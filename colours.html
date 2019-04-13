@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="colours.css">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>七彩配色卡 - shawxlee</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar bg-dark navbar-dark fixed-top">
+            <a href="#start" class="navbar-brand"><span>七彩配色卡</span></a>
+            <form class="form-inline">
+                <span class="navbar-text">当前背景色：</span>
+                <span class="navbar-text mr-4" id="currentColor">#FFFFFF</span>
+                <span class="navbar-text">更换背景色：</span>
+                <input type="text" id="inputColor" class="form-control form-control-sm mr-2" placeholder="#000000（请输入色值）" autocomplete="off">
+                <button class="btn btn-outline-light" type="button" id="changeColor">更换</button>
+            </form>
+            <a href="https://github.com/shawxlee" class="navbar-brand" target="_blank"><i class="fab fa-github-square"></i></a>
+        </nav>
+
+        <div id="start"></div>
+
+        <div class="row no-gutters">
+            <div class="col-auto mr-3">
+                <table style="border-right: 0.5rem solid #FF0000;">
+                    <thead>
+                        <tr>
+                            <th>红色（Red）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #FF0000;">Red</td>
+                            <td style="background-color: #FF0000;">#FF0000</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EE0000;">Red2</td>
+                            <td style="background-color: #EE0000;">#EE0000</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CD0000;">Red3</td>
+                            <td style="background-color: #CD0000;">#CD0000</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B0000;">DarkRed</td>
+                            <td style="background-color: #8B0000;">#8B0000</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #FF4500;">OrangeRed</td>
+                            <td style="background-color: #FF4500;">#FF4500</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EE4000;">OrangeRed2</td>
+                            <td style="background-color: #EE4000;">#EE4000</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CD3700;">OrangeRed3</td>
+                            <td style="background-color: #CD3700;">#CD3700</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B2500;">OrangeRed4</td>
+                            <td style="background-color: #8B2500;">#8B2500</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #FF6A6A;">IndianRed1</td>
+                            <td style="background-color: #FF6A6A;">#FF6A6A</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EE6363;">IndianRed2</td>
+                            <td style="background-color: #EE6363;">#EE6363</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CD5C5C;">IndianRed</td>
+                            <td style="background-color: #CD5C5C;">#CD5C5C</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CD5555;">IndianRed3</td>
+                            <td style="background-color: #CD5555;">#CD5555</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B3A3A;">IndianRed4</td>
+                            <td style="background-color: #8B3A3A;">#8B3A3A</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EE799F;">PaleVioletRed1</td>
+                            <td style="background-color: #EE799F;">#FF82AB</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EE799F;">PaleVioletRed2</td>
+                            <td style="background-color: #EE799F;">#EE799F</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #DB7093;">PaleVioletRed</td>
+                            <td style="background-color: #DB7093;">#DB7093</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CD6889;">PaleVioletRed3</td>
+                            <td style="background-color: #CD6889;">#CD6889</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B475D;">PaleVioletRed4</td>
+                            <td style="background-color: #8B475D;">#8B475D</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #FF3E96;">VioletRed1</td>
+                            <td style="background-color: #FF3E96;">#FF3E96</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EE3A8C;">VioletRed2</td>
+                            <td style="background-color: #EE3A8C;">#EE3A8C</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CD3278;">VioletRed3</td>
+                            <td style="background-color: #CD3278;">#CD3278</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B2252;">VioletRed4</td>
+                            <td style="background-color: #8B2252;">#8B2252</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #D02090;">VioletRed</td>
+                            <td style="background-color: #D02090;">#D02090</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #C71585;">MediumVioletRed</td>
+                            <td style="background-color: #C71585;">#C71585</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-auto mr-3">
+                <table style="border-right: 0.5rem solid #FFA500;">
+                    <thead>
+                        <tr>
+                            <th>橙色（Orange）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #FFA500;">Orange</td>
+                            <td style="background-color: #FFA500;">#FFA500</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EE9A00;">Orange2</td>
+                            <td style="background-color: #EE9A00;">#EE9A00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CD8500;">Orange3</td>
+                            <td style="background-color: #CD8500;">#CD8500</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B5A00;">Orange4</td>
+                            <td style="background-color: #8B5A00;">#8B5A00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #FF8C00;">DarkOrange</td>
+                            <td style="background-color: #FF8C00;">#FF8C00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #FF7F00;">DarkOrange1</td>
+                            <td style="background-color: #FF7F00;">#FF7F00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EE7600;">DarkOrange2</td>
+                            <td style="background-color: #EE7600;">#EE7600</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CD6600;">DarkOrange3</td>
+                            <td style="background-color: #CD6600;">#CD6600</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B4500;">DarkOrange4</td>
+                            <td style="background-color: #8B4500;">#8B4500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-auto mr-3">
+                <table style="border-right: 0.5rem solid #FFFF00;">
+                    <thead>
+                        <tr>
+                            <th>黄色（Yellow）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #FFFF00;">Yellow</td>
+                            <td style="background-color: #FFFF00;">#FFFF00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EEEE00;">Yellow2</td>
+                            <td style="background-color: #EEEE00;">#EEEE00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CDCD00;">Yellow3</td>
+                            <td style="background-color: #CDCD00;">#CDCD00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B00;">Yellow4</td>
+                            <td style="background-color: #8B8B00;">#8B8B00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #FFFFE0;">LightYellow</td>
+                            <td style="background-color: #FFFFE0;">#FFFFE0</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #FAFAD2;">LtGoldenrodYello</td>
+                            <td style="background-color: #FAFAD2;">#FAFAD2</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #EEEED1;">LightYellow2</td>
+                            <td style="background-color: #EEEED1;">#EEEED1</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CDCDB4;">LightYellow3</td>
+                            <td style="background-color: #CDCDB4;">#CDCDB4</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B7A;">LightYellow4</td>
+                            <td style="background-color: #8B8B7A;">#8B8B7A</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #ADFF2F;">GreenYellow</td>
+                            <td style="background-color: #ADFF2F;">#ADFF2F</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-auto mr-3">
+                <table style="border-right: 0.5rem solid #00FF00;">
+                    <thead>
+                        <tr>
+                            <th>绿色（Green）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #00FF00;">Green</td>
+                            <td style="background-color: #00FF00;">#00FF00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00EE00;">Green2</td>
+                            <td style="background-color: #00EE00;">#00EE00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00CD00;">Green3</td>
+                            <td style="background-color: #00CD00;">#00CD00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #008B00;">Green4</td>
+                            <td style="background-color: #008B00;">#008B00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #006400;">DarkGreen</td>
+                            <td style="background-color: #006400;">#006400</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #32CD32;">LimeGreen</td>
+                            <td style="background-color: #32CD32;">#32CD32</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #228B22;">ForestGreen</td>
+                            <td style="background-color: #228B22;">#228B22</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00FF7F;">SpringGreen</td>
+                            <td style="background-color: #00FF7F;">#00FF7F</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00EE76;">SpringGreen2</td>
+                            <td style="background-color: #00EE76;">#00EE76</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00CD66;">SpringGreen3</td>
+                            <td style="background-color: #00CD66;">#00CD66</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #008B45;">SpringGreen4</td>
+                            <td style="background-color: #008B45;">#008B45</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00FA9A;">MedSpringGreen</td>
+                            <td style="background-color: #00FA9A;">#00FA9A</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #54FF9F;">SeaGreen1</td>
+                            <td style="background-color: #54FF9F;">#54FF9F</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #4EEE94;">SeaGreen2</td>
+                            <td style="background-color: #4EEE94;">#4EEE94</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #43CD80;">SeaGreen3</td>
+                            <td style="background-color: #43CD80;">#43CD80</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #3CB371;">MediumSeaGreen</td>
+                            <td style="background-color: #3CB371;">#3CB371</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #2E8B57;">SeaGreen</td>
+                            <td style="background-color: #2E8B57;">#2E8B57</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #98FB98;">PaleGreen</td>
+                            <td style="background-color: #98FB98;">#98FB98</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9AFF9A;">PaleGreen1</td>
+                            <td style="background-color: #9AFF9A;">#9AFF9A</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #90EE90;">LightGreen</td>
+                            <td style="background-color: #90EE90;">#90EE90</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #7CCD7C;">PaleGreen3</td>
+                            <td style="background-color: #7CCD7C;">#7CCD7C</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #548B54;">PaleGreen4</td>
+                            <td style="background-color: #548B54;">#548B54</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #C1FFC1;">DarkSeaGreen1</td>
+                            <td style="background-color: #C1FFC1;">#C1FFC1</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #B4EEB4;">DarkSeaGreen2</td>
+                            <td style="background-color: #B4EEB4;">#B4EEB4</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9BCD9B;">DarkSeaGreen3</td>
+                            <td style="background-color: #9BCD9B;">#9BCD9B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8FBC8F;">DarkSeaGreen</td>
+                            <td style="background-color: #8FBC8F;">#8FBC8F</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #698B69;">DarkSeaGreen4</td>
+                            <td style="background-color: #698B69;">#698B69</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CAFF70;">DarkOliveGreen1</td>
+                            <td style="background-color: #CAFF70;">#CAFF70</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #BCEE68;">DarkOliveGreen2</td>
+                            <td style="background-color: #BCEE68;">#BCEE68</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #A2CD5A;">DarkOliveGreen3</td>
+                            <td style="background-color: #A2CD5A;">#A2CD5A</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #6E8B3D;">DarkOliveGreen4</td>
+                            <td style="background-color: #6E8B3D;">#6E8B3D</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #556B2F;">DarkOliveGreen</td>
+                            <td style="background-color: #556B2F;">#556B2F</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9ACD32;">YellowGreen</td>
+                            <td style="background-color: #9ACD32;">#9ACD32</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #7CFC00;">LawnGreen</td>
+                            <td style="background-color: #7CFC00;">#7CFC00</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #20B2AA;">LightSeaGreen</td>
+                            <td style="background-color: #20B2AA;">#20B2AA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-auto mr-3">
+                <table style="border-right: 0.5rem solid #00FFFF;">
+                    <thead>
+                        <tr>
+                            <th>青色（Cyan）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #00FFFF;">Cyan</td>
+                            <td style="background-color: #00FFFF;">#00FFFF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00EEEE;">Cyan2</td>
+                            <td style="background-color: #00EEEE;">#00EEEE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00CDCD;">Cyan3</td>
+                            <td style="background-color: #00CDCD;">#00CDCD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #008B8B;">DarkCyan</td>
+                            <td style="background-color: #008B8B;">#008B8B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #E0FFFF;">LightCyan</td>
+                            <td style="background-color: #E0FFFF;">#E0FFFF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #D1EEEE;">LightCyan2</td>
+                            <td style="background-color: #D1EEEE;">#D1EEEE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #B4CDCD;">LightCyan3</td>
+                            <td style="background-color: #B4CDCD;">#B4CDCD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #7A8B8B;">LightCyan4</td>
+                            <td style="background-color: #7A8B8B;">#7A8B8B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-auto mr-3">
+                <table style="border-right: 0.5rem solid #0000FF;">
+                    <thead>
+                        <tr>
+                            <th>蓝色（Blue）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #0000FF;">Blue</td>
+                            <td style="background-color: #0000FF;">#0000FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #0000EE;">Blue2</td>
+                            <td style="background-color: #0000EE;">#0000EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #0000CD;">MediumBlue</td>
+                            <td style="background-color: #0000CD;">#0000CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00008B;">DarkBlue</td>
+                            <td style="background-color: #00008B;">#00008B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #000080;">NavyBlue</td>
+                            <td style="background-color: #000080;">#000080</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #191970;">MidnightBlue</td>
+                            <td style="background-color: #191970;">#191970</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #4876FF;">RoyalBlue1</td>
+                            <td style="background-color: #4876FF;">#4876FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #436EEE;">RoyalBlue2</td>
+                            <td style="background-color: #436EEE;">#436EEE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #4169E1;">RoyalBlue</td>
+                            <td style="background-color: #4169E1;">#4169E1</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #3A5FCD;">RoyalBlue3</td>
+                            <td style="background-color: #3A5FCD;">#3A5FCD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #27408B;">RoyalBlue4</td>
+                            <td style="background-color: #27408B;">#27408B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #6495ED;">CornflowerBlue</td>
+                            <td style="background-color: #6495ED;">#6495ED</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #1E90FF;">DodgerBlue</td>
+                            <td style="background-color: #1E90FF;">#1E90FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #1C86EE;">DodgerBlue2</td>
+                            <td style="background-color: #1C86EE;">#1C86EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #1874CD;">DodgerBlue3</td>
+                            <td style="background-color: #1874CD;">#1874CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #104E8B;">DodgerBlue4</td>
+                            <td style="background-color: #104E8B;">#104E8B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #63B8FF;">SteelBlue1</td>
+                            <td style="background-color: #63B8FF;">#63B8FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #5CACEE;">SteelBlue2</td>
+                            <td style="background-color: #5CACEE;">#5CACEE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #4F94CD;">SteelBlue3</td>
+                            <td style="background-color: #4F94CD;">#4F94CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #4682B4;">SteelBlue</td>
+                            <td style="background-color: #4682B4;">#4682B4</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #36648B;">SteelBlue4</td>
+                            <td style="background-color: #36648B;">#36648B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00BFFF;">DeepSkyBlue</td>
+                            <td style="background-color: #00BFFF;">#00BFFF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00B2EE;">DeepSkyBlue2</td>
+                            <td style="background-color: #00B2EE;">#00B2EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #009ACD;">DeepSkyBlue3</td>
+                            <td style="background-color: #009ACD;">#009ACD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #00688B;">DeepSkyBlue4</td>
+                            <td style="background-color: #00688B;">#00688B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #87CEEB;">SkyBlue</td>
+                            <td style="background-color: #87CEEB;">#87CEEB</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #87CEFA;">LightSkyBlue</td>
+                            <td style="background-color: #87CEFA;">#87CEFA</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #87CEFF;">SkyBlue1</td>
+                            <td style="background-color: #87CEFF;">#87CEFF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #7EC0EE;">SkyBlue2</td>
+                            <td style="background-color: #7EC0EE;">#7EC0EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #6CA6CD;">SkyBlue3</td>
+                            <td style="background-color: #6CA6CD;">#6CA6CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #4A708B;">SkyBlue4</td>
+                            <td style="background-color: #4A708B;">#4A708B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #B0E2FF;">LightSkyBlue1</td>
+                            <td style="background-color: #B0E2FF;">#B0E2FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #A4D3EE;">LightSkyBlue2</td>
+                            <td style="background-color: #A4D3EE;">#A4D3EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8DB6CD;">LightSkyBlue3</td>
+                            <td style="background-color: #8DB6CD;">#8DB6CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #607B8B;">LightSkyBlue4</td>
+                            <td style="background-color: #607B8B;">#607B8B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #CAE1FF;">LightSteelBlue1</td>
+                            <td style="background-color: #CAE1FF;">#CAE1FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #BCD2EE;">LightSteelBlue2</td>
+                            <td style="background-color: #BCD2EE;">#BCD2EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #B0C4DE;">LightSteelBlue</td>
+                            <td style="background-color: #B0C4DE;">#B0C4DE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #A2B5CD;">LightSteelBlue3</td>
+                            <td style="background-color: #A2B5CD;">#A2B5CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #6E7B8B;">LightSteelBlue4</td>
+                            <td style="background-color: #6E7B8B;">#6E7B8B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #98F5FF;">CadetBlue1</td>
+                            <td style="background-color: #98F5FF;">#98F5FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8EE5EE;">CadetBlue2</td>
+                            <td style="background-color: #8EE5EE;">#8EE5EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #7AC5CD;">CadetBlue3</td>
+                            <td style="background-color: #7AC5CD;">#7AC5CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #5F9EA0;">CadetBlue</td>
+                            <td style="background-color: #5F9EA0;">#5F9EA0</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #53868B;">CadetBlue4</td>
+                            <td style="background-color: #53868B;">#53868B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #BFEFFF;">LightBlue1</td>
+                            <td style="background-color: #BFEFFF;">#BFEFFF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #B2DFEE;">LightBlue2</td>
+                            <td style="background-color: #B2DFEE;">#B2DFEE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #ADD8E6;">LightBlue</td>
+                            <td style="background-color: #ADD8E6;">#ADD8E6</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9AC0CD;">LightBlue3</td>
+                            <td style="background-color: #9AC0CD;">#9AC0CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #68838B;">LightBlue4</td>
+                            <td style="background-color: #68838B;">#68838B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #F0F8FF;">AliceBlue</td>
+                            <td style="background-color: #F0F8FF;">#F0F8FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #B0E0E6;">PowderBlue</td>
+                            <td style="background-color: #B0E0E6;">#B0E0E6</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8470FF;">LightSlateBlue</td>
+                            <td style="background-color: #8470FF;">#8470FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #836FFF;">SlateBlue1</td>
+                            <td style="background-color: #836FFF;">#836FFF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #7B68EE;">MediumSlateBlue</td>
+                            <td style="background-color: #7B68EE;">#7B68EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #7A67EE;">SlateBlue2</td>
+                            <td style="background-color: #7A67EE;">#7A67EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #6A5ACD;">SlateBlue</td>
+                            <td style="background-color: #6A5ACD;">#6A5ACD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #6959CD;">SlateBlue3</td>
+                            <td style="background-color: #6959CD;">#6959CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #483D8B;">DarkSlateBlue</td>
+                            <td style="background-color: #483D8B;">#483D8B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #473C8B;">SlateBlue4</td>
+                            <td style="background-color: #473C8B;">#473C8B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-auto mr-3">
+                <table style="border-right: 0.5rem solid #A020F0;">
+                    <thead>
+                        <tr>
+                            <th>紫色（Purple）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #A020F0;">Purple</td>
+                            <td style="background-color: #A020F0;">#A020F0</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9B30FF;">Purple1</td>
+                            <td style="background-color: #9B30FF;">#9B30FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #912CEE;">Purple2</td>
+                            <td style="background-color: #912CEE;">#912CEE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #7D26CD;">Purple3</td>
+                            <td style="background-color: #7D26CD;">#7D26CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #551A8B;">Purple4</td>
+                            <td style="background-color: #551A8B;">#551A8B</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #AB82FF;">MediumPurple1</td>
+                            <td style="background-color: #AB82FF;">#AB82FF</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9F79EE;">MediumPurple2</td>
+                            <td style="background-color: #9F79EE;">#9F79EE</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9370DB;">MediumPurple</td>
+                            <td style="background-color: #9370DB;">#9370DB</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8968CD;">MediumPurple3</td>
+                            <td style="background-color: #8968CD;">#8968CD</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #5D478B;">MediumPurple4</td>
+                            <td style="background-color: #5D478B;">#5D478B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="colours.js"></script>
+</body>
+</html>
