@@ -1,0 +1,189 @@
+html {
+	font-size: 12px;
+	letter-spacing: 0.5px;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	padding-top: 4.5rem;
+	line-height: 0.5rem;
+	background-color: #E8E8E8;
+}
+
+#headNavbar nav {
+	border-bottom: 0.1rem solid #E8E8E8;
+}
+#headNavbar span {
+	color: #363636;
+	font-size: 1.2rem;
+}
+#headNavbar button {
+	border-color: #f8f9fa;
+	height: 2.5rem;
+	font-size: 1.2rem;
+}
+#tagCollapse button {
+	font-size: 1rem;
+	border-color: #4F94CD;
+	color: #4F94CD;
+	width: 100%;
+	height: 2rem;
+	line-height: 1rem;
+}
+#searchCollapse button {
+	font-size: 1rem;
+	width: 100%;
+	border-color: #4F94CD;
+	background-color: #4F94CD;
+	color: white;
+}
+
+.filmDiv {
+	padding: 0.8rem;
+	margin-bottom: 1rem;
+	background-color: #f8f9fa;
+	border-radius: 1rem;
+}
+.imgDiv {
+	height: 9.9rem;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0.3rem;
+}
+.imgDiv img {
+	border-radius: 0.3rem;
+}
+.coverDiv {
+	position: absolute;
+	top: -4.5rem;
+	left: -5.4rem;
+	z-index: 1;
+	margin: 0;
+	padding-top: 5.2rem;
+	padding-left: 5.8rem;
+	width: 9.9rem;
+	height: 9.9rem;
+	border-radius: 50%;
+	background: radial-gradient(rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 70%);
+}
+.coverDiv p {
+	font-size: 0.9rem;
+	width: auto;
+	height: auto;
+}
+.coverDiv p::first-letter {
+	font-size: 1.25rem;
+}
+
+.infoDiv {
+	padding-left: 0.8rem;
+	color: #828282;
+}
+.infoDiv h5 {
+	display: inline-block;
+	font-weight: bold;
+	color: #1C1C1C;
+}
+.infoDiv h6 {
+	font-weight: bold;
+}
+.seriesDiv {
+	display: inline-block;
+}
+.seriesDiv button {
+	margin: 0;
+	padding: 0;
+	font-size: 0.9rem;
+	width: 4rem;
+	height: 1.6rem;
+	margin-bottom: 0.4rem;
+	color: #4F94CD;
+	border-color: #4F94CD;
+}
+.seriesDiv a {
+	font-size: 1.1rem;
+}
+
+.noteDiv {
+	height: 2.5rem;
+	line-height: 2.5rem;
+}
+.noteDiv p {
+	background-color: #ededed;
+	border-radius: 0.3rem;
+	color: #1C1C1C;
+}
+.noteDiv i {
+	color: #9C9C9C;
+	margin-left: 0.8rem;
+	margin-right: 0.8rem;
+}
+.sourceDiv {
+	height: 2.5rem;
+	padding-left: 0.8rem;
+}
+.sourceDiv button {
+	width: 100%;
+	background-color: #4F94CD;
+	border-color: #4F94CD;
+	color: white;
+}
+.sourceDiv div {
+	text-align: center;
+}
+.sourceDiv p {
+	margin-top: 1rem;
+}
+
+.heightDiv {
+	height: 3.5rem;
+}
+
+#footNav nav {
+	height: 3.5rem;
+	line-height: 2.3rem;
+	border-top: 0.1rem solid #E8E8E8;
+	font-size: 1.2rem;
+}
+#footNav button {
+	border-color: #f8f9fa;
+	background-color: #f8f9fa;
+	font-size: 1.2rem;
+}
+#footNav a {
+	color: #696969;
+}
+/* 侧边栏样式 */
+.sidebarClass {
+	position: fixed;
+	right: -50%;
+	width: 50%;
+	height: calc(100vh - 3.5rem);
+	background: #E8E8E8;
+	z-index: 9999;
+	transition: width 1s;
+}
+.addWidth {
+	width: 100%;
+}
+
+/* 去除按钮点击后显示的边框 */
+.navbar-toggler:focus,
+.navbar-toggler:active:focus,
+.navbar-toggler.active:focus,
+.navbar-toggler.focus,
+.navbar-toggler:active.focus,
+.navbar-toggler.active.focus {
+	outline: none;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+	outline: none;
+	text-shadow: none;
+}

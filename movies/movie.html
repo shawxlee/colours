@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" type="text/css" href="movie.css">
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<title>影片推荐</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="headNavbar">
+			<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tagCollapse">
+					<i class="fas fa-bars"></i>
+				</button>
+				<span class="navbar-text">全部影片</span>
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#searchCollapse">
+					<i class="fas fa-search"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="tagCollapse">
+					<div class="row no-gutters my-3 mx-2">
+						<div class="col-2 p-1" v-for="item in tags">
+							<button type="button" class="btn">{{ item.tag }}</button>
+						</div>
+					</div>
+				</div>
+				<div class="collapse navbar-collapse" id="searchCollapse">
+					<form>
+						<div class="row no-gutters my-3 mx-2">
+							<div class="col-9 px-1">
+								<input type="search" class="form-control" placeholder="输入影片名称">
+							</div>
+							<div class="col-3 pr-1 pl-2">
+								<button type="button" class="btn">搜索</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</nav>
+		</div>
+
+		<div id="filmList">
+			<div class="filmDiv" v-for="(item, index) in films" :key="item.id">
+				<div class="row no-gutters">
+					<div class="col-3">
+						<div class="imgDiv">
+							<a :href="item.doubanUrl" target="_blank"><img :src="item.imgUrl" width="100%" height="100%"></a>
+							<div class="coverDiv">
+								<p :style="{color: scoreColor(item)}">{{ item.score }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-9">
+						<div class="infoDiv" :id="item.filmId">
+							<h5>{{ item.translateName }}</h5><span>（{{ item.year }}）</span>
+							<div class="seriesDiv" :class="{'d-none': item.noSeries}">
+								<button type="button" class="btn">系列 <i class="fas fa-sort"></i></button>
+							</div>
+							<h6>{{ item.officialName }}</h6>
+							<br><br>
+							<p>地区：{{ item.country }}</p>
+							<p>类型：{{ item.type }}</p>
+							<p>导演：{{ item.director }}</p>
+							<p>主演：{{ item.star }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="row no-gutters">
+					<div class="col-9">
+						<div class="noteDiv">
+							<p><i class="fas fa-thumbs-up"></i>{{ item.note }}</p>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="sourceDiv">
+							<button type="button" class="btn" data-toggle="modal" :data-target="'#modal_' + item.id" @click.prevent="onModal(item)">播放 <i class="far fa-play-circle"></i></button>
+							<div class="modal fade" :id="'modal_' + item.id" tabindex="-1">
+								<div class="modal-dialog modal-dialog-centered">
+									<div class="modal-content">
+										<div class="modal-header">选择播放源：</div>
+										<div class="modal-body">
+											<div class="row justify-content-center no-gutters">
+												<div class="col-3" :class="{'d-none': item.noBilibili}">
+													<a :href="item.bilibiliUrl" target="_blank"><img src="bilibili.png" width="50%"></a>
+													<p>哔哩哔哩</p>
+												</div>
+												<div class="col-3" :class="{'d-none': item.noTencent}">
+													<a :href="item.tencentUrl" target="_blank"><img src="tencent.png" width="50%"></a>
+													<p>腾讯视频</p>
+												</div>
+												<div class="col-3" :class="{'d-none': item.noYouku}">
+													<a :href="item.youkuUrl" target="_blank"><img src="youku.png" width="50%"></a>
+													<p>优酷视频</p>
+												</div>
+												<div class="col-3" :class="{'d-none': item.noIqiyi}">
+													<a :href="item.iqiyiUrl" target="_blank"><img src="iqiyi.png" width="50%"></a>
+													<p>爱奇艺</p>
+												</div>
+												<div class="col-3" :class="{'d-none': item.noOther}">
+													<a :href="item.otherUrl" target="_blank"><img src="other.png" width="50%"></a>
+													<p>其他平台</p>
+												</div>
+												<div class="col-3" :class="{'d-none': item.noDownload}">
+													<a :href="item.downloadUrl" target="_blank"><img src="other.png" width="50%"></a>
+													<p>资源下载</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="heightDiv"></div>
+
+		<div id="footNav">
+			<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-bottom">
+				<a href="#" class="nav-item nav-link active"><i class="fab fa-stripe-s"></i> 推荐列表</a>
+				<a href="#" class="nav-item nav-link"><i class="fas fa-list-alt"></i> 待看</a>
+				<a href="#" class="nav-item nav-link"><i class="fas fa-check-square"></i> 已看</a>
+				<button type="button" class="btn" id="sidebarToggler"><i class="fas fa-cog"></i></button>
+			</nav>
+			<div id="sideBar" class="sidebarClass">
+				<ul class="list-unstyled">
+					<li>侧边栏菜单项1</li>
+					<li>侧边栏菜单项2</li>
+					<li>侧边栏菜单项3</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script type="text/javascript" src="movie.js"></script>
+</body>
+</html>

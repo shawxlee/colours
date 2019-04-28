@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <style type="text/css">
+        nav {
+            height: 2.5rem;
+        }
+        .sideBarClass {
+            position: fixed;
+            right: -50%;
+            width: 50%;
+            height: calc(100vh - 2.5rem);
+            background: black;
+            z-index: 9999;
+            transition: width 1s;
+        }
+        .addWidth {
+            width: 100%;
+        }
+    </style>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>……</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="nav fixed-top nav-fill bg-info navbar-light">
+            <span class="navbar-text">这个导航栏作为示例元素，会被侧边栏遮挡</span>
+        </nav>
+        <nav class="nav fixed-bottom nav-fill bg-dark">
+            <a href="#" class="nav-item nav-link active">主页</a>
+            <a href="#" class="nav-item nav-link">导航1</a>
+            <a href="#" class="nav-item nav-link">导航2</a>
+            <button type="button" class="btn btn-info p-1 m-1" id="sideToggler"><i class="fas fa-cog"></i> 侧边栏</button>
+        </nav>
+        <div id="sideBar" class="sideBarClass">
+            <ul class="text-light py-3">
+                <li>侧边栏菜单项1</li>
+                <li>侧边栏菜单项2</li>
+                <li>侧边栏菜单项3</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#sideToggler").click(function () {
+                var sideBar = $("#sideBar");
+                if (!sideBar.hasClass("addWidth")) {
+                    $("#sideBar").addClass("addWidth");
+                } 
+                else {
+                    $("#sideBar").removeClass("addWidth");
+                }
+            })
+    })
+</script>
+</body>
+</html>
