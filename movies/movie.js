@@ -1,21 +1,50 @@
+$(function () {
+	$("#searchButton").click(function (event) {
+		var sb = $("#searchButton");
+		var si = $("#searchInput");
+		var sf = $("#searchForm");
+		if (si.hasClass("d-none")) {
+			sb.css("color", "#4F4F4F");
+			si.removeClass("d-none");
+			sf.addClass("widthSearch");
+		} else {
+			sb.attr("type", "submit");
+		}
+		event.stopPropagation();
+	});
+	$("#headNavbar").click(function(){
+		$("#searchForm").removeClass("widthSearch");
+		$("#searchInput").fadeIn("slow");
+		
+	});
+	$("#searchInput, #searchButton").click(function (event) {
+		event.stopPropagation();
+	});
+
+	$("#sidebarToggler").click(function () {
+		var sb = $("#sideBar");
+		if (!sb.hasClass("widthSidebar")) {
+			$("#sideBar").addClass("widthSidebar");
+		} 
+		else {
+			$("#sideBar").removeClass("widthSidebar");
+		}
+	})
+});
+
 new Vue({
 	el: '#headNavbar',
 	data: {
 		tags: [
-		{ tag: '动作' },
+		{ tag: '剧情' },
 		{ tag: '惊悚' },
-		{ tag: '战争' },
+		{ tag: '冒险' },
 		{ tag: '科幻' },
-		{ tag: '科幻' },
-		{ tag: '科幻' },
-		{ tag: '科幻' },
+		{ tag: '恐怖' },
 		{ tag: '动作' },
-		{ tag: '惊悚' },
-		{ tag: '战争' },
-		{ tag: '科幻' },
-		{ tag: '科幻' },
-		{ tag: '科幻' },
-		{ tag: '科幻' },
+		{ tag: '喜剧' },
+		{ tag: '灾难' },
+		{ tag: '悬疑' },
 		]
 	}
 });
@@ -1412,15 +1441,3 @@ new Vue({
 		},
 	},
 });
-
-$(function () {
-	$("#sidebarToggler").click(function () {
-		var sideBar = $("#sideBar");
-		if (!sideBar.hasClass("addWidth")) {
-			$("#sideBar").addClass("addWidth");
-		} 
-		else {
-			$("#sideBar").removeClass("addWidth");
-		}
-	})
-})

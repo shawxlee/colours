@@ -1,174 +1,23 @@
 html {
 	font-size: 12px;
-	letter-spacing: 0.5px;
 }
 body {
 	width: 100vw;
 	height: 100vh;
 	padding: 0;
 	margin: 0;
-	padding-top: 4.5rem;
-	line-height: 0.5rem;
+	padding-top: 4rem;
+	line-height: 0.4rem;
 	background-color: #E8E8E8;
+	letter-spacing: 0.05rem;
 }
-
-#headNavbar nav {
-	border-bottom: 0.1rem solid #E8E8E8;
-}
-#headNavbar span {
-	color: #363636;
-	font-size: 1.2rem;
-}
-#headNavbar button {
-	border-color: #f8f9fa;
-	height: 2.5rem;
-	font-size: 1.2rem;
-}
-#tagCollapse button {
-	font-size: 1rem;
-	border-color: #4F94CD;
-	color: #4F94CD;
-	width: 100%;
-	height: 2rem;
-	line-height: 1rem;
-}
-#searchCollapse button {
-	font-size: 1rem;
-	width: 100%;
-	border-color: #4F94CD;
-	background-color: #4F94CD;
-	color: white;
-}
-
-.filmDiv {
-	padding: 0.8rem;
-	margin-bottom: 1rem;
-	background-color: #f8f9fa;
-	border-radius: 1rem;
-}
-.imgDiv {
-	height: 9.9rem;
-	position: relative;
-	overflow: hidden;
-	border-radius: 0.3rem;
-}
-.imgDiv img {
-	border-radius: 0.3rem;
-}
-.coverDiv {
-	position: absolute;
-	top: -4.5rem;
-	left: -5.4rem;
-	z-index: 1;
-	margin: 0;
-	padding-top: 5.2rem;
-	padding-left: 5.8rem;
-	width: 9.9rem;
-	height: 9.9rem;
-	border-radius: 50%;
-	background: radial-gradient(rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 70%);
-}
-.coverDiv p {
-	font-size: 0.9rem;
-	width: auto;
-	height: auto;
-}
-.coverDiv p::first-letter {
-	font-size: 1.25rem;
-}
-
-.infoDiv {
-	padding-left: 0.8rem;
-	color: #828282;
-}
-.infoDiv h5 {
-	display: inline-block;
-	font-weight: bold;
-	color: #1C1C1C;
-}
-.infoDiv h6 {
-	font-weight: bold;
-}
-.seriesDiv {
-	display: inline-block;
-}
-.seriesDiv button {
+button {
 	margin: 0;
 	padding: 0;
-	font-size: 0.9rem;
-	width: 4rem;
-	height: 1.6rem;
-	margin-bottom: 0.4rem;
-	color: #4F94CD;
-	border-color: #4F94CD;
-}
-.seriesDiv a {
-	font-size: 1.1rem;
-}
-
-.noteDiv {
-	height: 2.5rem;
-	line-height: 2.5rem;
-}
-.noteDiv p {
-	background-color: #ededed;
-	border-radius: 0.3rem;
-	color: #1C1C1C;
-}
-.noteDiv i {
-	color: #9C9C9C;
-	margin-left: 0.8rem;
-	margin-right: 0.8rem;
-}
-.sourceDiv {
-	height: 2.5rem;
-	padding-left: 0.8rem;
-}
-.sourceDiv button {
-	width: 100%;
-	background-color: #4F94CD;
-	border-color: #4F94CD;
-	color: white;
-}
-.sourceDiv div {
 	text-align: center;
+	vertical-align: baseline;
+	letter-spacing: 0.05rem;
 }
-.sourceDiv p {
-	margin-top: 1rem;
-}
-
-.heightDiv {
-	height: 3.5rem;
-}
-
-#footNav nav {
-	height: 3.5rem;
-	line-height: 2.3rem;
-	border-top: 0.1rem solid #E8E8E8;
-	font-size: 1.2rem;
-}
-#footNav button {
-	border-color: #f8f9fa;
-	background-color: #f8f9fa;
-	font-size: 1.2rem;
-}
-#footNav a {
-	color: #696969;
-}
-/* 侧边栏样式 */
-.sidebarClass {
-	position: fixed;
-	right: -50%;
-	width: 50%;
-	height: calc(100vh - 3.5rem);
-	background: #E8E8E8;
-	z-index: 9999;
-	transition: width 1s;
-}
-.addWidth {
-	width: 100%;
-}
-
 /* 去除按钮点击后显示的边框 */
 .navbar-toggler:focus,
 .navbar-toggler:active:focus,
@@ -186,4 +35,205 @@ body {
 .btn.active.focus {
 	outline: none;
 	text-shadow: none;
+}
+
+#headNavbar nav {
+	background: #ededed;
+	border-bottom: 0.1rem solid #D3D3D3;
+}
+#headNavbar span {
+	color: #000000;
+	font-size: 1.2rem;
+}
+#tagToggler, #searchToggler, #searchButton {
+	border: none;
+	height: 2.5rem;
+	font-size: 1.2rem;
+	color: #A9A9A9;
+}
+#tagCollapse label {
+	padding-top: 0.6rem;
+}
+#tagCollapse button {
+	font-size: 1rem;
+	border-color: #4F94CD;
+	color: #4F94CD;
+	width: 100%;
+	height: 2rem;
+	line-height: 1rem;
+}
+.searchClass {
+	position: absolute;
+	top: 0.5rem;
+	right: 1.1rem;
+	z-index: 9;
+	width: 100%;
+	width: 8%;
+	transition: width 1s;
+}
+.widthSearch {
+	width: 55%;
+}
+#searchInput {
+	border-radius: 3rem;
+	background-color: #f8f9fa;
+}
+#searchButton {
+	position: absolute;
+	top: 0.4rem;
+	right: 1rem;
+	z-index: 99;
+}
+
+.topDivider {
+	width: 100%;
+	text-align: center;
+	color: #BEBEBE;
+	margin-top: 0.8rem;
+}
+.topDivider hr {
+	display: inline-block;
+	width: 30%;
+	vertical-align: middle;
+	margin-bottom: 1rem;
+}
+
+.filmDiv {
+	background-color: #f8f9fa;
+	border-radius: 1rem;
+}
+.imgDiv {
+	height: 9.9rem;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0.3rem;
+}
+.imgDiv img {
+	border-radius: 0.3rem;
+	width: 100%;
+	height: 100%;
+}
+.coverDiv {
+	position: absolute;
+	top: -15%;
+	left: -15%;
+	z-index: 1;
+	width: 50%;
+	height: 75%;
+	background: linear-gradient(to right, rgba(28, 28, 28, 0.7), rgba(28, 28, 28, 0.5), rgba(28, 28, 28, 0.3), rgba(28, 28, 28, 0));
+	transform: rotate(35deg);
+}
+.imgDiv p {
+	position: absolute;
+	top: 0.8rem;
+	left: 0.4rem;
+	z-index: 2;
+}
+.imgDiv p::first-letter {
+	font-size: 1.5rem;
+}
+
+.infoDiv {
+	padding-top: 0.2rem;
+	color: #9C9C9C;
+}
+.infoDiv h5 {
+	display: inline-block;
+	font-weight: bold;
+	color: #1C1C1C;
+}
+.infoDiv span {
+	font-size: 1.1rem;
+	letter-spacing: 0.03rem;
+	margin-bottom: 0.4rem;
+}
+.infoDiv button {
+	margin-bottom: 0.4rem;
+	margin-left: 0.5rem;
+	padding: 0;
+	font-size: 0.9rem;
+	width: 4rem;
+	height: 1.5rem;
+	line-height: 1rem;
+	color: #4F94CD;
+	border-color: #4F94CD;
+}
+.infoDiv h6 {
+	line-height: 0.8rem;
+	margin-bottom: 1.8rem;
+	letter-spacing: 0.03rem;
+}
+
+.noteDiv {
+	height: 2.5rem;
+	line-height: 2.5rem;
+	background-color: #ededed;
+	border-radius: 0.3rem;
+	color: #1C1C1C;
+}
+.noteDiv i {
+	color: #9C9C9C;
+	margin-right: 0.4rem;
+	line-height: 0.8rem;
+}
+.sourceDiv {
+	height: 2.5rem;
+	padding-left: 0.6rem;
+}
+.sourceDiv button {
+	background-color: #4F94CD;
+	border-color: #4F94CD;
+	color: white;
+	width: 100%;
+}
+.sourceDiv div {
+	text-align: center;
+}
+.sourceDiv p {
+	font-size: 0.9rem;
+	margin-top: 1rem;
+}
+
+.bottomDivider {
+	width: 100%;
+	text-align: center;
+	color: #BEBEBE;
+	margin-top: 0.8rem;
+	margin-bottom: 5rem;
+}
+.bottomDivider hr {
+	display: inline-block;
+	width: 30%;
+	vertical-align: middle;
+	margin-bottom: 1rem;
+}
+
+#footNav ul {
+	background-color: white;
+	height: 4.5rem;
+	line-height: 1.4rem;
+	border-top: 0.1rem solid #E8E8E8;
+	font-size: 0.9rem;
+}
+#footNav ul li {
+	text-align: center;
+}
+#footNav a {
+	color: #A9A9A9;
+}
+#footNav i {
+	font-size: 1.5rem;
+}
+/* 侧边栏样式 */
+.sidebarClass {
+	position: fixed;
+	right: -50%;
+	width: 50%;
+	height: calc(100vh - 4rem);
+	background: #E8E8E8;
+	z-index: 9999;
+	transition: width 1s;
+}
+.widthSidebar {
+	width: 100%;
 }

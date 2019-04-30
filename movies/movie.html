@@ -15,55 +15,64 @@
 <body>
 	<div class="container-fluid">
 		<div id="headNavbar">
-			<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
-				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tagCollapse">
+			<nav class="navbar navbar-expand-lg fixed-top">
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tagCollapse" id="tagToggler">
 					<i class="fas fa-bars"></i>
 				</button>
 				<span class="navbar-text">全部影片</span>
-				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#searchCollapse">
+				<button type="button" class="navbar-toggler invisible">
 					<i class="fas fa-search"></i>
 				</button>
-				<div class="collapse navbar-collapse" id="tagCollapse">
-					<div class="row no-gutters my-3 mx-2">
+				<form class="form-inline searchClass p-0 m-0" id="searchForm">
+					<input type="search" class="form-control d-none" id="searchInput" placeholder="输入电影名称">
+					<button type="button" class="btn" id="searchButton"><i class="fas fa-search"></i></button>
+				</form>
+				<div class="collapse navbar-collapse p-3" id="tagCollapse">
+					<form class="my-2">
+						<div class="form-row no-gutters">
+							<div class="custom-control custom-radio col-4 text-center">
+								<input type="radio" name="filter" id="filterYear" class="custom-control-input" checked>
+								<label class="custom-control-label" for="filterYear"> 年份: 前→后</label>
+							</div>
+							<div class="custom-control custom-radio col-4 text-center">
+								<input type="radio" name="filter" id="filterScore" class="custom-control-input">
+								<label class="custom-control-label" for="filterScore"> 评分: 高→底</label>
+							</div>
+							<div class="custom-control custom-radio col-4 text-center">
+								<input type="radio" name="filter" id="filterName" class="custom-control-input">
+								<label class="custom-control-label" for="filterName"> 名称: A→Z</label>
+							</div>
+						</div>
+					</form>
+					<div class="row no-gutters mt-3">
 						<div class="col-2 p-1" v-for="item in tags">
 							<button type="button" class="btn">{{ item.tag }}</button>
 						</div>
 					</div>
 				</div>
-				<div class="collapse navbar-collapse" id="searchCollapse">
-					<form>
-						<div class="row no-gutters my-3 mx-2">
-							<div class="col-9 px-1">
-								<input type="search" class="form-control" placeholder="输入影片名称">
-							</div>
-							<div class="col-3 pr-1 pl-2">
-								<button type="button" class="btn">搜索</button>
-							</div>
-						</div>
-					</form>
-				</div>
 			</nav>
 		</div>
 
+		<div class="topDivider">
+			<hr>&nbsp;&nbsp; 下拉更新 <i class="fas fa-sync-alt"></i> &nbsp;&nbsp;<hr>
+		</div>
+
 		<div id="filmList">
-			<div class="filmDiv" v-for="(item, index) in films" :key="item.id">
-				<div class="row no-gutters">
+			<div class="filmDiv my-3 p-3" v-for="(item, index) in films" :key="item.id">
+				<div class="row no-gutters mb-1">
 					<div class="col-3">
 						<div class="imgDiv">
-							<a :href="item.doubanUrl" target="_blank"><img :src="item.imgUrl" width="100%" height="100%"></a>
-							<div class="coverDiv">
-								<p :style="{color: scoreColor(item)}">{{ item.score }}</p>
-							</div>
+							<a :href="item.doubanUrl" target="_blank"><img :src="item.imgUrl"></a>
+							<div class="coverDiv"></div>
+							<p :style="{color: scoreColor(item)}">{{ item.score }}</p>
 						</div>
 					</div>
 					<div class="col-9">
-						<div class="infoDiv" :id="item.filmId">
-							<h5>{{ item.translateName }}</h5><span>（{{ item.year }}）</span>
-							<div class="seriesDiv" :class="{'d-none': item.noSeries}">
-								<button type="button" class="btn">系列 <i class="fas fa-sort"></i></button>
-							</div>
+						<div class="infoDiv pl-2" :id="item.filmId">
+							<h5>{{ item.translateName }}</h5>
+							<span>({{ item.year }})</span>
+							<button type="button" class="btn" id="seriesDiv" :class="{'d-none': item.noSeries}">系列 <i class="fas fa-sort"></i></button>
 							<h6>{{ item.officialName }}</h6>
-							<br><br>
 							<p>地区：{{ item.country }}</p>
 							<p>类型：{{ item.type }}</p>
 							<p>导演：{{ item.director }}</p>
@@ -73,17 +82,19 @@
 				</div>
 				<div class="row no-gutters">
 					<div class="col-9">
-						<div class="noteDiv">
-							<p><i class="fas fa-thumbs-up"></i>{{ item.note }}</p>
+						<div class="noteDiv pl-2">
+							<i class="fas fa-star"></i>{{ item.note }}
 						</div>
 					</div>
 					<div class="col-3">
 						<div class="sourceDiv">
-							<button type="button" class="btn" data-toggle="modal" :data-target="'#modal_' + item.id" @click.prevent="onModal(item)">播放 <i class="far fa-play-circle"></i></button>
+							<button type="button" class="btn" data-toggle="modal" :data-target="'#modal_' + item.id" @click.prevent="onModal(item)"><i class="far fa-play-circle"></i> 播放</button>
 							<div class="modal fade" :id="'modal_' + item.id" tabindex="-1">
 								<div class="modal-dialog modal-dialog-centered">
 									<div class="modal-content">
-										<div class="modal-header">选择播放源：</div>
+										<div class="modal-header">
+											<h6 class="modal-title">选择播放源：</h6>
+										</div>
 										<div class="modal-body">
 											<div class="row justify-content-center no-gutters">
 												<div class="col-3" :class="{'d-none': item.noBilibili}">
@@ -121,15 +132,25 @@
 			</div>
 		</div>
 
-		<div class="heightDiv"></div>
+		<div class="bottomDivider">
+			<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+		</div>
 
 		<div id="footNav">
-			<nav class="navbar navbar-expand-lg bg-light navbar-light fixed-bottom">
-				<a href="#" class="nav-item nav-link active"><i class="fab fa-stripe-s"></i> 推荐列表</a>
-				<a href="#" class="nav-item nav-link"><i class="fas fa-list-alt"></i> 待看</a>
-				<a href="#" class="nav-item nav-link"><i class="fas fa-check-square"></i> 已看</a>
-				<button type="button" class="btn" id="sidebarToggler"><i class="fas fa-cog"></i></button>
-			</nav>
+			<ul class="nav nav-fill fixed-bottom px-3 pt-1">
+				<li class="nav-item">
+					<a href="#" class="nav-link"><i class="fas fa-film"></i><br>全部</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link"><i class="far fa-plus-square"></i><br>待看</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link"><i class="far fa-check-square"></i><br>已看</a>
+				</li>
+				<li class="nav-item" id="sidebarToggler">
+					<a href="#" class="nav-link"><i class="fas fa-sliders-h"></i><br>设置</a>
+				</li>
+			</ul>
 			<div id="sideBar" class="sidebarClass">
 				<ul class="list-unstyled">
 					<li>侧边栏菜单项1</li>
