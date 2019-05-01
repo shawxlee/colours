@@ -1,35 +1,36 @@
 $(function () {
+	$("#filterCollapse").on('show.bs.collapse', function () {
+		$("#filterToggler").css("color", "#4F4F4F");
+	});
+	$('#filterCollapse').on('hidden.bs.collapse', function () {
+		$("#filterToggler").css("color", "#A9A9A9");
+	});
 	$("#searchButton").click(function (event) {
 		var sb = $("#searchButton");
 		var si = $("#searchInput");
-		var sf = $("#searchForm");
-		if (si.hasClass("d-none")) {
+		if (!si.hasClass("inputTransition")) {
 			sb.css("color", "#4F4F4F");
-			si.removeClass("d-none");
-			sf.addClass("widthSearch");
+			si.addClass("inputTransition");
 		} else {
 			sb.attr("type", "submit");
 		}
 		event.stopPropagation();
 	});
 	$("#headNavbar").click(function(){
-		$("#searchForm").removeClass("widthSearch");
-		$("#searchInput").fadeIn("slow");
-		
+		$("#searchInput").removeClass("inputTransition");
+		$("#searchButton").css("color", "#A9A9A9");
 	});
-	$("#searchInput, #searchButton").click(function (event) {
+	$("#searchInput").click(function (event) {
 		event.stopPropagation();
 	});
-
 	$("#sidebarToggler").click(function () {
-		var sb = $("#sideBar");
-		if (!sb.hasClass("widthSidebar")) {
-			$("#sideBar").addClass("widthSidebar");
-		} 
-		else {
-			$("#sideBar").removeClass("widthSidebar");
+		var ss = $("#settingSidebar");
+		if (!ss.hasClass("sidebarTransition")) {
+			ss.addClass("sidebarTransition");
+		} else {
+			ss.removeClass("sidebarTransition");
 		}
-	})
+	});
 });
 
 new Vue({

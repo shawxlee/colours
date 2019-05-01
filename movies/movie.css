@@ -42,53 +42,67 @@ button {
 	border-bottom: 0.1rem solid #D3D3D3;
 }
 #headNavbar span {
-	color: #000000;
 	font-size: 1.2rem;
 }
-#tagToggler, #searchToggler, #searchButton {
-	border: none;
+#filterToggler, #searchToggler, #searchButton {
 	height: 2.5rem;
 	font-size: 1.2rem;
 	color: #A9A9A9;
 }
-#tagCollapse label {
-	padding-top: 0.6rem;
+.sortsDiv {
+	border-right: 0.1rem solid #D3D3D3;
+	text-align: center;
 }
-#tagCollapse button {
-	font-size: 1rem;
+.sortsDiv button {
+	font-size: 0.9rem;
+	border-color: #A9A9A9;
+	color: #A9A9A9;
+	height: 1.8rem;
+	line-height: 0.9rem;
+}
+.tagsDiv button {
+	font-size: 0.9rem;
 	border-color: #4F94CD;
 	color: #4F94CD;
-	width: 100%;
-	height: 2rem;
-	line-height: 1rem;
+	height: 1.8rem;
+	line-height: 0.9rem;
 }
-.searchClass {
+.tagsDiv {
+
+}
+.searchForm {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9;
+	width: 100%;
+}
+.inputClass {
 	position: absolute;
 	top: 0.5rem;
 	right: 1.1rem;
-	z-index: 9;
-	width: 100%;
-	width: 8%;
-	transition: width 1s;
-}
-.widthSearch {
-	width: 55%;
-}
-#searchInput {
+	z-index: 99;
 	border-radius: 3rem;
 	background-color: #f8f9fa;
+	width: 8%;
+	opacity: 0;
+	transition: opacity,width 0.3s;
+}
+.inputTransition {
+	width: 55%;
+	opacity: 1;
 }
 #searchButton {
 	position: absolute;
 	top: 0.4rem;
-	right: 1rem;
-	z-index: 99;
+	right: 1.1rem;
+	z-index: 999;
 }
 
 .topDivider {
 	width: 100%;
 	text-align: center;
-	color: #BEBEBE;
+	color: #CFCFCF;
 	margin-top: 0.8rem;
 }
 .topDivider hr {
@@ -96,24 +110,24 @@ button {
 	width: 30%;
 	vertical-align: middle;
 	margin-bottom: 1rem;
+	color: #D3D3D3;
 }
 
-.filmDiv {
+.filmCard {
 	background-color: #f8f9fa;
 	border-radius: 1rem;
 }
-.imgDiv {
+.posterDiv {
 	height: 9.9rem;
 	position: relative;
 	overflow: hidden;
 	border-radius: 0.3rem;
 }
-.imgDiv img {
-	border-radius: 0.3rem;
+.posterDiv img {
 	width: 100%;
 	height: 100%;
 }
-.coverDiv {
+.scoreShadow {
 	position: absolute;
 	top: -15%;
 	left: -15%;
@@ -123,13 +137,13 @@ button {
 	background: linear-gradient(to right, rgba(28, 28, 28, 0.7), rgba(28, 28, 28, 0.5), rgba(28, 28, 28, 0.3), rgba(28, 28, 28, 0));
 	transform: rotate(35deg);
 }
-.imgDiv p {
+.posterDiv p {
 	position: absolute;
 	top: 0.8rem;
 	left: 0.4rem;
 	z-index: 2;
 }
-.imgDiv p::first-letter {
+.posterDiv p::first-letter {
 	font-size: 1.5rem;
 }
 
@@ -164,32 +178,31 @@ button {
 	letter-spacing: 0.03rem;
 }
 
-.noteDiv {
+.keyWords {
 	height: 2.5rem;
 	line-height: 2.5rem;
 	background-color: #ededed;
 	border-radius: 0.3rem;
 	color: #1C1C1C;
 }
-.noteDiv i {
+.keyWords i {
 	color: #9C9C9C;
-	margin-right: 0.4rem;
 	line-height: 0.8rem;
 }
-.sourceDiv {
+.playSource {
 	height: 2.5rem;
 	padding-left: 0.6rem;
 }
-.sourceDiv button {
+.playSource button {
 	background-color: #4F94CD;
 	border-color: #4F94CD;
 	color: white;
 	width: 100%;
 }
-.sourceDiv div {
+.playSource div {
 	text-align: center;
 }
-.sourceDiv p {
+.playSource p {
 	font-size: 0.9rem;
 	margin-top: 1rem;
 }
@@ -197,7 +210,7 @@ button {
 .bottomDivider {
 	width: 100%;
 	text-align: center;
-	color: #BEBEBE;
+	color: #CFCFCF;
 	margin-top: 0.8rem;
 	margin-bottom: 5rem;
 }
@@ -206,25 +219,25 @@ button {
 	width: 30%;
 	vertical-align: middle;
 	margin-bottom: 1rem;
+	color: #D3D3D3;
 }
 
 #footNav ul {
 	background-color: white;
 	height: 4.5rem;
-	line-height: 1.4rem;
 	border-top: 0.1rem solid #E8E8E8;
-	font-size: 0.9rem;
 }
 #footNav ul li {
 	text-align: center;
 }
 #footNav a {
 	color: #A9A9A9;
+	font-size: 0.8rem;
+	line-height: 1.3rem;
 }
 #footNav i {
 	font-size: 1.5rem;
 }
-/* 侧边栏样式 */
 .sidebarClass {
 	position: fixed;
 	right: -50%;
@@ -234,6 +247,6 @@ button {
 	z-index: 9999;
 	transition: width 1s;
 }
-.widthSidebar {
+.sidebarTransition {
 	width: 100%;
 }
