@@ -5,7 +5,7 @@ $(function () {
 		async: false,
 		data: {},
 		dataType: "json",
-		success: function (data) {
+		success (data) {
 			vm.films = data;
 		}
 	});
@@ -61,6 +61,7 @@ var vm = new Vue({
 		{ tag: '感染' },
 		{ tag: '怪物' },
 		{ tag: '鬼神' },
+		{ tag: '恐怖' },
 		{ tag: '猎奇' },
 		{ tag: '魔幻' },
 		{ tag: '末日' },
@@ -73,27 +74,29 @@ var vm = new Vue({
 		{ tag: '血腥' },
 		{ tag: '灾难' },
 		],
-		films: [],
 		sortOrder: 0,
+		films: [],
 	},
-	computed: {
-		filterFilms () {
+	methods: {
+		filterSort (films) {
 			if (this.sortOrder == 1) {
+				return this.films.sort(function (a,b) {
+					return a.year - b.year;
+				});
+			} else if (this.sortOrder == 2) {
 				return this.films.sort(function (a,b) {
 					return b.score - a.score;
 				});
-			} else if (this.sortOrder == 2) {
+			} else if (this.sortOrder == 3) {
 				return this.films.sort(function (a,b) {
 					return b.id - a.id;
 				});
 			} else {
 				return this.films.sort(function (a,b) {
-					return a.year - b.year;
+					return a.index - b.index;
 				});
 			}
 		},
-	},
-	methods: {
 		scoreColor (item) {
 			if (item.score >= 9) {
 				return '#A020F0';

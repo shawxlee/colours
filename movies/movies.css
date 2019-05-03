@@ -49,30 +49,21 @@ button {
 	font-size: 1.2rem;
 	color: #A9A9A9;
 }
-.sortsDiv {
-	width: 60%;
-	border-right: 0.1rem solid #E8E8E8;
-}
-.sortsDiv button {
-	font-size: 0.9rem;
-	border-color: #A9A9A9;
-	color: #A9A9A9;
-	height: 1.8rem;
-	line-height: 0.9rem;
-	width: auto;
-	white-space: nowrap;
-}
-.sortsDiv .chosen {
-	border-color: #4F4F4F;
-	color: #4F4F4F;
-}
-.tagsDiv button {
+#filterCollapse button {
 	font-size: 0.9rem;
 	border-color: #4F94CD;
 	color: #4F94CD;
 	height: 1.8rem;
 	line-height: 0.9rem;
-	width: auto;
+	width: 100%;
+}
+#filterCollapse a {
+	font-size: 0.9rem;
+	color: #A9A9A9;
+	text-decoration: none;
+}
+#filterCollapse .chosen {
+	color: #4F4F4F;
 }
 .searchForm {
 	position: absolute;
@@ -163,17 +154,6 @@ button {
 	font-size: 1.1rem;
 	letter-spacing: 0.03rem;
 	margin-bottom: 0.4rem;
-}
-.infoDiv button {
-	margin-bottom: 0.4rem;
-	margin-left: 0.5rem;
-	padding: 0;
-	font-size: 0.9rem;
-	width: 1.2rem;
-	height: 1.5rem;
-	line-height: 1rem;
-	color: #4F94CD;
-	border-color: #4F94CD;
 }
 .infoDiv h6 {
 	line-height: 0.8rem;
