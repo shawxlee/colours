@@ -4,7 +4,6 @@
 		"doubanUrl": "https://movie.douban.com/subject/1294941/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1108567104.webp",
 		"score": "7.7",
-		"filmId": "Jaws",
 		"translateName": "大白鲨",
 		"year": "1975",
 		"hasSeries": true,
@@ -21,7 +20,6 @@
 		"doubanUrl": "https://movie.douban.com/subject/1297242/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1108658455.webp",
 		"score": "6.4",
-		"filmId": "Jaws2",
 		"translateName": "大白鲨2",
 		"year": "1978",
 		"hasSeries": true,
@@ -38,7 +36,6 @@
 		"doubanUrl": "https://movie.douban.com/subject/1303765/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1108691070.webp",
 		"score": "5.8",
-		"filmId": "Jaws3D",
 		"translateName": "大白鲨3",
 		"year": "1983",
 		"hasSeries": true,
@@ -55,7 +52,6 @@
 		"doubanUrl": "https://movie.douban.com/subject/1301844/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2370610915.webp",
 		"score": "5.6",
-		"filmId": "JawsTheRevenge",
 		"translateName": "大白鲨大报复",
 		"year": "1987",
 		"hasSeries": true,
@@ -72,7 +68,6 @@
 		"doubanUrl": "https://movie.douban.com/subject/1293081/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1720924397.webp",
 		"score": "6.2",
-		"filmId": "Piranha",
 		"translateName": "食人鱼",
 		"year": "1978",
 		"hasSeries": true,
@@ -89,7 +84,6 @@
 		"doubanUrl": "https://movie.douban.com/subject/1295543/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2177148298.webp",
 		"score": "5.4",
-		"filmId": "PiranhaPartTwoTheSpawning",
 		"translateName": "食人鱼2：繁殖",
 		"year": "1981",
 		"hasSeries": true,
@@ -106,7 +100,6 @@
 		"doubanUrl": "https://movie.douban.com/subject/2269893/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p588919520.webp",
 		"score": "5.9",
-		"filmId": "Piranha3D",
 		"translateName": "食人鱼3D",
 		"year": "2010",
 		"hasSeries": true,
@@ -123,7 +116,6 @@
 		"doubanUrl": "https://movie.douban.com/subject/5323911/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1577132327.webp",
 		"score": "4.5",
-		"filmId": "Piranha3DD",
 		"translateName": "食人鱼3DD",
 		"year": "2012",
 		"hasSeries": true,
@@ -136,11 +128,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 5,
+		"id": 9,
 		"doubanUrl": "https://movie.douban.com/subject/1300868/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1756402567.webp",
 		"score": "8.1",
-		"filmId": "Alien",
 		"translateName": "异形",
 		"year": "1979",
 		"hasSeries": true,
@@ -153,11 +144,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 6,
+		"id": 10,
 		"doubanUrl": "https://movie.douban.com/subject/1293792/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2493207032.webp",
 		"score": "8.0",
-		"filmId": "Aliens",
 		"translateName": "异形2",
 		"year": "1986",
 		"hasSeries": true,
@@ -170,11 +160,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 7,
+		"id": 11,
 		"doubanUrl": "https://movie.douban.com/subject/1297929/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2408593936.webp",
 		"score": "7.1",
-		"filmId": "Alien³",
 		"translateName": "异形3",
 		"year": "1992",
 		"hasSeries": true,
@@ -187,11 +176,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 8,
+		"id": 12,
 		"doubanUrl": "https://movie.douban.com/subject/1299153/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1101480167.webp",
 		"score": "7.6",
-		"filmId": "AlienResurrection",
 		"translateName": "异形4",
 		"year": "1997",
 		"hasSeries": true,
@@ -204,11 +192,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 9,
+		"id": 13,
 		"doubanUrl": "https://movie.douban.com/subject/1308769/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2208862911.webp",
 		"score": "6.8",
-		"filmId": "AVPAlienvsPredator",
 		"translateName": "异形大战铁血战士",
 		"year": "2004",
 		"hasSeries": true,
@@ -221,11 +208,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 10,
+		"id": 14,
 		"doubanUrl": "https://movie.douban.com/subject/1578502/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1529820472.webp",
 		"score": "5.8",
-		"filmId": "AVPRAliensvsPredatorRequiem",
 		"translateName": "异形大战铁血战士2",
 		"year": "2007",
 		"hasSeries": true,
@@ -238,11 +224,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 11,
+		"id": 15,
 		"doubanUrl": "https://movie.douban.com/subject/3771562/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1548920463.webp",
 		"score": "7.3",
-		"filmId": "Prometheus",
 		"translateName": "普罗米修斯",
 		"year": "2012",
 		"hasSeries": true,
@@ -255,11 +240,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 12,
+		"id": 16,
 		"doubanUrl": "https://movie.douban.com/subject/11803087/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2458710053.webp",
 		"score": "7.4",
-		"filmId": "AlienCovenant",
 		"translateName": "异形：契约",
 		"year": "2017",
 		"hasSeries": true,
@@ -272,11 +256,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 12,
+		"id": 17,
 		"doubanUrl": "https://movie.douban.com/subject/1296794/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2510414340.webp",
 		"score": "7.9",
-		"filmId": "TheThing",
 		"translateName": "怪形",
 		"year": "1982",
 		"hasSeries": true,
@@ -289,11 +272,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 12,
+		"id": 18,
 		"doubanUrl": "https://movie.douban.com/subject/3097525/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1322402015.webp",
 		"score": "6.7",
-		"filmId": "TheThingPre",
 		"translateName": "怪形前传",
 		"year": "2011",
 		"hasSeries": true,
@@ -306,11 +288,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 13,
+		"id": 19,
 		"doubanUrl": "https://movie.douban.com/subject/1292523/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1259566836.webp",
 		"score": "8.1",
-		"filmId": "JurassicPark",
 		"translateName": "侏罗纪公园",
 		"year": "1993",
 		"hasSeries": true,
@@ -323,11 +304,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 14,
+		"id": 20,
 		"doubanUrl": "https://movie.douban.com/subject/1293702/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2239242722.webp",
 		"score": "7.5",
-		"filmId": "TheLostWorldJurassicPark",
 		"translateName": "侏罗纪公园2：失落的世界",
 		"year": "1997",
 		"hasSeries": true,
@@ -340,11 +320,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 15,
+		"id": 21,
 		"doubanUrl": "https://movie.douban.com/subject/1304643/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2239242997.webp",
 		"score": "7.1",
-		"filmId": "JurassicParkIII",
 		"translateName": "侏罗纪公园3",
 		"year": "2001",
 		"hasSeries": true,
@@ -357,11 +336,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 16,
+		"id": 22,
 		"doubanUrl": "https://movie.douban.com/subject/10440138/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2239466343.webp",
 		"score": "7.7",
-		"filmId": "JurassicWorld",
 		"translateName": "侏罗纪世界",
 		"year": "2015",
 		"hasSeries": true,
@@ -374,11 +352,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 17,
+		"id": 23,
 		"doubanUrl": "https://movie.douban.com/subject/26416062/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2525188434.webp",
 		"score": "6.7",
-		"filmId": "JurassicWorldFallenKingdom",
 		"translateName": "侏罗纪世界2",
 		"year": "2018",
 		"hasSeries": true,
@@ -391,11 +368,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 17,
+		"id": 24,
 		"doubanUrl": "https://movie.douban.com/subject/1294990/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2212154318.webp",
 		"score": "8.1",
-		"filmId": "Jumanji",
 		"translateName": "勇敢者的游戏",
 		"year": "1995",
 		"hasSeries": true,
@@ -408,11 +384,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 17,
+		"id": 25,
 		"doubanUrl": "https://movie.douban.com/subject/1370276/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1042253427.webp",
 		"score": "6.7",
-		"filmId": "ZathuraASpaceAdventure",
 		"translateName": "勇敢者的游戏2：太空飞行棋",
 		"year": "2005",
 		"hasSeries": true,
@@ -425,11 +400,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 17,
+		"id": 26,
 		"doubanUrl": "https://movie.douban.com/subject/26586766/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2504262476.webp",
 		"score": "6.9",
-		"filmId": "JumanjiWelcometotheJungle",
 		"translateName": "勇敢者游戏：决战丛林",
 		"year": "2017",
 		"hasSeries": true,
@@ -442,11 +416,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 17,
+		"id": 27,
 		"doubanUrl": "https://movie.douban.com/subject/1300830/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1261715918.webp",
 		"score": "6.6",
-		"filmId": "Anaconda",
 		"translateName": "狂蟒之灾",
 		"year": "1997",
 		"hasSeries": true,
@@ -459,11 +432,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 17,
+		"id": 28,
 		"doubanUrl": "https://movie.douban.com/subject/1308784/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1513060022.webp",
 		"score": "6.3",
-		"filmId": "AnacondasTheHuntfortheBloodOrchid",
 		"translateName": "狂蟒之灾2",
 		"year": "2004",
 		"hasSeries": true,
@@ -476,11 +448,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 17,
+		"id": 29,
 		"doubanUrl": "https://movie.douban.com/subject/3160325/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2517326639.webp",
 		"score": "4.9",
-		"filmId": "AnacondaIII",
 		"translateName": "狂蟒之灾3",
 		"year": "2008",
 		"hasSeries": true,
@@ -493,11 +464,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 17,
+		"id": 30,
 		"doubanUrl": "https://movie.douban.com/subject/3011606/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2518156085.webp",
 		"score": "4.4",
-		"filmId": "Anaconda4TrailofBlood",
 		"translateName": "狂蟒之灾4",
 		"year": "2009",
 		"hasSeries": true,
@@ -510,11 +480,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 18,
+		"id": 31,
 		"doubanUrl": "https://movie.douban.com/subject/1294276/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1860661551.webp",
 		"score": "6.4",
-		"filmId": "Mimic",
 		"translateName": "变种DNA",
 		"year": "1997",
 		"hasSeries": true,
@@ -527,11 +496,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 19,
+		"id": 32,
 		"doubanUrl": "https://movie.douban.com/subject/1422986/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1242457462.webp",
 		"score": "5.7",
-		"filmId": "Mimic2",
 		"translateName": "变种DNA 2",
 		"year": "2001",
 		"hasSeries": true,
@@ -544,11 +512,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 20,
+		"id": 33,
 		"doubanUrl": "https://movie.douban.com/subject/1422987/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1242465793.webp",
 		"score": "4.6",
-		"filmId": "MimicSentinel",
 		"translateName": "变种DNA 3：哨兵",
 		"year": "2003",
 		"hasSeries": true,
@@ -561,11 +528,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 21,
+		"id": 34,
 		"doubanUrl": "https://movie.douban.com/subject/1295384/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2128499819.webp",
 		"score": "7.8",
-		"filmId": "StarshipTroopers",
 		"translateName": "星河战队",
 		"year": "1997",
 		"hasSeries": true,
@@ -578,11 +544,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 22,
+		"id": 35,
 		"doubanUrl": "https://movie.douban.com/subject/1422938/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2128531640.webp",
 		"score": "5.1",
-		"filmId": "StarshipTroopers2HerooftheFederation",
 		"translateName": "星河战队2：联邦英雄",
 		"year": "2004",
 		"hasSeries": true,
@@ -595,11 +560,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 23,
+		"id": 36,
 		"doubanUrl": "https://movie.douban.com/subject/3006123/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2128557979.webp",
 		"score": "5.2",
-		"filmId": "StarshipTroopers3Marauder",
 		"translateName": "星河战队3：掠夺者",
 		"year": "2008",
 		"hasSeries": true,
@@ -612,11 +576,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 23,
+		"id": 37,
 		"doubanUrl": "https://movie.douban.com/subject/1293515/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1261755612.webp",
 		"score": "7.4",
-		"filmId": "DeepRising",
 		"translateName": "极度深寒",
 		"year": "1998",
 		"hasSeries": false,
@@ -629,11 +592,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 23,
+		"id": 38,
 		"doubanUrl": "https://movie.douban.com/subject/1295229/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1346471740.webp",
 		"score": "7.8",
-		"filmId": "TheMummy",
 		"translateName": "木乃伊",
 		"year": "1999",
 		"hasSeries": true,
@@ -646,11 +608,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 23,
+		"id": 39,
 		"doubanUrl": "https://movie.douban.com/subject/1298586/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1346476815.webp",
 		"score": "7.4",
-		"filmId": "TheMummyReturns",
 		"translateName": "木乃伊归来",
 		"year": "2001",
 		"hasSeries": true,
@@ -663,11 +624,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 23,
+		"id": 40,
 		"doubanUrl": "https://movie.douban.com/subject/1997679/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1346455684.webp",
 		"score": "5.5",
-		"filmId": "TheMummyTomboftheDragonEmperor",
 		"translateName": "木乃伊3",
 		"year": "2008",
 		"hasSeries": true,
@@ -680,11 +640,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 24,
+		"id": 41,
 		"doubanUrl": "https://movie.douban.com/subject/1306809/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1212463060.webp",
 		"score": "7.9",
-		"filmId": "ResidentEvil",
 		"translateName": "生化危机",
 		"year": "2002",
 		"hasSeries": true,
@@ -697,11 +656,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 25,
+		"id": 42,
 		"doubanUrl": "https://movie.douban.com/subject/1308752/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2179913443.webp",
 		"score": "7.7",
-		"filmId": "ResidentEvilApocalypse",
 		"translateName": "生化危机2：启示录",
 		"year": "2004",
 		"hasSeries": true,
@@ -714,11 +672,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 26,
+		"id": 43,
 		"doubanUrl": "https://movie.douban.com/subject/1482911/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1212470262.webp",
 		"score": "7.2",
-		"filmId": "ResidentEvilExtinction",
 		"translateName": "生化危机3：灭绝",
 		"year": "2007",
 		"hasSeries": true,
@@ -731,11 +688,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 27,
+		"id": 44,
 		"doubanUrl": "https://movie.douban.com/subject/3041294/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2447520441.webp",
 		"score": "6.5",
-		"filmId": "ResidentEvilAfterlife",
 		"translateName": "生化危机4：战神再生",
 		"year": "2010",
 		"hasSeries": true,
@@ -748,11 +704,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 28,
+		"id": 45,
 		"doubanUrl": "https://movie.douban.com/subject/6532822/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2212513611.webp",
 		"score": "5.9",
-		"filmId": "ResidentEvilRetribution",
 		"translateName": "生化危机5：惩罚",
 		"year": "2012",
 		"hasSeries": true,
@@ -765,11 +720,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 29,
+		"id": 46,
 		"doubanUrl": "https://movie.douban.com/subject/20471852/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2373597907.webp",
 		"score": "6.5",
-		"filmId": "ResidentEvilTheFinalChapter",
 		"translateName": "生化危机：终章",
 		"year": "2016",
 		"hasSeries": true,
@@ -782,11 +736,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 30,
+		"id": 47,
 		"doubanUrl": "https://movie.douban.com/subject/1298602/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1133906831.webp",
 		"score": "6.0",
-		"filmId": "EightLeggedFreaks",
 		"translateName": "八脚怪",
 		"year": "2002",
 		"hasSeries": false,
@@ -799,11 +752,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 30,
+		"id": 48,
 		"doubanUrl": "https://movie.douban.com/subject/1306421/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p809834737.webp",
 		"score": "7.1",
-		"filmId": "28DaysLater",
 		"translateName": "惊变28天",
 		"year": "2002",
 		"hasSeries": true,
@@ -816,11 +768,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 31,
+		"id": 49,
 		"doubanUrl": "https://movie.douban.com/subject/1758487/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2191902863.webp",
 		"score": "6.7",
-		"filmId": "28WeeksLater",
 		"translateName": "惊变28周",
 		"year": "2007",
 		"hasSeries": true,
@@ -833,11 +784,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 31,
+		"id": 50,
 		"doubanUrl": "https://movie.douban.com/subject/1300092/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1715883521.webp",
 		"score": "6.7",
-		"filmId": "TheCore",
 		"translateName": "地心抢险记",
 		"year": "2003",
 		"hasSeries": false,
@@ -850,11 +800,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 28,
+		"id": 51,
 		"doubanUrl": "https://movie.douban.com/subject/1309088/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2254829302.webp",
 		"score": "7.5",
-		"filmId": "DawnoftheDead",
 		"translateName": "活死人黎明",
 		"year": "2004",
 		"hasSeries": true,
@@ -867,11 +816,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 29,
+		"id": 52,
 		"doubanUrl": "https://baike.baidu.com/item/%E6%B4%BB%E6%AD%BB%E4%BA%BA%E4%B9%8B%E5%9C%B0/35692",
 		"posterUrl": "https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=eadee08cb5fd5266b3263446ca71fc4e/f31fbe096b63f6240075d5648444ebf81a4ca3a9.jpg",
 		"score": "6.4",
-		"filmId": "LandoftheDead",
 		"translateName": "活死人之地",
 		"year": "2005",
 		"hasSeries": true,
@@ -884,11 +832,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 30,
+		"id": 53,
 		"doubanUrl": "https://movie.douban.com/subject/1839849/",
 		"posterUrl": "https://img1.doubanio.com/view/subject/l/public/s1693427.jpg",
 		"score": "4.7",
-		"filmId": "NightoftheLivingDead3D",
 		"translateName": "新活死人之夜",
 		"year": "2006",
 		"hasSeries": true,
@@ -901,11 +848,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 31,
+		"id": 54,
 		"doubanUrl": "https://movie.douban.com/subject/1865656/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2053952350.webp",
 		"score": "5.8",
-		"filmId": "DiaryoftheDead",
 		"translateName": "死亡日记",
 		"year": "2007",
 		"hasSeries": true,
@@ -918,11 +864,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 32,
+		"id": 55,
 		"doubanUrl": "https://movie.douban.com/subject/1871840/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1439880843.webp",
 		"score": "6.4",
-		"filmId": "DayoftheDead",
 		"translateName": "新丧尸出笼",
 		"year": "2008",
 		"hasSeries": true,
@@ -935,11 +880,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 33,
+		"id": 56,
 		"doubanUrl": "https://movie.douban.com/subject/1308755/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1109815924.webp",
 		"score": "7.7",
-		"filmId": "ShaunoftheDead",
 		"translateName": "僵尸肖恩",
 		"year": "2004",
 		"hasSeries": true,
@@ -952,11 +896,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 34,
+		"id": 57,
 		"doubanUrl": "https://movie.douban.com/subject/1806555/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1774982769.webp",
 		"score": "8.3",
-		"filmId": "HotFuzz",
 		"translateName": "热血警探",
 		"year": "2007",
 		"hasSeries": true,
@@ -969,11 +912,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 35,
+		"id": 58,
 		"doubanUrl": "https://movie.douban.com/subject/3026572/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1955267614.webp",
 		"score": "7.4",
-		"filmId": "TheWorldsEnd",
 		"translateName": "世界尽头",
 		"year": "2013",
 		"hasSeries": true,
@@ -986,11 +928,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 36,
+		"id": 59,
 		"doubanUrl": "https://movie.douban.com/subject/1309044/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2181492314.webp",
 		"score": "6.5",
-		"filmId": "WaroftheWorlds",
 		"translateName": "世界之战",
 		"year": "2005",
 		"hasSeries": false,
@@ -1003,11 +944,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 36,
+		"id": 60,
 		"doubanUrl": "https://movie.douban.com/subject/1437109/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2209603070.webp",
 		"score": "7.6",
-		"filmId": "TheDescent",
 		"translateName": "黑暗侵袭",
 		"year": "2005",
 		"hasSeries": true,
@@ -1020,11 +960,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 36,
+		"id": 61,
 		"doubanUrl": "https://movie.douban.com/subject/3066083/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1061248512.webp",
 		"score": "6.7",
-		"filmId": "TheDescentPart2",
 		"translateName": "黑暗侵袭2",
 		"year": "2009",
 		"hasSeries": true,
@@ -1037,11 +976,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 37,
+		"id": 62,
 		"doubanUrl": "https://movie.douban.com/subject/1436680/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1590136099.webp",
 		"score": "6.0",
-		"filmId": "Doom",
 		"translateName": "毁灭战士",
 		"year": "2005",
 		"hasSeries": false,
@@ -1054,11 +992,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 37,
+		"id": 63,
 		"doubanUrl": "https://movie.douban.com/subject/1465415/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2200497859.webp",
 		"score": "6.0",
-		"filmId": "Slither",
 		"translateName": "撕裂人",
 		"year": "2006",
 		"hasSeries": false,
@@ -1071,11 +1008,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 37,
+		"id": 64,
 		"doubanUrl": "https://movie.douban.com/subject/1466007/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p554634907.webp",
 		"score": "7.6",
-		"filmId": "SilentHill",
 		"translateName": "寂静岭",
 		"year": "2006",
 		"hasSeries": true,
@@ -1088,11 +1024,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 37,
+		"id": 65,
 		"doubanUrl": "https://movie.douban.com/subject/2117898/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1729944511.webp",
 		"score": "5.6",
-		"filmId": "SilentHillRevelation3D",
 		"translateName": "寂静岭2",
 		"year": "2012",
 		"hasSeries": true,
@@ -1105,11 +1040,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 37,
+		"id": 66,
 		"doubanUrl": "https://movie.douban.com/subject/1763134/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p452546089.webp",
 		"score": "7.3",
-		"filmId": "TheHost",
 		"translateName": "汉江怪物",
 		"year": "2006",
 		"hasSeries": false,
@@ -1122,11 +1056,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 38,
+		"id": 67,
 		"doubanUrl": "https://movie.douban.com/subject/1482080/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2193019080.webp",
 		"score": "6.1",
-		"filmId": "SnakesonaPlane",
 		"translateName": "航班蛇患",
 		"year": "2006",
 		"hasSeries": false,
@@ -1139,11 +1072,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 38,
+		"id": 68,
 		"doubanUrl": "https://movie.douban.com/subject/1945330/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p616763662.webp",
 		"score": "7.9",
-		"filmId": "TheMist",
 		"translateName": "迷雾",
 		"year": "2007",
 		"hasSeries": false,
@@ -1156,11 +1088,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 39,
+		"id": 69,
 		"doubanUrl": "https://movie.douban.com/subject/2144242/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p1334135449.webp",
 		"score": "7.3",
-		"filmId": "Cloverfield",
 		"translateName": "科洛弗档案",
 		"year": "2008",
 		"hasSeries": true,
@@ -1173,11 +1104,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 40,
+		"id": 70,
 		"doubanUrl": "https://movie.douban.com/subject/2977957/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2310097289.webp",
 		"score": "6.8",
-		"filmId": "10CloverfieldLane",
 		"translateName": "科洛弗道10号",
 		"year": "2016",
 		"hasSeries": true,
@@ -1190,11 +1120,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 41,
+		"id": 71,
 		"doubanUrl": "https://movie.douban.com/subject/21328095/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2512711499.webp",
 		"score": "6.0",
-		"filmId": "TheCloverfieldParadox",
 		"translateName": "科洛弗悖论",
 		"year": "2018",
 		"hasSeries": true,
@@ -1207,11 +1136,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 41,
+		"id": 72,
 		"doubanUrl": "https://movie.douban.com/subject/2037833/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2265788657.webp",
 		"score": "6.7",
-		"filmId": "JourneytotheCenteroftheEarth",
 		"translateName": "地心历险记",
 		"year": "2008",
 		"hasSeries": true,
@@ -1224,11 +1152,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 41,
+		"id": 73,
 		"doubanUrl": "https://movie.douban.com/subject/3606973/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2209960965.webp",
 		"score": "6.3",
-		"filmId": "Journey2TheMysteriousIsland",
 		"translateName": "地心历险记2：神秘岛",
 		"year": "2012",
 		"hasSeries": true,
@@ -1241,11 +1168,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 74,
 		"doubanUrl": "https://movie.douban.com/subject/3259993/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p925924459.webp",
 		"score": "7.3",
-		"filmId": "Zombieland",
 		"translateName": "丧尸乐园",
 		"year": "2009",
 		"hasSeries": false,
@@ -1258,11 +1184,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 75,
 		"doubanUrl": "https://movie.douban.com/subject/3005875/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1166937881.webp",
 		"score": "7.8",
-		"filmId": "2012",
 		"translateName": "2012",
 		"year": "2009",
 		"hasSeries": false,
@@ -1275,11 +1200,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 76,
 		"doubanUrl": "https://movie.douban.com/subject/4817901/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p919571676.webp",
 		"score": "7.5",
-		"filmId": "Insidious",
 		"translateName": "潜伏",
 		"year": "2010",
 		"hasSeries": true,
@@ -1292,11 +1216,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 77,
 		"doubanUrl": "https://movie.douban.com/subject/10485526/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2165767192.webp",
 		"score": "7.9",
-		"filmId": "InsidiousChapter2",
 		"translateName": "潜伏2",
 		"year": "2013",
 		"hasSeries": true,
@@ -1309,11 +1232,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 78,
 		"doubanUrl": "https://movie.douban.com/subject/25728008/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2233079790.webp",
 		"score": "6.2",
-		"filmId": "InsidiousChapter3",
 		"translateName": "潜伏3",
 		"year": "2015",
 		"hasSeries": true,
@@ -1326,11 +1248,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 79,
 		"doubanUrl": "https://movie.douban.com/subject/26794994/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2504848070.webp",
 		"score": "6.1",
-		"filmId": "InsidiousTheLastKey",
 		"translateName": "潜伏4：锁命亡灵",
 		"year": "2018",
 		"hasSeries": true,
@@ -1343,11 +1264,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 80,
 		"doubanUrl": "https://movie.douban.com/subject/3143676/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1645227865.webp",
 		"score": "7.5",
-		"filmId": "TheCabinintheWoods",
 		"translateName": "林中小屋",
 		"year": "2012",
 		"hasSeries": false,
@@ -1360,11 +1280,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 81,
 		"doubanUrl": "https://movie.douban.com/subject/4832825/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1839461050.webp",
 		"score": "7.6",
-		"filmId": "Loimposible",
 		"translateName": "海啸奇迹",
 		"year": "2012",
 		"hasSeries": false,
@@ -1377,11 +1296,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 82,
 		"doubanUrl": "https://movie.douban.com/subject/6839145/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1588680264.webp",
 		"score": "6.7",
-		"filmId": "Deranged",
 		"translateName": "铁线虫入侵",
 		"year": "2012",
 		"hasSeries": false,
@@ -1394,11 +1312,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 83,
 		"doubanUrl": "https://movie.douban.com/subject/3804629/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p1936517673.webp",
 		"score": "7.8",
-		"filmId": "TheConjuring",
 		"translateName": "招魂",
 		"year": "2013",
 		"hasSeries": true,
@@ -1411,11 +1328,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 84,
 		"doubanUrl": "https://movie.douban.com/subject/24860563/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2360924286.webp",
 		"score": "7.7",
-		"filmId": "TheConjuring2",
 		"translateName": "招魂2",
 		"year": "2016",
 		"hasSeries": true,
@@ -1428,11 +1344,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 85,
 		"doubanUrl": "https://movie.douban.com/subject/3793783/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2014135242.webp",
 		"score": "7.8",
-		"filmId": "Gravity",
 		"translateName": "地心引力",
 		"year": "2013",
 		"hasSeries": false,
@@ -1445,11 +1360,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 86,
 		"doubanUrl": "https://movie.douban.com/subject/19976260/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2218510671.webp",
 		"score": "5.7",
-		"filmId": "TheLastDays",
 		"translateName": "末日浩劫",
 		"year": "2013",
 		"hasSeries": false,
@@ -1462,11 +1376,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 87,
 		"doubanUrl": "https://movie.douban.com/subject/5158577/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2545105344.webp",
 		"score": "5.3",
-		"filmId": "DontBlink",
 		"translateName": "千万别眨眼",
 		"year": "2014",
 		"hasSeries": false,
@@ -1479,11 +1392,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 42,
+		"id": 88,
 		"doubanUrl": "https://movie.douban.com/subject/25786077/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2239199353.webp",
 		"score": "7.0",
-		"filmId": "SanAndreas",
 		"translateName": "末日崩塌",
 		"year": "2015",
 		"hasSeries": false,
@@ -1496,11 +1408,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 43,
+		"id": 89,
 		"doubanUrl": "https://movie.douban.com/subject/25986180/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2360940399.webp",
 		"score": "8.4",
-		"filmId": "TraintoBusan",
 		"translateName": "釜山行",
 		"year": "2016",
 		"hasSeries": false,
@@ -1513,11 +1424,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 43,
+		"id": 90,
 		"doubanUrl": "https://movie.douban.com/subject/26410594/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2392479690.webp",
 		"score": "7.7",
-		"filmId": "TheTunnel",
 		"translateName": "隧道",
 		"year": "2016",
 		"hasSeries": false,
@@ -1530,11 +1440,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 44,
+		"id": 91,
 		"doubanUrl": "https://movie.douban.com/subject/21324900/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2391067246.webp",
 		"score": "7.7",
-		"filmId": "Arrival",
 		"translateName": "降临",
 		"year": "2016",
 		"hasSeries": false,
@@ -1547,11 +1456,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 44,
+		"id": 92,
 		"doubanUrl": "https://movie.douban.com/subject/26718838/",
 		"posterUrl": "https://img1.doubanio.com/view/photo/m/public/p2457412227.webp",
 		"score": "6.5",
-		"filmId": "Life",
 		"translateName": "异星觉醒",
 		"year": "2017",
 		"hasSeries": false,
@@ -1564,11 +1472,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 44,
+		"id": 93,
 		"doubanUrl": "https://movie.douban.com/subject/22266012/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2507891743.webp",
 		"score": "6.0",
-		"filmId": "Geostorm",
 		"translateName": "全球风暴",
 		"year": "2017",
 		"hasSeries": false,
@@ -1581,11 +1488,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 44,
+		"id": 94,
 		"doubanUrl": "https://movie.douban.com/subject/26384741/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2516019105.webp",
 		"score": "7.1",
-		"filmId": "Annihilation",
 		"translateName": "湮灭",
 		"year": "2018",
 		"hasSeries": false,
@@ -1598,11 +1504,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 45,
+		"id": 95,
 		"doubanUrl": "https://movie.douban.com/subject/26430636/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2515861511.webp",
 		"score": "6.4",
-		"filmId": "Rampage",
 		"translateName": "狂暴巨兽",
 		"year": "2018",
 		"hasSeries": false,
@@ -1615,11 +1520,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 45,
+		"id": 96,
 		"doubanUrl": "https://movie.douban.com/subject/26997663/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2512698700.webp",
 		"score": "6.3",
-		"filmId": "AQuietPlace",
 		"translateName": "寂静之地",
 		"year": "2018",
 		"hasSeries": false,
@@ -1632,11 +1536,10 @@
 		"comment": "经典大白鲨系列~"
 	},
 	{
-		"id": 46,
+		"id": 97,
 		"doubanUrl": "https://movie.douban.com/subject/26426194/",
 		"posterUrl": "https://img3.doubanio.com/view/photo/m/public/p2527778854.webp",
 		"score": "5.7",
-		"filmId": "TheMeg",
 		"translateName": "巨齿鲨",
 		"year": "2018",
 		"hasSeries": false,

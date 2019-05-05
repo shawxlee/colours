@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" type="text/css" href="movies2.css">
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+	<title>影片推荐</title>
+</head>
+<body>
+	<div id="app">
+		<div class="container-fluid">
+			<div class="headNavbar">
+				<nav class="navbar navbar-expand-lg border-bottom fixed-top">
+					<span class="navbar-brand my-0 h5">全部影片</span>
+					<ul class="nav nav-pills">
+						<li class="nav-item border border-secondary rounded-sm text-center mx-1"><a href="#detailModel" class="nav-link px-2 active" data-toggle="pill">全览模式</a></li>
+						<li class="nav-item border border-secondary rounded-sm text-center mx-1"><a href="#miniModel" class="nav-link px-2" data-toggle="pill">极简模式</a></li>
+						<li class="nav-item border border-secondary rounded-sm text-center mx-1"><a href="#seriesModel" class="nav-link px-2" data-toggle="pill">系列模式</a></li>
+					</ul>
+				</nav>
+
+				<nav class="navbar navbar-expand-lg border-bottom">
+					<button type="button" class="navbar-toggler togglerClass" data-toggle="collapse" data-target="#screenCollapse" id="screenToggler">
+						<i class="fas fa-bars"></i>
+					</button>
+					<button type="button" class="navbar-toggler togglerClass invisible" data-toggle="collapse">
+						<i class="fas fa-search"></i>
+					</button>
+					<form class="formClass p-0" id="searchForm">
+						<input type="search" class="form-control rounded-pill inputClass" id="searchInput" placeholder="输入片名进行搜索">
+						<button type="button" class="navbar-toggler togglerClass" id="searchButton"><i class="fas fa-search"></i></button>
+					</form>
+					<div class="collapse navbar-collapse py-4 px-2" id="screenCollapse">
+						<ul class="nav nav-pills nav-justified mb-3 px-1">
+							<li class="nav-item"><a href="#" class="nav-link active" data-toggle="pill" @click="sortOrder = 0"><i class="fas fa-sort"></i> 按年份排序</a></li>
+							<li class="nav-item"><a href="#" class="nav-link" data-toggle="pill" @click="sortOrder = 1"><i class="fas fa-sort"></i> 按评分排序</a></li>
+							<li class="nav-item"><a href="#" class="nav-link" data-toggle="pill" @click="sortOrder = 2"><i class="fas fa-sort"></i> 按更新排序</a></li>
+						</ul>
+						<hr>
+						<div class="row no-gutters">
+							<div class="col-2 p-1" v-for="item in tags">
+								<button type="button" class="btn btn-outline-primary btn-sm">{{ item.tag }}</button>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+
+			<div id="topDivider" class="mt-2 d-none">
+				<hr>&nbsp;&nbsp; 下拉更新 <i class="fas fa-sync-alt"></i> &nbsp;&nbsp;<hr>
+			</div>
+
+			<div class="tab-content">
+				<div class="tab-pane active d-none" id="detailModel">
+					<div class="detailCard my-3 p-3" v-for="(item, index) in filterSort(films)" :key="item.id">
+						<div class="row no-gutters mb-1">
+							<div class="col-3">
+								<div class="filmPoster">
+									<a :href="item.doubanUrl" target="_blank"><img :src="item.posterUrl" width="100%" height="100%"></a>
+									<div class="scoreShadow"></div>
+									<p :style="{color: scoreColor(item)}">{{ item.score }}</p>
+								</div>
+							</div>
+							<div class="col-9">
+								<div class="filmInfo pl-2" :id="item.filmId">
+									<h5>{{ item.translateName }}</h5>
+									<span>({{ item.year }})</span>
+									<h6>{{ item.officialName }}</h6>
+									<p>地区：{{ item.country }}</p>
+									<p>类型：{{ item.type }}</p>
+									<p>导演：{{ item.director }}</p>
+									<p>主演：{{ item.star }}</p>
+								</div>
+							</div>
+						</div>
+						<div class="row no-gutters">
+							<div class="col-9">
+								<div class="filmComment pl-2">
+									<i class="fas fa-comment-dots"></i> {{ item.comment }}
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="addToList">
+									<button type="button" class="btn" id="'add_' + item.id"><i class="far fa-play-circle"></i> 播放</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane accordion d-none" id="miniModel">
+					<div class="card miniCard" v-for="(item, index) in filterSort(films)" :key="item.id">
+						<div class="card-header" id="'miniToggler_' + item.id">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="'#miniCollapse_' + item.id">{{ item.translateName }} <small>({{ item.year }})</small></button>
+							</h5>
+						</div>
+						<div id="'miniCollapse_' + item.id" class="collapse" data-parent="'#miniToggler_' + item.id">
+							<div class="card-body">
+								<h6>{{ item.officialName }}</h6>
+								<p>地区：{{ item.country }}</p>
+								<p>类型：{{ item.type }}</p>
+								<p>导演：{{ item.director }}</p>
+								<p>主演：{{ item.star }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane d-none" id="seriesModel">
+					<div class="card seriesCard" v-for="(item, index) in filterSort(films)" :key="item.id">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<button class="btn" type="button" data-toggle="collapse">{{ item.translateName }} <small>({{ item.year }})</small></button>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="bottomDivider" class="d-none">
+				<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+			</div>
+
+			<div id="shortCut" class="d-none">
+				<button type="button" class="btn btn-secondary" id="toTop"><i class="fas fa-chevron-up"></i></button>
+				<br><br>
+				<button type="button" class="btn btn-secondary" id="toBottom"><i class="fas fa-chevron-down"></i></button>
+			</div>
+
+			<div id="loadingBg">
+				<div id="loadingInfo">
+					<img src="http://wx2.sinaimg.cn/large/7de6638dgy1g2q8e2t8edg205k05kdhq.gif" width="30%">
+					<br><br><br>
+					<span>正在加载……</span>
+				</div>
+			</div>
+
+			<div class="footNav">
+				<ul class="nav nav-justified fixed-bottom px-3">
+					<li class="nav-item">
+						<a href="#" class="nav-link"><i class="fas fa-film"></i><br>全部</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link"><i class="far fa-plus-square"></i><br>待看</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link"><i class="far fa-check-square"></i><br>已看</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link" id="settingToggler"><i class="fas fa-sliders-h"></i><br>设置</a>
+					</li>
+				</ul>
+				<div id="settingSidebar" class="sidebarClass">
+					<ul class="list-unstyled">
+						<li>侧边栏菜单项1</li>
+						<li>侧边栏菜单项2</li>
+						<li>侧边栏菜单项3</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script type="text/javascript" src="movies2.js"></script>
+</body>
+</html>
