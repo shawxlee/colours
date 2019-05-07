@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-	<link rel="stylesheet" type="text/css" href="movies2.css">
+	<link rel="stylesheet" type="text/css" href="light-theme.css">
 
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -18,12 +19,12 @@
 		<div class="container-fluid">
 			<!-- 顶部导航栏 -->
 			<div id="headNavbar">
-				<nav class="navbar navbar-expand-lg fixed-top border-bottom">
-					<span class="navbar-brand mb-0 h5">全部影片</span>
+				<nav class="navbar navbar-expand-lg fixed-top border-bottom bg-primary navbar-dark">
+					<span class="navbar-brand h5">全部影片</span>
 					<ul class="nav nav-pills">
-						<li class="nav-item border border-secondary rounded-sm mx-1"><a href="#detailModel" class="nav-link px-2 active" data-toggle="pill">全览模式</a></li>
-						<li class="nav-item border border-secondary rounded-sm mx-1"><a href="#seriesModel" class="nav-link px-2" data-toggle="pill">系列模式</a></li>
-						<li class="nav-item border border-secondary rounded-sm mx-1"><a href="#miniModel" class="nav-link px-2" data-toggle="pill">极简模式</a></li>
+						<li class="nav-item mx-1"><a href="#detailModel" class="nav-link px-2 active" data-toggle="pill">全览模式</a></li>
+						<li class="nav-item mx-1"><a href="#seriesModel" class="nav-link px-2" data-toggle="pill">系列模式</a></li>
+						<li class="nav-item mx-1"><a href="#miniModel" class="nav-link px-2" data-toggle="pill">极简模式</a></li>
 					</ul>
 				</nav>
 
@@ -39,15 +40,21 @@
 						<button type="button" class="navbar-toggler" id="searchButton"><i class="fas fa-search"></i></button>
 					</form>
 					<div class="collapse navbar-collapse py-4 px-2" id="screenCollapse">
-						<ul class="nav nav-pills nav-justified mb-3 px-1">
-							<li class="nav-item"><a href="#" class="nav-link px-2 active" data-toggle="pill" @click.stop="sortOrder = 0">按年份排序 <i class="fas fa-sort"></i></a></li>
-							<li class="nav-item"><a href="#" class="nav-link px-2" data-toggle="pill" @click.stop="sortOrder = 1">按评分排序 <i class="fas fa-sort"></i></a></li>
-							<li class="nav-item"><a href="#" class="nav-link px-2" data-toggle="pill" @click.stop="sortOrder = 2">按更新排序 <i class="fas fa-sort"></i></a></li>
-						</ul>
+						<div class="row no-gutters mb-3 px-1">
+							<div class="col-4">
+								<button type="button" name="sort" class="btn btn-sm btn-outline-primary border-0 active" @click.stop="sortOrder = 0">按年份排序 <i class="fas fa-sort"></i></button>
+							</div>
+							<div class="col-4">
+								<button type="button" name="sort" class="btn btn-sm btn-outline-primary border-0" @click.stop="sortOrder = 1">按评分排序 <i class="fas fa-sort"></i></button>
+							</div>
+							<div class="col-4">
+								<button type="button" name="sort" class="btn btn-sm btn-outline-primary border-0" @click.stop="sortOrder = 2">按更新排序 <i class="fas fa-sort"></i></button>
+							</div>
+						</div>
 						<hr>
 						<div class="row no-gutters">
 							<div class="col-2 p-1" v-for="item in tags">
-								<button type="button" class="btn btn-outline-primary btn-sm">{{ item.tag }}</button>
+								<button type="button" name="filter" class="btn btn-sm btn-outline-primary" id="'filter_' + item.id">{{ item.tag }}</button>
 							</div>
 						</div>
 					</div>
@@ -62,7 +69,7 @@
 			<!-- 标签页：电影列表 -->
 			<div class="tab-content">
 				<!-- 全览模式 -->
-				<div class="tab-pane fade in active" id="detailModel">
+				<div class="tab-pane active" id="detailModel">
 					<div class="detailCard my-3 p-3" v-for="(item, index) in filterSort(films)" :key="item.id">
 						<div class="row no-gutters mb-2">
 							<div class="col-4 col-sm-3 pr-2">
@@ -91,9 +98,7 @@
 								</div>
 							</div>
 							<div class="col-3 pl-2">
-								<div class="addToList">
-									<button type="button" class="btn btn-outline-primary" id="'add_' + item.id"><i class="fas fa-plus"></i> 想看</button>
-								</div>
+								<button type="button" class="btn btn-outline-primary addToList" id="'add_' + item.id"><i class="fas fa-plus"></i> 想看</button>
 							</div>
 						</div>
 					</div>
@@ -136,9 +141,11 @@
 
 			<!-- 快捷按钮 -->
 			<div class="shortCut">
-				<button type="button" class="btn btn-secondary" id="toTop"><i class="fas fa-chevron-up"></i></button>
+				<button type="button" class="btn btn-dark" id="toTop"><i class="fas fa-chevron-up"></i></button>
 				<br>
-				<button type="button" class="btn btn-secondary" id="toBottom"><i class="fas fa-chevron-down"></i></button>
+				<button type="button" class="btn btn-dark" id="reLoad"><i class="fas fa-redo-alt"></i></button>
+				<br>
+				<button type="button" class="btn btn-dark" id="toBottom"><i class="fas fa-chevron-down"></i></button>
 			</div>
 
 			<!-- 加载时显示画面 -->

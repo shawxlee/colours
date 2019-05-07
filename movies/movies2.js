@@ -75,8 +75,7 @@
 $(function () {
 	// 给json地址添加随机参数
 	var date = new Date();
-	var timer = date.getTime();
-	var reUrl = "https://github.com/shawxlee/practice-works/blob/master/movies/movies.json?t=" + timer;
+	var reUrl = "http://192.168.199.126:8080/movies/movies.json?t=" + date.getTime();
 	// 首次加载数据
 	loadData();
 	function loadData() {
@@ -84,7 +83,6 @@ $(function () {
 			url: reUrl,
 			type: "GET",
 			async: false,
-			cache: false,
 			dataType: "json",
 			success (result) {
 				vm.films = result;
@@ -95,59 +93,79 @@ $(function () {
 			}
 		});
 	}
+	// 重新加载数据
 	$("#loadingInfo button").click(function () {
 		loadData();
 	});
 
 	// 折叠面板
-	$("#screenCollapse").on('show.bs.collapse hidden.bs.collapse', function () {
+	$(".screenToggler").click(function () {
 		$(".screenToggler").toggleClass("togglerColor");
 	});
-	$(".tab-content, .bottomDivider, .shortCut, .footNav").click(function () {
-		$("#screenCollapse").collapse('hide');
-	});
-
-	// 搜索框
-	$("#searchButton").click(function () {
-		var sb = $("#searchButton");
-		var si = $(".searchInput");
-		if (!si.hasClass("inputTransition")) {
-			sb.css("color", "#363636");
-			si.addClass("inputTransition");
-		} else {
-			sb.attr("type", "submit");
-		}
-	});
-	$(".navbar-brand").click(function () {
+	$("#screenCollapse").on('hidden.bs.collapse', function () {
 		$(".searchInput").removeClass("inputTransition");
 		$("#searchButton").css("color", "#A9A9A9");
 		$("#searchButton").attr("type", "button");
 	});
-
+	// 排序按钮
+	$("[name='sort']").click(function () {
+		$(this).addClass("active");
+		$("[name='sort']:not(:focus)").removeClass("active");
+	});
+	// 搜索框
+	var si = $(".searchInput");
+	$("#searchButton").click(function () {
+		if (!si.hasClass("inputTransition")) {
+			$(this).css("color", "#363636");
+			si.addClass("inputTransition");
+		} else {
+			$(this).attr("type", "submit");
+		}
+	});
+	// 点击其他位置收起
+	$(".tab-content, .bottomDivider, .shortCut, .footNav").click(function () {
+		if (si.val()) {
+			$("#screenCollapse").collapse('hide');
+		} else {
+			$("#screenCollapse").collapse('hide');
+			$(".searchInput").removeClass("inputTransition");
+			$("#searchButton").css("color", "#A9A9A9");
+			$("#searchButton").attr("type", "button");
+		}
+	});
+	
 	// 更新数据并显示状态
 	function reloadData() {
-		$("#reloadDivider").animate({ marginTop: "3rem" });
-		$.get(reUrl, function (data, status) {
-			if (status == "success") {
-				vm.films = data;
-				$("#reloadDivider").html("<hr>&nbsp;&nbsp; 更新成功 <i class='fas fa-check-circle'></i> &nbsp;&nbsp;<hr>");
-			} else if (status == "notmodified") {
-				$("#reloadDivider").html("<hr>&nbsp;&nbsp; 没有更新 <i class='fas fa-minus-circle'></i> &nbsp;&nbsp;<hr>");
-			} else {
-				$("#reloadDivider").html("<hr>&nbsp;&nbsp; 更新失败 <i class='fas fa-exclamation-circle'></i> &nbsp;&nbsp;<hr>");
-			}
-		}, "json");
-		setTimeout(function () {
-			$("#reloadDivider").animate({ marginTop: "0.4rem" });
+		$("#reloadDivider").animate({ marginTop: "3rem" }, "fast", function () {
+			$.get(reUrl, function (data, status) {
+				if (status == "success") {
+					vm.films = data;
+					$("#reloadDivider").html("<hr>&nbsp;&nbsp; 更新成功 <i class='fas fa-check-circle'></i> &nbsp;&nbsp;<hr>");
+				} else if (status == "notmodified") {
+					$("#reloadDivider").html("<hr>&nbsp;&nbsp; 没有更新 <i class='fas fa-minus-circle'></i> &nbsp;&nbsp;<hr>");
+				} else {
+					$("#reloadDivider").html("<hr>&nbsp;&nbsp; 更新失败 <i class='fas fa-exclamation-circle'></i> &nbsp;&nbsp;<hr>");
+				}
+			}, "json");
 		});
 		setTimeout(function () {
-			$("#reloadDivider").html("<hr>&nbsp;&nbsp; 正在更新 <i class='fas fa-sync-alt'></i> &nbsp;&nbsp;<hr>");
-		});
+			$("#reloadDivider").animate({ marginTop: "0.4rem" }, "slow", function () {
+				$("#reloadDivider").html("<hr>&nbsp;&nbsp; 正在更新 <i class='fas fa-sync-alt'></i> &nbsp;&nbsp;<hr>");
+			});
+		}, 100);
 	}
 
-	// 返回顶部
+	// 滚动到顶部
 	$("#toTop").click(function () {
-		$('html, body').animate({ scrollTop: 0 }, 500, reloadData);
+		$('html, body').animate({ scrollTop: 0 }, "slow");
+	});
+	// 更新按钮
+	$("#reLoad").click(function () {
+		$('html, body').animate({ scrollTop: 0 }, "fast", reloadData);
+	});
+	// 滚动到底部
+	$("#toBottom").click(function () {
+		$('html, body').animate({ scrollTop: $(document).height() }, "slow");
 	});
 });
 
