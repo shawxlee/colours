@@ -1,5 +1,5 @@
 // 利用js计算当前设备的DPR，动态设置html的font-size，利用css的选择器根据DPR来设置不同DPR下的字体大小
-!function (win, lib) {
+!function (win,lib) {
 	var timer,
 	doc = win.document,
 	docElem = doc.documentElement,
@@ -73,11 +73,12 @@
 
 // 主要jquery脚本
 $(function () {
-	// 给json地址添加随机参数
-	var date = new Date();
-	var reUrl = "http://192.168.199.126:8080/movies/movies.json?t=" + date.getTime();
-	// 首次加载数据
-	loadData();
+	// 给json地址添加时间戳
+	var reUrl = "http://192.168.199.126:8080/movies/films.json?t=" + new Date().getTime(),
+	loadingBg = $("#loadingBg"),
+	loadingInfo = $("#loadingInfo"),
+	errorInfo = $("#errorInfo");
+
 	function loadData() {
 		$.ajax({
 			url: reUrl,
@@ -85,94 +86,126 @@ $(function () {
 			async: false,
 			dataType: "json",
 			success (result) {
-				vm.films = result;
-				$("#loadingBg").remove();
+				all.films = result;
+				loadingBg.remove();
 			},
 			error () {
-				$("#loadingInfo").html("<img src='error.png'><br><br><span>加载失败！</span><br><br><button type='button' class='btn btn-outline-primary'>重新加载</button>");
+				loadingInfo.hide();
+				errorInfo.show();
 			}
 		});
 	}
+
+	// 首次加载数据
+	loadData();
+
 	// 重新加载数据
-	$("#loadingInfo button").click(function () {
+	var loadAgain = $("#loadAgain");
+
+	loadAgain.click(function () {
+		errorInfo.hide();
+		loadingInfo.show();
 		loadData();
 	});
 
-	// 折叠面板
-	$(".screenToggler").click(function () {
-		$(".screenToggler").toggleClass("togglerColor");
-	});
-	$("#screenCollapse").on('hidden.bs.collapse', function () {
-		$(".searchInput").removeClass("inputTransition");
-		$("#searchButton").css("color", "#A9A9A9");
-		$("#searchButton").attr("type", "button");
-	});
-	// 排序按钮
-	$("[name='sort']").click(function () {
-		$(this).addClass("active");
-		$("[name='sort']:not(:focus)").removeClass("active");
-	});
 	// 搜索框
-	var si = $(".searchInput");
-	$("#searchButton").click(function () {
-		if (!si.hasClass("inputTransition")) {
-			$(this).css("color", "#363636");
-			si.addClass("inputTransition");
+	var searchInput = $("#searchInput"),
+	searchButton = $("#searchButton");
+
+	searchButton.click(function () {
+		if ($(this).hasClass("active")) {
+			$(this).prop("type", "submit");
 		} else {
-			$(this).attr("type", "submit");
+			$(this).addClass("active");
+			searchInput.animate({ opacity: 1, width: "100%" }, 100, "linear");
 		}
 	});
+
+	// 折叠面板
+	var screenCollapse = $("#screenCollapse"),
+	screenToggler = $("#screenToggler");
+
+	screenCollapse.on('show.bs.collapse hidden.bs.collapse', function () {
+		screenToggler.toggleClass("active");
+	});
+	screenCollapse.on('hidden.bs.collapse', function () {
+		searchInput.animate({ width: "15%", opacity: 0 }, 100, "linear");
+		searchButton.removeClass("active").prop("type", "button");
+	});
+
 	// 点击其他位置收起
-	$(".tab-content, .bottomDivider, .shortCut, .footNav").click(function () {
-		if (si.val()) {
-			$("#screenCollapse").collapse('hide');
+	var notHeader = $("#detailMode, #seriesMode, #miniMode, #bottomDivider, #toTop, #toBottom, #footer");
+
+	notHeader.click(function () {
+		if (searchInput.val()) {
+			screenCollapse.collapse('hide');
 		} else {
-			$("#screenCollapse").collapse('hide');
-			$(".searchInput").removeClass("inputTransition");
-			$("#searchButton").css("color", "#A9A9A9");
-			$("#searchButton").attr("type", "button");
+			screenCollapse.collapse('hide');
+			searchInput.animate({ width: "15%", opacity: 0 }, 100, "linear");
+			searchButton.removeClass("active").prop("type", "button");
 		}
 	});
 	
 	// 更新数据并显示状态
+	var topDivider = $("#topDivider"),
+	isReloading = $("#isReloading"),
+	reloadSuccess = $("#reloadSuccess"),
+	notModified = $("#notModified"),
+	reloadError = $("#reloadError");
+
 	function reloadData() {
-		$("#reloadDivider").animate({ marginTop: "3rem" }, "fast", function () {
-			$.get(reUrl, function (data, status) {
+		topDivider.addClass("pull");
+		setTimeout(function () {
+			$.get(reUrl, function (data,status) {
 				if (status == "success") {
-					vm.films = data;
-					$("#reloadDivider").html("<hr>&nbsp;&nbsp; 更新成功 <i class='fas fa-check-circle'></i> &nbsp;&nbsp;<hr>");
+					all.films = data;
+					isReloading.hide();
+					reloadSuccess.show();
+					topDivider.removeClass("pull").addClass("fold");
 				} else if (status == "notmodified") {
-					$("#reloadDivider").html("<hr>&nbsp;&nbsp; 没有更新 <i class='fas fa-minus-circle'></i> &nbsp;&nbsp;<hr>");
+					isReloading.hide();
+					notModified.show();
+					topDivider.removeClass("pull").addClass("fold");
 				} else {
-					$("#reloadDivider").html("<hr>&nbsp;&nbsp; 更新失败 <i class='fas fa-exclamation-circle'></i> &nbsp;&nbsp;<hr>");
+					isReloading.hide();
+					reloadError.show();
+					topDivider.removeClass("pull").addClass("fold");
 				}
 			}, "json");
-		});
-		setTimeout(function () {
-			$("#reloadDivider").animate({ marginTop: "0.4rem" }, "slow", function () {
-				$("#reloadDivider").html("<hr>&nbsp;&nbsp; 正在更新 <i class='fas fa-sync-alt'></i> &nbsp;&nbsp;<hr>");
-			});
 		}, 100);
+		if (topDivider.css("margin-top") == ".3rem") {
+			topDivider.removeClass("fold");
+			isReloading.show();
+			reloadSuccess.hide();
+			notModified.hide();
+			reloadError.hide();
+		}
 	}
 
+	// 页面滚动条
+	var htmlBody = $("html, body"),
+	toTop = $("#toTop"),
+	toBottom = $("#toBottom"),
+	toAll = $("#toAll");
 	// 滚动到顶部
-	$("#toTop").click(function () {
-		$('html, body').animate({ scrollTop: 0 }, "slow");
-	});
-	// 更新按钮
-	$("#reLoad").click(function () {
-		$('html, body').animate({ scrollTop: 0 }, "fast", reloadData);
+	toTop.click(function () {
+		htmlBody.animate({ scrollTop: 0 }, 300, "linear");
 	});
 	// 滚动到底部
-	$("#toBottom").click(function () {
-		$('html, body').animate({ scrollTop: $(document).height() }, "slow");
+	toBottom.click(function () {
+		htmlBody.animate({ scrollTop: $(document).height() }, 300, "linear");
+	});
+	// 滚动到顶部并刷新
+	toAll.click(function () {
+		htmlBody.animate({ scrollTop: 0 }, 100, "linear", reloadData);
 	});
 });
 
 // vue实例
-var vm = new Vue({
-	el: '#app',
+var all = new Vue({
+	el: '#all',
 	data: {
+		sortOrder: 1,
 		tags: [
 		{ tag: '犯罪' },
 		{ tag: '感染' },
@@ -191,17 +224,16 @@ var vm = new Vue({
 		{ tag: '血腥' },
 		{ tag: '灾难' },
 		],
-		sortOrder: 0,
 		films: [],
 	},
 	methods: {
 		// 过滤，排序
 		filterSort (films) {
-			if (this.sortOrder == 1) {
+			if (this.sortOrder == 2) {
 				return this.films.sort(function (a,b) {
 					return b.score - a.score;
 				});
-			} else if (this.sortOrder == 2) {
+			} else if (this.sortOrder == 3) {
 				return this.films.sort(function (a,b) {
 					return b.id - a.id;
 				});
@@ -211,29 +243,36 @@ var vm = new Vue({
 				});
 			}
 		},
-		// 分数分级显示不同颜色
+		// 分数显示不同颜色
 		scoreColor (item) {
 			if (item.score >= 9) {
-				return '#A020F0';
+				return '#a020f0';
 			}
 			else if (item.score < 9 && item.score >= 8) {
-				return '#0000FF';
+				return '#0000ff';
 			}
 			else if (item.score < 8 && item.score >= 7) {
-				return '#00FFFF';
+				return '#00ffff';
 			}
 			else if (item.score < 7 && item.score >= 6) {
-				return '#00FF00';
+				return '#00ff00';
 			}
 			else if (item.score < 6 && item.score >= 5) {
-				return '#FFFF00';
+				return '#ffff00';
 			}
 			else if (item.score < 5 && item.score >= 4) {
-				return '#FFA500';
+				return '#ffa500';
 			}
 			else {
-				return '#FF0000';
+				return '#ff0000';
 			}
 		},
+	},
+});
+
+var footer = new Vue({
+	el: '#footer',
+	data: {
+		pageOrder: 1,
 	},
 });

@@ -1,0 +1,349 @@
+/* 全局样式 */
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	padding-top: 4rem;
+	color: #1c1c1c;
+	background-color: #e8e8e8;
+}
+/* $primary: #4f94cd; $secondary: #a9a9a9; $light: #e8e8e8; $dark: #363636; */
+.btn-outline-primary {
+	color: #4f94cd;
+	border-color: #4f94cd;
+}
+.btn-outline-primary:focus,
+.btn-outline-primary:active:focus,
+.btn-outline-primary.active:focus,
+.btn-outline-primary.focus,
+.btn-outline-primary:active.focus,
+.btn-outline-primary.active.focus {
+	color: white;
+	background-color: #4f94cd;
+	border-color: #4f94cd;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active:focus,
+.navbar-toggler.active:focus,
+.navbar-toggler.focus,
+.navbar-toggler:active.focus,
+.navbar-toggler.active.focus {
+	outline: none;
+	box-shadow: none;
+}
+.form-control:focus,
+.form-control:active:focus,
+.form-control.active:focus,
+.form-control.focus,
+.form-control:active.focus,
+.form-control.active.focus {
+	border-color: #4f94cd;
+	outline: none;
+	box-shadow: none;
+}
+
+/* 导航栏1 */
+.headNavbar nav:first-of-type {
+	height: 3rem;
+	color: white;
+	background-color: #4f94cd;
+}
+/* 切换模式 */
+#modeSwitch li {
+	height: 1.5rem;
+}
+#modeSwitch a {
+	font-size: .9rem;
+	line-height: .4rem;
+	color: #a9a9a9;
+	border: 0.08rem solid #a9a9a9;
+}
+#modeSwitch .active {
+	color: white;
+	border-color: white;
+	background-color: transparent;
+}
+
+/* 导航栏2 */
+.headNavbar nav:last-of-type {
+	position: fixed;
+	top: 3rem;
+	right: 0;
+	z-index: 29;
+	width: 100%;
+	background-color: #f9f9f9;
+}
+/* 折叠面板 */
+.navbar-toggler {
+	color: #a9a9a9;
+}
+.navbar-toggler.active {
+	color: #363636;
+}
+#screenToggler {
+	font-size: 1.25rem;
+}
+#screenCollapse a {
+	width: 100%;
+	color: #4f94cd;
+}
+#screenCollapse .active {
+	color: white;
+	background-color: #4f94cd;
+	border-color: #4f94cd;
+}
+/* 搜索框 */
+.headNavbar form {
+	position: absolute;
+	top: 0;
+	right: 4%;
+	width: 80%;
+	height: 2.4rem;
+	padding: 0;
+}
+#searchInput {
+	position: absolute;
+	top: .25rem;
+	right: 0;
+	width: 15%;
+	height: 100%;
+	line-height: 2.4rem;
+	opacity: 0;
+}
+#searchButton {
+	position: absolute;
+	top: .5rem;
+	right: 0;
+	font-size: 1.25rem;
+}
+
+/* 下拉更新状态栏 */
+#topDivider {
+	width: 100%;
+	height: 2rem;
+	padding: 0;
+	margin: 0;
+	margin-top: .3rem;
+}
+#topDivider.pull {
+	animation: reloading .3s linear;
+}
+#topDivider.fold {
+	animation: reloading .3s linear .1s reverse;
+}
+@keyframes reloading {
+	0% {
+		margin-top: .3rem;
+	}
+	100% {
+		margin-top: 3rem;
+	}
+}
+#isReloading,
+#reloadSuccess,
+#notModified,
+#reloadError {
+	width: 100%;
+	height: 100%;
+	font-size: 1rem;
+	line-height: 2rem;
+	color: #cfcfcf;
+	text-align: center;
+}
+#topDivider hr {
+	display: inline-block;
+	width: 30%;
+	vertical-align: middle;
+}
+#topDivider .fa-sync-alt {
+	animation: rotating 1s linear infinite;
+}
+@keyframes rotating {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* 全览模式 */
+.detailCard {
+	background-color: #f9f9f9;
+	border-radius: 1rem;
+}
+/* 海报 */
+.filmPoster {
+	position: relative;
+	width: 100%;
+	height: 9.9rem;
+	border-radius: .3rem;
+	overflow: hidden;
+}
+.scoreShadow {
+	position: absolute;
+	top: -15%;
+	left: -15%;
+	width: 50%;
+	height: 70%;
+	background: linear-gradient(to right, rgba(28,28,28,.7), rgba(28,28,28,.5), rgba(28,28,28,.3), rgba(28,28,28,0));
+	transform: rotate(35deg);
+}
+.filmPoster p {
+	position: absolute;
+	top: .3rem;
+	left: .3rem;
+	padding: 0;
+	font-size: .9rem;
+}
+.filmPoster p::first-letter {
+	font-size: 1.3rem;
+}
+/* 信息 */
+.filmInfo {
+	padding-top: .5rem;
+	line-height: .3rem;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.filmInfo h5 {
+	display: inline-block;
+	font-weight: bold;
+	color: #363636;
+}
+.filmInfo span {
+	margin-bottom: .5rem;
+	font-size: 1rem;
+	color: #9c9c9c;
+}
+.filmInfo p {
+	font-size: .9rem;
+	color: #9c9c9c;
+}
+.filmInfo p:first-of-type {
+	margin-top: .3rem;
+	font-size: 1rem;
+	font-weight: bold;
+}
+/* 评语 */
+.filmComment {
+	height: 2.4rem;
+	font-size: 1rem;
+	line-height: 2.5rem;
+	color: #363636;
+	background-color: #f0f0f0;
+	border-radius: .3rem;
+}
+.filmComment i {
+	color: #b5b5b5;
+}
+/* 按钮 */
+#detailMode a {
+	width: 100%;
+	height: 2.4rem;
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	line-height: 2.4rem;
+	color: #4f94cd;
+}
+
+/* 底部分割线 */
+#bottomDivider {
+	width: 100%;
+	height: 2rem;
+	margin-bottom: 5rem;
+	font-size: 1rem;
+	line-height: 2rem;
+	color: #cfcfcf;
+	text-align: center;
+}
+#bottomDivider hr {
+	display: inline-block;
+	width: 30%;
+	vertical-align: middle;
+}
+
+/* 快捷按钮 */
+#toBottom {
+	position: fixed;
+	right: .5rem;
+	bottom: 4.3rem;
+	z-index: 9;
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1rem;
+	line-height: 2.5rem;
+	color: white;
+	text-align: center;
+	background-color: #363636;
+	border-radius: 50%;
+	opacity: .5;
+}
+#toTop {
+	position: fixed;
+	right: .5rem;
+	bottom: 7.3rem;
+	z-index: 9;
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1rem;
+	line-height: 2.5rem;
+	color: white;
+	text-align: center;
+	background-color: #363636;
+	border-radius: 50%;
+	opacity: .5;
+}
+
+/* 加载时显示画面 */
+#loadingBg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 9999;
+	width: 100vw;
+	height: calc(100vh - 4rem);
+	background-color: white;
+}
+#loadingInfo,
+#errorInfo {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 30%;
+	height: 30%;
+	margin: auto;
+	font-size: 1rem;
+	text-align: center;
+}
+
+/* 底部导航 */
+#footer ul {
+	height: 3.8rem;
+	background-color: white;
+}
+#footer .nav-link {
+	position: relative;
+	font-size: .8rem;
+	line-height: 1.2rem;
+	color: #a9a9a9;	
+}
+#footer .active {
+	color: #4f94cd;
+}
+#footer .nav-link i {
+	font-size: 1.5rem;
+}
+#footer .nav-link .fa-cog {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	font-size: .8rem;
+}
+#footer .nav-link .active {
+	color: white;
+}
