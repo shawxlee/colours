@@ -154,32 +154,22 @@ $(function () {
 	reloadError = $("#reloadError");
 
 	function reloadData() {
-		topDivider.addClass("pull");
-		setTimeout(function () {
-			$.get(reUrl, function (data,status) {
-				if (status == "success") {
-					all.films = data;
-					isReloading.hide();
-					reloadSuccess.show();
-					topDivider.removeClass("pull").addClass("fold");
-				} else if (status == "notmodified") {
-					isReloading.hide();
-					notModified.show();
-					topDivider.removeClass("pull").addClass("fold");
-				} else {
-					isReloading.hide();
-					reloadError.show();
-					topDivider.removeClass("pull").addClass("fold");
-				}
-			}, "json");
-		}, 100);
-		if (topDivider.css("margin-top") == ".3rem") {
-			topDivider.removeClass("fold");
-			isReloading.show();
-			reloadSuccess.hide();
-			notModified.hide();
-			reloadError.hide();
-		}
+		$.get(reUrl, function (data,status) {
+			if (status == "success") {
+				all.films = data;
+				isReloading.hide();
+				reloadSuccess.show();
+				topDivider.removeClass("pull").addClass("fold");
+			} else if (status == "notmodified") {
+				isReloading.hide();
+				notModified.show();
+				topDivider.removeClass("pull").addClass("fold");
+			} else {
+				isReloading.hide();
+				reloadError.show();
+				topDivider.removeClass("pull").addClass("fold");
+			}
+		}, "json");
 	}
 
 	// 页面滚动条
@@ -197,7 +187,16 @@ $(function () {
 	});
 	// 滚动到顶部并刷新
 	toAll.click(function () {
-		htmlBody.animate({ scrollTop: 0 }, 100, "linear", reloadData);
+		htmlBody.animate({ scrollTop: 0 }, 100, "linear", function () {
+			topDivider.removeClass("fold").addClass("pull");
+			reloadData();
+			if (topDivider.css("margin-top") == ".3rem") {
+				isReloading.show();
+				reloadSuccess.hide();
+				notModified.hide();
+				reloadError.hide();
+			}
+		});
 	});
 });
 
@@ -244,27 +243,27 @@ var all = new Vue({
 			}
 		},
 		// 分数显示不同颜色
-		scoreColor (item) {
+		scoreBg (item) {
 			if (item.score >= 9) {
-				return '#a020f0';
+				return '#912CEE';
 			}
 			else if (item.score < 9 && item.score >= 8) {
-				return '#0000ff';
+				return '#0000CD';
 			}
 			else if (item.score < 8 && item.score >= 7) {
-				return '#00ffff';
+				return '#00CDCD';
 			}
 			else if (item.score < 7 && item.score >= 6) {
-				return '#00ff00';
+				return '#00CD00';
 			}
 			else if (item.score < 6 && item.score >= 5) {
-				return '#ffff00';
+				return '#CDCD00';
 			}
 			else if (item.score < 5 && item.score >= 4) {
-				return '#ffa500';
+				return '#CD8500';
 			}
 			else {
-				return '#ff0000';
+				return '#CD0000';
 			}
 		},
 	},
