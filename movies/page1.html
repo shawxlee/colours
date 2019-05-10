@@ -28,21 +28,17 @@
 								<a class="nav-link rounded-sm px-2 py-0 active" data-toggle="pill" href="#detailMode">全览模式</a>
 							</li>
 							<li class="nav-item mx-1">
-								<a class="nav-link rounded-sm px-2 py-0" data-toggle="pill" href="#seriesMode">系列模式</a>
+								<a class="nav-link rounded-sm px-2 py-0" data-toggle="pill" href="#miniMode">极简模式</a>
 							</li>
 							<li class="nav-item mx-1">
-								<a class="nav-link rounded-sm px-2 py-0" data-toggle="pill" href="#miniMode">极简模式</a>
+								<a class="nav-link rounded-sm px-2 py-0" data-toggle="pill" href="#seriesMode">系列模式</a>
 							</li>
 						</ul>
 					</nav>				
 					<!-- 顶部导航栏2：排序、过滤、搜索 -->
 					<nav class="navbar navbar-expand-lg border-bottom">
-						<button class="navbar-toggler" id="screenToggler" data-toggle="collapse" data-target="#screenCollapse" type="button">
-							<i class="fas fa-bars"></i>
-						</button>
-						<button class="navbar-toggler invisible" data-toggle="collapse" type="button">
-							<i class="fas fa-search"></i>
-						</button>
+						<button class="navbar-toggler" id="screenToggler" data-toggle="collapse" data-target="#screenCollapse" type="button"><i class="fas fa-bars"></i></button>
+						<button class="navbar-toggler invisible" data-toggle="collapse" type="button"><i class="fas fa-search"></i></button>
 						<form>
 							<input class="form-control rounded-pill" id="searchInput" type="search" placeholder="输入片名进行搜索">
 							<button class="navbar-toggler" id="searchButton" type="button"><i class="fas fa-search"></i></button>
@@ -89,18 +85,18 @@
 				<div class="tab-content">
 					<!-- 全览模式 -->
 					<div class="tab-pane active" id="detailMode">
-						<div class="detailCard my-3 p-3" v-for="(item, index) in filterSort(films)" :key="item.id">
-							<div class="row no-gutters mb-2">
-								<div class="col-4 col-sm-3 pr-2">
-									<div class="filmPoster">
+						<div class="my-3 p-3 detailCard" v-for="(item, index) in filterSort(films)" :key="item.id">
+							<div class="row no-gutters">
+								<div class="col-auto">
+									<div class="filmPoster overflow-hidden">
 										<img :src="item.posterUrl" width="100%" height="100%">
-										<div class="filmScore" :style="{backgroundColor: scoreBg(item)}">
+										<div class="filmScore" :style="{backgroundColor: scoreColor(item)}">
 											<a :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
 										</div>
 									</div>
 								</div>
-								<div class="col-8 col-sm-9">
-									<div class="filmInfo">
+								<div class="col-8 pt-2 pl-2">
+									<div class="filmInfo overflow-hidden">
 										<h5>{{ item.translateName }}</h5><span> ({{ item.year }})</span>
 										<h6>{{ item.officialName }}</h6>
 										<br><br><br><br>
@@ -110,8 +106,7 @@
 										<p>主演：{{ item.star }}</p>
 									</div>
 								</div>
-							</div>
-							<div class="row no-gutters">
+								<div class="w-100 my-1"></div>
 								<div class="col-9">
 									<div class="filmComment">
 										<i class="fas fa-comment-dots mx-2"></i>{{ item.comment }}
@@ -125,6 +120,38 @@
 							</div>
 						</div>
 					</div>
+					<!-- 极简模式 -->
+					<div class="tab-pane accordion my-3 overflow-hidden" id="miniMode">
+						<div class="border" v-for="(item, index) in filterSort(films)" :key="item.id">
+							<div class="p-2 miniToggler" :id="'miniToggler_' + index">
+								<div class="filmScore" :style="{borderColor: scoreColor(item)}">
+									<a :style="{color: scoreColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
+								</div>
+								<h5 class="mb-0">{{ item.translateName }} <small>({{ item.year }})</small></h5>
+								<a class="btn btn-link collapsed float-right" data-toggle="collapse" :data-target="'#miniCollapse_' + index"><i class="fas fa-chevron-down"></i></a>
+							</div>
+							<div class="collapse p-2 miniCollapse" :id="'miniCollapse_' + index" :data-parent="'#miniToggler_' + index">
+								<div class="row no-gutters">
+									<div class="col-auto">
+										<div class="filmPoster overflow-hidden">
+											<img :src="item.posterUrl" width="100%" height="100%">
+										</div>
+									</div>
+									<div class="col-8 pt-2 pl-2">
+										<div class="filmInfo overflow-hidden">
+											<h6>{{ item.officialName }}</h6>
+											<br><br>
+											<p>地区：{{ item.country }}</p>
+											<p>类型：{{ item.type }}</p>
+											<p>导演：{{ item.director }}</p>
+											<p>主演：{{ item.star }}</p>
+											<p><i class="fas fa-comment-dots mx-2"></i>{{ item.comment }}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<!-- 系列模式 -->
 					<div class="tab-pane" id="seriesMode">
 						<div class="card seriesCard" v-for="(item, index) in filterSort(films)" :key="item.id">
@@ -132,25 +159,6 @@
 								<h5 class="mb-0">
 									<button class="btn" data-toggle="collapse" type="button">{{ item.translateName }} <small>({{ item.year }})</small></button>
 								</h5>
-							</div>
-						</div>
-					</div>
-					<!-- 极简模式 -->
-					<div class="tab-pane accordion" id="miniMode">
-						<div class="card miniCard" v-for="(item, index) in filterSort(films)" :key="item.id">
-							<div class="card-header" id="'miniToggler_' + item.id">
-								<h5 class="mb-0">
-									<button class="btn btn-link collapsed" data-toggle="collapse" data-target="'#miniCollapse_' + item.id" type="button">{{ item.translateName }} <small>({{ item.year }})</small></button>
-								</h5>
-							</div>
-							<div class="collapse" id="'miniCollapse_' + item.id" data-parent="'#miniToggler_' + item.id">
-								<div class="card-body">
-									<h6>{{ item.officialName }}</h6>
-									<p>地区：{{ item.country }}</p>
-									<p>类型：{{ item.type }}</p>
-									<p>导演：{{ item.director }}</p>
-									<p>主演：{{ item.star }}</p>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -186,13 +194,13 @@
 			<div id="footer">
 				<ul class="nav nav-justified fixed-bottom border-top">
 					<li class="nav-item">
-						<a class="nav-link" :class="{active: pageOrder == 1}" id="toAll" href="#all" @click="pageOrder = 1"><i class="fas fa-th-list"></i><br>全部</a>
+						<a class="nav-link" :class="{active: pageOrder == 1}" id="toAll" @click="pageOrder = 1"><i class="fas fa-star"></i><br>全部</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" :class="{active: pageOrder == 2}" id="toToWatch" href="#toWatch" @click="pageOrder = 2"><i class="fas fa-play-circle"></i><br>待看</a>
+						<a class="nav-link" :class="{active: pageOrder == 2}" id="toToWatch" @click="pageOrder = 2"><i class="fas fa-play-circle"></i><br>待看</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" :class="{active: pageOrder == 3}" id="toWatched" href="#watched" @click="pageOrder = 3"><i class="fas fa-star"></i><br>已看</a>
+						<a class="nav-link" :class="{active: pageOrder == 3}" id="toWatched" @click="pageOrder = 3"><i class="fas fa-pen-square"></i><br>已看</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" :class="{active: pageOrder == 4}" id="settingToggler" href="#settingSidebar" @click="pageOrder = 4"><i class="fas fa-cog"></i><br>设置</a>
@@ -202,7 +210,7 @@
 		</div>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>

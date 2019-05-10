@@ -243,7 +243,7 @@ var all = new Vue({
 			}
 		},
 		// 分数显示不同颜色
-		scoreBg (item) {
+		scoreColor (item) {
 			if (item.score >= 9) {
 				return '#912CEE';
 			}
