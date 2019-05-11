@@ -8,19 +8,17 @@ body {
 	background-color: #e8e8e8;
 }
 /* $primary: #4f94cd; $secondary: #a9a9a9; $light: #e8e8e8; $dark: #363636; */
-.btn-outline-primary {
-	color: #4f94cd;
-	border-color: #4f94cd;
-}
-.btn-outline-primary:focus,
-.btn-outline-primary:active:focus,
-.btn-outline-primary.active:focus,
-.btn-outline-primary.focus,
-.btn-outline-primary:active.focus,
-.btn-outline-primary.active.focus {
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
 	color: white;
 	background-color: #4f94cd;
 	border-color: #4f94cd;
+	outline: none;
+	box-shadow: none;
 }
 .navbar-toggler:focus,
 .navbar-toggler:active:focus,
@@ -28,6 +26,7 @@ body {
 .navbar-toggler.focus,
 .navbar-toggler:active.focus,
 .navbar-toggler.active.focus {
+	color: #363636;
 	outline: none;
 	box-shadow: none;
 }
@@ -50,9 +49,11 @@ body {
 }
 /* 切换模式 */
 #modeSwitch .nav-link {
-	padding-top: .05rem;
+	padding-top: .25rem;
+	padding-bottom: .25rem;
 	height: 1.5rem;
-	font-size: .9rem;
+	font-size: .8rem;
+	line-height: 1.5rem;
 	color: #a9a9a9;
 	border: 0.08rem solid #a9a9a9;
 }
@@ -81,10 +82,15 @@ body {
 #screenToggler {
 	font-size: 1.25rem;
 }
-#screenCollapse .btn {
-	width: 100%;
-	color: #4f94cd;
+#screenCollapse .nav-link {
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+	height: 2rem;
+	font-size: .875rem;
 	line-height: 1.5rem;
+	color: #4f94cd;
+	text-align: center;
+	border: 0.08rem solid #4f94cd;
 }
 #screenCollapse .active {
 	color: white;

@@ -222,6 +222,8 @@ var all = new Vue({
 		{ tag: '未来' },
 		{ tag: '血腥' },
 		{ tag: '灾难' },
+		{ tag: '血腥' },
+		{ tag: '灾难' }
 		],
 		films: [],
 	},

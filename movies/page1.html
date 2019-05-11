@@ -22,16 +22,16 @@
 				<div class="headNavbar">
 					<!-- 顶部导航栏1：标题、切换模式 -->
 					<nav class="navbar navbar-expand-lg fixed-top border-bottom">
-						<span class="navbar-brand mb-0 h5">全部影片</span>
+						<span class="navbar-brand mb-0 h4">全部影片</span>
 						<ul class="nav nav-pills" id="modeSwitch">
 							<li class="nav-item mx-1">
-								<a class="nav-link rounded-sm px-2 py-0 active" data-toggle="pill" href="#detailMode">全览模式</a>
+								<a class="nav-link rounded-pill px-2 py-0 active" data-toggle="pill" href="#detailMode">全览模式</a>
 							</li>
 							<li class="nav-item mx-1">
-								<a class="nav-link rounded-sm px-2 py-0" data-toggle="pill" href="#miniMode">极简模式</a>
+								<a class="nav-link rounded-pill px-2 py-0" data-toggle="pill" href="#miniMode">极简模式</a>
 							</li>
 							<li class="nav-item mx-1">
-								<a class="nav-link rounded-sm px-2 py-0" data-toggle="pill" href="#seriesMode">系列模式</a>
+								<a class="nav-link rounded-pill px-2 py-0" data-toggle="pill" href="#seriesMode">系列模式</a>
 							</li>
 						</ul>
 					</nav>				
@@ -44,21 +44,21 @@
 							<button class="navbar-toggler" id="searchButton" type="button"><i class="fas fa-search"></i></button>
 						</form>
 						<div class="collapse navbar-collapse py-4 px-2" id="screenCollapse">
-							<div class="row no-gutters mb-3 px-1">
-								<div class="col-4">
-									<a class="btn btn-sm btn-outline-primary border-0" :class="{active: sortOrder == 1}" @click="sortOrder = 1">按年份排序 <i class="fas fa-sort"></i></a>
+							<div class="row no-gutters justify-content-between">
+								<div class="col-4 px-1">
+									<a class="nav-link rounded-pill" :class="{active: sortOrder == 1}" @click="sortOrder = 1">按年份排序</a>
 								</div>
-								<div class="col-4">
-									<a class="btn btn-sm btn-outline-primary border-0" :class="{active: sortOrder == 2}" @click="sortOrder = 2">按评分排序 <i class="fas fa-sort"></i></a>
+								<div class="col-4 px-1">
+									<a class="nav-link rounded-pill" :class="{active: sortOrder == 2}" @click="sortOrder = 2">按评分排序</a>
 								</div>
-								<div class="col-4">
-									<a class="btn btn-sm btn-outline-primary border-0" :class="{active: sortOrder == 3}" @click="sortOrder = 3">按更新排序 <i class="fas fa-sort"></i></a>
+								<div class="col-4 px-1">
+									<a class="nav-link rounded-pill" :class="{active: sortOrder == 3}" @click="sortOrder = 3">按更新排序</a>
 								</div>
-							</div>
-							<hr>
-							<div class="row no-gutters">
-								<div class="col-2 p-1" v-for="item in tags">
-									<a class="btn btn-sm btn-outline-primary">{{ item.tag }}</a>
+								<div class="w-100">
+									<hr>
+								</div>
+								<div class="col-2 p-1" v-for="(item, index) in tags">
+									<a class="btn btn-sm" :class="{active: sortOrder == 3}" @click="filterOrder = index">{{ item.tag }}</a>
 								</div>
 							</div>
 						</div>
