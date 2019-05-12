@@ -1,9 +1,9 @@
 /* 全局样式 */
 body {
-	margin: 0;
-	padding-top: 4rem;
 	width: 100vw;
 	height: 100vh;
+	margin: 0;
+	padding-top: 4rem;
 	color: #1c1c1c;
 	background-color: #e8e8e8;
 }
@@ -49,13 +49,12 @@ body {
 }
 /* 切换模式 */
 #modeSwitch .nav-link {
-	padding-top: .25rem;
-	padding-bottom: .25rem;
 	height: 1.5rem;
+	padding-top: .35rem;
 	font-size: .8rem;
-	line-height: 1.5rem;
+	line-height: 1;
 	color: #a9a9a9;
-	border: 0.08rem solid #a9a9a9;
+	border: 0.083rem solid #a9a9a9;
 }
 #modeSwitch .active {
 	color: white;
@@ -82,29 +81,37 @@ body {
 #screenToggler {
 	font-size: 1.25rem;
 }
-#screenCollapse .nav-link {
-	padding-top: .25rem;
-	padding-bottom: .25rem;
-	height: 2rem;
-	font-size: .875rem;
-	line-height: 1.5rem;
+#screenCollapse .btn {
+	width: 100%;
 	color: #4f94cd;
-	text-align: center;
-	border: 0.08rem solid #4f94cd;
+	border-color: #4f94cd;
+	border-radius: .3rem;
+}
+#screenCollapse .btn span {
+	display: inline-block;
+	transform: rotate(90deg);
+	-ms-transform: rotate(90deg); /* IE 9 */
+	-webkit-transform: rotate(90deg); /* Safari and Chrome */
+}
+#screenCollapse .btn i {
+	margin-right: .1rem;
 }
 #screenCollapse .active {
 	color: white;
 	background-color: #4f94cd;
 	border-color: #4f94cd;
 }
+#screenCollapse .active .rev {
+	color: #a9a9a9;
+}
 /* 搜索框 */
 .headNavbar form {
 	position: absolute;
 	top: 0;
 	right: 4%;
-	padding: 0;
 	width: 80%;
 	height: 2.4rem;
+	padding: 0;
 }
 #searchInput {
 	position: absolute;
@@ -112,7 +119,7 @@ body {
 	right: 0;
 	width: 15%;
 	height: 100%;
-	line-height: 2.4rem;
+	line-height: 2.4;
 	opacity: 0;
 }
 #searchButton {
@@ -124,10 +131,10 @@ body {
 
 /* 下拉更新状态栏 */
 #topDivider {
-	margin-top: .3rem;
-	padding: 0;
 	width: 100%;
 	height: 2rem;
+	margin-top: .3rem;
+	padding: 0;
 }
 #topDivider.pull {
 	animation: reloading .3s linear;
@@ -150,7 +157,7 @@ body {
 	width: 100%;
 	height: 100%;
 	font-size: 1rem;
-	line-height: 2rem;
+	line-height: 2;
 	color: #cfcfcf;
 	text-align: center;
 }
@@ -199,14 +206,14 @@ body {
 }
 .detailCard .filmScore a {
 	font-size: 1rem;
-	line-height: 1.4rem;
+	line-height: 1.4;
 	color: white;
 	text-decoration: none;
 }
 /* 信息 */
 .filmInfo {
 	font-size: .9rem;
-	line-height: .3rem;
+	line-height: .3;
 	color: #9c9c9c;
 	white-space: nowrap;
 }
@@ -228,7 +235,7 @@ body {
 .filmComment {
 	height: 2.4rem;
 	font-size: 1rem;
-	line-height: 2.5rem;
+	line-height: 2.5;
 	color: #363636;
 	background-color: #f0f0f0;
 	border-radius: .3rem;
@@ -237,14 +244,13 @@ body {
 	color: #b5b5b5;
 }
 /* 按钮 */
-.addBtn .btn {
+.detailCard .btn {
 	width: 100%;
-	height: 2.4rem;
-	font-size: 1rem;
-	line-height: 2.4rem;
 	color: #4f94cd;
+	border-color: #4f94cd;
+	border-radius: .3rem;
 }
-.addBtn .active {
+.detailCard .active {
 	color: white;
 	background-color: #4f94cd;
 	border-color: #4f94cd;
@@ -264,12 +270,12 @@ body {
 	width: 2.5rem;
 	height: 1.25rem;
 	text-align: center;
-	border: 0.08rem solid;
+	border: 0.083rem solid;
 	border-radius: .2rem;
 }
 .miniToggler .filmScore a {
 	font-size: 1rem;
-	line-height: 1.4rem;
+	line-height: 1.4;
 	color: white;
 	text-decoration: none;
 }
@@ -284,7 +290,7 @@ body {
 .miniToggler .btn {
 	width: 5rem;
 	height: 2.4rem;
-	line-height: 2.4rem;
+	line-height: 2.4;
 	color: #4f94cd;
 }
 .miniToggler .active {
@@ -306,11 +312,11 @@ body {
 
 /* 底部分割线 */
 #bottomDivider {
-	margin-bottom: 5rem;
 	width: 100%;
 	height: 2rem;
+	margin-bottom: 5rem;
 	font-size: 1rem;
-	line-height: 2rem;
+	line-height: 2;
 	color: #cfcfcf;
 	text-align: center;
 }
@@ -329,7 +335,7 @@ body {
 	width: 2.5rem;
 	height: 2.5rem;
 	font-size: 1rem;
-	line-height: 2.5rem;
+	line-height: 2.5;
 	color: white;
 	text-align: center;
 	background-color: #363636;
@@ -344,7 +350,7 @@ body {
 	width: 2.5rem;
 	height: 2.5rem;
 	font-size: 1rem;
-	line-height: 2.5rem;
+	line-height: 2.5;
 	color: white;
 	text-align: center;
 	background-color: #363636;
@@ -369,9 +375,9 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	margin: auto;
 	width: 30%;
 	height: 30%;
+	margin: auto;
 	font-size: 1rem;
 	text-align: center;
 }
@@ -386,7 +392,7 @@ body {
 }
 #footer .nav-link {
 	font-size: .8rem;
-	line-height: 1.2rem;
+	line-height: 1.2;
 	color: #a9a9a9;	
 }
 #footer .active {

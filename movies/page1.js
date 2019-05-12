@@ -205,63 +205,156 @@ var all = new Vue({
 	el: '#all',
 	data: {
 		sortOrder: 1,
+		revYear: false,
+		revScore: true,
+		revRecent: true,
 		tags: [
-		{ tag: '犯罪' },
-		{ tag: '感染' },
-		{ tag: '怪物' },
-		{ tag: '鬼神' },
-		{ tag: '恐怖' },
-		{ tag: '猎奇' },
-		{ tag: '魔幻' },
-		{ tag: '末日' },
-		{ tag: '人性' },
-		{ tag: '丧尸' },
-		{ tag: '烧脑' },
-		{ tag: '时空' },
-		{ tag: '外星' },
-		{ tag: '未来' },
-		{ tag: '血腥' },
-		{ tag: '灾难' },
-		{ tag: '血腥' },
-		{ tag: '灾难' }
+		{
+			isActive: false,
+			tag: '犯罪'
+		},
+		{
+			isActive: false,
+			tag: '感染'
+		},
+		{
+			isActive: false,
+			tag: '怪物'
+		},
+		{
+			isActive: false,
+			tag: '鬼神'
+		},
+		{
+			isActive: false,
+			tag: '恐怖'
+		},
+		{
+			isActive: false,
+			tag: '猎奇'
+		},
+		{
+			isActive: false,
+			tag: '魔幻'
+		},
+		{
+			isActive: false,
+			tag: '末日'
+		},
+		{
+			isActive: false,
+			tag: '人性'
+		},
+		{
+			isActive: false,
+			tag: '丧尸'
+		},
+		{
+			isActive: false,
+			tag: '烧脑'
+		},
+		{
+			isActive: false,
+			tag: '时空'
+		},
+		{
+			isActive: false,
+			tag: '外星'
+		},
+		{
+			isActive: false,
+			tag: '未来'
+		},
+		{
+			isActive: false,
+			tag: '血腥'
+		},
+		{
+			isActive: false,
+			tag: '灾难'
+		},
+		{
+			isActive: false,
+			tag: '冒险'
+		},
+		{
+			isActive: false,
+			tag: '科幻'
+		}
 		],
 		films: [],
 	},
-	methods: {
-		// 过滤，排序
-		filterSort (films) {
-			if (this.sortOrder == 2) {
-				return this.films.sort(function (a,b) {
-					return b.score - a.score;
-				});
-			} else if (this.sortOrder == 3) {
-				return this.films.sort(function (a,b) {
-					return b.id - a.id;
-				});
-			} else {
-				return this.films.sort(function (a,b) {
+	computed: {
+		// 排序，过滤
+		sortFilter () {
+			var so = this.sortOrder,
+			ry = this.revYear,
+			rs = this.revScore,
+			rr = this.revRecent;
+
+			return this.films.sort(function (a,b) {
+				if (so == 1 && !ry) {
 					return a.year - b.year;
-				});
+				} else if (so == 2 && !rs) {
+					return b.score - a.score;
+				} else if (so == 3 && !rr) {
+					return b.id - a.id;
+				} else if (so == 1 && ry) {
+					return b.year - a.year;
+				} else if (so == 2 && rs) {
+					return a.score - b.score;
+				} else {
+					return a.id - b.id;
+				}
+			});
+		},
+	},
+	methods: {
+		// 点击不同按钮切换排序方式，点击同一按钮切换正倒序
+		sortActive (n) {
+			this.sortOrder = n;
+			if (n == 2) {
+				var rs = this.revScore;
+				rs = !rs;
+				this.revScore = rs;
+
+				this.revYear = true;
+				this.revRecent = true;
+			} else if (n == 3) {
+				var rr = this.revRecent;
+				rr = !rr;
+				this.revRecent = rr;
+
+				this.revYear = true;
+				this.revScore = true;
+			} else {
+				var ry = this.revYear;
+				ry = !ry;
+				this.revYear = ry;
+
+				this.revScore = true;
+				this.revRecent = true;
 			}
 		},
-		// 分数显示不同颜色
+		// 不同分数级别显示不同颜色
 		scoreColor (item) {
-			if (item.score >= 9) {
+			var is = item.score;
+			if (is >= 9) {
 				return '#912CEE';
 			}
-			else if (item.score < 9 && item.score >= 8) {
+			else if (is < 9 && is >= 8) {
 				return '#0000CD';
 			}
-			else if (item.score < 8 && item.score >= 7) {
+			else if (is < 8 && is >= 7) {
 				return '#00CDCD';
 			}
-			else if (item.score < 7 && item.score >= 6) {
+			else if (is < 7 && is >= 6) {
 				return '#00CD00';
 			}
-			else if (item.score < 6 && item.score >= 5) {
+			else if (is < 6 && is >= 5) {
 				return '#CDCD00';
 			}
-			else if (item.score < 5 && item.score >= 4) {
+			else if (is < 5 && is >= 4) {
 				return '#CD8500';
 			}
 			else {
