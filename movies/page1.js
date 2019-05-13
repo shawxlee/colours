@@ -110,14 +110,20 @@ $(function () {
 
 	// 搜索框
 	var searchInput = $("#searchInput"),
-	searchButton = $("#searchButton");
+	searchButton = $("#searchButton"),
+	siVal = $("#searchInput").val();
 
 	searchButton.click(function () {
-		if ($(this).hasClass("active")) {
-			$(this).prop("type", "submit");
-		} else {
-			$(this).addClass("active");
-			searchInput.animate({ opacity: 1, width: "100%" }, 100, "linear");
+		if (searchInput.css("opacity") == 0) {
+			searchInput.animate({ opacity: 1, width: "100%" }, 100, "linear").focus();
+			all.ifShow = false;
+		}
+	});
+	searchInput.on('focus blur', function () {
+		searchButton.toggleClass("active");
+		all.ifFocus = !all.ifFocus;
+		if (all.ifFocus) {
+			screenCollapse.collapse('hide');
 		}
 	});
 
@@ -125,24 +131,28 @@ $(function () {
 	var screenCollapse = $("#screenCollapse"),
 	screenToggler = $("#screenToggler");
 
-	screenCollapse.on('show.bs.collapse hidden.bs.collapse', function () {
-		screenToggler.toggleClass("active");
+	screenCollapse.on('show.bs.collapse', function () {
+		screenToggler.addClass("active");
+		all.ifShow = false;
 	});
 	screenCollapse.on('hidden.bs.collapse', function () {
-		searchInput.animate({ width: "15%", opacity: 0 }, 100, "linear");
-		searchButton.removeClass("active").prop("type", "button");
+		screenToggler.removeClass("active");
+		all.ifShow = true;
+		searchInput.animate({ width: "15%", opacity: 0 }, 100, "linear").val("");
+		searchButton.removeClass("active");
 	});
 
-	// 点击其他位置收起
-	var notHeader = $("#detailMode, #seriesMode, #miniMode, #bottomDivider, #toTop, #toBottom, #footer");
+	// 点击其他位置或滚动时收起
+	var notScreen = $("#modeSwitch, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #footer");
 
-	notHeader.click(function () {
-		if (searchInput.val()) {
+	notScreen.on('click scroll', function () {
+		if (siVal) {
 			screenCollapse.collapse('hide');
 		} else {
 			screenCollapse.collapse('hide');
-			searchInput.animate({ width: "15%", opacity: 0 }, 100, "linear");
-			searchButton.removeClass("active").prop("type", "button");
+			all.ifShow = true;
+			searchInput.animate({ width: "15%", opacity: 0 }, 100, "linear").val("");
+			searchButton.removeClass("active");
 		}
 	});
 	
@@ -282,17 +292,28 @@ var all = new Vue({
 			tag: '科幻'
 		}
 		],
+		activeTags: [],
+		ifShow: true,
+		searchText: '',
 		films: [],
+		filters: [],
 	},
 	computed: {
 		// 排序，过滤
-		sortFilter () {
+		filterFilms () {
+			if (this.searchText) {
+				this.filters = this.films.filter(function (item) {
+					return item.indexOf(all.searchText) !== -1;
+				});
+			} else {}
+			
+
 			var so = this.sortOrder,
 			ry = this.revYear,
 			rs = this.revScore,
 			rr = this.revRecent;
 
-			return this.films.sort(function (a,b) {
+			return this.filters.sort(function (a,b) {
 				if (so == 1 && !ry) {
 					return a.year - b.year;
 				} else if (so == 2 && !rs) {
@@ -314,24 +335,15 @@ var all = new Vue({
 		sortActive (n) {
 			this.sortOrder = n;
 			if (n == 2) {
-				var rs = this.revScore;
-				rs = !rs;
-				this.revScore = rs;
-
+				this.revScore = !this.revScore;
 				this.revYear = true;
 				this.revRecent = true;
 			} else if (n == 3) {
-				var rr = this.revRecent;
-				rr = !rr;
-				this.revRecent = rr;
-
+				this.revRecent = !this.revRecent;
 				this.revYear = true;
 				this.revScore = true;
 			} else {
-				var ry = this.revYear;
-				ry = !ry;
-				this.revYear = ry;
-
+				this.revYear = !this.revYear;
 				this.revScore = true;
 				this.revRecent = true;
 			}

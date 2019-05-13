@@ -37,11 +37,20 @@
 					</nav>				
 					<!-- 顶部导航栏2：排序、过滤、搜索 -->
 					<nav class="navbar navbar-expand-lg border-bottom">
-						<button class="navbar-toggler" id="screenToggler" data-toggle="collapse" data-target="#screenCollapse" type="button"><i class="fas fa-bars"></i></button>
-
-						<button class="navbar-toggler invisible" data-toggle="collapse" type="button"><i class="fas fa-search"></i></button>
-						<form>
-							<input class="form-control rounded-pill" id="searchInput" type="search" placeholder="输入片名进行搜索">
+						<div class="screenInfo">
+							<button class="navbar-toggler pr-1" id="screenToggler" data-toggle="collapse" data-target="#screenCollapse" type="button"><i class="fas fa-sort-amount-down"></i></button>
+							<template v-if="ifShow">
+								<span v-show="sortOrder == 1 && !revYear">最早上映</span>
+								<span v-show="sortOrder == 1 && revYear">最近上映</span>
+								<span v-show="sortOrder == 2 && !revScore">最高评分</span>
+								<span v-show="sortOrder == 2 && revScore">最低评分</span>
+								<span v-show="sortOrder == 3 && !revRecent">最近更新</span>
+								<span v-show="sortOrder == 3 && revRecent">最早更新</span>
+								<span v-for="item in activeTags"> · {{ item.activeTag }}</span>
+							</template>
+						</div>
+						<form class="m-0 p-0 searchForm">
+							<input class="form-control rounded-pill" id="searchInput" type="text" placeholder="输入片名进行搜索" autocomplete="off" v-model="searchText">
 							<button class="navbar-toggler" id="searchButton" type="button"><i class="fas fa-search"></i></button>
 						</form>
 						<div class="collapse navbar-collapse py-4 px-2" id="screenCollapse">
@@ -56,7 +65,7 @@
 									<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 3}" @click.passive="sortActive(3)">按更新排序 <span><i class="fas fa-caret-left" :class="{rev: !revRecent}"></i><i class="fas fa-caret-right" :class="{rev: revRecent}"></i></span></a>
 								</div>
 								<div class="w-100"><hr></div>
-								<div class="col-2 p-1" v-for="(item, index) in tags">
+								<div class="col-2 p-1" v-for="(item, index) in tags" :key="item.tag">
 									<a class="btn btn-sm" :class="{active: item.isActive}" @click.passive="item.isActive = !item.isActive">{{ item.tag }}</a>
 								</div>
 							</div>
@@ -84,7 +93,7 @@
 				<div class="tab-content">
 					<!-- 全览模式 -->
 					<div class="tab-pane active" id="detailMode">
-						<div class="my-3 p-3 detailCard" v-for="(item, index) in sortFilter" :key="item.id">
+						<div class="my-3 p-3 detailCard" v-for="(item, index) in filterFilms" :key="item.id">
 							<div class="row no-gutters">
 								<div class="col-auto">
 									<div class="filmPoster overflow-hidden">
@@ -117,7 +126,7 @@
 					</div>
 					<!-- 极简模式 -->
 					<div class="tab-pane accordion my-3 overflow-hidden" id="miniMode">
-						<div class="border" v-for="(item, index) in sortFilter" :key="item.id">
+						<div class="border" v-for="(item, index) in filterFilms" :key="item.id">
 							<div class="p-2 miniToggler" :id="'miniToggler_' + index">
 								<div class="filmScore" :style="{borderColor: scoreColor(item)}">
 									<a :style="{color: scoreColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
@@ -149,7 +158,7 @@
 					</div>
 					<!-- 系列模式 -->
 					<div class="tab-pane" id="seriesMode">
-						<div class="card seriesCard" v-for="(item, index) in sortFilter" :key="item.id">
+						<div class="card seriesCard" v-for="(item, index) in filterFilms" :key="item.id">
 							<div class="card-header">
 								<h5 class="mb-0">
 									<button class="btn" data-toggle="collapse" type="button">{{ item.transName }} <small>({{ item.year }})</small></button>

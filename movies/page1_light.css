@@ -1,24 +1,20 @@
 /* 全局样式 */
+/* $primary: #4f94cd; $secondary: #a9a9a9; $light: #e8e8e8; $dark: #363636; */
 body {
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
+	padding: 0;
 	padding-top: 4rem;
 	color: #1c1c1c;
 	background-color: #e8e8e8;
 }
-/* $primary: #4f94cd; $secondary: #a9a9a9; $light: #e8e8e8; $dark: #363636; */
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-	color: white;
-	background-color: #4f94cd;
-	border-color: #4f94cd;
-	outline: none;
-	box-shadow: none;
+
+.navbar-toggler {
+	color: #4f94cd;
+}
+.navbar-toggler.active {
+	color: #363636;
 }
 .navbar-toggler:focus,
 .navbar-toggler:active:focus,
@@ -26,9 +22,37 @@ body {
 .navbar-toggler.focus,
 .navbar-toggler:active.focus,
 .navbar-toggler.active.focus {
-	color: #363636;
-	outline: none;
 	box-shadow: none;
+	outline: none;
+}
+
+.btn {
+	width: 100%;
+	color: #4f94cd;
+	border-color: #4f94cd;
+	border-radius: .3rem;
+}
+.btn.active {
+	color: white;
+	background-color: #4f94cd;
+	border-color: #4f94cd;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+	box-shadow: none;
+	outline: none;
+}
+
+.form-control {
+	height: 2.4rem;
+	padding-top: .7rem;
+	padding-bottom: .7rem;
+	font-size: 1rem;
+	line-height: 1;
 }
 .form-control:focus,
 .form-control:active:focus,
@@ -36,13 +60,17 @@ body {
 .form-control.focus,
 .form-control:active.focus,
 .form-control.active.focus {
-	border-color: #4f94cd;
 	outline: none;
-	box-shadow: none;
+	box-shadow: 0 0 .083rem #4f94cd inset;
 }
 
+.row {
+	overflow-wrap: normal;
+}
+
+
 /* 导航栏1 */
-.headNavbar nav:first-of-type {
+.headNavbar .navbar:first-of-type {
 	height: 3rem;
 	color: white;
 	background-color: #4f94cd;
@@ -51,10 +79,11 @@ body {
 #modeSwitch .nav-link {
 	height: 1.5rem;
 	padding-top: .35rem;
+	padding-bottom: .35rem;
 	font-size: .8rem;
 	line-height: 1;
 	color: #a9a9a9;
-	border: 0.083rem solid #a9a9a9;
+	border: .08rem solid #a9a9a9;
 }
 #modeSwitch .active {
 	color: white;
@@ -63,7 +92,7 @@ body {
 }
 
 /* 导航栏2 */
-.headNavbar nav:last-of-type {
+.headNavbar .navbar:last-of-type {
 	position: fixed;
 	top: 3rem;
 	right: 0;
@@ -72,61 +101,53 @@ body {
 	background-color: white;
 }
 /* 折叠面板 */
-.navbar-toggler {
-	color: #a9a9a9;
-}
-.navbar-toggler.active {
-	color: #363636;
-}
-#screenToggler {
-	font-size: 1.25rem;
+.screenInfo {
+	font-size: 1rem;
+	color: #4f94cd;
 }
 #screenCollapse .btn {
-	width: 100%;
 	color: #4f94cd;
-	border-color: #4f94cd;
-	border-radius: .3rem;
 }
-#screenCollapse .btn span {
+#screenCollapse .active {
+	color: white;
+}
+#screenCollapse span {
 	display: inline-block;
 	transform: rotate(90deg);
 	-ms-transform: rotate(90deg); /* IE 9 */
 	-webkit-transform: rotate(90deg); /* Safari and Chrome */
 }
-#screenCollapse .btn i {
-	margin-right: .1rem;
+#screenCollapse .fa-caret-left {
+	margin-right: .06rem;
 }
-#screenCollapse .active {
-	color: white;
-	background-color: #4f94cd;
-	border-color: #4f94cd;
+#screenCollapse .fa-caret-right {
+	margin-left: .06rem;
 }
 #screenCollapse .active .rev {
 	color: #a9a9a9;
 }
 /* 搜索框 */
-.headNavbar form {
+.searchForm {
 	position: absolute;
 	top: 0;
-	right: 4%;
-	width: 80%;
-	height: 2.4rem;
-	padding: 0;
-}
-#searchInput {
-	position: absolute;
-	top: .25rem;
 	right: 0;
+	width: 80%;
+}
+.searchForm .form-control {
+	position: absolute;
+	top: .2375rem;
+	right: 1rem;
 	width: 15%;
-	height: 100%;
-	line-height: 2.4;
 	opacity: 0;
 }
-#searchButton {
+.searchForm .navbar-toggler {
 	position: absolute;
 	top: .5rem;
-	right: 0;
-	font-size: 1.25rem;
+	right: 1rem;
+	color: #a9a9a9;
+}
+.searchForm .active {
+	color: #363636;
 }
 
 /* 下拉更新状态栏 */
@@ -185,9 +206,6 @@ body {
 	background-color: white;
 	border-radius: 1rem;
 }
-.detailCard .row {
-	overflow-wrap: normal;
-}
 /* 海报 */
 .detailCard .filmPoster {
 	position: relative;
@@ -243,18 +261,6 @@ body {
 .filmComment i {
 	color: #b5b5b5;
 }
-/* 按钮 */
-.detailCard .btn {
-	width: 100%;
-	color: #4f94cd;
-	border-color: #4f94cd;
-	border-radius: .3rem;
-}
-.detailCard .active {
-	color: white;
-	background-color: #4f94cd;
-	border-color: #4f94cd;
-}
 
 /* 极简模式 */
 #miniMode {
@@ -270,7 +276,7 @@ body {
 	width: 2.5rem;
 	height: 1.25rem;
 	text-align: center;
-	border: 0.083rem solid;
+	border: .083rem solid;
 	border-radius: .2rem;
 }
 .miniToggler .filmScore a {
@@ -293,16 +299,8 @@ body {
 	line-height: 2.4;
 	color: #4f94cd;
 }
-.miniToggler .active {
-	color: white;
-	background-color: #4f94cd;
-	border-color: #4f94cd;
-}
 .miniCollapse {
 	background-color: white;
-}
-.miniCollapse .row {
-	overflow-wrap: normal;
 }
 .miniCollapse .filmPoster {
 	width: 5.9rem;
@@ -327,10 +325,10 @@ body {
 }
 
 /* 快捷按钮 */
-#toBottom {
+#toTop {
 	position: fixed;
 	right: .5rem;
-	bottom: 4.3rem;
+	bottom: 7.3rem;
 	z-index: 9;
 	width: 2.5rem;
 	height: 2.5rem;
@@ -342,10 +340,10 @@ body {
 	border-radius: 50%;
 	opacity: .5;
 }
-#toTop {
+#toBottom {
 	position: fixed;
 	right: .5rem;
-	bottom: 7.3rem;
+	bottom: 4.3rem;
 	z-index: 9;
 	width: 2.5rem;
 	height: 2.5rem;
