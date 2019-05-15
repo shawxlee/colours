@@ -1,11 +1,11 @@
-/* 全局样式 */
 /* $primary: #4f94cd; $secondary: #a9a9a9; $light: #e8e8e8; $dark: #363636; */
+/*  全局样式  */
 body {
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	padding-top: 4rem;
+	padding-top: 6rem;
 	color: #1c1c1c;
 	background-color: #e8e8e8;
 }
@@ -68,7 +68,7 @@ body {
 	overflow-wrap: normal;
 }
 
-
+/*  局部样式  */
 /* 导航栏1 */
 .headNavbar .navbar:first-of-type {
 	height: 3rem;
@@ -114,13 +114,11 @@ body {
 #screenCollapse span {
 	display: inline-block;
 	transform: rotate(90deg);
-	-ms-transform: rotate(90deg); /* IE 9 */
-	-webkit-transform: rotate(90deg); /* Safari and Chrome */
 }
-#screenCollapse .fa-caret-left {
+.fa-caret-left {
 	margin-right: .06rem;
 }
-#screenCollapse .fa-caret-right {
+.fa-caret-right {
 	margin-left: .06rem;
 }
 #screenCollapse .active .rev {
@@ -137,8 +135,7 @@ body {
 	position: absolute;
 	top: .2375rem;
 	right: 1rem;
-	width: 15%;
-	opacity: 0;
+	width: 100%;
 }
 .searchForm .navbar-toggler {
 	position: absolute;
@@ -149,56 +146,44 @@ body {
 .searchForm .active {
 	color: #363636;
 }
+/* 动画：展开收起 */
+.stretch-enter, .stretch-leave-to {
+	width: 15%;
+	opacity: 0;
+}
+.stretch-enter-active, .stretch-leave-active {
+	transition: all .1s linear;
+}
 
 /* 下拉更新状态栏 */
 #topDivider {
 	width: 100%;
 	height: 2rem;
-	margin-top: .3rem;
-	padding: 0;
-}
-#topDivider.pull {
-	animation: reloading .3s linear;
-}
-#topDivider.fold {
-	animation: reloading .3s linear .1s reverse;
-}
-@keyframes reloading {
-	0% {
-		margin-top: .3rem;
-	}
-	100% {
-		margin-top: 3rem;
-	}
-}
-#isReloading,
-#reloadSuccess,
-#notModified,
-#reloadError {
-	width: 100%;
-	height: 100%;
 	font-size: 1rem;
 	line-height: 2;
 	color: #cfcfcf;
 	text-align: center;
-}
-#reloadSuccess,
-#notModified,
-#reloadError {
-	display: none;
 }
 #topDivider hr {
 	display: inline-block;
 	width: 30%;
 	vertical-align: middle;
 }
-#topDivider .fa-sync-alt {
+/* 动画：图标旋转 */
+.fa-sync-alt {
 	animation: rotating 1s linear infinite;
 }
 @keyframes rotating {
 	100% {
 		transform: rotate(360deg);
 	}
+}
+/* 动画：下拉收起 */
+.pull-enter, .pull-leave-to {
+	transform: translateY(-2rem);
+}
+.pull-enter-active, .pull-leave-active {
+	transition: all .3s linear;
 }
 
 /* 全览模式 */

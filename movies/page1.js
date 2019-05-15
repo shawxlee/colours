@@ -9,7 +9,7 @@
 	flexible = lib.flexible || (lib.flexible = {});
 	// 设置了 viewport meta
 	if (vpMeta) {
-		console.warn("将根据已有的meta标签来设置缩放比例");
+		console.warn("将根据已有的<meta>标签来设置缩放比例");
 		var initial = vpMeta.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
 		if (initial) {
 				scale = parseFloat(initial[1]); // 已设置的 initialScale
@@ -77,136 +77,128 @@ $(function () {
 	var reUrl = "http://192.168.199.126:8080/movies/films.json?t=" + new Date().getTime(),
 	loadingBg = $("#loadingBg"),
 	loadingInfo = $("#loadingInfo"),
-	errorInfo = $("#errorInfo");
+	errorInfo = $("#errorInfo"),
+	loadAgain = $("#loadAgain");
 
 	function loadData() {
-		$.ajax({
-			url: reUrl,
-			type: "GET",
-			async: false,
-			dataType: "json",
-			success (result) {
-				all.films = result;
-				loadingBg.remove();
-			},
-			error () {
+		$.getJSON(reUrl, function (data,status) {
+			if (status == "success") {
+				all.films = data;
+				loadingBg.fadeOut("fast", "linear").remove();
+			} else {
 				loadingInfo.hide();
 				errorInfo.show();
 			}
 		});
 	}
-
 	// 首次加载数据
 	loadData();
-
 	// 重新加载数据
-	var loadAgain = $("#loadAgain");
-
-	loadAgain.click(function () {
+	loadAgain.on("click", function () {
 		errorInfo.hide();
 		loadingInfo.show();
 		loadData();
 	});
 
-	// 搜索框
-	var searchInput = $("#searchInput"),
-	searchButton = $("#searchButton"),
-	siVal = $("#searchInput").val();
+	// 搜索框展开/收起
+	var searchToggler = $("#searchToggler"),
+	searchInput = $("#searchInput");
 
-	searchButton.click(function () {
-		if (searchInput.css("opacity") == 0) {
-			searchInput.animate({ opacity: 1, width: "100%" }, 100, "linear").focus();
-			all.ifShow = false;
+	searchToggler.on("click", function () {
+		if (all.stretchLeft) {
+			all.searchText = "";
+		} else {
+			all.stretchLeft = true;
+			searchInput.focus();
 		}
 	});
-	searchInput.on('focus blur', function () {
-		searchButton.toggleClass("active");
-		all.ifFocus = !all.ifFocus;
-		if (all.ifFocus) {
-			screenCollapse.collapse('hide');
-		}
+	searchInput.on("focus blur", function () {
+		searchToggler.toggleClass("active");
 	});
 
-	// 折叠面板
+	// 折叠组件：筛选面板
 	var screenCollapse = $("#screenCollapse"),
 	screenToggler = $("#screenToggler");
 
-	screenCollapse.on('show.bs.collapse', function () {
-		screenToggler.addClass("active");
-		all.ifShow = false;
-	});
-	screenCollapse.on('hidden.bs.collapse', function () {
-		screenToggler.removeClass("active");
-		all.ifShow = true;
-		searchInput.animate({ width: "15%", opacity: 0 }, 100, "linear").val("");
-		searchButton.removeClass("active");
+	screenCollapse.on("show.bs.collapse hidden.bs.collapse", function () {
+		screenToggler.toggleClass("active");
+		all.collapseHidden = !all.collapseHidden;
+		if (all.activeTags.length != 0) {
+			all.stretchLeft = false;
+			searchToggler.removeClass("active");
+		}
 	});
 
 	// 点击其他位置或滚动时收起
 	var notScreen = $("#modeSwitch, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #footer");
 
-	notScreen.on('click scroll', function () {
-		if (siVal) {
-			screenCollapse.collapse('hide');
-		} else {
-			screenCollapse.collapse('hide');
-			all.ifShow = true;
-			searchInput.animate({ width: "15%", opacity: 0 }, 100, "linear").val("");
-			searchButton.removeClass("active");
+	notScreen.on("click", function () {
+		screenCollapse.collapse("hide");
+		if (all.searchText.length == 0) {
+			all.stretchLeft = false;
+			searchToggler.removeClass("active");
+		}
+	});
+	$(document).on("scroll", function () {
+		screenCollapse.collapse("hide");
+		if (all.searchText.length == 0) {
+			all.stretchLeft = false;
+			searchToggler.removeClass("active");
 		}
 	});
 	
 	// 更新数据并显示状态
-	var topDivider = $("#topDivider"),
-	isReloading = $("#isReloading"),
-	reloadSuccess = $("#reloadSuccess"),
-	notModified = $("#notModified"),
-	reloadError = $("#reloadError");
-
+	function foldUp() {
+		all.pullDown = false;
+		if (!all.pullDown) {
+			all.reloadSuccess = false;
+			all.notModified = false;
+			all.reloadError = false;
+		}
+	}
 	function reloadData() {
-		$.get(reUrl, function (data,status) {
-			if (status == "success") {
-				all.films = data;
-				isReloading.hide();
-				reloadSuccess.show();
-				topDivider.removeClass("pull").addClass("fold");
-			} else if (status == "notmodified") {
-				isReloading.hide();
-				notModified.show();
-				topDivider.removeClass("pull").addClass("fold");
-			} else {
-				isReloading.hide();
-				reloadError.show();
-				topDivider.removeClass("pull").addClass("fold");
-			}
-		}, "json");
+		all.isReloading = true;
+		all.pullDown = true;
+		if (all.pullDown) {
+			$.post(reUrl, function (data,status) {
+				if (status == "success") {
+					if (all.activeTags.length != 0) {
+						for (var i = 0, len = all.tags.length; i < len; i++) {
+							all.tags[i].isActive = false;
+						}
+					}
+					if (all.searchText.length != 0) {
+						all.searchText = "";
+					}
+					all.films = data;
+					all.isReloading = false;
+					all.reloadSuccess = true;
+				} else if (status == "notmodified") {
+					all.isReloading = false;
+					all.notModified = true;
+				} else {
+					all.isReloading = false;
+					all.reloadError = true;
+				}
+			}, "json");
+			setTimeout(foldUp, 100);
+		}
 	}
 
-	// 页面滚动条
+	// 页面滚动与刷新
 	var htmlBody = $("html, body"),
 	toTop = $("#toTop"),
 	toBottom = $("#toBottom"),
 	toAll = $("#toAll");
-	// 滚动到顶部
-	toTop.click(function () {
+
+	toTop.on("click", function () {
 		htmlBody.animate({ scrollTop: 0 }, 300, "linear");
 	});
-	// 滚动到底部
-	toBottom.click(function () {
+	toBottom.on("click", function () {
 		htmlBody.animate({ scrollTop: $(document).height() }, 300, "linear");
 	});
-	// 滚动到顶部并刷新
-	toAll.click(function () {
-		htmlBody.animate({ scrollTop: 0 }, 100, "linear", function () {
-			topDivider.removeClass("fold").addClass("pull");
-			reloadData();
-			if (topDivider.css("margin-top") == ".3rem") {
-				isReloading.show();
-				reloadSuccess.hide();
-				notModified.hide();
-				reloadError.hide();
-			}
-		});
+	toAll.on("click", function () {
+		htmlBody.animate({ scrollTop: 0 }, 100, "linear", reloadData);
 	});
 });
 
@@ -214,18 +206,18 @@ $(function () {
 var all = new Vue({
 	el: '#all',
 	data: {
+		collapseHidden: true,
+		stretchLeft: false,
+		searchText: '',
 		sortOrder: 1,
 		revYear: false,
 		revScore: true,
 		revRecent: true,
+		activeTags: [],
 		tags: [
 		{
 			isActive: false,
-			tag: '犯罪'
-		},
-		{
-			isActive: false,
-			tag: '感染'
+			tag: '病毒'
 		},
 		{
 			isActive: false,
@@ -233,11 +225,15 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
-			tag: '鬼神'
+			tag: '鬼魂'
 		},
 		{
 			isActive: false,
-			tag: '恐怖'
+			tag: '惊悚'
+		},
+		{
+			isActive: false,
+			tag: '历险'
 		},
 		{
 			isActive: false,
@@ -253,10 +249,6 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
-			tag: '人性'
-		},
-		{
-			isActive: false,
 			tag: '丧尸'
 		},
 		{
@@ -265,15 +257,23 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
+			tag: '神话'
+		},
+		{
+			isActive: false,
 			tag: '时空'
 		},
 		{
 			isActive: false,
-			tag: '外星'
+			tag: '同性'
 		},
 		{
 			isActive: false,
 			tag: '未来'
+		},
+		{
+			isActive: false,
+			tag: '星际'
 		},
 		{
 			isActive: false,
@@ -285,35 +285,25 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
-			tag: '冒险'
-		},
-		{
-			isActive: false,
-			tag: '科幻'
+			tag: '罪案'
 		}
 		],
-		activeTags: [],
-		ifShow: true,
-		searchText: '',
+		pullDown: false,
+		isReloading: false,
+		reloadSuccess: false,
+		notModified: false,
+		reloadError: false,
 		films: [],
-		filters: [],
 	},
 	computed: {
-		// 排序，过滤
-		filterFilms () {
-			if (this.searchText) {
-				this.filters = this.films.filter(function (item) {
-					return item.indexOf(all.searchText) !== -1;
-				});
-			} else {}
-			
-
+		// 排序
+		sortFilms () {
 			var so = this.sortOrder,
 			ry = this.revYear,
 			rs = this.revScore,
 			rr = this.revRecent;
 
-			return this.filters.sort(function (a,b) {
+			return this.films.sort(function (a,b) {
 				if (so == 1 && !ry) {
 					return a.year - b.year;
 				} else if (so == 2 && !rs) {
@@ -329,16 +319,72 @@ var all = new Vue({
 				}
 			});
 		},
+		// 过滤
+		filterFilms () {
+			var st = this.searchText,
+			at = this.activeTags;
+
+			for (var i = 0, len = this.tags.length; i < len; i++) {
+				var tItem = this.tags[i];
+				if (st.length != 0) {
+					tItem.isActive = false;
+				} else {
+					if (tItem.isActive) {
+						at.push(tItem.tag);
+					} else {
+						if (at.indexOf(tItem.tag) != -1) {
+							var atIndex = at.indexOf(tItem.tag);
+							at.splice(atIndex, 1);
+						}
+					}
+				}
+			}
+			if (at.length != 0) {
+				st = '';
+				// 不完全匹配：type转换为数组，与activeTags嵌套循环，只要含有相同元素的项，都符合条件
+				return this.sortFilms.filter(function (item) {
+					var newType = item.type.split(' / '),
+					i, lenI,
+					j, lenJ;
+
+					for (i = 0, lenI = at.length; i < lenI; i++) {
+						for (j = 0, lenJ = newType.length; j < lenJ; j++) {
+							if (newType[j] == at[i]) {
+								return true;
+							}
+						}
+					}
+				});
+			} else {
+				// 不完全匹配：搜索词分割为每个字，与item每一项嵌套循环，只要字符串中包含相同字，都符合条件
+				return this.sortFilms.filter(function (item) {
+					var newSt = st.replace(/\s*/g, '').split(''),
+					i, lenI,
+					j, lenJ,
+					k, lenK;
+
+					for (i = 0, lenI = newSt.length; i < lenI; i++) {
+						for (j = 0, lenJ = item.length; j < lenJ; j++) {
+							for (k = 0, lenK = item[j].length; k < lenK; k++) {
+								if (item[j][k].toLowerCase().indexOf(newSt[i].toLowerCase()) !== -1) {
+									return true;
+								}
+							}
+						}
+					}
+				});
+			}
+		},
 	},
 	methods: {
 		// 点击不同按钮切换排序方式，点击同一按钮切换正倒序
-		sortActive (n) {
-			this.sortOrder = n;
-			if (n == 2) {
+		sortActive (order) {
+			this.sortOrder = order;
+			if (order == 2) {
 				this.revScore = !this.revScore;
 				this.revYear = true;
 				this.revRecent = true;
-			} else if (n == 3) {
+			} else if (order == 3) {
 				this.revRecent = !this.revRecent;
 				this.revYear = true;
 				this.revScore = true;

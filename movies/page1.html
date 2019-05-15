@@ -39,19 +39,21 @@
 					<nav class="navbar navbar-expand-lg border-bottom">
 						<div class="screenInfo">
 							<button class="navbar-toggler pr-1" id="screenToggler" data-toggle="collapse" data-target="#screenCollapse" type="button"><i class="fas fa-sort-amount-down"></i></button>
-							<template v-if="ifShow">
+							<template v-if="collapseHidden">
 								<span v-show="sortOrder == 1 && !revYear">最早上映</span>
 								<span v-show="sortOrder == 1 && revYear">最近上映</span>
 								<span v-show="sortOrder == 2 && !revScore">最高评分</span>
 								<span v-show="sortOrder == 2 && revScore">最低评分</span>
 								<span v-show="sortOrder == 3 && !revRecent">最近更新</span>
 								<span v-show="sortOrder == 3 && revRecent">最早更新</span>
-								<span v-for="item in activeTags"> · {{ item.activeTag }}</span>
+								<span v-for="item in activeTags"> · {{ item }}</span>
 							</template>
 						</div>
 						<form class="m-0 p-0 searchForm">
-							<input class="form-control rounded-pill" id="searchInput" type="text" placeholder="输入片名进行搜索" autocomplete="off" v-model="searchText">
-							<button class="navbar-toggler" id="searchButton" type="button"><i class="fas fa-search"></i></button>
+							<transition name="stretch">
+								<input class="form-control rounded-pill" id="searchInput" type="text" placeholder="输入关键词搜索" v-if="stretchLeft" v-model.trim="searchText">
+							</transition>
+							<button class="navbar-toggler" id="searchToggler" type="button"><i class="fas fa-search" v-show="searchText.length == 0"></i><i class="fas fa-times" v-show="searchText.length > 0"></i></button>
 						</form>
 						<div class="collapse navbar-collapse py-4 px-2" id="screenCollapse">
 							<div class="row no-gutters justify-content-between">
@@ -74,23 +76,25 @@
 				</div>
 
 				<!-- 下拉更新状态栏 -->
-				<div id="topDivider">
-					<div id="isReloading">
-						<hr>&nbsp;&nbsp; 正在更新 <i class="fas fa-sync-alt"></i> &nbsp;&nbsp;<hr>
+				<transition name="pull">
+					<div id="topDivider" v-if="pullDown">
+						<div v-show="isReloading">
+							<hr>&nbsp;&nbsp; 正在更新 <i class="fas fa-sync-alt"></i> &nbsp;&nbsp;<hr>
+						</div>
+						<div v-show="reloadSuccess">
+							<hr>&nbsp;&nbsp; 更新成功 <i class="fas fa-check-circle"></i> &nbsp;&nbsp;<hr>
+						</div>
+						<div v-show="notModified">
+							<hr>&nbsp;&nbsp; 没有更新 <i class="fas fa-minus-circle"></i> &nbsp;&nbsp;<hr>
+						</div>
+						<div v-show="reloadError">
+							<hr>&nbsp;&nbsp; 更新失败 <i class="fas fa-exclamation-circle"></i> &nbsp;&nbsp;<hr>
+						</div>
 					</div>
-					<div id="reloadSuccess">
-						<hr>&nbsp;&nbsp; 更新成功 <i class="fas fa-check-circle"></i> &nbsp;&nbsp;<hr>
-					</div>
-					<div id="notModified">
-						<hr>&nbsp;&nbsp; 没有更新 <i class="fas fa-minus-circle"></i> &nbsp;&nbsp;<hr>
-					</div>
-					<div id="reloadError">
-						<hr>&nbsp;&nbsp; 更新失败 <i class="fas fa-exclamation-circle"></i> &nbsp;&nbsp;<hr>
-					</div>
-				</div>
+				</transition>
 
 				<!-- 标签页：电影列表 -->
-				<div class="tab-content">
+				<div class="tab-content mt-3">
 					<!-- 全览模式 -->
 					<div class="tab-pane active" id="detailMode">
 						<div class="my-3 p-3 detailCard" v-for="(item, index) in filterFilms" :key="item.id">
@@ -170,7 +174,12 @@
 
 				<!-- 底部分割线 -->
 				<div id="bottomDivider">
-					<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+					<div v-if="filterFilms.length > 0">
+						<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+					</div>
+					<div v-else>
+						<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+					</div>
 				</div>
 
 				<!-- 快捷按钮 -->
