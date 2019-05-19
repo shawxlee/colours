@@ -10,7 +10,7 @@
 		"seriesId": "dbs",
 		"offiName": "Jaws",
 		"country": "美国",
-		"type": "怪物 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "史蒂文·斯皮尔伯格",
 		"star": "罗伊·沙伊德尔 / 罗伯特·肖",
 		"comment": "经典IP，史上第一部票房过亿美元的电影"
@@ -26,7 +26,7 @@
 		"seriesId": "dbs",
 		"offiName": "Jaws 2",
 		"country": "美国",
-		"type": "怪物 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "吉诺特·兹瓦克",
 		"star": "罗伊·沙伊德尔 / 洛兰·加里",
 		"comment": "第二条大白鲨，更大更凶"
@@ -42,7 +42,7 @@
 		"seriesId": "dbs",
 		"offiName": "Jaws 3-D",
 		"country": "美国",
-		"type": "怪物 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "乔·阿尔夫斯",
 		"star": "丹尼斯·奎德 / 贝丝·阿姆斯特朗",
 		"comment": "大白鲨系列第三部，都是套路"
@@ -58,7 +58,7 @@
 		"seriesId": "dbs",
 		"offiName": "Jaws: The Revenge",
 		"country": "美国",
-		"type": "怪物 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "约瑟夫·萨金特",
 		"star": "洛兰·加里 / 兰斯·盖斯特",
 		"comment": "经典大白鲨系列完结篇"
@@ -74,7 +74,7 @@
 		"seriesId": "sry",
 		"offiName": "Piranha",
 		"country": "美国",
-		"type": "怪物 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "乔·丹特",
 		"star": "布拉福德·迪尔曼 / 凯文·麦卡锡",
 		"comment": "密密麻麻尖嘴獠牙的小鱼鱼"
@@ -90,7 +90,7 @@
 		"seriesId": "sry",
 		"offiName": "Piranha Part Two: The Spawning",
 		"country": "美国 / 意大利",
-		"type": "怪物 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "詹姆斯·卡梅隆",
 		"star": "特里西娅·奥尼尔 / 兰斯·亨利克森",
 		"comment": "食人鱼续集，食人鱼中的战斗鱼，詹导处女作"
@@ -106,7 +106,7 @@
 		"seriesId": "sry",
 		"offiName": "Piranha 3-D",
 		"country": "美国",
-		"type": "怪物 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "亚历山大·阿嘉",
 		"star": "史蒂夫·R·麦奎因 / 杰西卡·斯佐尔",
 		"comment": "真·3D，有'血'有'肉'，性感'露骨'，海滩大屠杀很过瘾"
@@ -122,7 +122,7 @@
 		"seriesId": "sry",
 		"offiName": "Piranha 3DD",
 		"country": "美国",
-		"type": "怪物 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "约翰·古拉格",
 		"star": "丹妮尔·帕娜贝克 / 马特·布什",
 		"comment": "食人鱼进化，泳池再屠杀，格局比上一部小了点"
@@ -138,10 +138,10 @@
 		"seriesId": "yx",
 		"offiName": "Alien",
 		"country": "英国 / 美国",
-		"type": "怪物 / 太空 / 探险 / 逃生 / 外星",
+		"type": "变异 / 怪物 / 惊悚 / 太空 / 逃生 / 外星 / 血腥",
 		"director": "雷德利·斯科特",
 		"star": "西格妮·韦弗 / 汤姆·斯凯里特",
-		"comment": "经典IP，外星生物抱脸产卵，爆体繁殖，封闭飞船大逃杀"
+		"comment": "经典IP，x形抱脸虫，x头外星怪，封闭飞船大逃杀"
 	},
 	{
 		"id": 10,
@@ -154,7 +154,7 @@
 		"seriesId": "yx",
 		"offiName": "Aliens",
 		"country": "美国 / 英国",
-		"type": "怪物 / 探险 / 逃生 / 外星",
+		"type": "变异 / 怪物 / 惊悚 / 探险 / 逃生 / 外星 / 血腥",
 		"director": "詹姆斯·卡梅隆",
 		"star": "西格妮·韦弗 / 凯莉·赫恩",
 		"comment": "唯一生还者女主随军方小队重返异形老巢"
@@ -170,7 +170,7 @@
 		"seriesId": "yx",
 		"offiName": "Alien³",
 		"country": "美国",
-		"type": "怪物 / 人性 / 逃生 / 外星",
+		"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 外星 / 血腥",
 		"director": "大卫·芬奇",
 		"star": "西格妮·韦弗 / 查尔斯·达顿",
 		"comment": "与世隔绝的监狱星球，女主与异形斗智斗勇"
@@ -186,7 +186,7 @@
 		"seriesId": "yx",
 		"offiName": "Alien: Resurrection",
 		"country": "美国",
-		"type": "怪物 / 基因 / 逃生 / 外星",
+		"type": "变异 / 怪物 / 基因 / 惊悚 / 逃生 / 外星 / 血腥",
 		"director": "让-皮埃尔·热内",
 		"star": "西格妮·韦弗 / 薇诺娜·瑞德",
 		"comment": "正传完结篇，基因实验造出超强异形人女主，吊打异形"
@@ -202,7 +202,7 @@
 		"seriesId": "yx",
 		"offiName": "AVP: Alien vs. Predator",
 		"country": "美国 / 德国 / 捷克 / 英国",
-		"type": "怪物 / 探险 / 逃生 / 外星",
+		"type": "怪物 / 惊悚 / 探险 / 逃生 / 外星 / 血腥",
 		"director": "保罗·安德森",
 		"star": "桑娜·莱瑟 / 雷欧·波瓦",
 		"comment": "两大IP联动，探险队误入地下未知文明遗迹，不作死就不会死"
@@ -218,7 +218,7 @@
 		"seriesId": "yx",
 		"offiName": "AVPR: Aliens vs Predator - Requiem",
 		"country": "美国",
-		"type": "怪物 / 逃生 / 外星 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 逃生 / 外星 / 血腥 / 灾难",
 		"director": "科林·施特劳斯 / 格雷格·施特劳斯",
 		"star": "史蒂文·帕斯奎尔 / 蕾可·艾尔丝沃斯",
 		"comment": "进化后的铁血异形屠杀小镇大量繁殖，一群人的求生之路"
@@ -234,7 +234,7 @@
 		"seriesId": "yx",
 		"offiName": "Prometheus",
 		"country": "美国 / 英国",
-		"type": "怪物 / 探险 / 逃生 / 外星 / 哲学",
+		"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 外星 / 哲学",
 		"director": "雷德利·斯科特",
 		"star": "劳米·拉佩斯 / 迈克尔·法斯宾德",
 		"comment": "异形前传开启，科考队到外星探寻人类起源，结果玩脱了"
@@ -250,10 +250,10 @@
 		"seriesId": "yx",
 		"offiName": "Alien: Covenant",
 		"country": "美国",
-		"type": "怪物 / 人性 / 逃生 / 外星 / 哲学",
+		"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 外星 / 哲学",
 		"director": "雷德利·斯科特",
 		"star": "迈克尔·法斯宾德 / 凯瑟琳·沃特斯顿",
-		"comment": "前传续集，主题是通过两个仿生人探讨人性，顺便打怪"
+		"comment": "前传续集，通过两个仿生人的对立探讨造物与生命，顺便打打怪"
 	},
 	{
 		"id": 17,
@@ -266,7 +266,7 @@
 		"seriesId": "gx",
 		"offiName": "The Thing",
 		"country": "美国",
-		"type": "变异 / 怪物 / 人性 / 逃生 / 血腥",
+		"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 血腥",
 		"director": "约翰·卡朋特",
 		"star": "库尔特·拉塞尔 / 威尔福德·布利姆雷",
 		"comment": "造型变态且逼真，未知生物同化人类，集体恐慌与信任危机"
@@ -282,7 +282,7 @@
 		"seriesId": "gx",
 		"offiName": "The Thing",
 		"country": "美国 / 加拿大",
-		"type": "变异 / 怪物 / 人性 / 逃生 / 血腥",
+		"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 血腥",
 		"director": "小马斯希斯·范·哈金尼根",
 		"star": "玛丽·伊丽莎白·温斯特德 / 乔尔·埃哲顿",
 		"comment": "无缝衔接怪形，交代前因，另一场集体恐慌与信任危机"
@@ -298,7 +298,7 @@
 		"seriesId": "mgj",
 		"offiName": "A Nightmare On Elm Street",
 		"country": "美国",
-		"type": "鬼魂 / 逃生 / 血腥",
+		"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
 		"director": "韦斯·克雷文",
 		"star": "希瑟·兰根坎普 / 罗伯特·英格兰德",
 		"comment": "经典IP，梦中杀人狂Freddy，德普处女作，女主超美"
@@ -314,7 +314,7 @@
 		"seriesId": "mgj",
 		"offiName": "A Nightmare on Elm Street 2: Freddy's Revenge",
 		"country": "美国",
-		"type": "鬼魂 / 逃生 / 血腥",
+		"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
 		"director": "杰克·舒德",
 		"star": "马克·帕顿 / 肯·迈尔斯",
 		"comment": "新的一家搬进了这座房子，噩梦又开始了，这部有点给里给气"
@@ -330,7 +330,7 @@
 		"seriesId": "mgj",
 		"offiName": "A Nightmare On Elm Street 3: Dream Warriors",
 		"country": "美国",
-		"type": "鬼魂 / 逃生 / 血腥",
+		"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
 		"director": "查克·拉塞尔",
 		"star": "希瑟·兰根坎普 / 克雷格·沃森",
 		"comment": "Nancy回归，做噩梦的孩子们被关在医院，一起战斗吧"
@@ -346,7 +346,7 @@
 		"seriesId": "mgj",
 		"offiName": "A Nightmare On Elm Street 4: The Dream Master",
 		"country": "美国",
-		"type": "鬼魂 / 逃生 / 血腥",
+		"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
 		"director": "雷尼·哈林",
 		"star": "John Beckman / Kisha Brackel",
 		"comment": "生还者们再次陷入噩梦，这部最重口，人变蟑螂什么的"
@@ -362,7 +362,7 @@
 		"seriesId": "mgj",
 		"offiName": "A Nightmare On Elm Street: The Dream Child",
 		"country": "美国",
-		"type": "鬼魂 / 逃生 / 血腥",
+		"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
 		"director": "斯蒂芬·霍普金斯",
 		"star": "罗伯特·英格兰德 / Lisa Wilcox",
 		"comment": "主要交代了Freddy的身世，他妈终于来收他了"
@@ -378,7 +378,7 @@
 		"seriesId": "mgj",
 		"offiName": "Freddy's Dead: The Final Nightmare",
 		"country": "美国",
-		"type": "鬼魂 / 逃生 / 血腥",
+		"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
 		"director": "瑞秋·塔拉蕾",
 		"star": "罗伯特·英格兰德 / 丽萨·赞恩",
 		"comment": "榆树街的孩子被杀光了，Freddy竟然有一个女儿"
@@ -394,7 +394,7 @@
 		"seriesId": "mgj",
 		"offiName": "New Nightmare",
 		"country": "美国",
-		"type": "鬼魂 / 逃生 / 血腥",
+		"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
 		"director": "韦斯·克雷文",
 		"star": "杰夫·戴维斯 / 希瑟·兰根坎普",
 		"comment": "猛鬼街系列完结篇，Nancy再回归，在电影里演电影"
@@ -426,7 +426,7 @@
 		"seriesId": "zlj",
 		"offiName": "Jurassic Park",
 		"country": "美国",
-		"type": "怪物 / 基因 / 探险 / 逃生",
+		"type": "怪物 / 基因 / 惊悚 / 探险 / 逃生",
 		"director": "史蒂文·斯皮尔伯格",
 		"star": "山姆·尼尔 / 劳拉·邓恩",
 		"comment": "经典IP，第一次了解恐龙就是从这里开始的"
@@ -442,7 +442,7 @@
 		"seriesId": "zlj",
 		"offiName": "The Lost World: Jurassic Park",
 		"country": "美国",
-		"type": "怪物 / 探险 / 逃生",
+		"type": "怪物 / 惊悚 / 探险 / 逃生",
 		"director": "史蒂文·斯皮尔伯格",
 		"star": "杰夫·高布伦 / 朱丽安·摩尔",
 		"comment": "重返恐龙岛，利欲熏心使人作死"
@@ -458,7 +458,7 @@
 		"seriesId": "zlj",
 		"offiName": "Jurassic Park III",
 		"country": "美国",
-		"type": "怪物 / 探险 / 逃生",
+		"type": "怪物 / 惊悚 / 探险 / 逃生",
 		"director": "乔·庄斯顿",
 		"star": "山姆·尼尔 / 威廉姆·H·梅西",
 		"comment": "为了救一个小男孩，男主又被骗回岛，没想到小男孩才是挂比"
@@ -474,7 +474,7 @@
 		"seriesId": "zlj",
 		"offiName": "Jurassic World",
 		"country": "美国 / 中国大陆",
-		"type": "怪物 / 基因 / 逃生 / 灾难",
+		"type": "怪物 / 基因 / 惊悚 / 逃生 / 灾难",
 		"director": "科林·特雷沃罗",
 		"star": "克里斯·帕拉特 / 布莱丝·达拉斯·霍华德",
 		"comment": "膨胀了，开始驯养恐龙了，终极BOSS沧龙帅得一比"
@@ -490,7 +490,7 @@
 		"seriesId": "zlj",
 		"offiName": "Jurassic World: Fallen Kingdom",
 		"country": "美国 / 西班牙",
-		"type": "怪物 / 基因 / 人性 / 逃生",
+		"type": "怪物 / 基因 / 惊悚 / 人性 / 探险 / 逃生",
 		"director": "胡安·安东尼奥·巴亚纳",
 		"star": "克里斯·帕拉特 / 布莱丝·达拉斯·霍华德",
 		"comment": "悲鸣的长颈龙入选年度最催泪画面，小女孩人设巧妙，格局变小了"
@@ -506,7 +506,7 @@
 		"seriesId": "12zhz",
 		"offiName": "Twelve Monkeys",
 		"country": "美国",
-		"type": "病毒 / 穿越 / 末日 / 烧脑 / 罪案",
+		"type": "病毒 / 穿越 / 末日 / 烧脑 / 哲学 / 罪案",
 		"director": "特瑞·吉列姆",
 		"star": "布鲁斯·威利斯 / 布拉德·皮特",
 		"comment": "时间是一个逃不出的圆，因果循环，起点即是终点"
@@ -522,10 +522,10 @@
 		"seriesId": "qzz",
 		"offiName": "Se7en",
 		"country": "美国",
-		"type": "人性 / 哲学 / 致郁 / 罪案",
+		"type": "惊悚 / 人性 / 致郁 / 宗教 / 罪案",
 		"director": "大卫·芬奇",
 		"star": "摩根·弗里曼 / 布拉德·皮特",
-		"comment": "浓厚宗教色彩，七宗罪是对人性的警示，结局令人唏嘘"
+		"comment": "凶手以天主教的七宗罪为手法作案，结局令人唏嘘"
 	},
 	{
 		"id": 33,
@@ -538,7 +538,7 @@
 		"seriesId": "ygz",
 		"offiName": "Jumanji",
 		"country": "美国",
-		"type": "穿越 / 奇幻 / 探险",
+		"type": "穿越 / 奇幻 / 探险 / 无限",
 		"director": "乔·庄斯顿",
 		"star": "罗宾·威廉姆斯 / 乔纳森·海德",
 		"comment": "经典IP，小男孩绞进旋涡的画面是我的童年阴影了"
@@ -554,7 +554,7 @@
 		"seriesId": "ygz",
 		"offiName": "Zathura: A Space Adventure",
 		"country": "美国",
-		"type": "穿越 / 奇幻 / 太空",
+		"type": "穿越 / 奇幻 / 太空 / 无限",
 		"director": "乔恩·费儒",
 		"star": "乔纳·波波 / 乔什·哈切森",
 		"comment": "我的太空恐惧症就源自这部电影，宇宙漂泊细思极恐"
@@ -573,7 +573,7 @@
 		"type": "穿越 / 奇幻 / 探险",
 		"director": "杰克·卡斯丹",
 		"star": "道恩·强森 / 凯文·哈特",
-		"comment": "将棋盘游戏换成电子游戏，内容更丰富了，剧情比较平淡"
+		"comment": "不下棋了，玩剧情流真人游戏，失去了无限流的乐趣"
 	},
 	{
 		"id": 36,
@@ -618,7 +618,7 @@
 		"seriesId": "kmzz",
 		"offiName": "Anaconda",
 		"country": "巴西 / 美国 / 秘鲁",
-		"type": "怪物 / 人性 / 探险 / 逃生",
+		"type": "怪物 / 惊悚 / 探险 / 逃生",
 		"director": "路易斯·罗沙",
 		"star": "詹妮弗·洛佩兹 / 艾斯·库珀",
 		"comment": "经典IP，虽然我对蛇无感，但对亚马逊雨林产生了阴影"
@@ -634,7 +634,7 @@
 		"seriesId": "kmzz",
 		"offiName": "Anacondas: The Hunt for the Blood Orchid",
 		"country": "美国",
-		"type": "怪物 / 人性 / 探险 / 逃生",
+		"type": "怪物 / 惊悚 / 探险 / 逃生",
 		"director": "德怀特·H·里特",
 		"star": "约翰尼·梅辛纳 / 卡迪·斯特瑞兰德",
 		"comment": "满背的蚂蟥和交缠翻滚的蛇群可谓密恐福利"
@@ -650,7 +650,7 @@
 		"seriesId": "kmzz",
 		"offiName": "Anaconda III",
 		"country": "美国 / 罗马尼亚",
-		"type": "怪物 / 逃生 / 血腥",
+		"type": "怪物 / 惊悚 / 逃生 / 血腥",
 		"director": "唐·方李洛伊",
 		"star": "克里斯托·艾伦 / 大卫·哈塞尔霍夫",
 		"comment": "出了亚马逊继续作死，搞科研做实验什么的最危险了"
@@ -666,7 +666,7 @@
 		"seriesId": "kmzz",
 		"offiName": "Anaconda 4: Trail of Blood",
 		"country": "罗马尼亚 / 美国",
-		"type": "怪物 / 探险 / 逃生",
+		"type": "怪物 / 惊悚 / 探险 / 逃生",
 		"director": "唐·方李洛伊",
 		"star": "克莉丝朵·艾伦，约翰·拉里斯-大卫",
 		"comment": "送外卖的人前赴后继"
@@ -682,7 +682,7 @@
 		"seriesId": "bzdna",
 		"offiName": "Mimic",
 		"country": "美国",
-		"type": "怪物 / 基因 / 探险 / 逃生",
+		"type": "变异 / 怪物 / 基因 / 惊悚 / 探险 / 逃生",
 		"director": "吉尔莫·德尔·托罗",
 		"star": "米拉·索维诺 / 杰瑞米·诺森",
 		"comment": "意外的好看，伪装成人的大蟑螂，又恶心又刺激"
@@ -698,7 +698,7 @@
 		"seriesId": "bzdna",
 		"offiName": "Mimic 2",
 		"country": "美国",
-		"type": "怪物 / 逃生",
+		"type": "变异 / 怪物 / 基因 / 惊悚 / 逃生",
 		"director": "让·德·塞贡扎克",
 		"star": "阿里克斯·库拉姆乔伊 / 布鲁诺·坎波斯",
 		"comment": "打不死的小强又回来了，这次进化得更像人了"
@@ -714,7 +714,7 @@
 		"seriesId": "bzdna",
 		"offiName": "Mimic: Sentinel",
 		"country": "美国",
-		"type": "怪物",
+		"type": "怪物 / 惊悚",
 		"director": "J.T. Petty",
 		"star": "Karl Geary / 约翰.卡普洛斯",
 		"comment": "大部分时间都是男主在暗中观察，最后怪物才出现"
@@ -730,7 +730,7 @@
 		"seriesId": "ycysz",
 		"offiName": "Cube",
 		"country": "加拿大",
-		"type": "理论 / 人性 / 烧脑 / 逃生 / 血腥",
+		"type": "惊悚 / 人性 / 烧脑 / 逃生 / 无限 / 血腥",
 		"director": "文森佐·纳塔利",
 		"star": "妮可·德波儿 / 大卫·休莱特",
 		"comment": "经典IP，密室逃脱，杀戮游戏，人性考验，血腥刺激"
@@ -746,7 +746,7 @@
 		"seriesId": "ycysz",
 		"offiName": "Cube 2: Hypercube",
 		"country": "加拿大",
-		"type": "理论 / 人性 / 烧脑 / 逃生 / 血腥",
+		"type": "惊悚 / 人性 / 烧脑 / 逃生 / 无限 / 血腥",
 		"director": "安德列·塞库拉",
 		"star": "卡瑞·玛切特 / 格兰特·维恩·戴维斯",
 		"comment": "立方升级，四维空间，杀人花样更多更高端"
@@ -762,7 +762,7 @@
 		"seriesId": "ycysz",
 		"offiName": "Cube Zero",
 		"country": "加拿大",
-		"type": "理论 / 人性 / 烧脑 / 逃生 / 血腥",
+		"type": "惊悚 / 人性 / 烧脑 / 逃生 / 无限 / 血腥",
 		"director": "厄尼·巴巴拉什",
 		"star": "扎卡里·贝内特 / David Huband",
 		"comment": "终于有立方外面的情节了，居然有监控实时直播"
@@ -781,7 +781,7 @@
 		"type": "基因 / 人性 / 未来 / 哲学 / 罪案",
 		"director": "安德鲁·尼科尔",
 		"star": "伊桑·霍克 / 乌玛·瑟曼",
-		"comment": "未来科幻神作，当基因决定一切，该如何改变命运"
+		"comment": "未来科幻神作，当基因决定一切，命运该如何更改"
 	},
 	{
 		"id": 48,
@@ -826,10 +826,10 @@
 		"seriesId": "xhzd",
 		"offiName": "Starship Troopers 3: Marauder",
 		"country": "美国",
-		"type": "怪物 / 人性 / 外星 / 血腥 / 战争",
+		"type": "怪物 / 外星 / 血腥 / 战争 / 宗教",
 		"director": "爱德华·纽梅尔",
 		"star": "卡斯帕·凡·迪恩 / 乔琳纳·布拉洛克",
-		"comment": "这部有点宗教意味，还有阴谋论，最后的巨虫+机甲挺混搭的"
+		"comment": "传教令人稍感不适，阴谋论，最后的巨虫+机甲挺混搭的"
 	},
 	{
 		"id": 51,
@@ -842,7 +842,7 @@
 		"seriesId": "jdsh",
 		"offiName": "Deep Rising",
 		"country": "美国 / 加拿大",
-		"type": "怪物 / 人性 / 逃生 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "斯蒂芬·索莫斯",
 		"star": "特里特·威廉斯 / 法米克·詹森",
 		"comment": "大章鱼触手play，把人拖进马桶的画面是童年阴影之一了"
@@ -858,7 +858,7 @@
 		"seriesId": "mny",
 		"offiName": "The Mummy",
 		"country": "美国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "惊悚 / 历史 / 神话 / 探险 / 逃生 / 宗教",
 		"director": "斯蒂芬·索莫斯",
 		"star": "布兰登·费舍 / 蕾切尔·薇兹",
 		"comment": "经典大白鲨系列~"
@@ -874,7 +874,7 @@
 		"seriesId": "mny",
 		"offiName": "The Mummy Returns",
 		"country": "美国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "惊悚 / 历史 / 神话 / 探险 / 逃生 / 宗教",
 		"director": "斯蒂芬·索莫斯",
 		"star": "布兰登·费舍 / 蕾切尔·薇兹",
 		"comment": "经典大白鲨系列~"
@@ -890,7 +890,7 @@
 		"seriesId": "mny",
 		"offiName": "The Mummy: Tomb of the Dragon Emperor",
 		"country": "美国 / 德国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "神话 / 探险",
 		"director": "罗伯·科恩",
 		"star": "布兰登·费舍 / 李连杰",
 		"comment": "经典大白鲨系列~"
@@ -906,7 +906,7 @@
 		"seriesId": "lfmy",
 		"offiName": "Belphégor - Le fantôme du Louvre",
 		"country": "法国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "惊悚 / 魔鬼 / 宗教",
 		"director": "让-保尔·萨罗米",
 		"star": "苏菲·玛索 / 米歇尔·塞罗尔",
 		"comment": "经典大白鲨系列~"
@@ -922,7 +922,7 @@
 		"seriesId": "rgzn",
 		"offiName": "Artificial Intelligence: AI",
 		"country": "美国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "末日 / 奇幻 / 人性 / 未来 / 哲学 / 致郁",
 		"director": "史蒂文·斯皮尔伯格",
 		"star": "海利·乔·奥斯蒙 / 弗兰西丝·奥康纳",
 		"comment": "经典大白鲨系列~"
@@ -938,7 +938,7 @@
 		"seriesId": "jxsrz",
 		"offiName": "Jeepers Creepers",
 		"country": "美国 / 德国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 逃生 / 血腥",
 		"director": "维克多·萨尔瓦",
 		"star": "吉娜·菲利普斯 / 贾斯汀·朗",
 		"comment": "经典大白鲨系列~"
@@ -954,7 +954,7 @@
 		"seriesId": "jxsrz",
 		"offiName": "Jeepers Creepers 2",
 		"country": "美国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 逃生 / 血腥",
 		"director": "维克多·萨尔瓦",
 		"star": "乔纳森·布瑞克 / 妮基·艾考克斯",
 		"comment": "经典大白鲨系列~"
@@ -970,7 +970,7 @@
 		"seriesId": "jxsrz",
 		"offiName": "Jeepers Creepers 3: Cathedral",
 		"country": "美国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "怪物 / 惊悚 / 逃生 / 血腥",
 		"director": "维克多·萨尔瓦",
 		"star": "梅格·福斯特 / 吉娜·菲利普斯",
 		"comment": "经典大白鲨系列~"
@@ -986,7 +986,7 @@
 		"seriesId": "shwj",
 		"offiName": "Resident Evil",
 		"country": "英国 / 德国 / 法国 / 美国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "变异 / 病毒 / 惊悚 / 丧尸 / 探险 / 逃生 / 血腥",
 		"director": "保罗·安德森",
 		"star": "米拉·乔沃维奇 / 米歇尔·罗德里格兹",
 		"comment": "经典大白鲨系列~"
@@ -1002,7 +1002,7 @@
 		"seriesId": "shwj",
 		"offiName": "Resident Evil: Apocalypse",
 		"country": "英国 / 加拿大",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "变异 / 病毒 / 惊悚 / 丧尸 / 逃生 / 血腥 / 灾难",
 		"director": "亚历山大·维特",
 		"star": "米拉·乔沃维奇 / 西耶娜·盖尔利",
 		"comment": "经典大白鲨系列~"
@@ -1018,7 +1018,7 @@
 		"seriesId": "shwj",
 		"offiName": "Resident Evil: Extinction",
 		"country": "美国 / 法国 / 澳大利亚 / 德国 / 英国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "变异 / 惊悚 / 末日 / 人性 / 丧尸 / 逃生 / 血腥",
 		"director": "拉塞尔·穆卡希",
 		"star": "米拉·乔沃维奇 / 奥德·菲尔",
 		"comment": "经典大白鲨系列~"
@@ -1034,7 +1034,7 @@
 		"seriesId": "shwj",
 		"offiName": "Resident Evil: Afterlife",
 		"country": "德国 / 法国 / 美国 / 加拿大",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "病毒 / 惊悚 / 末日 / 人性 / 丧尸 / 逃生 / 血腥",
 		"director": "保罗·安德森",
 		"star": "米拉·乔沃维奇 / 艾丽·拉特",
 		"comment": "经典大白鲨系列~"
@@ -1050,7 +1050,7 @@
 		"seriesId": "shwj",
 		"offiName": "Resident Evil: Retribution",
 		"country": "德国 / 加拿大 / 美国 / 法国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "惊悚 / 末日 / 人性 / 丧尸 / 探险 / 逃生 / 血腥",
 		"director": "保罗·安德森",
 		"star": "米拉·乔沃维奇 / 米歇尔·罗德里格兹",
 		"comment": "经典大白鲨系列~"
@@ -1066,7 +1066,7 @@
 		"seriesId": "shwj",
 		"offiName": "Resident Evil: The Final Chapter",
 		"country": "美国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "病毒 / 惊悚 / 人性 / 丧尸 / 探险 / 血腥 / 哲学",
 		"director": "保罗·安德森",
 		"star": "米拉·乔沃维奇 / 伊恩·格雷",
 		"comment": "经典大白鲨系列~"
@@ -1082,7 +1082,7 @@
 		"seriesId": "sspbg",
 		"offiName": "Minority Report",
 		"country": "美国",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "人性 / 烧脑 / 未来 / 哲学 / 罪案",
 		"director": "史蒂文·斯皮尔伯格",
 		"star": "汤姆·克鲁斯 / 科林·法瑞尔",
 		"comment": "经典大白鲨系列~"
@@ -1098,7 +1098,7 @@
 		"seriesId": "bjg",
 		"offiName": "Eight Legged Freaks",
 		"country": "美国 / 澳大利亚",
-		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"type": "变异 / 怪物 / 惊悚 / 逃生 / 灾难",
 		"director": "埃洛瑞·埃卡伊姆",
 		"star": "大卫·阿奎特 / 卡瑞·伍尔",
 		"comment": "经典大白鲨系列~"
@@ -2589,6 +2589,22 @@
 		"type": "怪物 / 惊险 / 血腥 / 灾难",
 		"director": "三池崇史",
 		"star": "福士苍汰 / 山崎纮菜",
+		"comment": "经典大白鲨系列~"
+	},
+	{
+		"id": 159,
+		"doubanUrl": "https://movie.douban.com/subject/10463953/",
+		"posterUrl": "./images/模仿游戏.webp",
+		"score": "8.6",
+		"transName": "模仿游戏",
+		"year": "2014",
+		"hasSeries": false,
+		"seriesId": "mfyx",
+		"offiName": "The Imitation Game",
+		"country": "英国 / 美国",
+		"type": "怪物 / 惊险 / 血腥 / 灾难",
+		"director": "莫滕·泰杜姆",
+		"star": "本尼迪克特·康伯巴奇 / 凯拉·奈特莉",
 		"comment": "经典大白鲨系列~"
 	},
 	{
