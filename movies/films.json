@@ -13,7 +13,7 @@
 		"type": "怪物 / 惊悚 / 血腥 / 灾难",
 		"director": "史蒂文·斯皮尔伯格",
 		"star": "罗伊·沙伊德尔 / 罗伯特·肖",
-		"comment": "经典IP，史上第一部票房过亿美元的电影，怪兽类型启蒙"
+		"comment": "经典IP，史上第一部票房过亿美元的电影"
 	},
 	{
 		"id": 2,
@@ -512,7 +512,7 @@
 		"comment": "时间是一个逃不出的圆，因果循环，起点即是终点"
 	},
 	{
-		"id": 32,
+		"id": 33,
 		"doubanUrl": "https://movie.douban.com/subject/1292223/",
 		"posterUrl": "./images/七宗罪.webp",
 		"score": "8.8",
@@ -528,7 +528,7 @@
 		"comment": "凶手以天主教的七宗罪为手法作案，结局令人唏嘘"
 	},
 	{
-		"id": 33,
+		"id": 34,
 		"doubanUrl": "https://movie.douban.com/subject/1294990/",
 		"posterUrl": "./images/勇敢者的游戏.webp",
 		"score": "8.1",
@@ -544,7 +544,7 @@
 		"comment": "经典IP，小男孩绞进旋涡的画面是我的童年阴影了"
 	},
 	{
-		"id": 34,
+		"id": 35,
 		"doubanUrl": "https://movie.douban.com/subject/1370276/",
 		"posterUrl": "./images/勇敢者的游戏：宇宙历险.webp",
 		"score": "6.7",
@@ -560,7 +560,7 @@
 		"comment": "我的太空恐惧症就源自这部电影，宇宙漂泊细思极恐"
 	},
 	{
-		"id": 35,
+		"id": 36,
 		"doubanUrl": "https://movie.douban.com/subject/26586766/",
 		"posterUrl": "./images/勇敢者游戏：决战丛林.webp",
 		"score": "6.9",
@@ -576,7 +576,7 @@
 		"comment": "不下棋了，玩剧情流真人游戏，失去了无限流的乐趣"
 	},
 	{
-		"id": 36,
+		"id": 37,
 		"doubanUrl": "https://movie.douban.com/subject/1293013/",
 		"posterUrl": "./images/独立日.webp",
 		"score": "8.0",
@@ -592,7 +592,7 @@
 		"comment": "外星人要入侵地球啦，美国人把国庆日变成世界纪念日啦"
 	},
 	{
-		"id": 37,
+		"id": 38,
 		"doubanUrl": "https://movie.douban.com/subject/4811813/",
 		"posterUrl": "./images/独立日：卷土重来.webp",
 		"score": "5.6",
@@ -608,7 +608,7 @@
 		"comment": "外星人又要入侵地球啦，美国人……算了这部随便看看吧"
 	},
 	{
-		"id": 38,
+		"id": 39,
 		"doubanUrl": "https://movie.douban.com/subject/1300830/",
 		"posterUrl": "./images/狂蟒之灾.webp",
 		"score": "6.6",
@@ -624,7 +624,7 @@
 		"comment": "经典IP，虽然我对蛇无感，但对亚马逊雨林产生了阴影"
 	},
 	{
-		"id": 39,
+		"id": 40,
 		"doubanUrl": "https://movie.douban.com/subject/1308784/",
 		"posterUrl": "./images/狂蟒之灾2：搜寻血兰.webp",
 		"score": "6.3",
@@ -640,7 +640,7 @@
 		"comment": "满背的蚂蟥和交缠翻滚的蛇群可谓密恐福利"
 	},
 	{
-		"id": 40,
+		"id": 41,
 		"doubanUrl": "https://movie.douban.com/subject/3160325/",
 		"posterUrl": "./images/狂蟒之灾3.webp",
 		"score": "4.9",
@@ -656,7 +656,7 @@
 		"comment": "出了亚马逊继续作死，搞科研做实验什么的最危险了"
 	},
 	{
-		"id": 41,
+		"id": 42,
 		"doubanUrl": "https://movie.douban.com/subject/3011606/",
 		"posterUrl": "./images/狂蟒之灾4：血路斑驳.webp",
 		"score": "4.4",
@@ -672,7 +672,7 @@
 		"comment": "送外卖的人前赴后继"
 	},
 	{
-		"id": 42,
+		"id": 43,
 		"doubanUrl": "https://movie.douban.com/subject/1294276/",
 		"posterUrl": "./images/变种DNA.webp",
 		"score": "6.4",
@@ -688,7 +688,7 @@
 		"comment": "意外的好看，伪装成人的大蟑螂，又恶心又刺激"
 	},
 	{
-		"id": 43,
+		"id": 44,
 		"doubanUrl": "https://movie.douban.com/subject/1422986/",
 		"posterUrl": "./images/变种DNA 2.webp",
 		"score": "5.7",
@@ -704,7 +704,7 @@
 		"comment": "打不死的小强又回来了，这次进化得更像人了"
 	},
 	{
-		"id": 44,
+		"id": 45,
 		"doubanUrl": "https://movie.douban.com/subject/1422987/",
 		"posterUrl": "./images/变种DNA：哨兵.webp",
 		"score": "4.6",
@@ -720,7 +720,7 @@
 		"comment": "大部分时间都是男主在暗中观察，最后怪物才出现"
 	},
 	{
-		"id": 45,
+		"id": 46,
 		"doubanUrl": "https://movie.douban.com/subject/1305903/",
 		"posterUrl": "./images/异次元杀阵.webp",
 		"score": "7.9",
@@ -736,7 +736,7 @@
 		"comment": "经典IP，密室逃脱，杀戮游戏，人性考验，血腥刺激"
 	},
 	{
-		"id": 46,
+		"id": 47,
 		"doubanUrl": "https://movie.douban.com/subject/1305306/",
 		"posterUrl": "./images/异次元杀阵2：超级立方体.webp",
 		"score": "6.7",
@@ -752,7 +752,7 @@
 		"comment": "立方升级，四维空间，杀人花样更多更高端"
 	},
 	{
-		"id": 46,
+		"id": 48,
 		"doubanUrl": "https://movie.douban.com/subject/1316693/",
 		"posterUrl": "./images/异次元杀阵前传.webp",
 		"score": "7.0",
@@ -768,7 +768,7 @@
 		"comment": "终于有立方外面的情节了，居然有监控实时直播"
 	},
 	{
-		"id": 47,
+		"id": 49,
 		"doubanUrl": "https://movie.douban.com/subject/1300117/",
 		"posterUrl": "./images/千钧一发.webp",
 		"score": "8.7",
@@ -784,7 +784,7 @@
 		"comment": "未来科幻神作，其实无关基因，是梦想令人生有意义"
 	},
 	{
-		"id": 48,
+		"id": 50,
 		"doubanUrl": "https://movie.douban.com/subject/1295384/",
 		"posterUrl": "./images/星河战队.webp",
 		"score": "7.8",
@@ -800,7 +800,7 @@
 		"comment": "经典IP，人类军队大战外星昆虫，战争场面很过瘾，女主超美"
 	},
 	{
-		"id": 49,
+		"id": 51,
 		"doubanUrl": "https://movie.douban.com/subject/1422938/",
 		"posterUrl": "./images/星河战队2：联邦英雄.webp",
 		"score": "5.1",
@@ -816,7 +816,7 @@
 		"comment": "虫族智商又涨了，这次是寄生大脑，杀人诛心"
 	},
 	{
-		"id": 50,
+		"id": 52,
 		"doubanUrl": "https://movie.douban.com/subject/3006123/",
 		"posterUrl": "./images/星河战队3：掠夺者.webp",
 		"score": "5.2",
@@ -832,7 +832,7 @@
 		"comment": "传教令人稍感不适，阴谋论，最后的巨虫+机甲挺混搭的"
 	},
 	{
-		"id": 51,
+		"id": 53,
 		"doubanUrl": "https://movie.douban.com/subject/1293515/",
 		"posterUrl": "./images/极度深寒.webp",
 		"score": "7.4",
@@ -848,7 +848,7 @@
 		"comment": "大章鱼触手play，把人拖进马桶的画面是童年阴影之一了"
 	},
 	{
-		"id": 52,
+		"id": 54,
 		"doubanUrl": "https://movie.douban.com/subject/1295229/",
 		"posterUrl": "./images/木乃伊.webp",
 		"score": "7.8",
@@ -864,7 +864,7 @@
 		"comment": "经典IP，对神秘诡谲的古埃及文化没有抵抗力"
 	},
 	{
-		"id": 53,
+		"id": 55,
 		"doubanUrl": "https://movie.douban.com/subject/1298586/",
 		"posterUrl": "./images/木乃伊归来.webp",
 		"score": "7.4",
@@ -880,7 +880,7 @@
 		"comment": "新的历险，宫殿的闪回很美，还有密密麻麻的甲虫和蝎子"
 	},
 	{
-		"id": 54,
+		"id": 56,
 		"doubanUrl": "https://movie.douban.com/subject/1997679/",
 		"posterUrl": "./images/木乃伊：龙帝之墓.webp",
 		"score": "5.5",
@@ -896,7 +896,7 @@
 		"comment": "木乃伊系列完结篇，看看就行，纯粹瞎编，祖龙都气活了"
 	},
 	{
-		"id": 55,
+		"id": 57,
 		"doubanUrl": "https://movie.douban.com/subject/1297659/",
 		"posterUrl": "./images/卢浮魅影.webp",
 		"score": "6.6",
@@ -912,7 +912,7 @@
 		"comment": "也是木乃伊题材，幽灵附体，苏菲玛索好美，幻觉场景挺带感的"
 	},
 	{
-		"id": 56,
+		"id": 58,
 		"doubanUrl": "https://movie.douban.com/subject/1302827/",
 		"posterUrl": "./images/人工智能.webp",
 		"score": "8.6",
@@ -928,7 +928,7 @@
 		"comment": "未来科幻神作，机器人版木偶奇遇记，感动得一塌糊涂"
 	},
 	{
-		"id": 57,
+		"id": 59,
 		"doubanUrl": "https://movie.douban.com/subject/1306670/",
 		"posterUrl": "./images/惊心食人族.webp",
 		"score": "5.8",
@@ -944,7 +944,7 @@
 		"comment": "作死姐弟误入藏尸基地，被撞不死又会飞的蝙蝠怪一路追杀"
 	},
 	{
-		"id": 58,
+		"id": 60,
 		"doubanUrl": "https://movie.douban.com/subject/1308046/",
 		"posterUrl": "./images/惊心食人族2.webp",
 		"score": "6.3",
@@ -960,7 +960,7 @@
 		"comment": "最精彩的一部，路过校车抛锚，一车学生成为怪物的猎物"
 	},
 	{
-		"id": 59,
+		"id": 61,
 		"doubanUrl": "https://movie.douban.com/subject/2314054/",
 		"posterUrl": "./images/惊心食人族3.webp",
 		"score": "4.3",
@@ -976,7 +976,7 @@
 		"comment": "食人族系列完结篇，第一部女主和第二部老头回归了断蝙蝠怪"
 	},
 	{
-		"id": 60,
+		"id": 62,
 		"doubanUrl": "https://movie.douban.com/subject/1306809/",
 		"posterUrl": "./images/生化危机.webp",
 		"score": "7.9",
@@ -992,7 +992,7 @@
 		"comment": "经典IP，最精彩的一部，剧情视效都很刺激，新手Alice"
 	},
 	{
-		"id": 61,
+		"id": 63,
 		"doubanUrl": "https://movie.douban.com/subject/1308752/",
 		"posterUrl": "./images/生化危机：启示录.webp",
 		"score": "7.7",
@@ -1008,7 +1008,7 @@
 		"comment": "病毒还是泄露了，浣熊市沦陷为丧尸城，进阶Alice"
 	},
 	{
-		"id": 62,
+		"id": 64,
 		"doubanUrl": "https://movie.douban.com/subject/1482911/",
 		"posterUrl": "./images/生化危机：灭绝.webp",
 		"score": "7.2",
@@ -1024,7 +1024,7 @@
 		"comment": "病毒席卷全球，人类末日已至，城市化为荒漠，超能Alice"
 	},
 	{
-		"id": 63,
+		"id": 65,
 		"doubanUrl": "https://movie.douban.com/subject/3041294/",
 		"posterUrl": "./images/生化危机：战神再生.webp",
 		"score": "6.5",
@@ -1040,7 +1040,7 @@
 		"comment": "克隆军团亮相，被注射血清变回普通人的Alice依旧吊炸天"
 	},
 	{
-		"id": 64,
+		"id": 66,
 		"doubanUrl": "https://movie.douban.com/subject/6532822/",
 		"posterUrl": "./images/生化危机：惩罚.webp",
 		"score": "5.9",
@@ -1056,7 +1056,7 @@
 		"comment": "大型打怪通关真人秀，前几部的梗都再来一遍，金刚Alice"
 	},
 	{
-		"id": 65,
+		"id": 67,
 		"doubanUrl": "https://movie.douban.com/subject/20471852/",
 		"posterUrl": "./images/生化危机：终章.webp",
 		"score": "6.5",
@@ -1072,7 +1072,7 @@
 		"comment": "生化危机系列完结篇，真相大白，感慨万千，女神Alice"
 	},
 	{
-		"id": 66,
+		"id": 68,
 		"doubanUrl": "https://movie.douban.com/subject/1297689/",
 		"posterUrl": "./images/少数派报告.webp",
 		"score": "7.8",
@@ -1088,7 +1088,7 @@
 		"comment": "预测犯罪企图，避免犯罪事实，对司法公正的设想与反思"
 	},
 	{
-		"id": 67,
+		"id": 69,
 		"doubanUrl": "https://movie.douban.com/subject/1298602/",
 		"posterUrl": "./images/八脚怪.webp",
 		"score": "6.0",
@@ -1104,7 +1104,7 @@
 		"comment": "变异大蜘蛛们攻击小镇，特效不错，斯嘉丽早期作品"
 	},
 	{
-		"id": 68,
+		"id": 70,
 		"doubanUrl": "https://movie.douban.com/subject/1305046/",
 		"posterUrl": "./images/双瞳.webp",
 		"score": "7.5",
@@ -1120,7 +1120,7 @@
 		"comment": "结合犯罪探案+道教修仙的题材，剖析人生哲学，大开眼界"
 	},
 	{
-		"id": 69,
+		"id": 71,
 		"doubanUrl": "https://movie.douban.com/subject/1306421/",
 		"posterUrl": "./images/惊变28天.webp",
 		"score": "7.1",
@@ -1136,7 +1136,7 @@
 		"comment": "幸存者并非幸运儿，比丧尸更可怕的，是人心"
 	},
 	{
-		"id": 70,
+		"id": 72,
 		"doubanUrl": "https://movie.douban.com/subject/1758487/",
 		"posterUrl": "./images/惊变28周.webp",
 		"score": "6.7",
@@ -1152,7 +1152,7 @@
 		"comment": "以为病毒灭绝了回来重建家园，结果人家还进化了"
 	},
 	{
-		"id": 71,
+		"id": 73,
 		"doubanUrl": "https://movie.douban.com/subject/1300092/",
 		"posterUrl": "./images/地心抢险记.webp",
 		"score": "6.7",
@@ -1168,7 +1168,7 @@
 		"comment": "地核熄火，一队专家坐着钻地潜艇钻进地心拯救地球"
 	},
 	{
-		"id": 72,
+		"id": 74,
 		"doubanUrl": "https://movie.douban.com/subject/1291545/",
 		"posterUrl": "./images/大鱼.webp",
 		"score": "8.8",
@@ -1184,7 +1184,7 @@
 		"comment": "人生太无趣，所以才讲故事；人生太有趣，所以才有故事"
 	},
 	{
-		"id": 73,
+		"id": 75,
 		"doubanUrl": "https://movie.douban.com/subject/1307332/",
 		"posterUrl": "./images/冷山.webp",
 		"score": "8.1",
@@ -1200,7 +1200,7 @@
 		"comment": "回来吧，回到我身边；余生，就当做他仍在回家的路上"
 	},
 	{
-		"id": 74,
+		"id": 76,
 		"doubanUrl": "https://movie.douban.com/subject/1307931/",
 		"posterUrl": "./images/彼得·潘.webp",
 		"score": "8.1",
@@ -1216,7 +1216,7 @@
 		"comment": "所有人都会长大，除了他；颜值爆表，永远为彼得潘心动"
 	},
 	{
-		"id": 75,
+		"id": 77,
 		"doubanUrl": "https://movie.douban.com/subject/1309088/",
 		"posterUrl": "./images/活死人黎明.webp",
 		"score": "7.5",
@@ -1232,7 +1232,7 @@
 		"comment": "最佳庇护所——商场，资源应有尽有，但没人会坐以待毙"
 	},
 	{
-		"id": 76,
+		"id": 78,
 		"doubanUrl": "https://baike.baidu.com/item/%E6%B4%BB%E6%AD%BB%E4%BA%BA%E4%B9%8B%E5%9C%B0/35692",
 		"posterUrl": "./images/活死人之地.jpg",
 		"score": "6.4",
@@ -1248,7 +1248,7 @@
 		"comment": "进化的丧尸攻破人类最后的庇护城，阶级统治要不得"
 	},
 	{
-		"id": 77,
+		"id": 79,
 		"doubanUrl": "https://movie.douban.com/subject/1839849/",
 		"posterUrl": "./images/新活死人之夜.jpg",
 		"score": "4.7",
@@ -1264,7 +1264,7 @@
 		"comment": "主角回乡参加葬礼，结果发现亲朋好友都成了丧尸"
 	},
 	{
-		"id": 78,
+		"id": 80,
 		"doubanUrl": "https://movie.douban.com/subject/1865656/",
 		"posterUrl": "./images/死亡日记.webp",
 		"score": "5.8",
@@ -1280,7 +1280,7 @@
 		"comment": "几个大学生拍电影时丧尸爆发，一路逃亡坚持录像"
 	},
 	{
-		"id": 79,
+		"id": 81,
 		"doubanUrl": "https://movie.douban.com/subject/1871840/",
 		"posterUrl": "./images/新丧尸出笼.webp",
 		"score": "6.4",
@@ -1296,7 +1296,7 @@
 		"comment": "主角团终于是能打的军人了，逃命救人炸BOSS，搞定"
 	},
 	{
-		"id": 80,
+		"id": 82,
 		"doubanUrl": "https://movie.douban.com/subject/1308755/",
 		"posterUrl": "./images/僵尸肖恩.webp",
 		"score": "7.7",
@@ -1312,7 +1312,7 @@
 		"comment": "英伦铁三角成名作，另类丧尸片，黑色幽默，非常有趣"
 	},
 	{
-		"id": 81,
+		"id": 83,
 		"doubanUrl": "https://movie.douban.com/subject/1806555/",
 		"posterUrl": "./images/热血警探.webp",
 		"score": "8.3",
@@ -1328,7 +1328,7 @@
 		"comment": "镜头剪辑教科书，延续搞怪画风，反乌托邦的猎奇故事"
 	},
 	{
-		"id": 82,
+		"id": 84,
 		"doubanUrl": "https://movie.douban.com/subject/3026572/",
 		"posterUrl": "./images/世界尽头.webp",
 		"score": "7.4",
@@ -1344,7 +1344,7 @@
 		"comment": "“血与冰淇淋”三部曲收官之作，各种混搭，脑洞无边"
 	},
 	{
-		"id": 83,
+		"id": 85,
 		"doubanUrl": "https://movie.douban.com/subject/1309136/",
 		"posterUrl": "./images/范海辛.webp",
 		"score": "7.1",
@@ -1360,7 +1360,7 @@
 		"comment": "吸血鬼、科学怪人、猎人、狼人、巨人……中世纪传说集合"
 	},
 	{
-		"id": 84,
+		"id": 86,
 		"doubanUrl": "https://movie.douban.com/subject/1308779/",
 		"posterUrl": "./images/后天.webp",
 		"score": "8.1",
@@ -1376,7 +1376,7 @@
 		"comment": "灾难片的教科书，剧情一般，但视效一流，爽就完事了"
 	},
 	{
-		"id": 85,
+		"id": 87,
 		"doubanUrl": "https://movie.douban.com/subject/1308979/",
 		"posterUrl": "./images/雷蒙·斯尼奇的不幸历险.webp",
 		"score": "7.5",
@@ -1392,7 +1392,7 @@
 		"comment": "哥特风的“童话”故事，剧情荒诞猎奇，片尾设计妙极了"
 	},
 	{
-		"id": 86,
+		"id": 88,
 		"doubanUrl": "https://movie.douban.com/subject/1309021/",
 		"posterUrl": "./images/康斯坦丁.webp",
 		"score": "7.8",
@@ -1408,7 +1408,7 @@
 		"comment": "上不了天堂也下不了地狱的驱魔人的故事，DC大法好"
 	},
 	{
-		"id": 87,
+		"id": 89,
 		"doubanUrl": "https://movie.douban.com/subject/1309184/",
 		"posterUrl": "./images/恐怖蜡像馆.webp",
 		"score": "6.9",
@@ -1424,7 +1424,7 @@
 		"comment": "活人直接做成蜡像，代入一下恐怖至极"
 	},
 	{
-		"id": 88,
+		"id": 90,
 		"doubanUrl": "https://movie.douban.com/subject/1309044/",
 		"posterUrl": "./images/世界之战.webp",
 		"score": "6.5",
@@ -1440,7 +1440,7 @@
 		"comment": "难得平凡的阿汤哥，外星人入侵场面很过瘾，结局意外理中"
 	},
 	{
-		"id": 89,
+		"id": 91,
 		"doubanUrl": "https://movie.douban.com/subject/1437109/",
 		"posterUrl": "./images/黑暗侵袭.webp",
 		"score": "7.6",
@@ -1456,7 +1456,7 @@
 		"comment": "全程紧张，如临其境，恐惧与绝望表现得淋漓尽致"
 	},
 	{
-		"id": 90,
+		"id": 92,
 		"doubanUrl": "https://movie.douban.com/subject/3066083/",
 		"posterUrl": "./images/黑暗侵袭2.webp",
 		"score": "6.7",
@@ -1472,7 +1472,7 @@
 		"comment": "续集交代了怪物的背景，强行让女主失忆重返地狱"
 	},
 	{
-		"id": 91,
+		"id": 93,
 		"doubanUrl": "https://movie.douban.com/subject/1418752/",
 		"posterUrl": "./images/万能钥匙.webp",
 		"score": "7.9",
@@ -1488,7 +1488,7 @@
 		"comment": "两个至理名言：好奇害死猫；信则有不信则无"
 	},
 	{
-		"id": 92,
+		"id": 94,
 		"doubanUrl": "https://movie.douban.com/subject/1309053/",
 		"posterUrl": "./images/格林兄弟.webp",
 		"score": "6.6",
@@ -1504,7 +1504,7 @@
 		"comment": "格林童话串烧，但是走荒诞残酷的黑暗风，会有不适感"
 	},
 	{
-		"id": 93,
+		"id": 95,
 		"doubanUrl": "https://movie.douban.com/subject/1436680/",
 		"posterUrl": "./images/毁灭战士.webp",
 		"score": "6.0",
@@ -1520,7 +1520,7 @@
 		"comment": "武装小队去外星实验基地调查，发现人都变成了怪物"
 	},
 	{
-		"id": 94,
+		"id": 96,
 		"doubanUrl": "https://movie.douban.com/subject/1465415/",
 		"posterUrl": "./images/撕裂人.webp",
 		"score": "6.0",
@@ -1536,7 +1536,7 @@
 		"comment": "非常重口，变异、蠕虫、肉团……怎么恶心怎么来"
 	},
 	{
-		"id": 95,
+		"id": 97,
 		"doubanUrl": "https://movie.douban.com/subject/1466007/",
 		"posterUrl": "./images/寂静岭.webp",
 		"score": "7.6",
@@ -1552,7 +1552,7 @@
 		"comment": "“表世界”与“里世界”，伪善与真恶的具象化，很多隐喻"
 	},
 	{
-		"id": 96,
+		"id": 98,
 		"doubanUrl": "https://movie.douban.com/subject/2117898/",
 		"posterUrl": "./images/寂静岭：启示.webp",
 		"score": "5.6",
@@ -1568,7 +1568,7 @@
 		"comment": "女儿重回寂静岭，揭开真相，与“自己”做一个了断"
 	},
 	{
-		"id": 97,
+		"id": 99,
 		"doubanUrl": "https://movie.douban.com/subject/1329950/",
 		"posterUrl": "./images/达·芬奇密码.webp",
 		"score": "7.3",
@@ -1584,7 +1584,7 @@
 		"comment": "符号学家的解谜游戏，很喜欢这种对传说开脑洞的解读"
 	},
 	{
-		"id": 98,
+		"id": 100,
 		"doubanUrl": "https://movie.douban.com/subject/1927369/",
 		"posterUrl": "./images/天使与魔鬼.webp",
 		"score": "7.3",
@@ -1600,7 +1600,7 @@
 		"comment": "有人说：科学的尽头是哲学，哲学的尽头是神学"
 	},
 	{
-		"id": 99,
+		"id": 101,
 		"doubanUrl": "https://movie.douban.com/subject/24860318/",
 		"posterUrl": "./images/但丁密码.webp",
 		"score": "6.2",
@@ -1616,7 +1616,7 @@
 		"comment": "反派死于话多，阴谋毁于讲究"
 	},
 	{
-		"id": 100,
+		"id": 102,
 		"doubanUrl": "https://movie.douban.com/subject/1778999/",
 		"posterUrl": "./images/鬼域.webp",
 		"score": "6.5",
@@ -1632,7 +1632,7 @@
 		"comment": "女主掉入诡异空间，那里全是被现实遗忘的人事物"
 	},
 	{
-		"id": 101,
+		"id": 103,
 		"doubanUrl": "https://movie.douban.com/subject/1763134/",
 		"posterUrl": "./images/汉江怪物.webp",
 		"score": "7.3",
@@ -1648,7 +1648,7 @@
 		"comment": "与巨型娃娃鱼斗智斗勇，反映人性温暖，讽刺社会麻木"
 	},
 	{
-		"id": 102,
+		"id": 104,
 		"doubanUrl": "https://movie.douban.com/subject/1482080/",
 		"posterUrl": "./images/航班蛇患.webp",
 		"score": "6.1",
@@ -1664,7 +1664,7 @@
 		"comment": "无处可逃的空中蛇灾"
 	},
 	{
-		"id": 103,
+		"id": 105,
 		"doubanUrl": "https://movie.douban.com/subject/1780168/",
 		"posterUrl": "./images/诡丝.webp",
 		"score": "7.0",
@@ -1680,7 +1680,7 @@
 		"comment": "科学捉鬼，真相感人，诡丝其实就是“慈母手中线”啊"
 	},
 	{
-		"id": 104,
+		"id": 106,
 		"doubanUrl": "https://movie.douban.com/subject/1890572/",
 		"posterUrl": "./images/坠入.webp",
 		"score": "8.8",
@@ -1696,7 +1696,7 @@
 		"comment": "谎言与纯真，幻想与希望，故事好美，画面好美，李佩斯好美"
 	},
 	{
-		"id": 105,
+		"id": 107,
 		"doubanUrl": "https://movie.douban.com/subject/1767042/",
 		"posterUrl": "./images/潘神的迷宫.webp",
 		"score": "7.8",
@@ -1712,7 +1712,7 @@
 		"comment": "一边是残酷的现实，一边是美满的童话，你相信哪个结局"
 	},
 	{
-		"id": 105,
+		"id": 108,
 		"doubanUrl": "https://movie.douban.com/subject/1867408/",
 		"posterUrl": "./images/伤城.webp",
 		"score": "6.8",
@@ -1728,7 +1728,7 @@
 		"comment": "世间安得两全法，不负如来不负卿"
 	},
 	{
-		"id": 106,
+		"id": 109,
 		"doubanUrl": "https://movie.douban.com/subject/1860745/",
 		"posterUrl": "./images/仙境之桥.webp",
 		"score": "7.8",
@@ -1744,7 +1744,7 @@
 		"comment": "她出现又离去，如璀璨流星，她教会你成长，请永远相信"
 	},
 	{
-		"id": 106,
+		"id": 110,
 		"doubanUrl": "https://movie.douban.com/subject/1781126/",
 		"posterUrl": "./images/十二宫.webp",
 		"score": "7.3",
@@ -1760,7 +1760,7 @@
 		"comment": "真实案件改编，连环杀手作案前刻意透露线索挑衅警方"
 	},
 	{
-		"id": 107,
+		"id": 111,
 		"doubanUrl": "https://movie.douban.com/subject/2160611/",
 		"posterUrl": "./images/恐怖星球.webp",
 		"score": "7.4",
@@ -1776,7 +1776,7 @@
 		"comment": "剪辑复古，节奏紧凑，剧情硬核，极其重口，慎入"
 	},
 	{
-		"id": 108,
+		"id": 112,
 		"doubanUrl": "https://movie.douban.com/subject/2053665/",
 		"posterUrl": "./images/降头.webp",
 		"score": "6.1",
@@ -1792,7 +1792,7 @@
 		"comment": "对降头术感兴趣可以一看，部分画面令人不适，慎入"
 	},
 	{
-		"id": 109,
+		"id": 113,
 		"doubanUrl": "https://movie.douban.com/subject/1867335/",
 		"posterUrl": "./images/星尘.webp",
 		"score": "7.6",
@@ -1808,7 +1808,7 @@
 		"comment": "“浪漫”一词足矣，片尾曲我当了十年的手机铃声"
 	},
 	{
-		"id": 110,
+		"id": 114,
 		"doubanUrl": "https://movie.douban.com/subject/2263112/",
 		"posterUrl": "./images/C+侦探.webp",
 		"score": "6.6",
@@ -1824,7 +1824,7 @@
 		"comment": "“C+侦探”就是“私家侦探”的粤语谐音，画风比较阴沉"
 	},
 	{
-		"id": 111,
+		"id": 115,
 		"doubanUrl": "https://movie.douban.com/subject/4118060/",
 		"posterUrl": "./images/B+侦探.webp",
 		"score": "5.7",
@@ -1840,7 +1840,7 @@
 		"comment": "有推理过程的演绎，氛围营造到位，越接近真相越紧张"
 	},
 	{
-		"id": 112,
+		"id": 116,
 		"doubanUrl": "https://movie.douban.com/subject/1945330/",
 		"posterUrl": "./images/迷雾.webp",
 		"score": "7.9",
@@ -1856,7 +1856,7 @@
 		"comment": "浓雾危机四伏，各色人等齐困超市，未知恐惧与信仰盲从"
 	},
 	{
-		"id": 113,
+		"id": 117,
 		"doubanUrl": "https://movie.douban.com/subject/2144242/",
 		"posterUrl": "./images/科洛弗档案.webp",
 		"score": "7.3",
@@ -1872,7 +1872,7 @@
 		"comment": "伪DV拍摄手法，代入感强烈，普通人视角中的灾难时刻"
 	},
 	{
-		"id": 114,
+		"id": 118,
 		"doubanUrl": "https://movie.douban.com/subject/2977957/",
 		"posterUrl": "./images/科洛弗道10号.webp",
 		"score": "6.8",
@@ -1888,7 +1888,7 @@
 		"comment": "怪物只出现了几秒，主要讲末世中一处地下室的悬疑经历"
 	},
 	{
-		"id": 115,
+		"id": 119,
 		"doubanUrl": "https://movie.douban.com/subject/21328095/",
 		"posterUrl": "./images/科洛弗悖论.webp",
 		"score": "6.0",
@@ -1904,7 +1904,7 @@
 		"comment": "科洛弗前传，太空能源实验结果打开了平行宇宙的通道"
 	},
 	{
-		"id": 116,
+		"id": 120,
 		"doubanUrl": "https://movie.douban.com/subject/2037833/",
 		"posterUrl": "./images/地心历险记.webp",
 		"score": "6.7",
@@ -1920,7 +1920,7 @@
 		"comment": "凡尔纳小说改编，一家沙雕掉入地心世界的探险经历"
 	},
 	{
-		"id": 117,
+		"id": 121,
 		"doubanUrl": "https://movie.douban.com/subject/3606973/",
 		"posterUrl": "./images/地心历险记2：神秘岛.webp",
 		"score": "6.3",
@@ -1936,7 +1936,7 @@
 		"comment": "沙雕一家踏上神秘岛屿再度探险，特效不错"
 	},
 	{
-		"id": 119,
+		"id": 122,
 		"doubanUrl": "https://movie.douban.com/subject/2354729/",
 		"posterUrl": "./images/先知.webp",
 		"score": "6.7",
@@ -1952,7 +1952,7 @@
 		"comment": "没错，就是你，你就是被主选中的天之骄子"
 	},
 	{
-		"id": 120,
+		"id": 123,
 		"doubanUrl": "https://movie.douban.com/subject/3006772/",
 		"posterUrl": "./images/第九区.webp",
 		"score": "8.2",
@@ -1968,7 +1968,7 @@
 		"comment": "种族歧视者必被歧视反噬，人性的丑陋与美丽并存"
 	},
 	{
-		"id": 121,
+		"id": 124,
 		"doubanUrl": "https://movie.douban.com/subject/3259993/",
 		"posterUrl": "./images/丧尸乐园.webp",
 		"score": "7.3",
@@ -1984,7 +1984,7 @@
 		"comment": "末世生存指南最后一条：生存之余，享受生活"
 	},
 	{
-		"id": 122,
+		"id": 125,
 		"doubanUrl": "https://movie.douban.com/subject/2076181/",
 		"posterUrl": "./images/无姓之人.webp",
 		"score": "8.2",
@@ -2000,7 +2000,7 @@
 		"comment": "未来无数可能，我只选择有你的人生；男女主颜值爆表"
 	},
 	{
-		"id": 123,
+		"id": 126,
 		"doubanUrl": "https://movie.douban.com/subject/3011051/",
 		"posterUrl": "./images/恐怖游轮.webp",
 		"score": "8.4",
@@ -2016,7 +2016,7 @@
 		"comment": "背弃誓言者将永堕地狱"
 	},
 	{
-		"id": 124,
+		"id": 127,
 		"doubanUrl": "https://movie.douban.com/subject/3005875/",
 		"posterUrl": "./images/2012.webp",
 		"score": "7.8",
@@ -2032,7 +2032,7 @@
 		"comment": "特效过瘾，灾难场面够长够足，主角团命真的硬"
 	},
 	{
-		"id": 125,
+		"id": 128,
 		"doubanUrl": "https://movie.douban.com/subject/4082744/",
 		"posterUrl": "./images/阴宅瓦德马尔.webp",
 		"score": "5.5",
@@ -2048,7 +2048,7 @@
 		"comment": "克苏鲁题材代表作之一，上篇，到古宅调查发现阴谋"
 	},
 	{
-		"id": 128,
+		"id": 129,
 		"doubanUrl": "https://movie.douban.com/subject/5905771/",
 		"posterUrl": "./images/阴宅瓦德马尔2.webp",
 		"score": "5.1",
@@ -2064,7 +2064,7 @@
 		"comment": "下篇，克总终于出现了，疯子与模特假人有点吓到"
 	},
 	{
-		"id": 126,
+		"id": 130,
 		"doubanUrl": "https://movie.douban.com/subject/2131654/",
 		"posterUrl": "./images/诸神之战.webp",
 		"score": "6.1",
@@ -2080,7 +2080,7 @@
 		"comment": "希腊神话的英雄珀耳修斯殴打北欧神话的海怪克拉肯的故事"
 	},
 	{
-		"id": 127,
+		"id": 131,
 		"doubanUrl": "https://movie.douban.com/subject/4824515/",
 		"posterUrl": "./images/诸神之怒.webp",
 		"score": "5.9",
@@ -2096,7 +2096,7 @@
 		"comment": "兄弟虐恋，父子情深……不愧是希腊神话，众神本色呢"
 	},
 	{
-		"id": 129,
+		"id": 132,
 		"doubanUrl": "https://movie.douban.com/subject/3813779/",
 		"posterUrl": "./images/剑雨.webp",
 		"score": "7.1",
@@ -2112,7 +2112,7 @@
 		"comment": "刀光剑影的武侠，柴米油盐的爱情"
 	},
 	{
-		"id": 130,
+		"id": 133,
 		"doubanUrl": "https://movie.douban.com/subject/4817901/",
 		"posterUrl": "./images/潜伏.webp",
 		"score": "7.5",
@@ -2128,7 +2128,7 @@
 		"comment": "经典IP，小男孩灵魂出窍时招惹恶灵，欲占据其身体"
 	},
 	{
-		"id": 131,
+		"id": 134,
 		"doubanUrl": "https://movie.douban.com/subject/10485526/",
 		"posterUrl": "./images/潜伏2.webp",
 		"score": "7.9",
@@ -2144,7 +2144,7 @@
 		"comment": "一家人并未摆脱恐惧，未知鬼魂频频作怪，真相竟是……"
 	},
 	{
-		"id": 132,
+		"id": 135,
 		"doubanUrl": "https://movie.douban.com/subject/25728008/",
 		"posterUrl": "./images/潜伏3.webp",
 		"score": "6.2",
@@ -2160,7 +2160,7 @@
 		"comment": "第一部故事的前传，灵媒Elise的另一起惊险迷案"
 	},
 	{
-		"id": 133,
+		"id": 136,
 		"doubanUrl": "https://movie.douban.com/subject/26794994/",
 		"posterUrl": "./images/潜伏：锁命亡灵.webp",
 		"score": "6.1",
@@ -2176,7 +2176,7 @@
 		"comment": "灵媒Elise的个人背景故事，监狱里的锁魂鬼怪"
 	},
 	{
-		"id": 134,
+		"id": 137,
 		"doubanUrl": "https://movie.douban.com/subject/3012819/",
 		"posterUrl": "./images/胡桃夹子：魔境冒险.webp",
 		"score": "6.3",
@@ -2192,7 +2192,7 @@
 		"comment": "德国童话改编，漂亮小孩们的暧昧真令人心动啊"
 	},
 	{
-		"id": 136,
+		"id": 138,
 		"doubanUrl": "https://movie.douban.com/subject/4079117/",
 		"posterUrl": "./images/杀戮都市.webp",
 		"score": "6.6",
@@ -2208,7 +2208,7 @@
 		"comment": "已死之人被神秘机器传送到异空间打怪，千手观音超带感"
 	},
 	{
-		"id": 137,
+		"id": 139,
 		"doubanUrl": "https://movie.douban.com/subject/4079119/",
 		"posterUrl": "./images/杀戮都市：完美答案.webp",
 		"score": "6.5",
@@ -2224,7 +2224,7 @@
 		"comment": "GANTZ快没电了，世界线崩坏，决战将至，结局感人"
 	},
 	{
-		"id": 137,
+		"id": 140,
 		"doubanUrl": "https://movie.douban.com/subject/2999913/",
 		"posterUrl": "./images/保罗.webp",
 		"score": "7.6",
@@ -2240,7 +2240,7 @@
 		"comment": "西蒙聚聚和好基友搭档奉上的一场科幻宅狂欢之旅"
 	},
 	{
-		"id": 138,
+		"id": 141,
 		"doubanUrl": "https://movie.douban.com/subject/3262050/",
 		"posterUrl": "./images/美少女特攻队.webp",
 		"score": "6.1",
@@ -2256,7 +2256,7 @@
 		"comment": "无限流，花式制服play，悲惨现实前的一场颅内高潮"
 	},
 	{
-		"id": 138,
+		"id": 142,
 		"doubanUrl": "https://movie.douban.com/subject/3131599/",
 		"posterUrl": "./images/惊天战神.webp",
 		"score": "5.7",
@@ -2272,7 +2272,7 @@
 		"comment": "当年在电影院看得我心惊胆战，视效音效都很“硬核”"
 	},
 	{
-		"id": 139,
+		"id": 143,
 		"doubanUrl": "https://movie.douban.com/subject/6078003/",
 		"posterUrl": "./images/柳如是.webp",
 		"score": "7.1",
@@ -2288,7 +2288,7 @@
 		"comment": "我见青山多妩媚，料青山见我应如是"
 	},
 	{
-		"id": 140,
+		"id": 144,
 		"doubanUrl": "https://movie.douban.com/subject/3143676/",
 		"posterUrl": "./images/林中小屋.webp",
 		"score": "7.5",
@@ -2304,7 +2304,7 @@
 		"comment": "经典怪物角色大杂烩，对恐怖片商业流水线的讽刺"
 	},
 	{
-		"id": 141,
+		"id": 145,
 		"doubanUrl": "https://movie.douban.com/subject/6839145/",
 		"posterUrl": "./images/铁线虫入侵.webp",
 		"score": "6.7",
@@ -2320,7 +2320,7 @@
 		"comment": "依然是表现小人物在灾难面前的无力+讽刺政府"
 	},
 	{
-		"id": 142,
+		"id": 146,
 		"doubanUrl": "https://movie.douban.com/subject/4832825/",
 		"posterUrl": "./images/海啸奇迹.webp",
 		"score": "7.6",
@@ -2336,7 +2336,7 @@
 		"comment": "2004印度洋海啸真实事件改编，爱能战胜一切艰险"
 	},
 	{
-		"id": 143,
+		"id": 147,
 		"doubanUrl": "https://movie.douban.com/subject/19976260/",
 		"posterUrl": "./images/末日浩劫.webp",
 		"score": "5.7",
@@ -2352,7 +2352,7 @@
 		"comment": "“见光死”病毒爆发，蜷缩于建筑内的人类末世……"
 	},
 	{
-		"id": 144,
+		"id": 148,
 		"doubanUrl": "https://movie.douban.com/subject/2132473/",
 		"posterUrl": "./images/僵尸世界大战.webp",
 		"score": "7.4",
@@ -2368,7 +2368,7 @@
 		"comment": "最具人文关怀丧尸，弱者反而得生，大场面够本"
 	},
 	{
-		"id": 145,
+		"id": 149,
 		"doubanUrl": "https://movie.douban.com/subject/3804629/",
 		"posterUrl": "./images/招魂.webp",
 		"score": "7.8",
@@ -2384,7 +2384,7 @@
 		"comment": "经典IP，闹鬼玩偶安娜贝尔事件，阴森紧张的气氛绝了"
 	},
 	{
-		"id": 146,
+		"id": 150,
 		"doubanUrl": "https://movie.douban.com/subject/24860563/",
 		"posterUrl": "./images/招魂2.webp",
 		"score": "7.7",
@@ -2400,7 +2400,7 @@
 		"comment": "驱魔夫妻介入新案件，却不能证明灵异事件的真实性"
 	},
 	{
-		"id": 147,
+		"id": 151,
 		"doubanUrl": "https://movie.douban.com/subject/3793783/",
 		"posterUrl": "./images/地心引力.webp",
 		"score": "7.8",
@@ -2416,7 +2416,7 @@
 		"comment": "黑暗无声的浩瀚宇宙，渺小孤独的绝境求生"
 	},
 	{
-		"id": 148,
+		"id": 152,
 		"doubanUrl": "https://movie.douban.com/subject/10432911/",
 		"posterUrl": "./images/流感.webp",
 		"score": "7.9",
@@ -2432,7 +2432,7 @@
 		"comment": "韩影从不吝惜过度渲染的人性狗血与触目惊心的骇人场景"
 	},
 	{
-		"id": 149,
+		"id": 153,
 		"doubanUrl": "https://movie.douban.com/subject/25807345/",
 		"posterUrl": "./images/彗星来的那一夜.webp",
 		"score": "8.5",
@@ -2448,7 +2448,7 @@
 		"comment": "小成本大学问，看完此片将导致头脑风暴一整晚"
 	},
 	{
-		"id": 150,
+		"id": 154,
 		"doubanUrl": "https://movie.douban.com/subject/5323957/",
 		"posterUrl": "./images/安德的游戏.webp",
 		"score": "6.9",
@@ -2464,7 +2464,7 @@
 		"comment": "这不是游戏，这是战争"
 	},
 	{
-		"id": 151,
+		"id": 155,
 		"doubanUrl": "https://movie.douban.com/subject/22715021/",
 		"posterUrl": "./images/僵尸.webp",
 		"score": "7.8",
@@ -2480,7 +2480,7 @@
 		"comment": "致敬港式僵尸片黄金时代，一场精彩的告别演出"
 	},
 	{
-		"id": 152,
+		"id": 156,
 		"doubanUrl": "https://movie.douban.com/subject/5158577/",
 		"posterUrl": "./images/千万别眨眼.webp",
 		"score": "5.3",
@@ -2496,7 +2496,7 @@
 		"comment": "暴风雪山庄模式+无人生还模式，千万别眨眼，否则……"
 	},
 	{
-		"id": 153,
+		"id": 157,
 		"doubanUrl": "https://movie.douban.com/subject/20278505/",
 		"posterUrl": "./images/前目的地.webp",
 		"score": "7.8",
@@ -2512,7 +2512,7 @@
 		"comment": "我睡我自己，我渣我自己，我生我自己，我杀我自己"
 	},
 	{
-		"id": 154,
+		"id": 158,
 		"doubanUrl": "https://movie.douban.com/subject/24743711/",
 		"posterUrl": "./images/催眠大师.webp",
 		"score": "7.6",
@@ -2528,7 +2528,7 @@
 		"comment": "国产悬疑佳作，反转反转再反转，“旧梦太美只能半醒”"
 	},
 	{
-		"id": 155,
+		"id": 159,
 		"doubanUrl": "https://movie.douban.com/subject/25884801/",
 		"posterUrl": "./images/记忆大师.webp",
 		"score": "7.1",
@@ -2544,7 +2544,7 @@
 		"comment": "要想骗过别人，先要骗过自己"
 	},
 	{
-		"id": 156,
+		"id": 160,
 		"doubanUrl": "https://movie.douban.com/subject/21349345/",
 		"posterUrl": "./images/移动迷宫.webp",
 		"score": "6.9",
@@ -2560,7 +2560,7 @@
 		"comment": "一群小鲜肉被困在迷宫中心，迷宫中似有神秘怪物把守"
 	},
 	{
-		"id": 157,
+		"id": 161,
 		"doubanUrl": "https://movie.douban.com/subject/25995508/",
 		"posterUrl": "./images/移动迷宫：焦土试炼.webp",
 		"score": "5.8",
@@ -2576,7 +2576,7 @@
 		"comment": "一行人逃出迷宫，却发现世界已变焦土……"
 	},
 	{
-		"id": 158,
+		"id": 162,
 		"doubanUrl": "https://movie.douban.com/subject/26004132/",
 		"posterUrl": "./images/移动迷宫：死亡解药.webp",
 		"score": "5.3",
@@ -2592,7 +2592,7 @@
 		"comment": "年轻人真是靠不住啊"
 	},
 	{
-		"id": 159,
+		"id": 163,
 		"doubanUrl": "https://movie.douban.com/subject/25777512/",
 		"posterUrl": "./images/诚如神之所说.webp",
 		"score": "6.5",
@@ -2608,7 +2608,7 @@
 		"comment": "学校突然陷入恐怖离奇的淘汰游戏，血腥，干脆，刺激"
 	},
 	{
-		"id": 159,
+		"id": 164,
 		"doubanUrl": "https://movie.douban.com/subject/10463953/",
 		"posterUrl": "./images/模仿游戏.webp",
 		"score": "8.6",
@@ -2621,10 +2621,10 @@
 		"type": "历史 / 人性 / 同性 / 战争 / 致郁",
 		"director": "莫滕·泰杜姆",
 		"star": "本尼迪克特·康伯巴奇 / 凯拉·奈特莉",
-		"comment": "经典大白鲨系列~"
+		"comment": "人工智能之父艾伦·图灵传记改编，天才的伟大与悲剧"
 	},
 	{
-		"id": 160,
+		"id": 165,
 		"doubanUrl": "https://movie.douban.com/subject/25767747/",
 		"posterUrl": "./images/故事的故事.webp",
 		"score": "7.6",
@@ -2634,13 +2634,13 @@
 		"seriesId": "gsdgs",
 		"offiName": "Il racconto dei racconti",
 		"country": "意大利 / 法国 / 英国",
-		"type": "奇幻 / 人性 / 探险 / 血腥 / 哲学",
+		"type": "奇幻 / 人性 / 血腥 / 哲学 / 致郁",
 		"director": "马提欧·加洛尼",
 		"star": "萨尔玛·海耶克 / 文森特·卡索",
-		"comment": "经典大白鲨系列~"
+		"comment": "欧洲童话集《五日谈》改编，暗黑猎奇风，爱生欲，欲生恶"
 	},
 	{
-		"id": 161,
+		"id": 166,
 		"doubanUrl": "https://movie.douban.com/subject/10757577/",
 		"posterUrl": "./images/卡罗尔.webp",
 		"score": "8.3",
@@ -2653,10 +2653,10 @@
 		"type": "爱情 / 同性",
 		"director": "托德·海因斯",
 		"star": "凯特·布兰切特 / 鲁妮·玛拉",
-		"comment": "经典大白鲨系列~"
+		"comment": "结尾的一幕简直心潮澎湃，爱能让人所向披靡"
 	},
 	{
-		"id": 162,
+		"id": 167,
 		"doubanUrl": "https://movie.douban.com/subject/25786077/",
 		"posterUrl": "./images/末日崩塌.webp",
 		"score": "7.0",
@@ -2669,10 +2669,10 @@
 		"type": "人性 / 探险 / 逃生 / 灾难",
 		"director": "布拉德·佩顿",
 		"star": "道恩·强森 / 亚历珊德拉·达达里奥",
-		"comment": "经典大白鲨系列~"
+		"comment": "加州突发大地震，巨石强森一家人逃难自救"
 	},
 	{
-		"id": 162,
+		"id": 168,
 		"doubanUrl": "https://movie.douban.com/subject/2364051/",
 		"posterUrl": "./images/鸡皮疙瘩.webp",
 		"score": "6.2",
@@ -2685,10 +2685,10 @@
 		"type": "怪物 / 惊悚 / 奇幻 / 探险",
 		"director": "罗伯·莱特曼",
 		"star": "杰克·布莱克 / 迪兰·明奈特",
-		"comment": "经典大白鲨系列~"
+		"comment": "《鸡皮疙瘩》系列的怪物们从书中来到现实搞事"
 	},
 	{
-		"id": 162,
+		"id": 169,
 		"doubanUrl": "https://movie.douban.com/subject/26779967/",
 		"posterUrl": "./images/鸡皮疙瘩2：闹鬼万圣节.webp",
 		"score": "5.4",
@@ -2701,10 +2701,10 @@
 		"type": "怪物 / 惊悚 / 奇幻 / 探险",
 		"director": "阿里·桑德尔",
 		"star": "温迪·麦克伦登-考威 / 麦迪森·伊瑟曼",
-		"comment": "经典大白鲨系列~"
+		"comment": "木偶斯拉皮阴谋大闹万圣节"
 	},
 	{
-		"id": 163,
+		"id": 170,
 		"doubanUrl": "https://movie.douban.com/subject/25986180/",
 		"posterUrl": "./images/釜山行.webp",
 		"score": "8.4",
@@ -2717,10 +2717,10 @@
 		"type": "变异 / 人性 / 丧尸 / 逃生 / 血腥 / 灾难",
 		"director": "延尚昊",
 		"star": "孔侑 / 郑有美",
-		"comment": "经典大白鲨系列~"
+		"comment": "当你坐火车时突然爆发丧尸，你会如何活到最后"
 	},
 	{
-		"id": 164,
+		"id": 171,
 		"doubanUrl": "https://movie.douban.com/subject/26410594/",
 		"posterUrl": "./images/隧道.webp",
 		"score": "7.7",
@@ -2733,10 +2733,10 @@
 		"type": "惊悚 / 人性 / 逃生 / 灾难",
 		"director": "金成勋",
 		"star": "河正宇 / 吴达洙",
-		"comment": "经典大白鲨系列~"
+		"comment": "一个人在生存极限中的挣扎，剧情真实而残酷"
 	},
 	{
-		"id": 165,
+		"id": 172,
 		"doubanUrl": "https://movie.douban.com/subject/21324900/",
 		"posterUrl": "./images/降临.webp",
 		"score": "7.7",
@@ -2749,10 +2749,10 @@
 		"type": "怪物 / 烧脑 / 外星 / 哲学",
 		"director": "丹尼斯·维伦纽瓦",
 		"star": "艾米·亚当斯 / 杰瑞米·雷纳",
-		"comment": "经典大白鲨系列~"
+		"comment": "超脱时间的束缚，每一秒都在过完一生"
 	},
 	{
-		"id": 166,
+		"id": 173,
 		"doubanUrl": "https://movie.douban.com/subject/26799731/",
 		"posterUrl": "./images/请以你的名字呼唤我.webp",
 		"score": "8.8",
@@ -2765,10 +2765,10 @@
 		"type": "爱情 / 同性 / 致郁",
 		"director": "卢卡·瓜达尼诺",
 		"star": "艾米·汉莫 / 蒂莫西·柴勒梅德",
-		"comment": "经典大白鲨系列~"
+		"comment": "你甚至会忘了这是同性片，美丽的夏日恋曲，后劲非常大"
 	},
 	{
-		"id": 167,
+		"id": 174,
 		"doubanUrl": "https://movie.douban.com/subject/26309788/",
 		"posterUrl": "./images/金刚：骷髅岛.webp",
 		"score": "6.5",
@@ -2781,10 +2781,10 @@
 		"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 血腥",
 		"director": "乔丹·沃格特-罗伯茨",
 		"star": "汤姆·希德勒斯顿 / 布丽·拉尔森",
-		"comment": "经典大白鲨系列~"
+		"comment": "竹林中的长脚蜘蛛把我吓到了，怪物们还挺硬核的"
 	},
 	{
-		"id": 168,
+		"id": 175,
 		"doubanUrl": "https://movie.douban.com/subject/26718838/",
 		"posterUrl": "./images/异星觉醒.webp",
 		"score": "6.5",
@@ -2797,10 +2797,10 @@
 		"type": "怪物 / 惊悚 / 太空 / 逃生 / 外星 / 血腥",
 		"director": "丹尼尔·伊斯皮诺萨",
 		"star": "杰克·吉伦哈尔 / 丽贝卡·弗格森",
-		"comment": "经典大白鲨系列~"
+		"comment": "宇宙就像一盒巧克力，你永远不知道下一个是什么怪物"
 	},
 	{
-		"id": 169,
+		"id": 176,
 		"doubanUrl": "https://movie.douban.com/subject/22266012/",
 		"posterUrl": "./images/全球风暴.webp",
 		"score": "6.0",
@@ -2813,10 +2813,10 @@
 		"type": "人性 / 太空 / 逃生 / 灾难",
 		"director": "迪安·德夫林",
 		"star": "杰拉德·巴特勒 / 吉姆·斯特吉斯",
-		"comment": "经典大白鲨系列~"
+		"comment": "剧情为主，灾难场面较少，阿祖还是帅的"
 	},
 	{
-		"id": 170,
+		"id": 177,
 		"doubanUrl": "https://movie.douban.com/subject/26384741/",
 		"posterUrl": "./images/湮灭.webp",
 		"score": "7.1",
@@ -2829,10 +2829,10 @@
 		"type": "变异 / 怪物 / 惊悚 / 烧脑 / 探险 / 外星 / 哲学",
 		"director": "亚历克斯·嘉兰",
 		"star": "娜塔莉·波特曼 / 詹妮弗·杰森·李",
-		"comment": "经典大白鲨系列~"
+		"comment": "看完电影不知所云，看完影评细思恐极"
 	},
 	{
-		"id": 171,
+		"id": 178,
 		"doubanUrl": "https://movie.douban.com/subject/26997663/",
 		"posterUrl": "./images/寂静之地.webp",
 		"score": "6.3",
@@ -2845,10 +2845,10 @@
 		"type": "怪物 / 惊悚 / 末日 / 人性 / 逃生",
 		"director": "约翰·卡拉辛斯基",
 		"star": "艾米莉·布朗特 / 约翰·卡拉辛斯基",
-		"comment": "经典大白鲨系列~"
+		"comment": "气氛塑造非常到位，特别是生孩子那段太紧张了"
 	},
 	{
-		"id": 172,
+		"id": 179,
 		"doubanUrl": "https://movie.douban.com/subject/26430636/",
 		"posterUrl": "./images/狂暴巨兽.webp",
 		"score": "6.4",
@@ -2861,10 +2861,10 @@
 		"type": "变异 / 怪物 / 基因 / 灾难",
 		"director": "布拉德·佩顿",
 		"star": "道恩·强森 / 娜奥米·哈里斯",
-		"comment": "经典大白鲨系列~"
+		"comment": "我巨石强森又来拯救世界了，这次有三只大怪兽哦"
 	},
 	{
-		"id": 173,
+		"id": 180,
 		"doubanUrl": "https://movie.douban.com/subject/26925317/",
 		"posterUrl": "./images/动物世界.webp",
 		"score": "7.2",
@@ -2877,10 +2877,10 @@
 		"type": "奇幻 / 人性 / 烧脑 / 逃生 / 哲学",
 		"director": "韩延",
 		"star": "李易峰 / 迈克尔·道格拉斯",
-		"comment": "经典大白鲨系列~"
+		"comment": "不是简单的纸牌游戏，而是智商的博弈"
 	},
 	{
-		"id": 174,
+		"id": 181,
 		"doubanUrl": "https://movie.douban.com/subject/26426194/",
 		"posterUrl": "./images/巨齿鲨.webp",
 		"score": "5.7",
@@ -2893,6 +2893,6 @@
 		"type": "怪物 / 惊悚 / 探险 / 灾难",
 		"director": "乔·德特杜巴",
 		"star": "杰森·斯坦森 / 李冰冰",
-		"comment": "经典大白鲨系列~"
+		"comment": "海上科研项目不小心惊动了一只远古海洋霸主巨齿鲨"
 	}
 ]

@@ -120,14 +120,20 @@ $(function () {
 	// 筛选面板
 	var screenCollapse = $("#screenCollapse"),
 	screenToggler = $("#screenToggler");
-	// 筛选按钮变色；筛选信息隐藏/显示；若有标签被激活则收起搜索框
-	screenCollapse.on("show.bs.collapse hidden.bs.collapse", function () {
-		screenToggler.toggleClass("active");
-		all.screenHidden = !all.screenHidden;
+	// 筛选按钮变色；筛选信息隐藏/显示；若有标签被激活则收起搜索框；折叠更多标签
+	screenCollapse.on("show.bs.collapse", function () {
+		screenToggler.addClass("active");
+		all.screenHidden = false;
+	});
+	screenCollapse.on("hidden.bs.collapse", function () {
+		screenToggler.removeClass("active");
+		all.screenHidden = true;
 		if (all.activeTags.length > 0) {
 			all.stretchLeft = false;
 			searchToggler.removeClass("active");
 		}
+		if (true) {} else {}
+		all.moreHidden = true;
 	});
 
 	// 收起筛选面板和搜索框
@@ -153,7 +159,7 @@ $(function () {
 	var topDivider = $("#topDivider");
 	function foldUp() {
 		all.pullDown = false;
-		if (topDivider.css("transform") == "translateY(-2rem)") {
+		if (topDivider.css("margin-top") == "-4rem") {
 			all.isReloading = true;
 			all.reloadSuccess = false;
 			all.notModified = false;
@@ -163,7 +169,7 @@ $(function () {
 	// 下拉更新并显示状态
 	function reloadData() {
 		all.pullDown = true;
-		if (topDivider.css("transform") == "translateY(0)") {
+		if (topDivider.css("margin-top") == "1rem") {
 			$.post(reUrl, function (data,status) {
 				if (status == "success") {
 					all.clearTags();
@@ -215,7 +221,15 @@ var all = new Vue({
 		tags: [
 		{
 			isActive: false,
+			tag: '变异'
+		},
+		{
+			isActive: false,
 			tag: '病毒'
+		},
+		{
+			isActive: false,
+			tag: '穿越'
 		},
 		{
 			isActive: false,
@@ -223,23 +237,7 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
-			tag: '鬼魂'
-		},
-		{
-			isActive: false,
-			tag: '惊悚'
-		},
-		{
-			isActive: false,
-			tag: '历险'
-		},
-		{
-			isActive: false,
-			tag: '猎奇'
-		},
-		{
-			isActive: false,
-			tag: '魔幻'
+			tag: '基因'
 		},
 		{
 			isActive: false,
@@ -247,7 +245,7 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
-			tag: '丧尸'
+			tag: '奇幻'
 		},
 		{
 			isActive: false,
@@ -259,11 +257,19 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
-			tag: '时空'
+			tag: '太空'
 		},
 		{
 			isActive: false,
-			tag: '同性'
+			tag: '探险'
+		},
+		{
+			isActive: false,
+			tag: '逃生'
+		},
+		{
+			isActive: false,
+			tag: '外星'
 		},
 		{
 			isActive: false,
@@ -271,7 +277,47 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
-			tag: '星际'
+			tag: '灾难'
+		},
+		{
+			isActive: false,
+			tag: '哲学'
+		},
+		{
+			isActive: false,
+			tag: '罪案'
+		},
+		{
+			isActive: false,
+			tag: '爱情'
+		},
+		{
+			isActive: false,
+			tag: '惊悚'
+		},
+		{
+			isActive: false,
+			tag: '历史'
+		},
+		{
+			isActive: false,
+			tag: '魔鬼'
+		},
+		{
+			isActive: false,
+			tag: '人性'
+		},
+		{
+			isActive: false,
+			tag: '丧尸'
+		},
+		{
+			isActive: false,
+			tag: '同性'
+		},
+		{
+			isActive: false,
+			tag: '无限'
 		},
 		{
 			isActive: false,
@@ -279,13 +325,22 @@ var all = new Vue({
 		},
 		{
 			isActive: false,
-			tag: '灾难'
+			tag: '战争'
 		},
 		{
 			isActive: false,
-			tag: '罪案'
-		}
+			tag: '致郁'
+		},
+		{
+			isActive: false,
+			tag: '重口'
+		},
+		{
+			isActive: false,
+			tag: '宗教'
+		},
 		],
+		moreHidden: true,
 		stretchLeft: false,
 		searchText: '',
 		pullDown: false,
@@ -336,11 +391,13 @@ var all = new Vue({
 		// 清空所有选中的标签
 		clearTags () {
 			var i, len,
-			tags = this.tags;
+			tags = this.tags,
+			activeTags = this.activeTags;
 
 			for (i = 0, len = tags.length; i < len; i++) {
 				tags[i].isActive = false;
 			}
+			activeTags.splice(0);
 		},
 		// 不同分数级别显示不同颜色
 		scoreColor (item) {
@@ -368,7 +425,18 @@ var all = new Vue({
 		},
 	},
 	computed: {
-		// 排序：年份/评分/更新
+		// 标签过滤：默认显示前17个，点击完全显示
+		filterTags () {
+			var moreHidden = this.moreHidden;
+			return this.tags.filter(function (item,index) {
+				if (moreHidden) {
+					return index < 17;
+				} else {
+					return true;
+				}
+			});
+		},
+		// 电影排序：年份/评分/更新
 		sortFilms () {
 			var sortOrder = this.sortOrder,
 			revYear = this.revYear,
@@ -391,23 +459,20 @@ var all = new Vue({
 				}
 			});
 		},
-		// 过滤：类型标签/搜索文本
+		// 电影过滤：类型标签/搜索文本
 		filterFilms () {
-			var searchText = this.searchText,
-			activeTags = this.activeTags,
-			tags = this.tags;
+			var activeTags = this.activeTags,
+			searchText = this.searchText;
 
 			return this.sortFilms.filter(function (item) {
-				// 标签过滤
+				// 标签过滤：遍历每一个标签，只要包含一个就返回
 				if (activeTags.length > 0) {
-					// 不完全匹配：遍历每一个标签，只要包含一个就返回
 					var i, lenI;
 					for (i = 0, lenI = activeTags.length; i < lenI; i++) {
 						return item.type.includes(activeTags[i]);
 					}
-				// 搜索过滤
+				// 搜索过滤：将搜索文本分割为每个字，只要包含一个就返回
 				} else if (searchText.length > 0) {
-					// 不完全匹配：将搜索文本分割为每个字，只要包含一个就返回
 					var stArr = searchText.replace(/\s*/g, '').split(''),
 					j, lenJ,
 					k, lenK;

@@ -5,7 +5,7 @@ body {
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	padding-top: 6rem;
+	padding-top: 6.75rem;
 	color: #1c1c1c;
 	background-color: #e8e8e8;
 }
@@ -49,10 +49,8 @@ body {
 
 .form-control {
 	height: 2.4rem;
-	padding-top: .7rem;
-	padding-bottom: .7rem;
 	font-size: 1rem;
-	line-height: 1;
+	line-height: 2.4;
 }
 .form-control:focus,
 .form-control:active:focus,
@@ -130,13 +128,21 @@ body {
 #screenCollapse .active .reverse {
 	color: #a9a9a9;
 }
+#screenCollapse .moreTags {
+	color: #a9a9a9;
+	background-color: #e8e8e8;
+	border-color: #e8e8e8;
+}
+#screenCollapse .navbar-toggler {
+	font-size: 1rem;
+}
 
 /* 搜索框 */
 .searchForm {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 80%;
+	width: 82%;
 }
 .searchForm .form-control {
 	position: absolute;
@@ -150,11 +156,13 @@ body {
 	right: 1rem;
 }
 /* 动画：展开收起 */
-.stretch-enter, .stretch-leave-to {
+.stretch-enter,
+.stretch-leave-to {
 	width: 15%;
 	opacity: 0;
 }
-.stretch-enter-active, .stretch-leave-active {
+.stretch-enter-active,
+.stretch-leave-active {
 	transition: all .1s linear;
 }
 
@@ -162,6 +170,8 @@ body {
 #topDivider {
 	width: 100%;
 	height: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 	font-size: 1rem;
 	line-height: 2;
 	color: #cfcfcf;
@@ -172,6 +182,15 @@ body {
 	width: 30%;
 	vertical-align: middle;
 }
+/* 动画：下拉收起 */
+.pull-enter,
+.pull-leave-to {
+	margin-top: -4rem;
+}
+.pull-enter-active,
+.pull-leave-active {
+	transition: all .3s linear;
+}
 /* 动画：图标旋转 */
 .fa-sync-alt {
 	animation: rotating 1s linear infinite;
@@ -181,34 +200,26 @@ body {
 		transform: rotate(360deg);
 	}
 }
-/* 动画：下拉收起 */
-.pull-enter, .pull-leave-to {
-	transform: translateY(-2rem);
-}
-.pull-enter-active, .pull-leave-active {
-	transition: all .3s linear;
-}
 
 /* 全览模式 */
 .detailCard {
 	background-color: white;
-	border-radius: 1rem;
 }
 /* 海报 */
 .detailCard .filmPoster {
 	position: relative;
-	width: 6.9rem;
-	height: 9.9rem;
+	width: 5.9rem;
+	height: 8.8rem;
 	border-radius: .3rem;
 }
 .detailCard .filmScore {
 	position: absolute;
-	top: .55rem;
-	right: .55rem;
-	width: 2.5rem;
-	height: 1.25rem;
+	top: 0;
+	right: 0;
+	width: 2.3rem;
+	height: 1.3rem;
 	text-align: center;
-	border-radius: .2rem;
+	border-radius: 0 .3rem;
 }
 .detailCard .filmScore a {
 	font-size: 1rem;
@@ -218,36 +229,45 @@ body {
 }
 /* 信息 */
 .filmInfo {
-	font-size: .9rem;
-	line-height: .3;
+	line-height: 1.4;
 	color: #9c9c9c;
-	white-space: nowrap;
 }
 .filmInfo h5 {
-	display: inline-block;
-	margin-bottom: .3rem;
+	margin: 0;
 	font-weight: bold;
 	color: #363636;
 }
-.filmInfo span {
-	font-size: 1rem;
-	vertical-align: .1rem;
-}
 .filmInfo h6 {
+	margin: 0;
 	font-size: 1rem;
 	font-weight: bold;
+}
+.filmInfo p {
+	margin: 0;
+	font-size: .9rem;
+}
+.filmInfo .d-flex h6:last-of-type,
+.filmInfo .d-flex p:last-of-type {
+	width: 80%;
+	white-space: nowrap;
+	overflow-x: auto;
 }
 /* 评语 */
 .filmComment {
 	height: 2.4rem;
 	font-size: 1rem;
-	line-height: 2.5;
-	color: #363636;
-	background-color: #f0f0f0;
+	line-height: 2.4;
+	background-color: #f5f5f5;
 	border-radius: .3rem;
 }
 .filmComment i {
-	color: #b5b5b5;
+	color: #9c9c9c;
+}
+.filmComment p {
+	height: 100%;
+	color: #363636;
+	white-space: nowrap;
+	overflow-x: auto;
 }
 
 /* 极简模式 */
@@ -300,7 +320,8 @@ body {
 #bottomDivider {
 	width: 100%;
 	height: 2rem;
-	margin-bottom: 5rem;
+	margin-top: 1rem;
+	margin-bottom: 4.8rem;
 	font-size: 1rem;
 	line-height: 2;
 	color: #cfcfcf;
@@ -313,21 +334,7 @@ body {
 }
 
 /* 快捷按钮 */
-#toTop {
-	position: fixed;
-	right: .5rem;
-	bottom: 7.3rem;
-	z-index: 9;
-	width: 2.5rem;
-	height: 2.5rem;
-	font-size: 1rem;
-	line-height: 2.5;
-	color: white;
-	text-align: center;
-	background-color: #363636;
-	border-radius: 50%;
-	opacity: .5;
-}
+#toTop,
 #toBottom {
 	position: fixed;
 	right: .5rem;
@@ -342,6 +349,11 @@ body {
 	background-color: #363636;
 	border-radius: 50%;
 	opacity: .5;
+}
+#toTop {
+	position: fixed;
+	right: .5rem;
+	bottom: 7.3rem;
 }
 
 /* 加载时显示画面 */
@@ -377,14 +389,13 @@ body {
 	background-color: white;
 }
 #footer .nav-link {
+	padding-top: .6rem;
 	font-size: .8rem;
-	line-height: 1.2;
 	color: #a9a9a9;	
+}
+#footer .nav-link i {
+	font-size: 1.5rem;
 }
 #footer .active {
 	color: #4f94cd;
-}
-#footer .nav-link i {
-	margin-top: .1rem;
-	font-size: 1.5rem;
 }

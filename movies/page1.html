@@ -7,15 +7,15 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
 	<link rel="stylesheet" type="text/css" href="page1_light.css">
 
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
 	<title>MR.S - 来自Shaw的电影推荐</title>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid m-0 p-0">
 		<!-- Page 1：全部影片 -->
 		<div id="all">
 			<div class="headNavbar">
@@ -45,7 +45,7 @@
 							<span v-show="sortOrder == 2 && revScore">最低评分</span>
 							<span v-show="sortOrder == 3 && !revRecent">最近更新</span>
 							<span v-show="sortOrder == 3 && revRecent">最早更新</span>
-							<span v-for="item in activeTags"> · {{ item }}</span>
+							<span v-for="(item, index) in activeTags" :key="index"> · {{ item }}</span>
 						</template>
 					</div>
 					<form class="m-0 p-0 searchForm">
@@ -54,7 +54,7 @@
 						</transition>
 						<button class="navbar-toggler" id="searchToggler" type="button"><i class="fas fa-search" v-show="searchText.length == 0"></i><i class="fas fa-times" v-show="searchText.length > 0"></i></button>
 					</form>
-					<div class="collapse navbar-collapse py-4 px-2" id="screenCollapse">
+					<div class="collapse navbar-collapse p-2 pt-4" id="screenCollapse">
 						<div class="row no-gutters justify-content-between">
 							<div class="col-4 px-1">
 								<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 1}" @click.passive="sortActive(1)">按年份排序 <span><i class="fas fa-caret-left" :class="{reverse: !revYear}"></i><i class="fas fa-caret-right" :class="{reverse: revYear}"></i></span></a>
@@ -66,11 +66,14 @@
 								<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 3}" @click.passive="sortActive(3)">按更新排序 <span><i class="fas fa-caret-left" :class="{reverse: !revRecent}"></i><i class="fas fa-caret-right" :class="{reverse: revRecent}"></i></span></a>
 							</div>
 							<div class="w-100"><hr></div>
-							<div class="col-2 p-1" v-for="(item, index) in tags" :key="item.tag">
+							<div class="col-2 p-1" v-for="(item, index) in filterTags" :key="index">
 								<a class="btn btn-sm" :class="{active: item.isActive}" @click.passive="filterActive(item)">{{ item.tag }}</a>
 							</div>
-							<div class="w-100 text-center">
-								<button class="navbar-toggler" :class="{active: activeTags.length > 0}" type="button" @click.passive="clearTags"><i class="fas fa-times"></i> 清空标签</button>
+							<div class="col-2 p-1" v-if="moreHidden">
+								<a class="btn btn-sm moreTags" @click.passive="moreHidden = false">更多</a>
+							</div>
+							<div class="w-100 mt-1 text-center" v-if="activeTags.length > 0">
+								<button class="navbar-toggler" type="button" @click.passive="clearTags"><i class="fas fa-times"></i> 清空标签</button>
 							</div>
 						</div>
 					</div>
@@ -96,37 +99,53 @@
 			</transition>
 
 			<!-- 标签页：电影列表 -->
-			<div class="tab-content mt-3">
+			<div class="tab-content">
 				<!-- 全览模式 -->
 				<div class="tab-pane active" id="detailMode">
-					<div class="my-3 p-3 detailCard" v-for="(item, index) in filterFilms" :key="item.id">
+					<div class="my-1 p-3 detailCard" v-for="(item, index) in filterFilms" :key="item.id">
 						<div class="row no-gutters">
 							<div class="col-auto">
 								<div class="filmPoster overflow-hidden">
-									<img :src="item.posterUrl" width="100%" height="100%">
+									<img data-toggle="modal" :data-target="'#largePoster_' + index" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
+									<div class="modal fade" :id="'largePoster_' + index" tabindex="-1">
+										<div class="modal-dialog modal-dialog-centered">
+											<img :src="item.posterUrl" width="100%">
+										</div>
+									</div>
 									<div class="filmScore" :style="{backgroundColor: scoreColor(item)}">
 										<a :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
 									</div>
 								</div>
 							</div>
-							<div class="col-8 pt-2 pl-2">
-								<div class="filmInfo overflow-hidden">
-									<h5>{{ item.transName }}</h5><span> ({{ item.year }})</span>
-									<h6>{{ item.offiName }}</h6>
-									<br><br><br><br>
-									<p>地区：{{ item.country }}</p>
-									<p>类型：{{ item.type }}</p>
-									<p>导演：{{ item.director }}</p>
-									<p>主演：{{ item.star }}</p>
+							<div class="col-8 pt-1 pl-2">
+								<div class="filmInfo">
+									<h5>{{ item.transName }}</h5>
+									<div class="d-flex mt-1 mb-2">
+										<h6>({{ item.year }})</h6>&nbsp;
+										<h6>{{ item.offiName }}</h6>
+									</div>
+									<div class="d-flex">
+										<p>类型：</p>
+										<p>{{ item.type }}</p>
+									</div>
+									<div class="d-flex">
+										<p>地区：</p>
+										<p>{{ item.country }}</p>
+									</div>
+									<div class="d-flex">
+										<p>导演：</p>
+										<p>{{ item.director }}</p>
+									</div>
+									<div class="d-flex">
+										<p>主演：</p>
+										<p>{{ item.star }}</p>
+									</div>
 								</div>
 							</div>
-							<div class="w-100 my-1"></div>
-							<div class="col-9">
-								<p class="filmComment"><i class="fas fa-comment-dots mx-2"></i>{{ item.comment }}</p>
-							</div>
-							<div class="col-3 pl-2">
-								<a class="btn"><i class="fas fa-plus"></i> 想看</a>
-							</div>
+						</div>
+						<div class="d-flex mt-2 px-2 filmComment">
+							<div class="mr-2"><i class="fas fa-comment-dots"></i></div>
+							<p>{{ item.comment }}</p>
 						</div>
 					</div>
 				</div>
@@ -227,7 +246,10 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+	<script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+	<script src="https://github.com/vuejs/vue-touch/blob/next/dist/vue-touch.min.js"></script>
+
 	<script type="text/javascript" src="page1.js"></script>
 </body>
 </html>
