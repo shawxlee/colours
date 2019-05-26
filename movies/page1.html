@@ -50,30 +50,30 @@
 					</div>
 					<form class="m-0 p-0 searchForm">
 						<transition name="stretch">
-							<input class="form-control rounded-pill" id="searchInput" type="text" placeholder="输入关键词搜索" v-if="stretchLeft" v-model.trim="searchText">
+							<input class="form-control rounded-pill" type="text" placeholder="输入关键词搜索" v-if="stretchLeft" v-model.trim="searchText" @focus.passive="isFocus = true" @blur.passive="isFocus = false" v-focus>
 						</transition>
-						<button class="navbar-toggler" id="searchToggler" type="button"><i class="fas fa-search" v-show="searchText.length == 0"></i><i class="fas fa-times" v-show="searchText.length > 0"></i></button>
+						<button class="navbar-toggler" :class="{active: isFocus}" type="button" @mousedown="notBlur(event)" @click.passive="onSearch"><i class="fas fa-search" v-show="searchText.length == 0"></i><i class="fas fa-times" v-show="searchText.length > 0"></i></button>
 					</form>
 					<div class="collapse navbar-collapse p-2 pt-4" id="screenCollapse">
 						<div class="row no-gutters justify-content-between">
 							<div class="col-4 px-1">
-								<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 1}" @click.passive="sortActive(1)">按年份排序 <span><i class="fas fa-caret-left" :class="{reverse: !revYear}"></i><i class="fas fa-caret-right" :class="{reverse: revYear}"></i></span></a>
+								<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 1}" @click.passive="onSort(1)">按年份排序 <span><i class="fas fa-caret-left" :class="{reverse: !revYear}"></i><i class="fas fa-caret-right" :class="{reverse: revYear}"></i></span></a>
 							</div>
 							<div class="col-4 px-1">
-								<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 2}" @click.passive="sortActive(2)">按评分排序 <span><i class="fas fa-caret-left" :class="{reverse: !revScore}"></i><i class="fas fa-caret-right" :class="{reverse: revScore}"></i></span></a>
+								<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 2}" @click.passive="onSort(2)">按评分排序 <span><i class="fas fa-caret-left" :class="{reverse: !revScore}"></i><i class="fas fa-caret-right" :class="{reverse: revScore}"></i></span></a>
 							</div>
 							<div class="col-4 px-1">
-								<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 3}" @click.passive="sortActive(3)">按更新排序 <span><i class="fas fa-caret-left" :class="{reverse: !revRecent}"></i><i class="fas fa-caret-right" :class="{reverse: revRecent}"></i></span></a>
+								<a class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 3}" @click.passive="onSort(3)">按更新排序 <span><i class="fas fa-caret-left" :class="{reverse: !revRecent}"></i><i class="fas fa-caret-right" :class="{reverse: revRecent}"></i></span></a>
 							</div>
 							<div class="w-100"><hr></div>
 							<div class="col-2 p-1" v-for="(item, index) in filterTags" :key="index">
-								<a class="btn btn-sm" :class="{active: item.isActive}" @click.passive="filterActive(item)">{{ item.tag }}</a>
+								<a class="btn btn-sm" :class="{active: item.isActive}" @click.passive="onTag(item)">{{ item.tag }}</a>
 							</div>
 							<div class="col-2 p-1" v-if="moreHidden">
 								<a class="btn btn-sm moreTags" @click.passive="moreHidden = false">更多</a>
 							</div>
 							<div class="w-100 mt-1 text-center" v-if="activeTags.length > 0">
-								<button class="navbar-toggler" type="button" @click.passive="clearTags"><i class="fas fa-times"></i> 清空标签</button>
+								<button class="navbar-toggler" type="button" @click.passive="onClear"><i class="fas fa-times"></i> 清空标签</button>
 							</div>
 						</div>
 					</div>
@@ -88,9 +88,6 @@
 					</div>
 					<div v-show="reloadSuccess">
 						<hr>&nbsp;&nbsp; 更新成功 <i class="fas fa-check-circle"></i> &nbsp;&nbsp;<hr>
-					</div>
-					<div v-show="notModified">
-						<hr>&nbsp;&nbsp; 没有更新 <i class="fas fa-minus-circle"></i> &nbsp;&nbsp;<hr>
 					</div>
 					<div v-show="reloadError">
 						<hr>&nbsp;&nbsp; 更新失败 <i class="fas fa-exclamation-circle"></i> &nbsp;&nbsp;<hr>
@@ -117,10 +114,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-8 pt-1 pl-2">
+							<div class="col-8 pl-2">
 								<div class="filmInfo">
 									<h5>{{ item.transName }}</h5>
-									<div class="d-flex mt-1 mb-2">
+									<div class="d-flex mt-1 mb-3">
 										<h6>({{ item.year }})</h6>&nbsp;
 										<h6>{{ item.offiName }}</h6>
 									</div>
@@ -210,12 +207,12 @@
 			<!-- 加载时显示画面 -->
 			<div id="loadingBg">
 				<div id="loadingInfo">
-					<img src="loading.gif" width="50%">
+					<img src="./images/loading.gif" width="50%">
 					<br><br>
 					<span>正在加载……</span>
 				</div>
 				<div id="errorInfo">
-					<img src="error.png" width="50%">
+					<img src="./images/error.png" width="50%">
 					<br><br>
 					<span>加载失败！</span>
 					<br><br>
@@ -247,9 +244,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
 	<script src="https://github.com/vuejs/vue-touch/blob/next/dist/vue-touch.min.js"></script>
 
+	<script type="text/javascript" src="font-size.js"></script>
 	<script type="text/javascript" src="page1.js"></script>
 </body>
 </html>

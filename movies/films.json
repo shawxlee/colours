@@ -50,9 +50,9 @@
 	{
 		"id": 4,
 		"doubanUrl": "https://movie.douban.com/subject/1301844/",
-		"posterUrl": "./images/大白鲨：复仇.webp",
+		"posterUrl": "./images/大白鲨4：复仇.webp",
 		"score": "5.6",
-		"transName": "大白鲨：复仇",
+		"transName": "大白鲨4：复仇",
 		"year": "1987",
 		"hasSeries": true,
 		"seriesId": "dbs",
@@ -178,9 +178,9 @@
 	{
 		"id": 12,
 		"doubanUrl": "https://movie.douban.com/subject/1299153/",
-		"posterUrl": "./images/异形：复活.webp",
+		"posterUrl": "./images/异形4：复活.webp",
 		"score": "7.6",
-		"transName": "异形：复活",
+		"transName": "异形4：复活",
 		"year": "1997",
 		"hasSeries": true,
 		"seriesId": "yx",
@@ -210,9 +210,9 @@
 	{
 		"id": 14,
 		"doubanUrl": "https://movie.douban.com/subject/1578502/",
-		"posterUrl": "./images/异形大战铁血战士：安魂曲.webp",
+		"posterUrl": "./images/异形大战铁血战士2：安魂曲.webp",
 		"score": "5.8",
-		"transName": "异形大战铁血战士：安魂曲",
+		"transName": "异形大战铁血战士2：安魂曲",
 		"year": "2007",
 		"hasSeries": true,
 		"seriesId": "yx",
@@ -546,9 +546,9 @@
 	{
 		"id": 35,
 		"doubanUrl": "https://movie.douban.com/subject/1370276/",
-		"posterUrl": "./images/勇敢者的游戏：宇宙历险.webp",
+		"posterUrl": "./images/勇敢者的游戏2：宇宙历险.webp",
 		"score": "6.7",
-		"transName": "勇敢者的游戏：宇宙历险",
+		"transName": "勇敢者的游戏2：宇宙历险",
 		"year": "2005",
 		"hasSeries": true,
 		"seriesId": "ygz",
@@ -594,9 +594,9 @@
 	{
 		"id": 38,
 		"doubanUrl": "https://movie.douban.com/subject/4811813/",
-		"posterUrl": "./images/独立日：卷土重来.webp",
+		"posterUrl": "./images/独立日2：卷土重来.webp",
 		"score": "5.6",
-		"transName": "独立日：卷土重来",
+		"transName": "独立日2：卷土重来",
 		"year": "2016",
 		"hasSeries": true,
 		"seriesId": "dlr",
@@ -706,9 +706,9 @@
 	{
 		"id": 45,
 		"doubanUrl": "https://movie.douban.com/subject/1422987/",
-		"posterUrl": "./images/变种DNA：哨兵.webp",
+		"posterUrl": "./images/变种DNA 3：哨兵.webp",
 		"score": "4.6",
-		"transName": "变种DNA：哨兵",
+		"transName": "变种DNA 3：哨兵",
 		"year": "2003",
 		"hasSeries": true,
 		"seriesId": "bzdna",
@@ -882,9 +882,9 @@
 	{
 		"id": 56,
 		"doubanUrl": "https://movie.douban.com/subject/1997679/",
-		"posterUrl": "./images/木乃伊：龙帝之墓.webp",
+		"posterUrl": "./images/木乃伊3：龙帝之墓.webp",
 		"score": "5.5",
-		"transName": "木乃伊：龙帝之墓",
+		"transName": "木乃伊3：龙帝之墓",
 		"year": "2008",
 		"hasSeries": true,
 		"seriesId": "mny",
@@ -994,9 +994,9 @@
 	{
 		"id": 63,
 		"doubanUrl": "https://movie.douban.com/subject/1308752/",
-		"posterUrl": "./images/生化危机：启示录.webp",
+		"posterUrl": "./images/生化危机2：启示录.webp",
 		"score": "7.7",
-		"transName": "生化危机：启示录",
+		"transName": "生化危机2：启示录",
 		"year": "2004",
 		"hasSeries": true,
 		"seriesId": "shwj",
@@ -1010,9 +1010,9 @@
 	{
 		"id": 64,
 		"doubanUrl": "https://movie.douban.com/subject/1482911/",
-		"posterUrl": "./images/生化危机：灭绝.webp",
+		"posterUrl": "./images/生化危机3：灭绝.webp",
 		"score": "7.2",
-		"transName": "生化危机：灭绝",
+		"transName": "生化危机3：灭绝",
 		"year": "2007",
 		"hasSeries": true,
 		"seriesId": "shwj",
@@ -1026,9 +1026,9 @@
 	{
 		"id": 65,
 		"doubanUrl": "https://movie.douban.com/subject/3041294/",
-		"posterUrl": "./images/生化危机：战神再生.webp",
+		"posterUrl": "./images/生化危机4：战神再生.webp",
 		"score": "6.5",
-		"transName": "生化危机：战神再生",
+		"transName": "生化危机4：战神再生",
 		"year": "2010",
 		"hasSeries": true,
 		"seriesId": "shwj",
@@ -1042,9 +1042,9 @@
 	{
 		"id": 66,
 		"doubanUrl": "https://movie.douban.com/subject/6532822/",
-		"posterUrl": "./images/生化危机：惩罚.webp",
+		"posterUrl": "./images/生化危机5：惩罚.webp",
 		"score": "5.9",
-		"transName": "生化危机：惩罚",
+		"transName": "生化危机5：惩罚",
 		"year": "2012",
 		"hasSeries": true,
 		"seriesId": "shwj",
@@ -1058,9 +1058,9 @@
 	{
 		"id": 67,
 		"doubanUrl": "https://movie.douban.com/subject/20471852/",
-		"posterUrl": "./images/生化危机：终章.webp",
+		"posterUrl": "./images/生化危机6：终章.webp",
 		"score": "6.5",
-		"transName": "生化危机：终章",
+		"transName": "生化危机6：终章",
 		"year": "2016",
 		"hasSeries": true,
 		"seriesId": "shwj",
@@ -1112,7 +1112,7 @@
 		"year": "2002",
 		"hasSeries": false,
 		"seriesId": "st",
-		"offiName": "双瞳",
+		"offiName": "雙瞳",
 		"country": "香港 / 台湾",
 		"type": "惊悚 / 魔鬼 / 人性 / 血腥 / 哲学 / 宗教 / 罪案",
 		"director": "陈国富",
@@ -1178,7 +1178,7 @@
 		"seriesId": "dy",
 		"offiName": "Big Fish",
 		"country": "美国",
-		"type": "怪物 / 奇幻 / 人性 / 探险 / 哲学",
+		"type": "奇幻 / 探险 / 哲学",
 		"director": "蒂姆·波顿",
 		"star": "伊万·麦克格雷格 / 阿尔伯特·芬尼",
 		"comment": "人生太无趣，所以才讲故事；人生太有趣，所以才有故事"
@@ -1242,7 +1242,7 @@
 		"seriesId": "hsr",
 		"offiName": "Land of the Dead",
 		"country": "美国 / 法国 / 加拿大",
-		"type": "惊悚 / 末日 / 人性 / 丧尸 / 探险 / 血腥",
+		"type": "惊悚 / 末日 / 人性 / 丧尸 / 血腥",
 		"director": "乔治·A·罗梅罗",
 		"star": "西蒙·贝克尔 / 丹尼斯·霍珀",
 		"comment": "进化的丧尸攻破人类最后的庇护城，阶级统治要不得"
@@ -1306,7 +1306,7 @@
 		"seriesId": "xybql",
 		"offiName": "Shaun of the Dead",
 		"country": "英国 / 法国 / 美国",
-		"type": "丧尸 / 探险 / 逃生 / 血腥 / 灾难 / 哲学",
+		"type": "丧尸 / 逃生 / 血腥 / 灾难 / 哲学",
 		"director": "埃德加·赖特",
 		"star": "西蒙·佩吉 / 尼克·弗罗斯特",
 		"comment": "英伦铁三角成名作，另类丧尸片，黑色幽默，非常有趣"
@@ -1322,7 +1322,7 @@
 		"seriesId": "xybql",
 		"offiName": "Hot Fuzz",
 		"country": "美国 / 法国 / 英国",
-		"type": "探险 / 血腥 / 哲学 / 罪案",
+		"type": "人性 / 血腥 / 哲学 / 罪案",
 		"director": "埃德加·赖特",
 		"star": "西蒙·佩吉 / 尼克·弗罗斯特",
 		"comment": "镜头剪辑教科书，延续搞怪画风，反乌托邦的猎奇故事"
@@ -1354,7 +1354,7 @@
 		"seriesId": "fhx",
 		"offiName": "Van Helsing",
 		"country": "捷克 / 美国",
-		"type": "怪物 / 惊悚 / 神话 / 探险 / 宗教",
+		"type": "怪物 / 惊悚 / 神话 / 宗教",
 		"director": "斯蒂芬·索莫斯",
 		"star": "休·杰克曼 / 凯特·贝金赛尔",
 		"comment": "吸血鬼、科学怪人、猎人、狼人、巨人……中世纪传说集合"
@@ -1370,7 +1370,7 @@
 		"seriesId": "ht",
 		"offiName": "The Day After Tomorrow",
 		"country": "美国",
-		"type": "末日 / 人性 / 探险 / 逃生 / 灾难",
+		"type": "人性 / 探险 / 逃生 / 灾难",
 		"director": "罗兰·艾默里奇",
 		"star": "丹尼斯·奎德 / 杰克·吉伦哈尔",
 		"comment": "灾难片的教科书，剧情一般，但视效一流，爽就完事了"
@@ -1386,7 +1386,7 @@
 		"seriesId": "lmsnqdbxlx",
 		"offiName": "Lemony Snicket's A Series of Unfortunate Events",
 		"country": "美国 / 德国",
-		"type": "奇幻 / 探险 / 哲学",
+		"type": "奇幻 / 探险 / 哲学 / 致郁",
 		"director": "布拉德·塞伯宁",
 		"star": "金·凯瑞 / 连姆·艾肯",
 		"comment": "哥特风的“童话”故事，剧情荒诞猎奇，片尾设计妙极了"
@@ -1554,9 +1554,9 @@
 	{
 		"id": 98,
 		"doubanUrl": "https://movie.douban.com/subject/2117898/",
-		"posterUrl": "./images/寂静岭：启示.webp",
+		"posterUrl": "./images/寂静岭2：启示.webp",
 		"score": "5.6",
-		"transName": "寂静岭：启示",
+		"transName": "寂静岭2：启示",
 		"year": "2012",
 		"hasSeries": true,
 		"seriesId": "jjl",
@@ -1626,7 +1626,7 @@
 		"seriesId": "gy",
 		"offiName": "鬼域",
 		"country": "香港 / 泰国",
-		"type": "惊悚 / 魔鬼 / 探险 / 哲学",
+		"type": "惊悚 / 魔鬼 / 人性 / 哲学",
 		"director": "彭顺 / 彭发",
 		"star": "李心洁 / 李彩桦",
 		"comment": "女主掉入诡异空间，那里全是被现实遗忘的人事物"
@@ -1642,7 +1642,7 @@
 		"seriesId": "hjgw",
 		"offiName": "괴물",
 		"country": "韩国",
-		"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 灾难 / 哲学",
+		"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 灾难",
 		"director": "奉俊昊",
 		"star": "宋康昊 / 朴海日",
 		"comment": "与巨型娃娃鱼斗智斗勇，反映人性温暖，讽刺社会麻木"
@@ -1738,7 +1738,7 @@
 		"seriesId": "xjzq",
 		"offiName": "Bridge to Terabithia",
 		"country": "美国",
-		"type": "怪物 / 奇幻 / 探险 / 哲学 / 致郁",
+		"type": "奇幻 / 探险 / 哲学 / 致郁",
 		"director": "嘉柏·丘波",
 		"star": "乔什·哈切森 / 安娜索菲亚·罗伯",
 		"comment": "她出现又离去，如璀璨流星，她教会你成长，请永远相信"
@@ -1786,7 +1786,7 @@
 		"seriesId": "jt",
 		"offiName": "降頭",
 		"country": "香港",
-		"type": "惊悚 / 血腥 / 哲学 / 重口 / 罪案",
+		"type": "惊悚 / 人性 / 血腥 / 重口 / 罪案",
 		"director": "邱礼涛",
 		"star": "郑浩南 / 邵美琪",
 		"comment": "对降头术感兴趣可以一看，部分画面令人不适，慎入"
@@ -1818,7 +1818,7 @@
 		"seriesId": "zt",
 		"offiName": "C+偵探",
 		"country": "香港",
-		"type": "惊悚 / 人性 / 哲学 / 罪案",
+		"type": "惊悚 / 人性 / 罪案",
 		"director": "彭顺",
 		"star": "郭富城 / 廖启智",
 		"comment": "“C+侦探”就是“私家侦探”的粤语谐音，画风比较阴沉"
@@ -1834,7 +1834,7 @@
 		"seriesId": "zt",
 		"offiName": "B+偵探",
 		"country": "香港",
-		"type": "惊悚 / 人性 / 哲学 / 罪案",
+		"type": "惊悚 / 人性 / 罪案",
 		"director": "彭顺",
 		"star": "郭富城 / 廖启智",
 		"comment": "有推理过程的演绎，氛围营造到位，越接近真相越紧张"
@@ -1850,7 +1850,7 @@
 		"seriesId": "mw",
 		"offiName": "The Mist",
 		"country": "美国",
-		"type": "怪物 / 惊悚 / 人性 / 血腥 / 灾难 / 哲学 / 致郁 / 宗教",
+		"type": "怪物 / 惊悚 / 人性 / 血腥 / 哲学 / 致郁 / 宗教",
 		"director": "弗兰克·德拉邦特",
 		"star": "托马斯·简 / 马西娅·盖伊·哈登",
 		"comment": "浓雾危机四伏，各色人等齐困超市，未知恐惧与信仰盲从"
@@ -1866,7 +1866,7 @@
 		"seriesId": "klf",
 		"offiName": "Cloverfield",
 		"country": "美国",
-		"type": "怪物 / 人性 / 探险 / 逃生 / 外星 / 灾难",
+		"type": "怪物 / 人性 / 逃生 / 外星 / 灾难",
 		"director": "马特·里夫斯",
 		"star": "丽兹·卡潘 / 杰西卡·卢卡斯",
 		"comment": "伪DV拍摄手法，代入感强烈，普通人视角中的灾难时刻"
@@ -1882,7 +1882,7 @@
 		"seriesId": "klf",
 		"offiName": "10 Cloverfield Lane",
 		"country": "美国",
-		"type": "惊悚 / 末日 / 人性 / 逃生 / 外星 / 罪案",
+		"type": "惊悚 / 末日 / 人性 / 逃生 / 外星",
 		"director": "丹·特拉亨伯格",
 		"star": "约翰·古德曼 / 玛丽·伊丽莎白·温斯特德",
 		"comment": "怪物只出现了几秒，主要讲末世中一处地下室的悬疑经历"
@@ -1962,7 +1962,7 @@
 		"seriesId": "djq",
 		"offiName": "District 9",
 		"country": "美国 / 新西兰 / 加拿大 / 南非",
-		"type": "变异 / 怪物 / 人性 / 逃生 / 外星 / 哲学 / 致郁",
+		"type": "变异 / 怪物 / 人性 / 外星 / 致郁",
 		"director": "尼尔·布洛姆坎普",
 		"star": "沙尔托·科普雷 / 詹森·库伯",
 		"comment": "种族歧视者必被歧视反噬，人性的丑陋与美丽并存"
@@ -2122,7 +2122,7 @@
 		"seriesId": "qf",
 		"offiName": "Insidious",
 		"country": "美国",
-		"type": "惊悚 / 魔鬼 / 烧脑 / 哲学",
+		"type": "惊悚 / 魔鬼 / 人性 / 烧脑 / 哲学",
 		"director": "温子仁",
 		"star": "萝丝·拜恩 / 帕特里克·威尔森",
 		"comment": "经典IP，小男孩灵魂出窍时招惹恶灵，欲占据其身体"
@@ -2138,7 +2138,7 @@
 		"seriesId": "qf",
 		"offiName": "Insidious Chapter 2",
 		"country": "美国",
-		"type": "惊悚 / 魔鬼 / 烧脑 / 哲学",
+		"type": "惊悚 / 魔鬼 / 人性 / 烧脑 / 哲学",
 		"director": "温子仁",
 		"star": "帕特里克·威尔森 / 萝丝·拜恩",
 		"comment": "一家人并未摆脱恐惧，未知鬼魂频频作怪，真相竟是……"
@@ -2154,7 +2154,7 @@
 		"seriesId": "qf",
 		"offiName": "Insidious Chapter 3",
 		"country": "美国 / 加拿大",
-		"type": "惊悚 / 魔鬼 / 烧脑 / 哲学",
+		"type": "惊悚 / 魔鬼 / 人性 / 哲学",
 		"director": "雷·沃纳尔",
 		"star": "林·沙烨 / 德蒙特·莫罗尼",
 		"comment": "第一部故事的前传，灵媒Elise的另一起惊险迷案"
@@ -2162,15 +2162,15 @@
 	{
 		"id": 136,
 		"doubanUrl": "https://movie.douban.com/subject/26794994/",
-		"posterUrl": "./images/潜伏：锁命亡灵.webp",
+		"posterUrl": "./images/潜伏4：锁命亡灵.webp",
 		"score": "6.1",
-		"transName": "潜伏：锁命亡灵",
+		"transName": "潜伏4：锁命亡灵",
 		"year": "2018",
 		"hasSeries": true,
 		"seriesId": "qf",
 		"offiName": "Insidious: The Last Key",
 		"country": "美国 / 加拿大",
-		"type": "惊悚 / 魔鬼 / 烧脑 / 哲学",
+		"type": "惊悚 / 魔鬼 / 人性 / 哲学",
 		"director": "亚当·罗比特尔",
 		"star": "林·沙烨 / 雷·沃纳尔",
 		"comment": "灵媒Elise的个人背景故事，监狱里的锁魂鬼怪"
@@ -2210,9 +2210,9 @@
 	{
 		"id": 139,
 		"doubanUrl": "https://movie.douban.com/subject/4079119/",
-		"posterUrl": "./images/杀戮都市：完美答案.webp",
+		"posterUrl": "./images/杀戮都市2：完美答案.webp",
 		"score": "6.5",
-		"transName": "杀戮都市：完美答案",
+		"transName": "杀戮都市2：完美答案",
 		"year": "2011",
 		"hasSeries": true,
 		"seriesId": "xlds",
@@ -2253,7 +2253,7 @@
 		"type": "奇幻 / 人性 / 烧脑 / 探险 / 无限 / 哲学 / 致郁",
 		"director": "扎克·施奈德",
 		"star": "艾米莉·布朗宁 / 杰米·钟",
-		"comment": "无限流，花式制服play，悲惨现实前的一场颅内高潮"
+		"comment": "花式制服play，悲惨现实前的一场颅内高潮"
 	},
 	{
 		"id": 142,
@@ -2314,7 +2314,7 @@
 		"seriesId": "txcrq",
 		"offiName": "연가시",
 		"country": "韩国",
-		"type": "变异 / 怪物 / 人性 / 灾难",
+		"type": "怪物 / 人性 / 灾难",
 		"director": "朴正祐",
 		"star": "金明民 / 金烔完",
 		"comment": "依然是表现小人物在灾难面前的无力+讽刺政府"
@@ -2410,7 +2410,7 @@
 		"seriesId": "dxyl",
 		"offiName": "Gravity",
 		"country": "美国 / 英国",
-		"type": "惊悚 / 人性 / 太空 / 逃生 / 灾难",
+		"type": "惊悚 / 人性 / 太空 / 逃生",
 		"director": "阿方索·卡隆",
 		"star": "桑德拉·布洛克 / 乔治·克鲁尼",
 		"comment": "黑暗无声的浩瀚宇宙，渺小孤独的绝境求生"
@@ -2426,7 +2426,7 @@
 		"seriesId": "lg",
 		"offiName": "감기",
 		"country": "韩国",
-		"type": "病毒 / 人性 / 逃生 / 灾难 / 哲学",
+		"type": "病毒 / 人性 / 逃生 / 灾难",
 		"director": "金成洙",
 		"star": "张赫 / 秀爱",
 		"comment": "韩影从不吝惜过度渲染的人性狗血与触目惊心的骇人场景"
@@ -2458,7 +2458,7 @@
 		"seriesId": "addyx",
 		"offiName": "Ender's Game",
 		"country": "美国",
-		"type": "太空 / 探险 / 外星 / 战争 / 哲学",
+		"type": "太空 / 外星 / 人性 / 战争 / 哲学",
 		"director": "加文·胡德",
 		"star": "阿萨·巴特菲尔德 / 哈里森·福特",
 		"comment": "这不是游戏，这是战争"
@@ -2490,10 +2490,10 @@
 		"seriesId": "qwbzy",
 		"offiName": "Don't Blink",
 		"country": "美国",
-		"type": "惊悚 / 人性 / 哲学 / 致郁",
+		"type": "惊悚 / 人性 / 哲学",
 		"director": "特拉维斯·奥茨",
 		"star": "米娜·苏瓦丽 / 布莱恩·奥斯汀·格林",
-		"comment": "暴风雪山庄模式+无人生还模式，千万别眨眼，否则……"
+		"comment": "暴风雪山庄+无人生还模式，千万别眨眼，否则……"
 	},
 	{
 		"id": 157,
@@ -2562,9 +2562,9 @@
 	{
 		"id": 161,
 		"doubanUrl": "https://movie.douban.com/subject/25995508/",
-		"posterUrl": "./images/移动迷宫：焦土试炼.webp",
+		"posterUrl": "./images/移动迷宫2：焦土试炼.webp",
 		"score": "5.8",
-		"transName": "移动迷宫：焦土试炼",
+		"transName": "移动迷宫2：焦土试炼",
 		"year": "2015",
 		"hasSeries": true,
 		"seriesId": "ydmg",
@@ -2578,9 +2578,9 @@
 	{
 		"id": 162,
 		"doubanUrl": "https://movie.douban.com/subject/26004132/",
-		"posterUrl": "./images/移动迷宫：死亡解药.webp",
+		"posterUrl": "./images/移动迷宫3：死亡解药.webp",
 		"score": "5.3",
-		"transName": "移动迷宫：死亡解药",
+		"transName": "移动迷宫3：死亡解药",
 		"year": "2018",
 		"hasSeries": true,
 		"seriesId": "ydmg",
@@ -2634,7 +2634,7 @@
 		"seriesId": "gsdgs",
 		"offiName": "Il racconto dei racconti",
 		"country": "意大利 / 法国 / 英国",
-		"type": "奇幻 / 人性 / 血腥 / 哲学 / 致郁",
+		"type": "惊悚 / 奇幻 / 人性 / 哲学",
 		"director": "马提欧·加洛尼",
 		"star": "萨尔玛·海耶克 / 文森特·卡索",
 		"comment": "欧洲童话集《五日谈》改编，暗黑猎奇风，爱生欲，欲生恶"
@@ -2730,7 +2730,7 @@
 		"seriesId": "sd",
 		"offiName": "터널",
 		"country": "韩国",
-		"type": "惊悚 / 人性 / 逃生 / 灾难",
+		"type": "人性 / 逃生 / 灾难",
 		"director": "金成勋",
 		"star": "河正宇 / 吴达洙",
 		"comment": "一个人在生存极限中的挣扎，剧情真实而残酷"
@@ -2874,7 +2874,7 @@
 		"seriesId": "dwsj",
 		"offiName": "动物世界",
 		"country": "中国大陆",
-		"type": "奇幻 / 人性 / 烧脑 / 逃生 / 哲学",
+		"type": "奇幻 / 人性 / 烧脑 / 哲学",
 		"director": "韩延",
 		"star": "李易峰 / 迈克尔·道格拉斯",
 		"comment": "不是简单的纸牌游戏，而是智商的博弈"

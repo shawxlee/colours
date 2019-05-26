@@ -1,77 +1,4 @@
-// 利用js计算当前设备的DPR，动态设置html的font-size，利用css的选择器根据DPR来设置不同DPR下的字体大小
-!function (win,lib) {
-	var timer,
-	doc = win.document,
-	docElem = doc.documentElement,
-	vpMeta = doc.querySelector('meta[name="viewport"]'),
-	dpr = 0,
-	scale = 0,
-	flexible = lib.flexible || (lib.flexible = {});
-	// 设置了 viewport meta
-	if (vpMeta) {
-		console.warn("将根据已有的<meta>标签来设置缩放比例");
-		var initial = vpMeta.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
-		if (initial) {
-				scale = parseFloat(initial[1]); // 已设置的 initialScale
-				dpr = parseInt(1 / scale);      // 设备像素比 devicePixelRatio
-			}
-		}
-		function setFontSize() {
-			var winWidth = docElem.getBoundingClientRect().width;
-			if (winWidth / dpr > 540) {
-				(winWidth = 540 * dpr);
-			}
-		// 根节点 fontSize 根据宽度决定
-		var baseSize = winWidth / 25;
-		docElem.style.fontSize = baseSize + "px";
-		flexible.rem = win.rem = baseSize;
-	}
-	// 调整窗口时重置
-	win.addEventListener("resize", function() {
-		clearTimeout(timer);
-		timer = setTimeout(setFontSize, 300);
-	}, false);
-	// orientationchange 时也需要重算下
-	win.addEventListener("orientationchange", function() {
-		clearTimeout(timer);
-		timer = setTimeout(setFontSize, 300);
-	}, false);
-	// pageshow
-	// keyword: 倒退 缓存相关
-	win.addEventListener("pageshow", function(e) {
-		if (e.persisted) {
-			clearTimeout(timer);
-			timer = setTimeout(setFontSize, 300);
-		}
-	}, false);
-	// 设置基准字体
-	if ("complete" === doc.readyState) {
-		doc.body.style.fontSize = 12 * dpr + "px";
-	} else {
-		doc.addEventListener("DOMContentLoaded", function() {
-			doc.body.style.fontSize = 12 * dpr + "px";
-		}, false);
-	}
-	setFontSize();
-	flexible.dpr = win.dpr = dpr;
-	flexible.refreshRem = setFontSize;
-	flexible.rem2px = function(d) {
-		var c = parseFloat(d) * this.rem;
-		if ("string" == typeof d && d.match(/rem$/)) {
-			c += "px";
-		}
-		return c;
-	};
-	flexible.px2rem = function(d) {
-		var c = parseFloat(d) / this.rem;
-		if ("string" == typeof d && d.match(/px$/)) {
-			c += "rem";
-		}
-		return c;
-	}
-} (window, window.lib || (window.lib = {}));
-
-// 主要jquery脚本
+// jquery脚本
 $(function () {
 	// 给json地址添加时间戳
 	var reUrl = "http://192.168.199.126:8080/movies/films.json?t=" + new Date().getTime(),
@@ -100,95 +27,49 @@ $(function () {
 		loadData();
 	});
 
-	// 搜索框
-	var searchToggler = $("#searchToggler"),
-	searchInput = $("#searchInput");
-	// 点击按钮展开搜索框/清除搜索文本
-	searchToggler.on("click", function () {
-		if (all.stretchLeft) {
-			all.searchText = '';
-		} else {
-			all.stretchLeft = true;
-			searchInput.focus();
-		}
-	});
-	// 按钮变色
-	searchInput.on("focus blur", function () {
-		searchToggler.toggleClass("active");
-	});
-
-	// 筛选面板
-	var screenCollapse = $("#screenCollapse"),
-	screenToggler = $("#screenToggler");
-	// 筛选按钮变色；筛选信息隐藏/显示；若有标签被激活则收起搜索框；折叠更多标签
+	// 工具栏
+	var screenToggler = $("#screenToggler"),
+	screenCollapse = $("#screenCollapse");
+	// 筛选按钮变色；筛选信息隐藏/显示
 	screenCollapse.on("show.bs.collapse", function () {
 		screenToggler.addClass("active");
 		all.screenHidden = false;
 	});
+	// 若有标签被激活则收起搜索框；若有更多标签被激活则不折叠更多标签
 	screenCollapse.on("hidden.bs.collapse", function () {
 		screenToggler.removeClass("active");
 		all.screenHidden = true;
 		if (all.activeTags.length > 0) {
 			all.stretchLeft = false;
-			searchToggler.removeClass("active");
+			all.isFocus = false;
 		}
-		if (true) {} else {}
 		all.moreHidden = true;
-	});
-
-	// 收起筛选面板和搜索框
-	var notScreen = $("#modeSwitch, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #footer");
-	// 点击其他位置收起；若搜索框有内容则不收起
-	notScreen.on("click", function () {
-		screenCollapse.collapse("hide");
-		if (all.searchText.length == 0) {
-			all.stretchLeft = false;
-			searchToggler.removeClass("active");
-		}
-	});
-	// 页面滚动时收起；若搜索框有内容则不收起
-	$(document).on("scroll", function () {
-		screenCollapse.collapse("hide");
-		if (all.searchText.length == 0) {
-			all.stretchLeft = false;
-			searchToggler.removeClass("active");
-		}
-	});
-	
-	// 下拉更新
-	var topDivider = $("#topDivider");
-	function foldUp() {
-		all.pullDown = false;
-		if (topDivider.css("margin-top") == "-4rem") {
-			all.isReloading = true;
-			all.reloadSuccess = false;
-			all.notModified = false;
-			all.reloadError = false;
-		}
-	}
-	// 下拉更新并显示状态
-	function reloadData() {
-		all.pullDown = true;
-		if (topDivider.css("margin-top") == "1rem") {
-			$.post(reUrl, function (data,status) {
-				if (status == "success") {
-					all.clearTags();
-					all.searchText = '';
-					all.films = data;
-					all.isReloading = false;
-					all.reloadSuccess = true;
-				} else if (status == "notmodified") {
-					all.isReloading = false;
-					all.notModified = true;
-				} else {
-					all.isReloading = false;
-					all.reloadError = true;
+		var i, len;
+		for (i = 0, len = all.tags.length; i < len; i++) {
+			if (all.tags[i].isActive) {
+				if (i > 16) {
+					all.moreHidden = false;
 				}
-			}, "json");
-			// 0.1s后收起更新状态
-			setTimeout(foldUp, 100);
+			}
+		}
+	});
+	// 收起筛选面板和搜索框；若搜索框有内容则不收起
+	function foldUp() {
+		screenCollapse.collapse("hide");
+		if (all.searchText.length == 0) {
+			all.stretchLeft = false;
+			all.isFocus = false;
 		}
 	}
+	// 点击其他位置收起
+	var notScreen = $("#modeSwitch, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #footer");
+	notScreen.on("click", function () {
+		foldUp();
+	});
+	// 页面滚动时收起
+	$(document).on("scroll", function () {
+		foldUp();
+	});
 
 	// 页面滚动与刷新
 	var toTop = $("#toTop"),
@@ -204,11 +85,13 @@ $(function () {
 	});
 	// 回到顶部并刷新
 	toAll.on("click", function () {
-		$("html, body").animate({ scrollTop: 0 }, 100, "linear", reloadData);
+		$("html, body").animate({ scrollTop: 0 }, 100, "linear", function () {
+			all.pullDown = true;
+		});
 	});
 });
 
-// vue实例
+// page1根实例
 var all = new Vue({
 	el: '#all',
 	data: {
@@ -343,89 +226,120 @@ var all = new Vue({
 		moreHidden: true,
 		stretchLeft: false,
 		searchText: '',
+		isFocus: false,
 		pullDown: false,
 		isReloading: true,
 		reloadSuccess: false,
-		notModified: false,
 		reloadError: false,
-		films: [],
+		films: []
+	},
+	directives: {
+		focus: {
+			inserted (el) {
+				el.focus();
+			}
+		}
 	},
 	methods: {
 		// 点击不同按钮切换排序方式，点击同一按钮切换正倒序
-		sortActive (order) {
+		onSort (order) {
 			this.sortOrder = order;
-
-			var revYear = this.revYear,
-			revScore = this.revScore,
-			revRecent = this.revRecent;
-
 			if (order == 2) {
-				revScore = !revScore;
-				revYear = true;
-				revRecent = true;
+				this.revScore = !this.revScore;
+				this.revYear = true;
+				this.revRecent = true;
 			} else if (order == 3) {
-				revRecent = !revRecent;
-				revYear = true;
-				revScore = true;
+				this.revRecent = !this.revRecent;
+				this.revYear = true;
+				this.revScore = true;
 			} else {
-				revYear = !revYear;
-				revScore = true;
-				revRecent = true;
+				this.revYear = !this.revYear;
+				this.revScore = true;
+				this.revRecent = true;
 			}
 		},
-		// 点击切换激活状态；若选中则添加到筛选信息中，否则从中删除
-		filterActive (item) {
+		// 点击切换标签激活状态；若选中则添加到筛选信息中，否则从中删除
+		onTag (item) {
 			item.isActive = !item.isActive;
-
-			var searchText = this.searchText,
-			activeTags = this.activeTags;
-
 			if (item.isActive) {
-				searchText = '';
-				activeTags.push(item.tag);
+				this.searchText = '';
+				this.activeTags.push(item.tag);
 			} else {
-				var atIndex = activeTags.indexOf(item.tag);
-				activeTags.splice(atIndex, 1);
+				var atIndex = this.activeTags.indexOf(item.tag);
+				this.activeTags.splice(atIndex, 1);
 			}
 		},
 		// 清空所有选中的标签
-		clearTags () {
-			var i, len,
-			tags = this.tags,
-			activeTags = this.activeTags;
-
-			for (i = 0, len = tags.length; i < len; i++) {
-				tags[i].isActive = false;
+		onClear () {
+			var i, len;
+			for (i = 0, len = this.tags.length; i < len; i++) {
+				this.tags[i].isActive = false;
 			}
-			activeTags.splice(0);
+			this.activeTags.splice(0);
+		},
+		// 点击按钮搜索框不失去焦点
+		notBlur (event) {
+			event.preventDefault();
+		},
+		// 点击按钮展开搜索框/清除搜索文本
+		onSearch () {
+			if (this.stretchLeft) {
+				this.searchText = '';
+			} else {
+				this.stretchLeft = true;
+			}
 		},
 		// 不同分数级别显示不同颜色
 		scoreColor (item) {
-			if (item.score >= 9) {
-				return '#912CEE';
+			var score = item.score;
+			if (score >= 9) {
+				return '#912cee';
 			}
-			else if (item.score < 9 && item.score >= 8) {
-				return '#0000CD';
+			else if (score < 9 && score >= 8) {
+				return '#0000cd';
 			}
-			else if (item.score < 8 && item.score >= 7) {
-				return '#00CDCD';
+			else if (score < 8 && score >= 7) {
+				return '#00cdcd';
 			}
-			else if (item.score < 7 && item.score >= 6) {
-				return '#00CD00';
+			else if (score < 7 && score >= 6) {
+				return '#00cd00';
 			}
-			else if (item.score < 6 && item.score >= 5) {
-				return '#CDCD00';
+			else if (score < 6 && score >= 5) {
+				return '#cdcd00';
 			}
-			else if (item.score < 5 && item.score >= 4) {
-				return '#CD8500';
+			else if (score < 5 && score >= 4) {
+				return '#cd8500';
 			}
 			else {
-				return '#CD0000';
+				return '#cd0000';
 			}
 		},
+		// 重新加载数据并显示状态信息
+		reloadData () {
+			var reUrl = "http://192.168.199.126:8080/movies/films.json?t=" + new Date().getTime(),
+			films = this.films;
+
+			axios.get(reUrl)
+			.then(function (response) {
+				all.onClear();
+				all.searchText = '';
+				films = response;
+				all.isReloading = false;
+				all.reloadSuccess = true;
+			})
+			.catch(function (error) {
+				all.isReloading = false;
+				all.reloadError = true;
+			})
+			.then(function () {
+				setTimeout(function () {
+					all.pullDown = false;
+				}, 1000);
+			});
+		}
 	},
 	computed: {
-		// 标签过滤：默认显示前17个，点击完全显示
+		// 标签过滤：默认显示前17个，点击更多显示完整30个
 		filterTags () {
 			var moreHidden = this.moreHidden;
 			return this.tags.filter(function (item,index) {
@@ -465,39 +379,57 @@ var all = new Vue({
 			searchText = this.searchText;
 
 			return this.sortFilms.filter(function (item) {
-				// 标签过滤：遍历每一个标签，只要包含一个就返回
 				if (activeTags.length > 0) {
+					// 标签过滤：遍历每一个选中标签，返回包含至少一个标签的所有项
 					var i, lenI;
 					for (i = 0, lenI = activeTags.length; i < lenI; i++) {
-						return item.type.includes(activeTags[i]);
+						if (item.type.includes(activeTags[i])) {
+							return true;
+						}
 					}
-				// 搜索过滤：将搜索文本分割为每个字，只要包含一个就返回
 				} else if (searchText.length > 0) {
-					var stArr = searchText.replace(/\s*/g, '').split(''),
+					// 搜索过滤：将搜索文本按空格分割为关键词，清除数据文本的所有标点符号，返回包含至少一个关键词的所有项
+					var stArr = searchText.split(' '),
+					itemKeys = [item.transName, item.year, item.offiName, item.country, item.type, item.director, item.star, item.comment],
 					j, lenJ,
 					k, lenK;
 
 					for (j = 0, lenJ = stArr.length; j < lenJ; j++) {
-						for (k = 0, lenK = item.length; k < lenK; k++) {
-							return item[k].toLowerCase().includes(stArr[j].toLowerCase());
+						for (k = 0, lenK = itemKeys.length; k < lenK; k++) {
+							if (itemKeys[k].replace(/[ \/ ·，“”……：]+/g, '').toLowerCase().includes(stArr[j].toLowerCase())) {
+								return true;
+							}
 						}
 					}
 				} else {
 					return true;
 				}
 			});
-		},
+		}
 	},
 	watch: {
 		// 搜索时清空标签
 		searchText () {
 			if (this.searchText.length > 0) {
-				this.clearTags();
+				this.onClear();
+			}
+		},
+		// 下拉时加载数据，否则复位信息
+		pullDown () {
+			if (this.pullDown == true) {
+				setTimeout(function () {
+					all.reloadData();
+				}, 1000);
+			} else {
+				this.isReloading = true;
+				this.reloadSuccess = false;
+				this.reloadError = false;
 			}
 		}
 	}
 });
 
+// 底部导航栏
 var footer = new Vue({
 	el: '#footer',
 	data: {
