@@ -1,16 +1,14 @@
 // jquery脚本
 $(function () {
-	// 给json地址添加时间戳
-	var reUrl = "http://192.168.199.126:8080/movies/films.json?t=" + new Date().getTime(),
-	loadingBg = $("#loadingBg"),
+	var loadingBg = $("#loadingBg"),
 	loadingInfo = $("#loadingInfo"),
 	errorInfo = $("#errorInfo"),
 	loadAgain = $("#loadAgain");
 	// 加载成功则移除加载页面，否则显示错误提示
-	function loadData() {
-		$.getJSON(reUrl, function (data,status) {
+	function loadData(url,vm) {
+		$.getJSON(url, function (data,status) {
 			if (status == "success") {
-				all.films = data;
+				vm.films = data;
 				loadingBg.fadeOut("fast", "linear").remove();
 			} else {
 				loadingInfo.hide();
@@ -18,13 +16,15 @@ $(function () {
 			}
 		});
 	}
+	// 给json地址添加时间戳
+	var allfilms = "http://192.168.199.126:8080/movies/all-films.json?t=" + new Date().getTime();
 	// 首次加载数据
-	loadData();
+	loadData(allfilms,all);
 	// 点击按钮重新加载数据
 	loadAgain.on("click", function () {
 		errorInfo.hide();
 		loadingInfo.show();
-		loadData();
+		loadData(allfilms,all);
 	});
 
 	// 工具栏
@@ -33,14 +33,14 @@ $(function () {
 	// 筛选按钮变色；筛选信息隐藏/显示
 	screenCollapse.on("show.bs.collapse", function () {
 		screenToggler.addClass("active");
-		all.screenHidden = false;
+		all.collapseHidden = false;
 	});
 	// 若有标签被激活则收起搜索框；若有更多标签被激活则不折叠更多标签
 	screenCollapse.on("hidden.bs.collapse", function () {
 		screenToggler.removeClass("active");
-		all.screenHidden = true;
+		all.collapseHidden = true;
 		if (all.activeTags.length > 0) {
-			all.stretchLeft = false;
+			all.isStretch = false;
 			all.isFocus = false;
 		}
 		all.moreHidden = true;
@@ -57,12 +57,12 @@ $(function () {
 	function foldUp() {
 		screenCollapse.collapse("hide");
 		if (all.searchText.length == 0) {
-			all.stretchLeft = false;
+			all.isStretch = false;
 			all.isFocus = false;
 		}
 	}
 	// 点击其他位置收起
-	var notScreen = $("#modeSwitch, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #footer");
+	var notScreen = $("#topNavbar, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #footer");
 	notScreen.on("click", function () {
 		foldUp();
 	});
@@ -86,16 +86,17 @@ $(function () {
 	// 回到顶部并刷新
 	toAll.on("click", function () {
 		$("html, body").animate({ scrollTop: 0 }, 100, "linear", function () {
-			all.pullDown = true;
+			all.isPull = true;
 		});
 	});
 });
 
-// page1根实例
+// all页面根实例
 var all = new Vue({
 	el: '#all',
 	data: {
-		screenHidden: true,
+		topHidden: false,
+		collapseHidden: true,
 		activeTags: [],
 		sortOrder: 1,
 		revYear: false,
@@ -224,11 +225,10 @@ var all = new Vue({
 		},
 		],
 		moreHidden: true,
-		stretchLeft: false,
-		searchText: '',
+		isStretch: false,
 		isFocus: false,
-		pullDown: false,
-		isReloading: true,
+		searchText: '',
+		isPull: false,
 		reloadSuccess: false,
 		reloadError: false,
 		films: []
@@ -241,6 +241,14 @@ var all = new Vue({
 		}
 	},
 	methods: {
+		// 点击按钮展开搜索框/清除搜索文本
+		onSearch () {
+			if (this.isStretch) {
+				this.searchText = '';
+			} else {
+				this.isStretch = true;
+			}
+		},
 		// 点击不同按钮切换排序方式，点击同一按钮切换正倒序
 		onSort (order) {
 			this.sortOrder = order;
@@ -277,16 +285,12 @@ var all = new Vue({
 			}
 			this.activeTags.splice(0);
 		},
-		// 点击按钮搜索框不失去焦点
-		notBlur (event) {
-			event.preventDefault();
-		},
-		// 点击按钮展开搜索框/清除搜索文本
-		onSearch () {
-			if (this.stretchLeft) {
-				this.searchText = '';
-			} else {
-				this.stretchLeft = true;
+		onPull () {
+			this.topHidden = false;
+
+			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			if (scrollTop == 0) {
+				this.isPull = true;
 			}
 		},
 		// 不同分数级别显示不同颜色
@@ -313,29 +317,6 @@ var all = new Vue({
 			else {
 				return '#cd0000';
 			}
-		},
-		// 重新加载数据并显示状态信息
-		reloadData () {
-			var reUrl = "http://192.168.199.126:8080/movies/films.json?t=" + new Date().getTime(),
-			films = this.films;
-
-			axios.get(reUrl)
-			.then(function (response) {
-				all.onClear();
-				all.searchText = '';
-				films = response;
-				all.isReloading = false;
-				all.reloadSuccess = true;
-			})
-			.catch(function (error) {
-				all.isReloading = false;
-				all.reloadError = true;
-			})
-			.then(function () {
-				setTimeout(function () {
-					all.pullDown = false;
-				}, 1000);
-			});
 		}
 	},
 	computed: {
@@ -414,14 +395,30 @@ var all = new Vue({
 				this.onClear();
 			}
 		},
-		// 下拉时加载数据，否则复位信息
-		pullDown () {
-			if (this.pullDown == true) {
+		// 下拉时重新加载数据并显示状态信息，否则复位信息
+		isPull () {
+			if (this.isPull == true) {
+				var allfilms = "http://192.168.199.126:8080/movies/all-films.json?t=" + new Date().getTime(),
+				films = this.films;
+
 				setTimeout(function () {
-					all.reloadData();
+					axios.get(allfilms)
+					.then(function (response) {
+						all.onClear();
+						all.searchText = '';
+						films = response;
+						all.reloadSuccess = true;
+					})
+					.catch(function (error) {
+						all.reloadError = true;
+					})
+					.then(function () {
+						setTimeout(function () {
+							all.isPull = false;
+						}, 1000);
+					});
 				}, 1000);
 			} else {
-				this.isReloading = true;
 				this.reloadSuccess = false;
 				this.reloadError = false;
 			}

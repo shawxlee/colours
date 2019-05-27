@@ -1,15 +1,16 @@
 /* $primary: #4f94cd; $secondary: #a9a9a9; $light: #e8e8e8; $dark: #363636; */
+
 /*  全局样式  */
 body {
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	padding-top: 6.1rem;
+	padding-top: 3rem;
 	color: #1c1c1c;
 	background-color: #e8e8e8;
 }
-
+/* 折叠组件 */
 .navbar-toggler {
 	color: #a9a9a9;
 }
@@ -25,7 +26,7 @@ body {
 	box-shadow: none;
 	outline: none;
 }
-
+/* 按钮 */
 .btn {
 	width: 100%;
 	color: #4f94cd;
@@ -46,7 +47,7 @@ body {
 	box-shadow: none;
 	outline: none;
 }
-
+/* 输入框 */
 .form-control {
 	height: 2.4rem;
 	font-size: 1rem;
@@ -59,23 +60,25 @@ body {
 .form-control:active.focus,
 .form-control.active.focus {
 	border-color: #4f94cd;
-	outline: none;
 	box-shadow: none;
+	outline: none;
 }
 
-.row {
-	overflow-wrap: normal;
-}
 
 /*  局部样式  */
-/* 导航栏1 */
-.headNavbar .navbar:first-of-type {
+
+/* 标题栏 */
+.navbar:first-of-type {
 	height: 3rem;
 	color: white;
 	background-color: #4f94cd;
+	transition: all .3s linear;
+}
+.hide {
+	transform: translateY(-3rem);
 }
 /* 切换模式 */
-#modeSwitch .nav-link {
+#topNavbar .nav-link {
 	height: 1.5rem;
 	padding-top: .35rem;
 	padding-bottom: .35rem;
@@ -84,22 +87,23 @@ body {
 	color: #a9a9a9;
 	border: .08rem solid #a9a9a9;
 }
-#modeSwitch .active {
+#topNavbar .active {
 	color: white;
 	border-color: white;
 	background-color: transparent;
 }
 
-/* 导航栏2 */
-.headNavbar .navbar:last-of-type {
+/* 工具栏 */
+.navbar:last-of-type {
 	position: fixed;
 	top: 3rem;
 	right: 0;
-	z-index: 29;
+	z-index: 9;
 	width: 100%;
 	background-color: white;
+	transition: all .3s linear;
 }
-/* 折叠面板 */
+/* 筛选信息 */
 .screenInfo {
 	font-size: 1rem;
 	color: #4f94cd;
@@ -110,6 +114,7 @@ body {
 .screenInfo .active {
 	color: #363636;
 }
+/* 折叠面板 */
 #screenCollapse .btn {
 	color: #4f94cd;
 }
@@ -132,7 +137,7 @@ body {
 #screenCollapse .active .reverse {
 	color: #a9a9a9;
 }
-#screenCollapse .moreTags {
+#screenCollapse .more {
 	color: #a9a9a9;
 	background-color: #e8e8e8;
 	border-color: #e8e8e8;
@@ -159,7 +164,7 @@ body {
 	top: .5rem;
 	right: 1rem;
 }
-/* 动画：展开收起 */
+/* 过渡：展开/收起 */
 .stretch-enter,
 .stretch-leave-to {
 	width: 15%;
@@ -170,28 +175,25 @@ body {
 	transition: all .1s linear;
 }
 
-/* 下拉更新状态栏 */
-#topDivider {
+/* 更新状态栏 */
+.reloadInfo {
 	width: 100%;
-	height: 3.4rem;
+	height: 3rem;
 	font-size: 1rem;
-	line-height: 3.4;
+	line-height: 3;
 	color: #cfcfcf;
 	text-align: center;
+	transition: all .3s linear;
 }
-#topDivider hr {
+.reloadInfo hr {
 	display: inline-block;
 	width: 30%;
 	vertical-align: middle;
 }
-/* 动画：下拉收起 */
-.pull-enter,
-.pull-leave-to {
-	transform: translateY(-3.4rem);
-}
-.pull-enter-active,
-.pull-leave-active {
-	transition: all .3s linear;
+/* 过渡：下拉/收起 */
+.pull {
+	margin-top: .25rem;
+	transform: translateY(3.25rem);
 }
 /* 动画：图标旋转 */
 .fa-sync-alt {
@@ -208,7 +210,7 @@ body {
 	background-color: white;
 }
 /* 海报 */
-.detailCard .filmPoster {
+.filmPoster {
 	position: relative;
 	width: 5.9rem;
 	height: 8.8rem;
@@ -313,19 +315,14 @@ body {
 .miniCollapse {
 	background-color: white;
 }
-.miniCollapse .filmPoster {
-	width: 5.9rem;
-	height: 8.8rem;
-	border-radius: .3rem;
-}
 
 /* 底部分割线 */
 #bottomDivider {
 	width: 100%;
-	height: 3.4rem;
-	margin-bottom: 3.8rem;
+	height: 3rem;
+	margin-bottom: 4.05rem;
 	font-size: 1rem;
-	line-height: 3.4;
+	line-height: 3;
 	color: #cfcfcf;
 	text-align: center;
 }
@@ -353,9 +350,7 @@ body {
 	opacity: .5;
 }
 #toTop {
-	position: fixed;
-	right: .5rem;
-	bottom: 7.3rem;
+	transform: translateY(-3rem);
 }
 
 /* 加载时显示画面 */
@@ -365,7 +360,7 @@ body {
 	right: 0;
 	z-index: 9999;
 	width: 100vw;
-	height: calc(100vh - 4rem);
+	height: calc(100vh - 3.8rem);
 	background-color: white;
 }
 #loadingInfo,
