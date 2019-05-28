@@ -227,21 +227,23 @@ body {
 	height: 8.8rem;
 	border-radius: .3rem;
 }
-.largePoster {
-	width: 100vw;
-	height: 88vh;
-	text-align: center;
-}
 .filmPoster .btn {
 	width: 6rem;
+	margin-right: auto;
+	margin-left: auto;
 	color: white;
 	border-color: white;
 }
-.filmPoster span {
+.filmPoster p {
+	width: 100%;
 	font-size: .9rem;
-	color: #e8e8e8;
+	text-align: center;
+	color: #cfcfcf;
 	opacity: 0;
-	transition: all .2s linear .2s;
+	transition: all .1s linear;
+}
+.filmPoster span {
+	color: white;
 }
 .filmPoster .fade {
 	opacity: 1;

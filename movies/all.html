@@ -106,15 +106,16 @@
 							<div class="row no-gutters">
 								<div class="col-auto">
 									<div class="filmPoster overflow-hidden">
-										<img data-toggle="modal" :data-target="'#largePoster_' + index" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
+										<img data-toggle="modal" :data-target="'#largePoster_' + index" data-backdrop="static" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
 										<div class="modal" :id="'largePoster_' + index" tabindex="-1">
-											<div class="modal-dialog text-center m-0">
-												<div class="largePoster py-2 mb-1">
-													<img :src="item.posterUrl" :alt="item.transName" width="100%">
+											<div class="modal-dialog modal-dialog-centered m-0">
+												<div class="modal-content bg-transparent border-0 p-3 pb-1">
+													<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%">
+													<br>
+													<a class="btn" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a>
+													<br>
+													<p :class="{fade: isSave}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
 												</div>
-												<a class="btn" :href="item.posterUrl" :download="item.offiName" @click.stop.passive="isSave = true">保存图片</a>
-												<br>
-												<span class="{fade: isSave}">图片 {{ item.offiName }} 已保存到手机</span>
 											</div>
 										</div>
 										<div class="filmScore" :style="{backgroundColor: scoreColor(item)}">

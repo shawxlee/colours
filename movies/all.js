@@ -13,6 +13,7 @@ $(function () {
 			} else {
 				loadingInfo.hide();
 				errorInfo.show();
+				console.log(status);
 			}
 		});
 	}
@@ -299,6 +300,15 @@ var all = new Vue({
 			}
 			this.activeTags.splice(0);
 		},
+		// 点击保存1s后显示提示信息，显示1s后消失
+		onSave () {
+			setTimeout(function () {
+				all.isSave = true;
+				setTimeout(function () {
+					all.isSave = false;
+				}, 3000);
+			}, 1000);
+		},
 		// 不同分数级别显示不同颜色
 		scoreColor (item) {
 			var score = item.score;
@@ -408,7 +418,7 @@ var all = new Vue({
 				films = this.films;
 
 				setTimeout(function () {
-					axios.get(allfilms)
+					axios.get(allfilms, {timeout: 5000})
 					.then(function (response) {
 						all.onClear();
 						all.searchText = '';
@@ -417,6 +427,7 @@ var all = new Vue({
 					})
 					.catch(function (error) {
 						all.reloadError = true;
+						console.log(error);
 					})
 					.then(function () {
 						setTimeout(function () {
@@ -427,14 +438,6 @@ var all = new Vue({
 							}, 300);
 						}, 1000);
 					});
-				}, 1000);
-			}
-		},
-		// 保存信息显示1s后消失
-		isSave () {
-			if (this.isSave == true) {
-				setTimeout(function () {
-					all.isSave = false;
 				}, 1000);
 			}
 		}
