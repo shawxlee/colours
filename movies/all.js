@@ -44,6 +44,7 @@ $(function () {
 			all.isFocus = false;
 		}
 		all.moreHidden = true;
+
 		var i, len;
 		for (i = 0, len = all.tags.length; i < len; i++) {
 			if (all.tags[i].isActive) {
@@ -66,9 +67,12 @@ $(function () {
 	notScreen.on("click", function () {
 		foldUp();
 	});
-	// 页面滚动时收起
+	// 页面滚动时收起；滚到顶部后显示导航栏
 	$(document).on("scroll", function () {
 		foldUp();
+		if ($(document).scrollTop() == 0) {
+			all.headerHidden = false;
+		}
 	});
 
 	// 页面滚动与刷新
@@ -95,13 +99,16 @@ $(function () {
 var all = new Vue({
 	el: '#all',
 	data: {
-		topHidden: false,
+		headerHidden: false,
 		collapseHidden: true,
-		activeTags: [],
 		sortOrder: 1,
 		revYear: false,
 		revScore: true,
 		revRecent: true,
+		activeTags: [],
+		isStretch: false,
+		isFocus: false,
+		searchText: '',
 		tags: [
 		{
 			isActive: false,
@@ -225,13 +232,11 @@ var all = new Vue({
 		},
 		],
 		moreHidden: true,
-		isStretch: false,
-		isFocus: false,
-		searchText: '',
 		isPull: false,
 		reloadSuccess: false,
 		reloadError: false,
-		films: []
+		films: [],
+		isSave: false
 	},
 	directives: {
 		focus: {
@@ -241,6 +246,15 @@ var all = new Vue({
 		}
 	},
 	methods: {
+		// 下滑时隐藏导航栏；滚动到顶部时下滑触发下拉更新
+		onPull () {
+			this.headerHidden = false;
+
+			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			if (scrollTop == 0) {
+				this.isPull = true;
+			}
+		},
 		// 点击按钮展开搜索框/清除搜索文本
 		onSearch () {
 			if (this.isStretch) {
@@ -284,14 +298,6 @@ var all = new Vue({
 				this.tags[i].isActive = false;
 			}
 			this.activeTags.splice(0);
-		},
-		onPull () {
-			this.topHidden = false;
-
-			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-			if (scrollTop == 0) {
-				this.isPull = true;
-			}
 		},
 		// 不同分数级别显示不同颜色
 		scoreColor (item) {
@@ -415,12 +421,21 @@ var all = new Vue({
 					.then(function () {
 						setTimeout(function () {
 							all.isPull = false;
+							setTimeout(function () {
+								all.reloadSuccess = false;
+								all.reloadError = false;
+							}, 300);
 						}, 1000);
 					});
 				}, 1000);
-			} else {
-				this.reloadSuccess = false;
-				this.reloadError = false;
+			}
+		},
+		// 保存信息显示1s后消失
+		isSave () {
+			if (this.isSave == true) {
+				setTimeout(function () {
+					all.isSave = false;
+				}, 1000);
 			}
 		}
 	}
