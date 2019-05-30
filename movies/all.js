@@ -1,106 +1,11 @@
-// jquery脚本
-$(function () {
-	var loadingBg = $("#loadingBg"),
-	loadingInfo = $("#loadingInfo"),
-	errorInfo = $("#errorInfo"),
-	loadAgain = $("#loadAgain");
-	// 加载成功则移除加载页面，否则显示错误提示
-	function loadData(url,vm) {
-		$.getJSON(url, function (data,status) {
-			if (status == "success") {
-				vm.films = data;
-				loadingBg.fadeOut("fast", "linear").remove();
-			} else {
-				loadingInfo.hide();
-				errorInfo.show();
-				console.log(status);
-			}
-		});
-	}
-	// 给json地址添加时间戳
-	var allfilms = "http://192.168.199.126:8080/movies/all-films.json?t=" + new Date().getTime();
-	// 首次加载数据
-	loadData(allfilms,all);
-	// 点击按钮重新加载数据
-	loadAgain.on("click", function () {
-		errorInfo.hide();
-		loadingInfo.show();
-		loadData(allfilms,all);
-	});
-
-	// 工具栏
-	var screenToggler = $("#screenToggler"),
-	screenCollapse = $("#screenCollapse");
-	// 筛选按钮变色；筛选信息隐藏/显示
-	screenCollapse.on("show.bs.collapse", function () {
-		screenToggler.addClass("active");
-		all.collapseHidden = false;
-	});
-	// 若有标签被激活则收起搜索框；若有更多标签被激活则不折叠更多标签
-	screenCollapse.on("hidden.bs.collapse", function () {
-		screenToggler.removeClass("active");
-		all.collapseHidden = true;
-		if (all.activeTags.length > 0) {
-			all.isStretch = false;
-			all.isFocus = false;
-		}
-		all.moreHidden = true;
-
-		var i, len;
-		for (i = 0, len = all.tags.length; i < len; i++) {
-			if (all.tags[i].isActive) {
-				if (i > 16) {
-					all.moreHidden = false;
-				}
-			}
-		}
-	});
-	// 收起筛选面板和搜索框；若搜索框有内容则不收起
-	function foldUp() {
-		screenCollapse.collapse("hide");
-		if (all.searchText.length == 0) {
-			all.isStretch = false;
-			all.isFocus = false;
-		}
-	}
-	// 点击其他位置收起
-	var notScreen = $("#topNavbar, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #footer");
-	notScreen.on("click", function () {
-		foldUp();
-	});
-	// 页面滚动时收起；滚到顶部后显示导航栏
-	$(document).on("scroll", function () {
-		foldUp();
-		if ($(document).scrollTop() == 0) {
-			all.headerHidden = false;
-		}
-	});
-
-	// 页面滚动与刷新
-	var toTop = $("#toTop"),
-	toBottom = $("#toBottom"),
-	toAll = $("#toAll");
-	// 回到顶部
-	toTop.on("click", function () {
-		$("html, body").animate({ scrollTop: 0 }, 300, "linear");
-	});
-	// 直达底部
-	toBottom.on("click", function () {
-		$("html, body").animate({ scrollTop: $(document).height() }, 300, "linear");
-	});
-	// 回到顶部并刷新
-	toAll.on("click", function () {
-		$("html, body").animate({ scrollTop: 0 }, 100, "linear", function () {
-			all.isPull = true;
-		});
-	});
-});
-
-// all页面根实例
-var all = new Vue({
+// 页面1根实例
+var page1 = new Vue({
 	el: '#all',
 	data: {
+		isLoading: true,
+		loadError: false,
 		headerHidden: false,
+		modeOrder: 1,
 		collapseHidden: true,
 		sortOrder: 1,
 		revYear: false,
@@ -230,7 +135,7 @@ var all = new Vue({
 		{
 			isActive: false,
 			tag: '宗教'
-		},
+		}
 		],
 		moreHidden: true,
 		isPull: false,
@@ -239,7 +144,12 @@ var all = new Vue({
 		films: [],
 		isSave: false
 	},
+	mounted () {
+		// 首次加载数据
+		this.loadData();
+	},
 	directives: {
+		// 输入框自动获得焦点
 		focus: {
 			inserted (el) {
 				el.focus();
@@ -247,13 +157,38 @@ var all = new Vue({
 		}
 	},
 	methods: {
-		// 下滑时隐藏导航栏；滚动到顶部时下滑触发下拉更新
-		onPull () {
-			this.headerHidden = false;
+		// 加载成功则移除加载页面，否则显示错误提示
+		loadData () {
+			// 给json地址添加时间戳
+			var allfilms = 'http://192.168.199.126:8080/movies/all-films.json?t=' + new Date().getTime();
 
-			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-			if (scrollTop == 0) {
-				this.isPull = true;
+			axios.get(allfilms, {timeout: 5000})
+			.then(function (response) {
+				console.log(response);
+				page1.films = response.data;
+				page1.ifSuccess();
+			})
+			.catch(function (error) {
+				console.log(error);
+				page1.ifError();
+			});
+		},
+		// 加载成功的两种情况
+		ifSuccess () {
+			if (this.isLoading == true) {
+				this.isLoading = false;
+			} else {
+				this.onClear();
+				this.searchText = '';
+				this.reloadSuccess = true;
+			}
+		},
+		// 加载失败的两种情况
+		ifError () {
+			if (this.isLoading == true) {
+				this.loadError = true;
+			} else {
+				this.reloadError = true;
 			}
 		},
 		// 点击按钮展开搜索框/清除搜索文本
@@ -300,13 +235,36 @@ var all = new Vue({
 			}
 			this.activeTags.splice(0);
 		},
+		// 下滑时隐藏导航栏；滚动到顶部时下滑触发下拉更新
+		onPull () {
+			this.headerHidden = false;
+
+			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			if (scrollTop == 0) {
+				this.reloadData();
+			}
+		},
+		// 下拉后重新加载数据并显示状态信息，收起后复位信息
+		reloadData () {
+			this.isPull = true;
+			setTimeout(function () {
+				page1.loadData();
+				setTimeout(function () {
+					page1.isPull = false;
+					setTimeout(function () {
+						page1.reloadSuccess = false;
+						page1.reloadError = false;
+					}, 300);
+				}, 1500);
+			}, 1000);
+		},
 		// 点击保存1s后显示提示信息，显示1s后消失
 		onSave () {
 			setTimeout(function () {
-				all.isSave = true;
+				page1.isSave = true;
 				setTimeout(function () {
-					all.isSave = false;
-				}, 3000);
+					page1.isSave = false;
+				}, 2000);
 			}, 1000);
 		},
 		// 不同分数级别显示不同颜色
@@ -377,7 +335,7 @@ var all = new Vue({
 
 			return this.sortFilms.filter(function (item) {
 				if (activeTags.length > 0) {
-					// 标签过滤：遍历每一个选中标签，返回包含至少一个标签的所有项
+					// 标签：遍历每一个选中标签，返回包含至少一个标签的所有项
 					var i, lenI;
 					for (i = 0, lenI = activeTags.length; i < lenI; i++) {
 						if (item.type.includes(activeTags[i])) {
@@ -385,7 +343,7 @@ var all = new Vue({
 						}
 					}
 				} else if (searchText.length > 0) {
-					// 搜索过滤：将搜索文本按空格分割为关键词，清除数据文本的所有标点符号，返回包含至少一个关键词的所有项
+					// 搜索：将搜索文本按空格分割为关键词，清除数据文本的所有标点符号，返回包含至少一个关键词的所有项
 					var stArr = searchText.split(' '),
 					itemKeys = [item.transName, item.year, item.offiName, item.country, item.type, item.director, item.star, item.comment],
 					j, lenJ,
@@ -410,36 +368,6 @@ var all = new Vue({
 			if (this.searchText.length > 0) {
 				this.onClear();
 			}
-		},
-		// 下拉时重新加载数据并显示状态信息，否则复位信息
-		isPull () {
-			if (this.isPull == true) {
-				var allfilms = "http://192.168.199.126:8080/movies/all-films.json?t=" + new Date().getTime(),
-				films = this.films;
-
-				setTimeout(function () {
-					axios.get(allfilms, {timeout: 5000})
-					.then(function (response) {
-						all.onClear();
-						all.searchText = '';
-						films = response;
-						all.reloadSuccess = true;
-					})
-					.catch(function (error) {
-						all.reloadError = true;
-						console.log(error);
-					})
-					.then(function () {
-						setTimeout(function () {
-							all.isPull = false;
-							setTimeout(function () {
-								all.reloadSuccess = false;
-								all.reloadError = false;
-							}, 300);
-						}, 1000);
-					});
-				}, 1000);
-			}
 		}
 	}
 });
@@ -448,6 +376,74 @@ var all = new Vue({
 var footer = new Vue({
 	el: '#footer',
 	data: {
-		pageOrder: 1,
-	},
+		pageOrder: 1
+	}
+});
+
+// jquery脚本
+$(function () {
+	// 工具栏
+	var screenToggler = $("#screenToggler"),
+	screenCollapse = $("#screenCollapse");
+	// 筛选按钮变色；筛选信息隐藏/显示
+	screenCollapse.on("show.bs.collapse", function () {
+		screenToggler.addClass("active");
+		page1.collapseHidden = false;
+	});
+	// 若有标签被激活则收起搜索框；若有更多标签被激活则不折叠更多标签
+	screenCollapse.on("hidden.bs.collapse", function () {
+		screenToggler.removeClass("active");
+		page1.collapseHidden = true;
+		page1.moreHidden = true;
+		if (page1.activeTags.length > 0) {
+			page1.isStretch = false;
+			page1.isFocus = false;
+
+			var i, len;
+			for (i = 0, len = page1.tags.length; i < len; i++) {
+				if (page1.tags[i].isActive && i > 16) {
+					page1.moreHidden = false;
+				}
+			}
+		}
+	});
+	// 收起筛选面板和搜索框；若搜索框有内容则不收起
+	function foldUp() {
+		screenCollapse.collapse("hide");
+		if (page1.searchText.length == 0) {
+			page1.isStretch = false;
+			page1.isFocus = false;
+		}
+	}
+	// 点击其他位置收起
+	var nToolBar = $("#topNav, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #bottomNav");
+	nToolBar.on("click", function () {
+		foldUp();
+	});
+	// 页面滚动时收起；滚到顶部后显示导航栏
+	$(document).on("scroll", function () {
+		foldUp();
+		if ($(document).scrollTop() == 0) {
+			page1.headerHidden = false;
+		}
+	});
+
+	// 页面滚动与刷新
+	var toTop = $("#toTop"),
+	toBottom = $("#toBottom"),
+	toAll = $("#toAll");
+	// 回到顶部
+	toTop.on("click", function () {
+		$("html, body").animate({ scrollTop: 0 }, 300, "linear");
+	});
+	// 直达底部
+	toBottom.on("click", function () {
+		$("html, body").animate({ scrollTop: $(document).height() }, 300, "linear");
+	});
+	// 回到顶部并刷新
+	toAll.on("click", function () {
+		$("html, body").animate({ scrollTop: 0 }, 100, "linear", function () {
+			page1.reloadData();
+		});
+	});
 });

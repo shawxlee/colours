@@ -5,11 +5,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<!-- 引入样式库 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-
+	<!-- 私有样式 -->
 	<link rel="stylesheet" type="text/css" href="all-light-theme.css">
 
+	<!-- 图标及标题 -->
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<title>MR.S - 来自Shaw的电影推荐</title>
@@ -18,123 +20,189 @@
 	<div class="container-fluid m-0 p-0">
 		<!-- 页面1：全部影片 -->
 		<div id="all">
-			<v-touch @swipeup.passive="headerHidden = true" @swipedown.passive="onPull" :swipe-options="{direction: 'vertical'}">
-				<!-- 顶部导航栏：标题、切换模式 -->
-				<nav class="navbar navbar-expand-lg border-bottom fixed-top" :class="{hide: headerHidden}" id="topNavbar">
-					<span class="navbar-text mb-0 h4">全部影片</span>
-					<ul class="nav nav-pills">
-						<li class="nav-item mx-1">
-							<a class="nav-link rounded-pill px-2 active" data-toggle="pill" href="#detailMode">全览模式</a>
-						</li>
-						<li class="nav-item mx-1">
-							<a class="nav-link rounded-pill px-2" data-toggle="pill" href="#miniMode">极简模式</a>
-						</li>
-						<li class="nav-item mx-1">
-							<a class="nav-link rounded-pill px-2" data-toggle="pill" href="#seriesMode">系列模式</a>
-						</li>
-					</ul>
-				</nav>
-
-				<!-- 工具栏：排序、过滤、搜索 -->
-				<nav class="navbar navbar-expand-lg border-bottom fixed-sub" :class="{top: headerHidden}">
-					<!-- 筛选信息 -->
-					<div class="screenInfo">
-						<button class="navbar-toggler pr-1" id="screenToggler" data-toggle="collapse" data-target="#screenCollapse" type="button"><i class="fas fa-sort-amount-down"></i></button>
-						<template v-if="collapseHidden">
-							<span v-show="sortOrder == 1 && !revYear">最早上映</span>
-							<span v-show="sortOrder == 1 && revYear">最近上映</span>
-							<span v-show="sortOrder == 2 && !revScore">最高评分</span>
-							<span v-show="sortOrder == 2 && revScore">最低评分</span>
-							<span v-show="sortOrder == 3 && !revRecent">最近更新</span>
-							<span v-show="sortOrder == 3 && revRecent">最早更新</span>
-							<span v-for="(item, index) in activeTags" :key="index"> · {{ item }}</span>
-						</template>
+			<!-- 加载画面 -->
+			<transition name="fade">
+				<div class="loadStatus" v-if="isLoading">
+					<div v-if="loadError">
+						<img src="./images/error.png" width="30%">
+						<br><br>
+						<span>加载失败！</span>
+						<br><br>
+						<v-touch tag="button" class="btn" @tap="loadData"><i class="fas fa-redo-alt"></i> 重新加载</v-touch>
 					</div>
-					<!-- 搜索框 -->
-					<form class="searchForm m-0 p-0">
-						<transition name="stretch">
-							<input class="form-control rounded-pill" type="text" placeholder="输入关键词搜索" v-if="isStretch" @focus.passive="isFocus = true" @blur.passive="isFocus = false" v-model.trim="searchText" v-focus>
-						</transition>
-						<button class="navbar-toggler" :class="{active: isFocus}" type="button" @mousedown.prevent @click.passive="onSearch"><i class="fas fa-search" v-show="searchText.length == 0"></i><i class="fas fa-times" v-show="searchText.length > 0"></i></button>
-					</form>
-					<!-- 筛选面板 -->
-					<div class="collapse navbar-collapse p-2 pt-4" id="screenCollapse">
-						<div class="row no-gutters justify-content-between">
-							<div class="col-4 px-1">
-								<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 1}" @tap.passive="onSort(1)">按年份排序 <span><i class="fas fa-caret-left" :class="{reverse: !revYear}"></i><i class="fas fa-caret-right" :class="{reverse: revYear}"></i></span></v-touch>
-							</div>
-							<div class="col-4 px-1">
-								<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 2}" @tap.passive="onSort(2)">按评分排序 <span><i class="fas fa-caret-left" :class="{reverse: !revScore}"></i><i class="fas fa-caret-right" :class="{reverse: revScore}"></i></span></v-touch>
-							</div>
-							<div class="col-4 px-1">
-								<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 3}" @tap.passive="onSort(3)">按更新排序 <span><i class="fas fa-caret-left" :class="{reverse: !revRecent}"></i><i class="fas fa-caret-right" :class="{reverse: revRecent}"></i></span></v-touch>
-							</div>
-							<div class="w-100"><hr></div>
-							<div class="col-2 p-1" v-for="(item, index) in filterTags" :key="index">
-								<v-touch class="btn btn-sm" :class="{active: item.isActive}" @tap.passive="onTag(item)">{{ item.tag }}</v-touch>
-							</div>
-							<div class="col-2 p-1" v-show="moreHidden">
-								<v-touch class="btn btn-sm more" @tap.passive="moreHidden = false">更多</v-touch>
-							</div>
-							<div class="w-100 mt-1 text-center" v-show="activeTags.length > 0">
-								<v-touch class="navbar-toggler" @tap.passive="onClear"><i class="fas fa-times"></i> 清空标签</v-touch>
-							</div>
+					<div v-else>
+						<img src="./images/loading.gif" width="30%">
+						<br><br>
+						<span>正在加载……</span>
+					</div>
+				</div>
+			</transition>
+
+			<!-- 顶部导航栏：标题、切换模式 -->
+			<nav class="navbar navbar-expand-lg border-bottom fixed-top" :class="{hide: headerHidden}" id="topNav">
+				<span class="navbar-text mb-0 h4">全部影片</span>
+				<ul class="nav">
+					<li class="nav-item mx-1">
+						<v-touch class="nav-link rounded-pill px-2" :class="{active: modeOrder == 1}" @tap="modeOrder = 1">全览模式</v-touch>
+					</li>
+					<li class="nav-item mx-1">
+						<v-touch class="nav-link rounded-pill px-2" :class="{active: modeOrder == 2}" @tap="modeOrder = 2">简约模式</v-touch>
+					</li>
+					<li class="nav-item mx-1">
+						<v-touch class="nav-link rounded-pill px-2" :class="{active: modeOrder == 3}" @tap="modeOrder = 3">系列模式</v-touch>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- 工具栏：排序、过滤、搜索 -->
+			<nav class="navbar navbar-expand-lg border-bottom toolBar" :class="{top: headerHidden}">
+				<!-- 筛选信息 -->
+				<div class="screenInfo">
+					<button class="navbar-toggler pr-1" id="screenToggler" data-toggle="collapse" data-target="#screenCollapse" type="button"><i class="fas fa-sort-amount-down"></i></button>
+					<template v-if="collapseHidden">
+						<span v-show="sortOrder == 1 && !revYear">最早上映</span>
+						<span v-show="sortOrder == 1 && revYear">最近上映</span>
+						<span v-show="sortOrder == 2 && !revScore">最高评分</span>
+						<span v-show="sortOrder == 2 && revScore">最低评分</span>
+						<span v-show="sortOrder == 3 && !revRecent">最近更新</span>
+						<span v-show="sortOrder == 3 && revRecent">最早更新</span>
+						<span v-for="(item, index) in activeTags" :key="index"> · {{ item }}</span>
+					</template>
+				</div>
+				<!-- 搜索框 -->
+				<form>
+					<transition name="stretch">
+						<input class="form-control rounded-pill" type="text" placeholder="输入关键词搜索" v-if="isStretch" @focus.passive="isFocus = true" @blur.passive="isFocus = false" v-model.trim="searchText" v-focus>
+					</transition>
+					<button class="navbar-toggler" :class="{active: isFocus}" type="button" @mousedown.prevent @click.passive="onSearch"><i class="fas fa-search" v-show="searchText.length == 0"></i><i class="fas fa-times" v-show="searchText.length > 0"></i></button>
+				</form>
+				<!-- 筛选面板 -->
+				<div class="collapse navbar-collapse p-2 pt-4" id="screenCollapse">
+					<div class="row no-gutters justify-content-between">
+						<div class="col-4 px-1">
+							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 1}" @tap="onSort(1)">按年份排序 <span><i class="fas fa-caret-left" :class="{reverse: !revYear}"></i><i class="fas fa-caret-right" :class="{reverse: revYear}"></i></span></v-touch>
+						</div>
+						<div class="col-4 px-1">
+							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 2}" @tap="onSort(2)">按评分排序 <span><i class="fas fa-caret-left" :class="{reverse: !revScore}"></i><i class="fas fa-caret-right" :class="{reverse: revScore}"></i></span></v-touch>
+						</div>
+						<div class="col-4 px-1">
+							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 3}" @tap="onSort(3)">按更新排序 <span><i class="fas fa-caret-left" :class="{reverse: !revRecent}"></i><i class="fas fa-caret-right" :class="{reverse: revRecent}"></i></span></v-touch>
+						</div>
+						<div class="w-100"><hr></div>
+						<div class="col-2 p-1" v-for="(item, index) in filterTags" :key="index">
+							<v-touch class="btn btn-sm" :class="{active: item.isActive}" @tap="onTag(item)">{{ item.tag }}</v-touch>
+						</div>
+						<div class="col-2 p-1" v-show="moreHidden">
+							<v-touch class="btn btn-sm more" @tap="moreHidden = false">更多</v-touch>
+						</div>
+						<div class="w-100 mt-1 text-center" v-show="activeTags.length > 0">
+							<v-touch class="navbar-toggler" @tap="onClear"><i class="fas fa-times"></i> 清空标签</v-touch>
 						</div>
 					</div>
-				</nav>
+				</div>
+			</nav>
 
-				<!-- 下拉更新状态栏 -->
-				<transition name="pull">
-					<div class="reloadInfo" v-if="isPull">
-						<div v-if="reloadSuccess">
-							<hr>&nbsp;&nbsp; 更新成功 <i class="fas fa-check-circle"></i> &nbsp;&nbsp;<hr>
+			<!-- 下拉更新状态栏 -->
+			<transition name="pull">
+				<div class="reloadInfo mt-1" v-if="isPull">
+					<div v-if="reloadSuccess">
+						<hr>&nbsp;&nbsp; 更新成功 <i class="fas fa-check-circle"></i> &nbsp;&nbsp;<hr>
+					</div>
+					<div v-else-if="reloadError">
+						<hr>&nbsp;&nbsp; 更新失败 <i class="fas fa-exclamation-circle"></i> &nbsp;&nbsp;<hr>
+					</div>
+					<div v-else>
+						<hr>&nbsp;&nbsp; 正在更新 <i class="fas fa-sync-alt"></i> &nbsp;&nbsp;<hr>
+					</div>
+				</div>
+			</transition>
+
+			<!-- 电影列表 -->
+			<v-touch @swipeup="headerHidden = true" @swipedown="onPull" :swipe-options="{threshold: 100}">
+				<!-- 全览模式 -->
+				<div id="detailMode" v-show="modeOrder == 1">
+					<div class="detailCard my-1 p-3" v-for="(item, index) in filterFilms" :key="item.id">
+						<div class="d-flex">
+							<div class="filmPoster">
+								<img data-toggle="modal" :data-target="'#largePoster_' + index" data-backdrop="static" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
+								<div class="modal" :id="'largePoster_' + index" tabindex="-1">
+									<div class="modal-dialog modal-dialog-centered m-0">
+										<div class="modal-content bg-transparent border-0 p-3 pb-1">
+											<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%">
+											<br>
+											<a class="btn mx-auto" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a>
+											<br>
+											<p :class="{fade: isSave}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
+										</div>
+									</div>
+								</div>
+								<div class="filmScore" :style="{'background-color': scoreColor(item)}">
+									<a :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
+								</div>
+							</div>
+							<div class="filmInfo">
+								<h5>{{ item.transName }}</h5>
+								<div class="d-flex mt-1 mb-3">
+									<h6>({{ item.year }})</h6>&nbsp;
+									<h6>{{ item.offiName }}</h6>
+								</div>
+								<div class="d-flex">
+									<p>类型：</p>
+									<p>{{ item.type }}</p>
+								</div>
+								<div class="d-flex">
+									<p>地区：</p>
+									<p>{{ item.country }}</p>
+								</div>
+								<div class="d-flex">
+									<p>导演：</p>
+									<p>{{ item.director }}</p>
+								</div>
+								<div class="d-flex">
+									<p>主演：</p>
+									<p>{{ item.star }}</p>
+								</div>
+							</div>
 						</div>
-						<div v-else-if="reloadError">
-							<hr>&nbsp;&nbsp; 更新失败 <i class="fas fa-exclamation-circle"></i> &nbsp;&nbsp;<hr>
-						</div>
-						<div v-else>
-							<hr>&nbsp;&nbsp; 正在更新 <i class="fas fa-sync-alt"></i> &nbsp;&nbsp;<hr>
+						<div class="filmComment d-flex mt-2 px-2">
+							<div><i class="fas fa-comment-dots mr-2"></i></div>
+							<p>{{ item.comment }}</p>
 						</div>
 					</div>
-				</transition>
+				</div>
 
-				<!-- 标签页：电影列表 -->
-				<div class="tab-content">
-					<!-- 全览模式 -->
-					<div class="tab-pane active" id="detailMode">
-						<div class="detailCard my-1 p-3" v-for="(item, index) in filterFilms" :key="item.id">
-							<div class="row no-gutters">
-								<div class="col-auto">
-									<div class="filmPoster overflow-hidden">
-										<img data-toggle="modal" :data-target="'#largePoster_' + index" data-backdrop="static" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
-										<div class="modal" :id="'largePoster_' + index" tabindex="-1">
+				<!-- 简约模式 -->
+				<div class="accordion mx-1" id="miniMode" v-show="modeOrder == 2">
+					<div class="card my-1 shadow-sm" style="border-radius: .5rem;" v-for="(item, index) in filterFilms" :key="item.id">
+						<div class="card-header p-0 shadow">
+							<div class="miniToggler p-3 collapsed" data-toggle="collapse" :data-target="'#miniCollapse_' + index">
+								<div class="filmScore mr-1" :style="{'background-color': scoreColor(item)}">
+									<a :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
+								</div>
+								<h5>{{ item.transName }} <small>({{ item.year }})</small></h5>
+								<p><i class="fas fa-tag"></i> {{ item.type }}</p>
+							</div>
+						</div>
+						<div class="collapse" :id="'miniCollapse_' + index" data-parent="#miniMode">
+							<div class="card-body p-3">
+								<div class="d-flex">
+									<div class="filmPoster">
+										<img data-toggle="modal" :data-target="'#largePoster2_' + index" data-backdrop="static" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
+										<div class="modal" :id="'largePoster2_' + index" tabindex="-1">
 											<div class="modal-dialog modal-dialog-centered m-0">
 												<div class="modal-content bg-transparent border-0 p-3 pb-1">
 													<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%">
 													<br>
-													<a class="btn" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a>
+													<a class="btn mx-auto" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a>
 													<br>
 													<p :class="{fade: isSave}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
 												</div>
 											</div>
 										</div>
-										<div class="filmScore" :style="{backgroundColor: scoreColor(item)}">
-											<a :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
-										</div>
 									</div>
-								</div>
-								<div class="col-8 pl-2">
 									<div class="filmInfo">
-										<h5>{{ item.transName }}</h5>
-										<div class="d-flex mt-1 mb-3">
-											<h6>({{ item.year }})</h6>&nbsp;
-											<h6>{{ item.offiName }}</h6>
-										</div>
-										<div class="d-flex">
-											<p>类型：</p>
-											<p>{{ item.type }}</p>
-										</div>
-										<div class="d-flex">
+										<h6>{{ item.offiName }}</h6>
+										<div class="d-flex mt-1">
 											<p>地区：</p>
 											<p>{{ item.country }}</p>
 										</div>
@@ -146,111 +214,65 @@
 											<p>主演：</p>
 											<p>{{ item.star }}</p>
 										</div>
-									</div>
-								</div>
-							</div>
-							<div class="d-flex mt-2 px-2 filmComment">
-								<div class="mr-2"><i class="fas fa-comment-dots"></i></div>
-								<p>{{ item.comment }}</p>
-							</div>
-						</div>
-					</div>
-					<!-- 极简模式 -->
-					<div class="tab-pane accordion my-3 overflow-hidden" id="miniMode">
-						<div class="border" v-for="(item, index) in filterFilms" :key="item.id">
-							<div class="p-2 miniToggler" :id="'miniToggler_' + index">
-								<div class="filmScore" :style="{borderColor: scoreColor(item)}">
-									<a :style="{color: scoreColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
-								</div>
-								<h5 class="mb-0">{{ item.transName }} <small>({{ item.year }})</small></h5>
-								<a class="btn btn-link collapsed float-right" data-toggle="collapse" :data-target="'#miniCollapse_' + index"><i class="fas fa-chevron-down"></i></a>
-							</div>
-							<div class="collapse p-2 miniCollapse" :id="'miniCollapse_' + index" :data-parent="'#miniToggler_' + index">
-								<div class="row no-gutters">
-									<div class="col-auto">
-										<div class="filmPoster overflow-hidden">
-											<img :src="item.posterUrl" width="100%" height="100%">
-										</div>
-									</div>
-									<div class="col-8 pt-2 pl-2">
-										<div class="filmInfo overflow-hidden">
-											<h6>{{ item.offiName }}</h6>
-											<br><br>
-											<p>地区：{{ item.country }}</p>
-											<p>类型：{{ item.type }}</p>
-											<p>导演：{{ item.director }}</p>
-											<p>主演：{{ item.star }}</p>
-											<p><i class="fas fa-comment-dots mx-2"></i>{{ item.comment }}</p>
+										<div class="filmComment mt-2 px-2 py-1">
+											<i class="fas fa-comment-dots mr-2 mb-0"></i>{{ item.comment }}
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- 系列模式 -->
-					<div class="tab-pane" id="seriesMode">
-						<div class="card seriesCard" v-for="(item, index) in filterFilms" :key="item.id">
-							<div class="card-header">
-								<h5 class="mb-0">
-									<button class="btn" data-toggle="collapse" type="button">{{ item.transName }} <small>({{ item.year }})</small></button>
-								</h5>
-							</div>
+				</div>
+
+				<!-- 系列模式 -->
+				<div id="seriesMode" v-show="modeOrder == 3">
+					<div class="card" v-for="(item, index) in filterFilms" :key="item.id">
+						<div class="card-header">
+							<h5 class="mb-0">
+								<button class="btn" data-toggle="collapse" type="button">{{ item.transName }} <small>({{ item.year }})</small></button>
+							</h5>
 						</div>
 					</div>
 				</div>
-
-				<!-- 底部分割线 -->
-				<div id="bottomDivider">
-					<div v-if="filterFilms.length > 0">
-						<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
-					</div>
-					<div v-else>
-						<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
-					</div>
-				</div>
-
-				<!-- 快捷按钮 -->
-				<div id="toTop"><i class="fas fa-chevron-up"></i></div>
-				<div id="toBottom"><i class="fas fa-chevron-down"></i></div>
 			</v-touch>
+
+			<!-- 底部分割线 -->
+			<div id="bottomDivider">
+				<div v-if="filterFilms.length > 0">
+					<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+				</div>
+				<div v-else>
+					<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+				</div>
+			</div>
+
+			<!-- 快捷按钮 -->
+			<div id="toTop"><i class="fas fa-chevron-up"></i></div>
+			<div id="toBottom"><i class="fas fa-chevron-down"></i></div>
 		</div>
 
 		<!-- 底部全局导航 -->
 		<div id="footer">
-			<!-- 加载时显示画面 -->
-			<div id="loadingBg">
-				<div id="loadingInfo">
-					<img src="./images/loading.gif" width="50%">
-					<br><br>
-					<span>正在加载……</span>
-				</div>
-				<div id="errorInfo">
-					<img src="./images/error.png" width="50%">
-					<br><br>
-					<span>加载失败！</span>
-					<br><br>
-					<button class="btn" id="loadAgain" type="button"><i class="fas fa-redo-alt"></i> 重新加载</button>
-				</div>
-			</div>
-
-			<!-- 导航列表 -->
-			<ul class="nav nav-justified border-top fixed-bottom">
+			<ul class="nav nav-justified border-top fixed-bottom" id="bottomNav">
 				<li class="nav-item">
-					<a class="nav-link" :class="{active: pageOrder == 1}" id="toAll" @click="pageOrder = 1"><i class="fas fa-star"></i><br>全部</a>
+					<v-touch class="nav-link" :class="{active: pageOrder == 1}" id="toAll" @tap="pageOrder = 1"><i class="fas fa-star"></i><br>全部</v-touch>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" :class="{active: pageOrder == 2}" id="toToWatch" @click="pageOrder = 2"><i class="fas fa-play-circle"></i><br>待看</a>
+					<v-touch class="nav-link" :class="{active: pageOrder == 2}" id="toToWatch" @tap="pageOrder = 2"><i class="fas fa-play-circle"></i><br>待看</v-touch>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" :class="{active: pageOrder == 3}" id="toWatched" @click="pageOrder = 3"><i class="fas fa-pen-square"></i><br>已看</a>
+					<v-touch class="nav-link" :class="{active: pageOrder == 3}" id="toWatched" @tap="pageOrder = 3"><i class="fas fa-pen-square"></i><br>已看</v-touch>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" :class="{active: pageOrder == 4}" id="settingToggler" href="#settingSidebar" @click="pageOrder = 4"><i class="fas fa-cog"></i><br>设置</a>
+					<v-touch class="nav-link" :class="{active: pageOrder == 4}" id="settingToggler" @tap="pageOrder = 4"><i class="fas fa-cog"></i><br>设置</v-touch>
 				</li>
 			</ul>
 		</div>
 	</div>
 
+	<!-- 动态调整字号 -->
+	<script type="text/javascript" src="font-size.js"></script>
+	<!-- 引入脚本库 -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -258,8 +280,7 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 	<script src="./node_modules/vue-touch/dist/vue-touch.min.js"></script>
-
-	<script type="text/javascript" src="font-size.js"></script>
+	<!-- 私有脚本 -->
 	<script type="text/javascript" src="all.js"></script>
 </body>
 </html>
