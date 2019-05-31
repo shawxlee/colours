@@ -2,15 +2,11 @@
 var page1 = new Vue({
 	el: '#all',
 	data: {
-		isLoading: true,
-		loadError: false,
 		headerHidden: false,
 		modeOrder: 1,
-		collapseHidden: true,
+		screenHidden: true,
 		sortOrder: 1,
-		revYear: false,
-		revScore: true,
-		revRecent: true,
+		isReverse: false,
 		activeTags: [],
 		isStretch: false,
 		isFocus: false,
@@ -138,14 +134,16 @@ var page1 = new Vue({
 		}
 		],
 		moreHidden: true,
+		moreActive: false,
 		isPull: false,
-		reloadSuccess: false,
-		reloadError: false,
+		loadSuccess: false,
+		loadError: false,
 		films: [],
 		isSave: false
 	},
 	mounted () {
 		// 首次加载数据
+		this.isPull = true;
 		this.loadData();
 	},
 	directives: {
@@ -157,46 +155,39 @@ var page1 = new Vue({
 		}
 	},
 	methods: {
-		// 加载成功则移除加载页面，否则显示错误提示
+		// 加载数据并显示状态信息，然后收起状态栏，然后复位信息
 		loadData () {
 			// 给json地址添加时间戳
-			var allfilms = 'http://192.168.199.126:8080/movies/all-films.json?t=' + new Date().getTime();
+			var date = new Date(),
+			allfilms = 'http://192.168.199.126:8080/movies/all-films.json?t=' + date.getTime();
 
 			axios.get(allfilms, {timeout: 5000})
 			.then(function (response) {
-				console.log(response);
+				page1.onClear();
+				page1.searchText = '';
 				page1.films = response.data;
-				page1.ifSuccess();
+				page1.loadSuccess = true;
+				console.log(response);
 			})
 			.catch(function (error) {
+				page1.loadError = true;
 				console.log(error);
-				page1.ifError();
+			})
+			.then(function () {
+				setTimeout(function () {
+					page1.isPull = false;
+					setTimeout(function () {
+						page1.loadSuccess = false;
+						page1.loadError = false;
+					}, 300);
+				}, 1500);
 			});
-		},
-		// 加载成功的两种情况
-		ifSuccess () {
-			if (this.isLoading == true) {
-				this.isLoading = false;
-			} else {
-				this.onClear();
-				this.searchText = '';
-				this.reloadSuccess = true;
-			}
-		},
-		// 加载失败的两种情况
-		ifError () {
-			if (this.isLoading == true) {
-				this.loadError = true;
-			} else {
-				this.reloadError = true;
-			}
 		},
 		// 点击按钮展开搜索框/清除搜索文本
 		onSearch () {
-			if (this.isStretch) {
+			this.isStretch = true;
+			if (this.searchText.length > 0) {
 				this.searchText = '';
-			} else {
-				this.isStretch = true;
 			}
 		},
 		// 点击不同按钮切换排序方式，点击同一按钮切换正倒序
@@ -217,11 +208,14 @@ var page1 = new Vue({
 			}
 		},
 		// 点击切换标签激活状态；若选中则添加到筛选信息中，否则从中删除
-		onTag (item) {
+		onTag (item, index) {
 			item.isActive = !item.isActive;
 			if (item.isActive) {
 				this.searchText = '';
 				this.activeTags.push(item.tag);
+				if (index > 16) {
+					this.moreActive = true;
+				} else {}
 			} else {
 				var atIndex = this.activeTags.indexOf(item.tag);
 				this.activeTags.splice(atIndex, 1);
@@ -235,28 +229,25 @@ var page1 = new Vue({
 			}
 			this.activeTags.splice(0);
 		},
-		// 下滑时隐藏导航栏；滚动到顶部时下滑触发下拉更新
-		onPull () {
-			this.headerHidden = false;
+		// 上滑时隐藏导航栏
+		swipeUp () {
+			if (this.headerHidden == false) {
+				this.headerHidden = true;
+			}
+		},
+		// 下滑时显示导航栏；滚动到顶部时下滑触发下拉更新
+		swipeDown () {
+			if (this.headerHidden == true) {
+				this.headerHidden = false;
+			}
 
 			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 			if (scrollTop == 0) {
-				this.reloadData();
-			}
-		},
-		// 下拉后重新加载数据并显示状态信息，收起后复位信息
-		reloadData () {
-			this.isPull = true;
-			setTimeout(function () {
-				page1.loadData();
+				this.isPull = true;
 				setTimeout(function () {
-					page1.isPull = false;
-					setTimeout(function () {
-						page1.reloadSuccess = false;
-						page1.reloadError = false;
-					}, 300);
-				}, 1500);
-			}, 1000);
+					page1.loadData();
+				}, 1000);
+			}
 		},
 		// 点击保存1s后显示提示信息，显示1s后消失
 		onSave () {
@@ -269,62 +260,25 @@ var page1 = new Vue({
 		},
 		// 不同分数级别显示不同颜色
 		scoreColor (item) {
-			var score = item.score;
-			if (score >= 9) {
-				return '#912cee';
-			}
-			else if (score < 9 && score >= 8) {
-				return '#0000cd';
-			}
-			else if (score < 8 && score >= 7) {
-				return '#00cdcd';
-			}
-			else if (score < 7 && score >= 6) {
-				return '#00cd00';
-			}
-			else if (score < 6 && score >= 5) {
-				return '#cdcd00';
-			}
-			else if (score < 5 && score >= 4) {
-				return '#cd8500';
-			}
-			else {
-				return '#cd0000';
-			}
+			var colors = ['#cd0000', '#cd8500', '#cdcd00', '#00cd00', '#00cdcd', '#0000cd', '#912cee'],
+			colorIndex = Math.floor(item.score) - 3;
+
+			return colors[colorIndex];
 		}
 	},
 	computed: {
-		// 标签过滤：默认显示前17个，点击更多显示完整30个
-		filterTags () {
-			var moreHidden = this.moreHidden;
-			return this.tags.filter(function (item,index) {
-				if (moreHidden) {
-					return index < 17;
-				} else {
-					return true;
-				}
-			});
-		},
 		// 电影排序：年份/评分/更新
 		sortFilms () {
 			var sortOrder = this.sortOrder,
-			revYear = this.revYear,
-			revScore = this.revScore,
-			revRecent = this.revRecent;
+			isReverse = this.isReverse;
 
-			return this.films.sort(function (a,b) {
-				if (sortOrder == 1 && !revYear) {
-					return a.year - b.year;
-				} else if (sortOrder == 2 && !revScore) {
-					return b.score - a.score;
-				} else if (sortOrder == 3 && !revRecent) {
-					return b.id - a.id;
-				} else if (sortOrder == 1 && revYear) {
-					return b.year - a.year;
-				} else if (sortOrder == 2 && revScore) {
-					return a.score - b.score;
+			return this.films.sort(function (a, b) {
+				if (sortOrder == 1) {
+					return isReverse ? b.year - a.year : a.year - b.year;
+				} else if (sortOrder == 2) {
+					return isReverse ? a.score - b.score : b.score - a.score;
 				} else {
-					return a.id - b.id;
+					return isReverse ? a.id - b.id : b.id - a.id;
 				}
 			});
 		},
@@ -345,13 +299,13 @@ var page1 = new Vue({
 				} else if (searchText.length > 0) {
 					// 搜索：将搜索文本按空格分割为关键词，清除数据文本的所有标点符号，返回包含至少一个关键词的所有项
 					var stArr = searchText.split(' '),
-					itemKeys = [item.transName, item.year, item.offiName, item.country, item.type, item.director, item.star, item.comment],
+					keys = [item.transName, item.year, item.offiName, item.country, item.type, item.director, item.star, item.comment],
 					j, lenJ,
 					k, lenK;
 
 					for (j = 0, lenJ = stArr.length; j < lenJ; j++) {
-						for (k = 0, lenK = itemKeys.length; k < lenK; k++) {
-							if (itemKeys[k].replace(/[ \/ ·，“”……：]+/g, '').toLowerCase().includes(stArr[j].toLowerCase())) {
+						for (k = 0, lenK = keys.length; k < lenK; k++) {
+							if (keys[k].replace(/[ \/ ·，“”……：]+/g, '').toLowerCase().includes(stArr[j].toLowerCase())) {
 								return true;
 							}
 						}
@@ -363,8 +317,12 @@ var page1 = new Vue({
 		}
 	},
 	watch: {
+		// 排序方式变化时复位倒序属性
+		sortOrder (newOrder, oldOrder) {
+			this.isReverse = false;
+		},
 		// 搜索时清空标签
-		searchText () {
+		searchText (newText, oldText) {
 			if (this.searchText.length > 0) {
 				this.onClear();
 			}
@@ -380,20 +338,17 @@ var footer = new Vue({
 	}
 });
 
-// jquery脚本
+// bootstrap相关jquery脚本
 $(function () {
-	// 工具栏
-	var screenToggler = $("#screenToggler"),
-	screenCollapse = $("#screenCollapse");
+	// 折叠组件：工具栏
+	var screenCollapse = $('#screenCollapse');
 	// 筛选按钮变色；筛选信息隐藏/显示
-	screenCollapse.on("show.bs.collapse", function () {
-		screenToggler.addClass("active");
-		page1.collapseHidden = false;
+	screenCollapse.on('show.bs.collapse', function () {
+		page1.screenHidden = false;
 	});
 	// 若有标签被激活则收起搜索框；若有更多标签被激活则不折叠更多标签
-	screenCollapse.on("hidden.bs.collapse", function () {
-		screenToggler.removeClass("active");
-		page1.collapseHidden = true;
+	screenCollapse.on('hidden.bs.collapse', function () {
+		page1.screenHidden = true;
 		page1.moreHidden = true;
 		if (page1.activeTags.length > 0) {
 			page1.isStretch = false;
@@ -409,41 +364,46 @@ $(function () {
 	});
 	// 收起筛选面板和搜索框；若搜索框有内容则不收起
 	function foldUp() {
-		screenCollapse.collapse("hide");
+		screenCollapse.collapse('hide');
 		if (page1.searchText.length == 0) {
 			page1.isStretch = false;
 			page1.isFocus = false;
 		}
 	}
 	// 点击其他位置收起
-	var nToolBar = $("#topNav, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #bottomNav");
-	nToolBar.on("click", function () {
+	var nToolBar = $('#topNav, #detailMode, #miniMode, #seriesMode, #bottomDivider, #toTop, #toBottom, #bottomNav');
+	nToolBar.on('click', function () {
 		foldUp();
 	});
-	// 页面滚动时收起；滚到顶部后显示导航栏
-	$(document).on("scroll", function () {
+	// 页面滚动时收起
+	$(document).on('scroll', function () {
 		foldUp();
-		if ($(document).scrollTop() == 0) {
-			page1.headerHidden = false;
-		}
 	});
 
-	// 页面滚动与刷新
-	var toTop = $("#toTop"),
-	toBottom = $("#toBottom"),
-	toAll = $("#toAll");
+	// 滚动条动画
+	var toTop = $('#toTop'),
+	toBottom = $('#toBottom'),
+	toAll = $('#toAll');
 	// 回到顶部
-	toTop.on("click", function () {
-		$("html, body").animate({ scrollTop: 0 }, 300, "linear");
+	toTop.on('click', function () {
+		$('html, body').animate({ scrollTop: 0 }, 300, 'linear', function () {
+			page1.headerHidden = false;
+		});
 	});
 	// 直达底部
-	toBottom.on("click", function () {
-		$("html, body").animate({ scrollTop: $(document).height() }, 300, "linear");
+	toBottom.on('click', function () {
+		var height = $(document).height();
+		$('html, body').animate({ scrollTop: height }, 300, 'linear', function () {
+			page1.headerHidden = false;
+		});
 	});
 	// 回到顶部并刷新
-	toAll.on("click", function () {
-		$("html, body").animate({ scrollTop: 0 }, 100, "linear", function () {
-			page1.reloadData();
-		});
+	toAll.on('click', function () {
+		$(document).scrollTop(0);
+		page1.headerHidden = false;
+		page1.isPull = true;
+		setTimeout(function () {
+			page1.loadData();
+		}, 1000);
 	});
 });

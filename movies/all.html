@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 
 	<!-- 引入样式库 -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -20,24 +20,6 @@
 	<div class="container-fluid m-0 p-0">
 		<!-- 页面1：全部影片 -->
 		<div id="all">
-			<!-- 加载画面 -->
-			<transition name="fade">
-				<div class="loadStatus" v-if="isLoading">
-					<div v-if="loadError">
-						<img src="./images/error.png" width="30%">
-						<br><br>
-						<span>加载失败！</span>
-						<br><br>
-						<v-touch tag="button" class="btn" @tap="loadData"><i class="fas fa-redo-alt"></i> 重新加载</v-touch>
-					</div>
-					<div v-else>
-						<img src="./images/loading.gif" width="30%">
-						<br><br>
-						<span>正在加载……</span>
-					</div>
-				</div>
-			</transition>
-
 			<!-- 顶部导航栏：标题、切换模式 -->
 			<nav class="navbar navbar-expand-lg border-bottom fixed-top" :class="{hide: headerHidden}" id="topNav">
 				<span class="navbar-text mb-0 h4">全部影片</span>
@@ -57,16 +39,16 @@
 			<!-- 工具栏：排序、过滤、搜索 -->
 			<nav class="navbar navbar-expand-lg border-bottom toolBar" :class="{top: headerHidden}">
 				<!-- 筛选信息 -->
-				<div class="screenInfo">
-					<button class="navbar-toggler pr-1" id="screenToggler" data-toggle="collapse" data-target="#screenCollapse" type="button"><i class="fas fa-sort-amount-down"></i></button>
-					<template v-if="collapseHidden">
+				<div class="screenToggler" data-toggle="collapse" data-target="#screenCollapse">
+					<button class="navbar-toggler pr-1" :class="{active: !screenHidden}" type="button"><i class="fas fa-sort-amount-down"></i></button>
+					<template v-if="screenHidden">
 						<span v-show="sortOrder == 1 && !revYear">最早上映</span>
 						<span v-show="sortOrder == 1 && revYear">最近上映</span>
 						<span v-show="sortOrder == 2 && !revScore">最高评分</span>
 						<span v-show="sortOrder == 2 && revScore">最低评分</span>
 						<span v-show="sortOrder == 3 && !revRecent">最近更新</span>
 						<span v-show="sortOrder == 3 && revRecent">最早更新</span>
-						<span v-for="(item, index) in activeTags" :key="index"> · {{ item }}</span>
+						<span v-for="item in activeTags"> · {{ item }}</span>
 					</template>
 				</div>
 				<!-- 搜索框 -->
@@ -74,25 +56,28 @@
 					<transition name="stretch">
 						<input class="form-control rounded-pill" type="text" placeholder="输入关键词搜索" v-if="isStretch" @focus.passive="isFocus = true" @blur.passive="isFocus = false" v-model.trim="searchText" v-focus>
 					</transition>
-					<button class="navbar-toggler" :class="{active: isFocus}" type="button" @mousedown.prevent @click.passive="onSearch"><i class="fas fa-search" v-show="searchText.length == 0"></i><i class="fas fa-times" v-show="searchText.length > 0"></i></button>
+					<button class="navbar-toggler" :class="{active: isFocus}" type="button" @mousedown.prevent @click.passive="onSearch">
+						<i class="fas fa-times" v-if="searchText.length > 0"></i>
+						<i class="fas fa-search" v-else></i>
+					</button>
 				</form>
 				<!-- 筛选面板 -->
 				<div class="collapse navbar-collapse p-2 pt-4" id="screenCollapse">
 					<div class="row no-gutters justify-content-between">
 						<div class="col-4 px-1">
-							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 1}" @tap="onSort(1)">按年份排序 <span><i class="fas fa-caret-left" :class="{reverse: !revYear}"></i><i class="fas fa-caret-right" :class="{reverse: revYear}"></i></span></v-touch>
+							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 1}" @tap="onSort(1)">按年份排序 <span><i class="fas fa-caret-left" :class="{disabled: !isReverse}"></i><i class="fas fa-caret-right" :class="{disabled: isReverse}"></i></span></v-touch>
 						</div>
 						<div class="col-4 px-1">
-							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 2}" @tap="onSort(2)">按评分排序 <span><i class="fas fa-caret-left" :class="{reverse: !revScore}"></i><i class="fas fa-caret-right" :class="{reverse: revScore}"></i></span></v-touch>
+							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 2}" @tap="onSort(2)">按评分排序 <span><i class="fas fa-caret-left" :class="{disabled: !isReverse}"></i><i class="fas fa-caret-right" :class="{disabled: isReverse}"></i></span></v-touch>
 						</div>
 						<div class="col-4 px-1">
-							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 3}" @tap="onSort(3)">按更新排序 <span><i class="fas fa-caret-left" :class="{reverse: !revRecent}"></i><i class="fas fa-caret-right" :class="{reverse: revRecent}"></i></span></v-touch>
+							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == 3}" @tap="onSort(3)">按更新排序 <span><i class="fas fa-caret-left" :class="{disabled: !isReverse}"></i><i class="fas fa-caret-right" :class="{disabled: isReverse}"></i></span></v-touch>
 						</div>
 						<div class="w-100"><hr></div>
-						<div class="col-2 p-1" v-for="(item, index) in filterTags" :key="index">
+						<div class="col-2 p-1" v-for="(item, index) in tags" v-if="moreHidden ? index < 17 : ''">
 							<v-touch class="btn btn-sm" :class="{active: item.isActive}" @tap="onTag(item)">{{ item.tag }}</v-touch>
 						</div>
-						<div class="col-2 p-1" v-show="moreHidden">
+						<div class="col-2 p-1" v-if="moreHidden">
 							<v-touch class="btn btn-sm more" @tap="moreHidden = false">更多</v-touch>
 						</div>
 						<div class="w-100 mt-1 text-center" v-show="activeTags.length > 0">
@@ -104,11 +89,11 @@
 
 			<!-- 下拉更新状态栏 -->
 			<transition name="pull">
-				<div class="reloadInfo mt-1" v-if="isPull">
-					<div v-if="reloadSuccess">
+				<div class="tipInfo" v-if="isPull">
+					<div v-if="loadSuccess">
 						<hr>&nbsp;&nbsp; 更新成功 <i class="fas fa-check-circle"></i> &nbsp;&nbsp;<hr>
 					</div>
-					<div v-else-if="reloadError">
+					<div v-else-if="loadError">
 						<hr>&nbsp;&nbsp; 更新失败 <i class="fas fa-exclamation-circle"></i> &nbsp;&nbsp;<hr>
 					</div>
 					<div v-else>
@@ -118,7 +103,7 @@
 			</transition>
 
 			<!-- 电影列表 -->
-			<v-touch @swipeup="headerHidden = true" @swipedown="onPull" :swipe-options="{threshold: 100}">
+			<v-touch @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
 				<!-- 全览模式 -->
 				<div id="detailMode" v-show="modeOrder == 1">
 					<div class="detailCard my-1 p-3" v-for="(item, index) in filterFilms" :key="item.id">
@@ -237,7 +222,7 @@
 			</v-touch>
 
 			<!-- 底部分割线 -->
-			<div id="bottomDivider">
+			<div class="tipInfo" id="bottomDivider" v-if="sortFilms.length > 0">
 				<div v-if="filterFilms.length > 0">
 					<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
 				</div>
@@ -245,14 +230,15 @@
 					<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
 				</div>
 			</div>
-
-			<!-- 快捷按钮 -->
-			<div id="toTop"><i class="fas fa-chevron-up"></i></div>
-			<div id="toBottom"><i class="fas fa-chevron-down"></i></div>
 		</div>
 
 		<!-- 底部全局导航 -->
 		<div id="footer">
+			<!-- 快捷按钮 -->
+			<div id="toTop"><i class="fas fa-chevron-up"></i></div>
+			<div id="toBottom"><i class="fas fa-chevron-down"></i></div>
+
+			<!-- 页面导航 -->
 			<ul class="nav nav-justified border-top fixed-bottom" id="bottomNav">
 				<li class="nav-item">
 					<v-touch class="nav-link" :class="{active: pageOrder == 1}" id="toAll" @tap="pageOrder = 1"><i class="fas fa-star"></i><br>全部</v-touch>
