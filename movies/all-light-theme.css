@@ -53,8 +53,10 @@ body {
 /* 输入框 */
 .form-control {
 	height: 2.4rem;
+	padding-top: .7rem;
+	padding-bottom: .7rem;
 	font-size: 1rem;
-	line-height: 2.4;
+	line-height: 1;
 }
 .form-control:focus,
 .form-control:active:focus,
@@ -120,6 +122,7 @@ body {
 	top: .2375rem;
 	right: 1rem;
 	width: 100%;
+	transition: width .1s linear;
 }
 .toolBar form .navbar-toggler {
 	position: absolute;
@@ -163,12 +166,6 @@ body {
 	display: inline-block;
 	transform: rotate(90deg);
 }
-.fa-caret-left {
-	margin-left: .05rem;
-}
-.fa-caret-right {
-	margin-left: .1rem;
-}
 #screenCollapse .active {
 	color: white;
 }
@@ -182,6 +179,10 @@ body {
 }
 #screenCollapse .navbar-toggler {
 	font-size: 1rem;
+	opacity: 0;
+}
+#screenCollapse .show {
+	opacity: 1;
 }
 
 /* 更新状态栏 */

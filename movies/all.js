@@ -3,7 +3,6 @@ var page1 = new Vue({
 	el: '#all',
 	data: {
 		headerHidden: false,
-		modeOrder: 1,
 		screenHidden: true,
 		sortOrder: 1,
 		isReverse: false,
@@ -134,7 +133,6 @@ var page1 = new Vue({
 		}
 		],
 		moreHidden: true,
-		moreActive: false,
 		isPull: false,
 		loadSuccess: false,
 		loadError: false,
@@ -164,7 +162,7 @@ var page1 = new Vue({
 			axios.get(allfilms, {timeout: 5000})
 			.then(function (response) {
 				page1.onClear();
-				page1.searchText = '';
+				page1.hideSearch();
 				page1.films = response.data;
 				page1.loadSuccess = true;
 				console.log(response);
@@ -185,37 +183,30 @@ var page1 = new Vue({
 		},
 		// 点击按钮展开搜索框/清除搜索文本
 		onSearch () {
-			this.isStretch = true;
-			if (this.searchText.length > 0) {
+			if (!this.isStretch) {
+				this.isStretch = true;
+			}
+			if (this.isFocus && this.searchText.length > 0) {
 				this.searchText = '';
 			}
+		},
+		// 清空搜索文本，收起并隐藏搜索框
+		hideSearch () {
+			this.searchText = '';
+			this.isFocus = false;
+			this.isStretch = false;
 		},
 		// 点击不同按钮切换排序方式，点击同一按钮切换正倒序
 		onSort (order) {
 			this.sortOrder = order;
-			if (order == 2) {
-				this.revScore = !this.revScore;
-				this.revYear = true;
-				this.revRecent = true;
-			} else if (order == 3) {
-				this.revRecent = !this.revRecent;
-				this.revYear = true;
-				this.revScore = true;
-			} else {
-				this.revYear = !this.revYear;
-				this.revScore = true;
-				this.revRecent = true;
-			}
+			this.isReverse = !this.isReverse;
 		},
-		// 点击切换标签激活状态；若选中则添加到筛选信息中，否则从中删除
-		onTag (item, index) {
+		// 点击切换标签激活状态；若选中则添加到筛选信息中，否则从中删除；操作时关闭搜索框
+		onTag (item) {
 			item.isActive = !item.isActive;
 			if (item.isActive) {
-				this.searchText = '';
 				this.activeTags.push(item.tag);
-				if (index > 16) {
-					this.moreActive = true;
-				} else {}
+				this.hideSearch();
 			} else {
 				var atIndex = this.activeTags.indexOf(item.tag);
 				this.activeTags.splice(atIndex, 1);
@@ -231,13 +222,14 @@ var page1 = new Vue({
 		},
 		// 上滑时隐藏导航栏
 		swipeUp () {
-			if (this.headerHidden == false) {
+			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			if (!this.headerHidden && scrollTop > 175) {
 				this.headerHidden = true;
 			}
 		},
 		// 下滑时显示导航栏；滚动到顶部时下滑触发下拉更新
 		swipeDown () {
-			if (this.headerHidden == true) {
+			if (this.headerHidden) {
 				this.headerHidden = false;
 			}
 
@@ -318,11 +310,11 @@ var page1 = new Vue({
 	},
 	watch: {
 		// 排序方式变化时复位倒序属性
-		sortOrder (newOrder, oldOrder) {
+		sortOrder () {
 			this.isReverse = false;
 		},
-		// 搜索时清空标签
-		searchText (newText, oldText) {
+		// 有搜索内容时清空标签
+		searchText () {
 			if (this.searchText.length > 0) {
 				this.onClear();
 			}
@@ -351,9 +343,6 @@ $(function () {
 		page1.screenHidden = true;
 		page1.moreHidden = true;
 		if (page1.activeTags.length > 0) {
-			page1.isStretch = false;
-			page1.isFocus = false;
-
 			var i, len;
 			for (i = 0, len = page1.tags.length; i < len; i++) {
 				if (page1.tags[i].isActive && i > 16) {
@@ -362,12 +351,11 @@ $(function () {
 			}
 		}
 	});
-	// 收起筛选面板和搜索框；若搜索框有内容则不收起
+	// 收起筛选面板；若搜索文本为空也收起搜索框
 	function foldUp() {
 		screenCollapse.collapse('hide');
 		if (page1.searchText.length == 0) {
-			page1.isStretch = false;
-			page1.isFocus = false;
+			page1.hideSearch();
 		}
 	}
 	// 点击其他位置收起
@@ -375,27 +363,30 @@ $(function () {
 	nToolBar.on('click', function () {
 		foldUp();
 	});
-	// 页面滚动时收起
+	// 页面滚动时收起；滚动快到顶部时即显示顶部导航栏
 	$(document).on('scroll', function () {
 		foldUp();
+		var scrollTop = $(document).scrollTop();
+		console.log(scrollTop);
+		if (scrollTop < 100) {
+			page1.headerHidden = false;
+		}
 	});
 
-	// 滚动条动画
+	// 页面滚动动画效果
 	var toTop = $('#toTop'),
 	toBottom = $('#toBottom'),
 	toAll = $('#toAll');
 	// 回到顶部
 	toTop.on('click', function () {
-		$('html, body').animate({ scrollTop: 0 }, 300, 'linear', function () {
-			page1.headerHidden = false;
-		});
+		$('html, body').animate({ scrollTop: 0 }, 300, 'linear');
+		page1.headerHidden = false;
 	});
 	// 直达底部
 	toBottom.on('click', function () {
 		var height = $(document).height();
-		$('html, body').animate({ scrollTop: height }, 300, 'linear', function () {
-			page1.headerHidden = false;
-		});
+		$('html, body').animate({ scrollTop: height }, 300, 'linear');
+		page1.headerHidden = false;
 	});
 	// 回到顶部并刷新
 	toAll.on('click', function () {
