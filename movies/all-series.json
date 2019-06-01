@@ -1,0 +1,3196 @@
+[
+	{
+		"seriesId": 1,
+		"seriesName": "大白鲨",
+		"seriesList": [
+			{
+				"id": 1,
+				"doubanUrl": "https://movie.douban.com/subject/1294941/",
+				"posterUrl": "./images/大白鲨.webp",
+				"score": "7.7",
+				"transName": "大白鲨",
+				"year": "1975",
+				"offiName": "Jaws",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "史蒂文·斯皮尔伯格",
+				"star": "罗伊·沙伊德尔 / 罗伯特·肖",
+				"comment": "经典IP，史上第一部票房过亿美元的电影"
+			},
+			{
+				"id": 2,
+				"doubanUrl": "https://movie.douban.com/subject/1297242/",
+				"posterUrl": "./images/大白鲨2.webp",
+				"score": "6.4",
+				"transName": "大白鲨2",
+				"year": "1978",
+				"offiName": "Jaws 2",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "吉诺特·兹瓦克",
+				"star": "罗伊·沙伊德尔 / 洛兰·加里",
+				"comment": "第二条大白鲨，更大更凶"
+			},
+			{
+				"id": 3,
+				"doubanUrl": "https://movie.douban.com/subject/1303765/",
+				"posterUrl": "./images/大白鲨3.webp",
+				"score": "5.8",
+				"transName": "大白鲨3",
+				"year": "1983",
+				"offiName": "Jaws 3",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "乔·阿尔夫斯",
+				"star": "丹尼斯·奎德 / 贝丝·阿姆斯特朗",
+				"comment": "大白鲨系列第三部，都是套路"
+			},
+			{
+				"id": 4,
+				"doubanUrl": "https://movie.douban.com/subject/1301844/",
+				"posterUrl": "./images/大白鲨4：复仇.webp",
+				"score": "5.6",
+				"transName": "大白鲨4：复仇",
+				"year": "1987",
+				"offiName": "Jaws: The Revenge",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "约瑟夫·萨金特",
+				"star": "洛兰·加里 / 兰斯·盖斯特",
+				"comment": "经典大白鲨系列完结篇"
+			}
+		]
+	},
+	{
+		"seriesId": 2,
+		"seriesName": "食人鱼",
+		"seriesList": [
+			{
+				"id": 5,
+				"doubanUrl": "https://movie.douban.com/subject/1293081/",
+				"posterUrl": "./images/食人鱼.webp",
+				"score": "6.2",
+				"transName": "食人鱼",
+				"year": "1978",
+				"offiName": "Piranha",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "乔·丹特",
+				"star": "布拉福德·迪尔曼 / 凯文·麦卡锡",
+				"comment": "密密麻麻尖嘴獠牙的小鱼鱼"
+			},
+			{
+				"id": 6,
+				"doubanUrl": "https://movie.douban.com/subject/1295543/",
+				"posterUrl": "./images/食人鱼2：繁殖.png",
+				"score": "5.4",
+				"transName": "食人鱼2：繁殖",
+				"year": "1981",
+				"offiName": "Piranha Part Two: The Spawning",
+				"country": "美国 / 意大利",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "詹姆斯·卡梅隆",
+				"star": "特里西娅·奥尼尔 / 兰斯·亨利克森",
+				"comment": "食人鱼续集，食人鱼中的战斗鱼，詹导处女作"
+			},
+			{
+				"id": 7,
+				"doubanUrl": "https://movie.douban.com/subject/2269893/",
+				"posterUrl": "./images/食人鱼3D.webp",
+				"score": "5.9",
+				"transName": "食人鱼3D",
+				"year": "2010",
+				"offiName": "Piranha 3D",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "亚历山大·阿嘉",
+				"star": "史蒂夫·R·麦奎因 / 杰西卡·斯佐尔",
+				"comment": "有“血”有“肉”，性感露“骨”，海滩大屠杀很过瘾"
+			},
+			{
+				"id": 8,
+				"doubanUrl": "https://movie.douban.com/subject/5323911/",
+				"posterUrl": "./images/食人鱼3DD.webp",
+				"score": "4.5",
+				"transName": "食人鱼3DD",
+				"year": "2012",
+				"offiName": "Piranha 3DD",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "约翰·古拉格",
+				"star": "丹妮尔·帕娜贝克 / 马特·布什",
+				"comment": "食人鱼进化，泳池再屠杀，格局比上一部小了点"
+			}
+		]
+	},
+	{
+		"seriesId": 3,
+		"seriesName": "异形",
+		"seriesList": [
+			{
+				"id": 9,
+				"doubanUrl": "https://movie.douban.com/subject/1300868/",
+				"posterUrl": "./images/异形.webp",
+				"score": "8.1",
+				"transName": "异形",
+				"year": "1979",
+				"offiName": "Alien",
+				"country": "英国 / 美国",
+				"type": "变异 / 怪物 / 惊悚 / 太空 / 逃生 / 外星 / 血腥",
+				"director": "雷德利·斯科特",
+				"star": "西格妮·韦弗 / 汤姆·斯凯里特",
+				"comment": "经典IP，x形抱脸虫，x头外星怪，封闭飞船大逃杀"
+			},
+			{
+				"id": 10,
+				"doubanUrl": "https://movie.douban.com/subject/1293792/",
+				"posterUrl": "./images/异形2.webp",
+				"score": "8.0",
+				"transName": "异形2",
+				"year": "1986",
+				"offiName": "Aliens",
+				"country": "美国 / 英国",
+				"type": "变异 / 怪物 / 惊悚 / 探险 / 逃生 / 外星 / 血腥",
+				"director": "詹姆斯·卡梅隆",
+				"star": "西格妮·韦弗 / 凯莉·赫恩",
+				"comment": "唯一生还者女主随军方小队重返异形老巢"
+			},
+			{
+				"id": 11,
+				"doubanUrl": "https://movie.douban.com/subject/1297929/",
+				"posterUrl": "./images/异形3.webp",
+				"score": "7.1",
+				"transName": "异形3",
+				"year": "1992",
+				"offiName": "Alien³",
+				"country": "美国",
+				"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 外星 / 血腥",
+				"director": "大卫·芬奇",
+				"star": "西格妮·韦弗 / 查尔斯·达顿",
+				"comment": "与世隔绝的监狱星球，女主与异形斗智斗勇"
+			},
+			{
+				"id": 12,
+				"doubanUrl": "https://movie.douban.com/subject/1299153/",
+				"posterUrl": "./images/异形4：复活.webp",
+				"score": "7.6",
+				"transName": "异形4：复活",
+				"year": "1997",
+				"offiName": "Alien: Resurrection",
+				"country": "美国",
+				"type": "变异 / 怪物 / 基因 / 惊悚 / 逃生 / 外星 / 血腥",
+				"director": "让-皮埃尔·热内",
+				"star": "西格妮·韦弗 / 薇诺娜·瑞德",
+				"comment": "正传完结篇，基因实验造出超强异形人女主，吊打异形"
+			},
+			{
+				"id": 13,
+				"doubanUrl": "https://movie.douban.com/subject/1308769/",
+				"posterUrl": "./images/异形大战铁血战士.webp",
+				"score": "6.8",
+				"transName": "异形大战铁血战士",
+				"year": "2004",
+				"offiName": "AVP - Alien vs. Predator",
+				"country": "美国 / 德国 / 捷克 / 英国",
+				"type": "怪物 / 惊悚 / 探险 / 逃生 / 外星 / 血腥",
+				"director": "保罗·安德森",
+				"star": "桑娜·莱瑟 / 雷欧·波瓦",
+				"comment": "两大IP联动，探险队误入地下未知文明遗迹，不作死就不会死"
+			},
+			{
+				"id": 14,
+				"doubanUrl": "https://movie.douban.com/subject/1578502/",
+				"posterUrl": "./images/异形大战铁血战士2：安魂曲.webp",
+				"score": "5.8",
+				"transName": "异形大战铁血战士2：安魂曲",
+				"year": "2007",
+				"offiName": "AVP - Aliens vs Predator: Requiem",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 逃生 / 外星 / 血腥 / 灾难",
+				"director": "科林·施特劳斯 / 格雷格·施特劳斯",
+				"star": "史蒂文·帕斯奎尔 / 蕾可·艾尔丝沃斯",
+				"comment": "进化后的铁血异形屠杀小镇大量繁殖，一群人的求生之路"
+			},
+			{
+				"id": 15,
+				"doubanUrl": "https://movie.douban.com/subject/3771562/",
+				"posterUrl": "./images/普罗米修斯.webp",
+				"score": "7.3",
+				"transName": "普罗米修斯",
+				"year": "2012",
+				"offiName": "Prometheus",
+				"country": "美国 / 英国",
+				"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 外星 / 哲学",
+				"director": "雷德利·斯科特",
+				"star": "劳米·拉佩斯 / 迈克尔·法斯宾德",
+				"comment": "异形前传开启，科考队到外星探寻人类起源，结果玩脱了"
+			},
+			{
+				"id": 16,
+				"doubanUrl": "https://movie.douban.com/subject/11803087/",
+				"posterUrl": "./images/异形：契约.webp",
+				"score": "7.4",
+				"transName": "异形：契约",
+				"year": "2017",
+				"offiName": "Alien: Covenant",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 外星 / 哲学",
+				"director": "雷德利·斯科特",
+				"star": "迈克尔·法斯宾德 / 凯瑟琳·沃特斯顿",
+				"comment": "前传续集，通过两个仿生人的对立探讨造物与生命，顺便打打怪"
+			}
+		]
+	},
+	{
+		"seriesId": 4,
+		"seriesName": "怪形",
+		"seriesList": [
+			{
+				"id": 17,
+				"doubanUrl": "https://movie.douban.com/subject/1296794/",
+				"posterUrl": "./images/怪形.webp",
+				"score": "7.9",
+				"transName": "怪形",
+				"year": "1982",
+				"offiName": "The Thing",
+				"country": "美国",
+				"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 血腥 / 重口",
+				"director": "约翰·卡朋特",
+				"star": "库尔特·拉塞尔 / 威尔福德·布利姆雷",
+				"comment": "造型变态且逼真，未知生物同化人类，集体恐慌与信任危机"
+			},
+			{
+				"id": 18,
+				"doubanUrl": "https://movie.douban.com/subject/3097525/",
+				"posterUrl": "./images/怪形前传.webp",
+				"score": "6.7",
+				"transName": "怪形前传",
+				"year": "2011",
+				"offiName": "The Thing",
+				"country": "美国 / 加拿大",
+				"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 血腥 / 重口",
+				"director": "小马斯希斯·范·哈金尼根",
+				"star": "玛丽·伊丽莎白·温斯特德 / 乔尔·埃哲顿",
+				"comment": "无缝衔接怪形，交代前因，另一场集体恐慌与信任危机"
+			}
+		]
+	},
+	{
+		"seriesId": 5,
+		"seriesName": "猛鬼街",
+		"seriesList": [
+			{
+				"id": 19,
+				"doubanUrl": "https://movie.douban.com/subject/1298389/",
+				"posterUrl": "./images/猛鬼街.webp",
+				"score": "7.3",
+				"transName": "猛鬼街",
+				"year": "1984",
+				"offiName": "A Nightmare On Elm Street",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
+				"director": "韦斯·克雷文",
+				"star": "希瑟·兰根坎普 / 罗伯特·英格兰德",
+				"comment": "经典IP，梦中杀人狂Freddy，德普处女作，女主超美"
+			},
+			{
+				"id": 20,
+				"doubanUrl": "https://movie.douban.com/subject/1299957/",
+				"posterUrl": "./images/猛鬼街2.webp",
+				"score": "6.1",
+				"transName": "猛鬼街2",
+				"year": "1985",
+				"offiName": "A Nightmare on Elm Street Part 2: Freddy's Revenge",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
+				"director": "杰克·舒德",
+				"star": "马克·帕顿 / 肯·迈尔斯",
+				"comment": "新的一家搬进了这座房子，噩梦又开始了，这部有点给里给气"
+			},
+			{
+				"id": 21,
+				"doubanUrl": "https://movie.douban.com/subject/1298214/",
+				"posterUrl": "./images/猛鬼街3.webp",
+				"score": "6.9",
+				"transName": "猛鬼街3",
+				"year": "1987",
+				"offiName": "A Nightmare On Elm Street 3: Dream Warriors",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
+				"director": "查克·拉塞尔",
+				"star": "希瑟·兰根坎普 / 克雷格·沃森",
+				"comment": "Nancy回归，做噩梦的孩子们被关在医院，一起战斗吧"
+			},
+			{
+				"id": 22,
+				"doubanUrl": "https://movie.douban.com/subject/1295447/",
+				"posterUrl": "./images/猛鬼街4.webp",
+				"score": "6.5",
+				"transName": "猛鬼街4",
+				"year": "1988",
+				"offiName": "A Nightmare On Elm Street 4: The Dream Master",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
+				"director": "雷尼·哈林",
+				"star": "John Beckman / Kisha Brackel",
+				"comment": "生还者们再次陷入噩梦，这部最重口，人变蟑螂什么的"
+			},
+			{
+				"id": 23,
+				"doubanUrl": "https://movie.douban.com/subject/1295796/",
+				"posterUrl": "./images/猛鬼街5.webp",
+				"score": "6.5",
+				"transName": "猛鬼街5",
+				"year": "1989",
+				"offiName": "A Nightmare On Elm Street 5: The Dream Child",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
+				"director": "斯蒂芬·霍普金斯",
+				"star": "罗伯特·英格兰德 / Lisa Wilcox",
+				"comment": "主要交代了Freddy的身世，他妈终于来收他了"
+			},
+			{
+				"id": 24,
+				"doubanUrl": "https://movie.douban.com/subject/1303998/",
+				"posterUrl": "./images/猛鬼街6.webp",
+				"score": "6.3",
+				"transName": "猛鬼街6",
+				"year": "1991",
+				"offiName": "Freddy's Dead: The Final Nightmare",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
+				"director": "瑞秋·塔拉蕾",
+				"star": "罗伯特·英格兰德 / 丽萨·赞恩",
+				"comment": "榆树街的孩子被杀光了，Freddy竟然有一个女儿"
+			},
+			{
+				"id": 25,
+				"doubanUrl": "https://movie.douban.com/subject/1297010/",
+				"posterUrl": "./images/猛鬼街7.webp",
+				"score": "6.6",
+				"transName": "猛鬼街7",
+				"year": "1994",
+				"offiName": "New Nightmare",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 逃生 / 血腥",
+				"director": "韦斯·克雷文",
+				"star": "杰夫·戴维斯 / 希瑟·兰根坎普",
+				"comment": "猛鬼街系列完结篇，Nancy再回归，在电影里演电影"
+			}
+		]
+	},
+	{
+		"seriesId": 6,
+		"seriesName": "莫里斯",
+		"seriesList": [
+			{
+				"id": 26,
+				"doubanUrl": "https://movie.douban.com/subject/1293456/",
+				"posterUrl": "./images/莫里斯.webp",
+				"score": "8.8",
+				"transName": "莫里斯",
+				"year": "1987",
+				"offiName": "Maurice",
+				"country": "英国",
+				"type": "爱情 / 同性",
+				"director": "詹姆斯·伊沃里",
+				"star": "詹姆斯·维尔比 / 休·格兰特",
+				"comment": "最爱的同性片没有之一，自然优雅如诗如画回味无穷，男神Maurice"
+			}
+		]
+	},
+	{
+		"seriesId": 7,
+		"seriesName": "侏罗纪",
+		"seriesList": [
+			{
+				"id": 27,
+				"doubanUrl": "https://movie.douban.com/subject/1292523/",
+				"posterUrl": "./images/侏罗纪公园.webp",
+				"score": "8.1",
+				"transName": "侏罗纪公园",
+				"year": "1993",
+				"offiName": "Jurassic Park",
+				"country": "美国",
+				"type": "怪物 / 基因 / 惊悚 / 探险 / 逃生",
+				"director": "史蒂文·斯皮尔伯格",
+				"star": "山姆·尼尔 / 劳拉·邓恩",
+				"comment": "经典IP，第一次了解恐龙就是从这里开始的"
+			},
+			{
+				"id": 28,
+				"doubanUrl": "https://movie.douban.com/subject/1293702/",
+				"posterUrl": "./images/侏罗纪公园2：失落的世界.webp",
+				"score": "7.5",
+				"transName": "侏罗纪公园2：失落的世界",
+				"year": "1997",
+				"offiName": "The Lost World: Jurassic Park",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 探险 / 逃生",
+				"director": "史蒂文·斯皮尔伯格",
+				"star": "杰夫·高布伦 / 朱丽安·摩尔",
+				"comment": "重返恐龙岛，利欲熏心使人作死"
+			},
+			{
+				"id": 29,
+				"doubanUrl": "https://movie.douban.com/subject/1304643/",
+				"posterUrl": "./images/侏罗纪公园3.webp",
+				"score": "7.1",
+				"transName": "侏罗纪公园3",
+				"year": "2001",
+				"offiName": "Jurassic Park III",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 探险 / 逃生",
+				"director": "乔·庄斯顿",
+				"star": "山姆·尼尔 / 威廉姆·H·梅西",
+				"comment": "为了救一个小男孩，男主又被骗回岛，没想到小男孩才是挂比"
+			},
+			{
+				"id": 30,
+				"doubanUrl": "https://movie.douban.com/subject/10440138/",
+				"posterUrl": "./images/侏罗纪世界.webp",
+				"score": "7.7",
+				"transName": "侏罗纪世界",
+				"year": "2015",
+				"offiName": "Jurassic World",
+				"country": "美国 / 中国大陆",
+				"type": "怪物 / 基因 / 惊悚 / 逃生 / 灾难",
+				"director": "科林·特雷沃罗",
+				"star": "克里斯·帕拉特 / 布莱丝·达拉斯·霍华德",
+				"comment": "膨胀了，开始驯养恐龙了，终极BOSS沧龙帅得一比"
+			},
+			{
+				"id": 31,
+				"doubanUrl": "https://movie.douban.com/subject/26416062/",
+				"posterUrl": "./images/侏罗纪世界2：失落王国.webp",
+				"score": "6.7",
+				"transName": "侏罗纪世界2：失落王国",
+				"year": "2018",
+				"offiName": "Jurassic World: Fallen Kingdom",
+				"country": "美国 / 西班牙",
+				"type": "怪物 / 基因 / 惊悚 / 人性 / 探险 / 逃生 / 哲学",
+				"director": "胡安·安东尼奥·巴亚纳",
+				"star": "克里斯·帕拉特 / 布莱丝·达拉斯·霍华德",
+				"comment": "悲鸣的长颈龙入选年度最催泪画面，小女孩人设巧妙，格局变小了"
+			}
+		]
+	}
+	{
+		"seriesId": 8,
+		"seriesName": "12只猴子",
+		"seriesList": [
+			{
+				"id": 32,
+				"doubanUrl": "https://movie.douban.com/subject/1298744/",
+				"posterUrl": "./images/12只猴子.webp",
+				"score": "8.1",
+				"transName": "12只猴子",
+				"year": "1995",
+				"offiName": "Twelve Monkeys",
+				"country": "美国",
+				"type": "病毒 / 穿越 / 末日 / 烧脑 / 哲学 / 罪案",
+				"director": "特瑞·吉列姆",
+				"star": "布鲁斯·威利斯 / 布拉德·皮特",
+				"comment": "时间是一个逃不出的圆，因果循环，起点即是终点"
+			}
+		]
+	},
+	{
+		"seriesId": 9,
+		"seriesName": "七宗罪",
+		"seriesList": [
+			{
+				"id": 33,
+				"doubanUrl": "https://movie.douban.com/subject/1292223/",
+				"posterUrl": "./images/七宗罪.webp",
+				"score": "8.8",
+				"transName": "七宗罪",
+				"year": "1995",
+				"offiName": "Se7en",
+				"country": "美国",
+				"type": "惊悚 / 人性 / 致郁 / 宗教 / 罪案",
+				"director": "大卫·芬奇",
+				"star": "摩根·弗里曼 / 布拉德·皮特",
+				"comment": "凶手以天主教的七宗罪为手法作案，结局令人唏嘘"
+			}
+		]
+	},
+	{
+		"seriesId": 10,
+		"seriesName": "勇敢者",
+		"seriesList": [
+			{
+				"id": 34,
+				"doubanUrl": "https://movie.douban.com/subject/1294990/",
+				"posterUrl": "./images/勇敢者的游戏.webp",
+				"score": "8.1",
+				"transName": "勇敢者的游戏",
+				"year": "1995",
+				"offiName": "Jumanji",
+				"country": "美国",
+				"type": "穿越 / 奇幻 / 探险 / 无限",
+				"director": "乔·庄斯顿",
+				"star": "罗宾·威廉姆斯 / 乔纳森·海德",
+				"comment": "经典IP，小男孩绞进旋涡的画面是我的童年阴影了"
+			},
+			{
+				"id": 35,
+				"doubanUrl": "https://movie.douban.com/subject/1370276/",
+				"posterUrl": "./images/勇敢者的游戏2：宇宙历险.webp",
+				"score": "6.7",
+				"transName": "勇敢者的游戏2：宇宙历险",
+				"year": "2005",
+				"offiName": "Zathura: A Space Adventure",
+				"country": "美国",
+				"type": "穿越 / 奇幻 / 太空 / 无限",
+				"director": "乔恩·费儒",
+				"star": "乔纳·波波 / 乔什·哈切森",
+				"comment": "我的太空恐惧症就源自这部电影，宇宙漂泊细思极恐"
+			},
+			{
+				"id": 36,
+				"doubanUrl": "https://movie.douban.com/subject/26586766/",
+				"posterUrl": "./images/勇敢者游戏：决战丛林.webp",
+				"score": "6.9",
+				"transName": "勇敢者游戏：决战丛林",
+				"year": "2017",
+				"offiName": "Jumanji: Welcome to the Jungle",
+				"country": "美国",
+				"type": "穿越 / 奇幻 / 探险",
+				"director": "杰克·卡斯丹",
+				"star": "道恩·强森 / 凯文·哈特",
+				"comment": "不下棋了，玩剧情流真人游戏，失去了无限流的乐趣"
+			}
+		]
+	},
+	{
+		"seriesId": 11,
+		"seriesName": "独立日",
+		"seriesList": [
+			{
+				"id": 37,
+				"doubanUrl": "https://movie.douban.com/subject/1293013/",
+				"posterUrl": "./images/独立日.webp",
+				"score": "8.0",
+				"transName": "独立日",
+				"year": "1996",
+				"offiName": "Independence Day",
+				"country": "美国",
+				"type": "外星 / 灾难 / 战争",
+				"director": "罗兰·艾默里奇",
+				"star": "威尔·史密斯 / 比尔·普尔曼",
+				"comment": "外星人要入侵地球啦，美国人把国庆日变成世界纪念日啦"
+			},
+			{
+				"id": 38,
+				"doubanUrl": "https://movie.douban.com/subject/4811813/",
+				"posterUrl": "./images/独立日2：卷土重来.webp",
+				"score": "5.6",
+				"transName": "独立日2：卷土重来",
+				"year": "2016",
+				"offiName": "Independence Day: Resurgence",
+				"country": "美国",
+				"type": "外星 / 灾难 / 战争",
+				"director": "罗兰·艾默里奇",
+				"star": "利亚姆·海姆斯沃斯 / 杰夫·高布伦",
+				"comment": "外星人又要入侵地球啦，美国人……算了这部随便看看吧"
+			}
+		]
+	},
+	{
+		"seriesId": 12,
+		"seriesName": "狂蟒之灾",
+		"seriesList": [
+			{
+				"id": 39,
+				"doubanUrl": "https://movie.douban.com/subject/1300830/",
+				"posterUrl": "./images/狂蟒之灾.webp",
+				"score": "6.6",
+				"transName": "狂蟒之灾",
+				"year": "1997",
+				"offiName": "Anaconda",
+				"country": "巴西 / 美国 / 秘鲁",
+				"type": "怪物 / 惊悚 / 探险 / 逃生",
+				"director": "路易斯·罗沙",
+				"star": "詹妮弗·洛佩兹 / 艾斯·库珀",
+				"comment": "经典IP，虽然我对蛇无感，但对亚马逊雨林产生了阴影"
+			},
+			{
+				"id": 40,
+				"doubanUrl": "https://movie.douban.com/subject/1308784/",
+				"posterUrl": "./images/狂蟒之灾2：搜寻血兰.webp",
+				"score": "6.3",
+				"transName": "狂蟒之灾2：搜寻血兰",
+				"year": "2004",
+				"offiName": "Anacondas: The Hunt for the Blood Orchid",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 探险 / 逃生",
+				"director": "德怀特·H·里特",
+				"star": "约翰尼·梅辛纳 / 卡迪·斯特瑞兰德",
+				"comment": "满背的蚂蟥和交缠翻滚的蛇群可谓密恐福利"
+			},
+			{
+				"id": 41,
+				"doubanUrl": "https://movie.douban.com/subject/3160325/",
+				"posterUrl": "./images/狂蟒之灾3.webp",
+				"score": "4.9",
+				"transName": "狂蟒之灾3",
+				"year": "2008",
+				"offiName": "Anaconda 3",
+				"country": "美国 / 罗马尼亚",
+				"type": "怪物 / 惊悚 / 逃生 / 血腥",
+				"director": "唐·方李洛伊",
+				"star": "克里斯托·艾伦 / 大卫·哈塞尔霍夫",
+				"comment": "出了亚马逊继续作死，搞科研做实验什么的最危险了"
+			},
+			{
+				"id": 42,
+				"doubanUrl": "https://movie.douban.com/subject/3011606/",
+				"posterUrl": "./images/狂蟒之灾4：血路斑驳.webp",
+				"score": "4.4",
+				"transName": "狂蟒之灾4：血路斑驳",
+				"year": "2009",
+				"offiName": "Anaconda: Trail of Blood",
+				"country": "罗马尼亚 / 美国",
+				"type": "怪物 / 惊悚 / 探险 / 逃生",
+				"director": "唐·方李洛伊",
+				"star": "克莉丝朵·艾伦，约翰·拉里斯-大卫",
+				"comment": "送外卖的人前赴后继"
+			}
+		]
+	},
+	{
+		"seriesId": 13,
+		"seriesName": "变种DNA",
+		"seriesList": [
+			{
+				"id": 43,
+				"doubanUrl": "https://movie.douban.com/subject/1294276/",
+				"posterUrl": "./images/变种DNA.webp",
+				"score": "6.4",
+				"transName": "变种DNA",
+				"year": "1997",
+				"offiName": "Mimic",
+				"country": "美国",
+				"type": "变异 / 怪物 / 基因 / 惊悚 / 探险 / 逃生",
+				"director": "吉尔莫·德尔·托罗",
+				"star": "米拉·索维诺 / 杰瑞米·诺森",
+				"comment": "意外的好看，伪装成人的大蟑螂，又恶心又刺激"
+			},
+			{
+				"id": 44,
+				"doubanUrl": "https://movie.douban.com/subject/1422986/",
+				"posterUrl": "./images/变种DNA 2.webp",
+				"score": "5.7",
+				"transName": "变种DNA 2",
+				"year": "2001",
+				"offiName": "Mimic 2",
+				"country": "美国",
+				"type": "变异 / 怪物 / 基因 / 惊悚 / 逃生",
+				"director": "让·德·塞贡扎克",
+				"star": "阿里克斯·库拉姆乔伊 / 布鲁诺·坎波斯",
+				"comment": "打不死的小强又回来了，这次进化得更像人了"
+			},
+			{
+				"id": 45,
+				"doubanUrl": "https://movie.douban.com/subject/1422987/",
+				"posterUrl": "./images/变种DNA 3：哨兵.webp",
+				"score": "4.6",
+				"transName": "变种DNA 3：哨兵",
+				"year": "2003",
+				"offiName": "Mimic: Sentinel",
+				"country": "美国",
+				"type": "怪物 / 惊悚",
+				"director": "J.T. Petty",
+				"star": "Karl Geary / 约翰.卡普洛斯",
+				"comment": "大部分时间都是男主在暗中观察，最后怪物才出现"
+			}
+		]
+	},
+	{
+		"seriesId": 14,
+		"seriesName": "异次元杀阵",
+		"seriesList": [
+			{
+				"id": 46,
+				"doubanUrl": "https://movie.douban.com/subject/1305903/",
+				"posterUrl": "./images/异次元杀阵.webp",
+				"score": "7.9",
+				"transName": "异次元杀阵",
+				"year": "1997",
+				"offiName": "Cube",
+				"country": "加拿大",
+				"type": "惊悚 / 人性 / 烧脑 / 逃生 / 无限 / 血腥",
+				"director": "文森佐·纳塔利",
+				"star": "妮可·德波儿 / 大卫·休莱特",
+				"comment": "经典IP，密室逃脱，杀戮游戏，人性考验，血腥刺激"
+			},
+			{
+				"id": 47,
+				"doubanUrl": "https://movie.douban.com/subject/1305306/",
+				"posterUrl": "./images/异次元杀阵2：超级立方体.webp",
+				"score": "6.7",
+				"transName": "异次元杀阵2：超级立方体",
+				"year": "2002",
+				"offiName": "Cube 2: Hypercube",
+				"country": "加拿大",
+				"type": "惊悚 / 人性 / 烧脑 / 逃生 / 无限 / 血腥",
+				"director": "安德列·塞库拉",
+				"star": "卡瑞·玛切特 / 格兰特·维恩·戴维斯",
+				"comment": "立方升级，四维空间，杀人花样更多更高端"
+			},
+			{
+				"id": 48,
+				"doubanUrl": "https://movie.douban.com/subject/1316693/",
+				"posterUrl": "./images/异次元杀阵前传.webp",
+				"score": "7.0",
+				"transName": "异次元杀阵前传",
+				"year": "2004",
+				"offiName": "Cube Zero",
+				"country": "加拿大",
+				"type": "惊悚 / 人性 / 烧脑 / 逃生 / 无限 / 血腥",
+				"director": "厄尼·巴巴拉什",
+				"star": "扎卡里·贝内特 / David Huband",
+				"comment": "终于有立方外面的情节了，居然有监控实时直播"
+			}
+		]
+	},
+	{
+		"seriesId": 15,
+		"seriesName": "千钧一发",
+		"seriesList": [
+			{
+				"id": 49,
+				"doubanUrl": "https://movie.douban.com/subject/1300117/",
+				"posterUrl": "./images/千钧一发.webp",
+				"score": "8.7",
+				"transName": "千钧一发",
+				"year": "1997",
+				"offiName": "Gattaca",
+				"country": "美国",
+				"type": "基因 / 人性 / 未来 / 哲学 / 罪案",
+				"director": "安德鲁·尼科尔",
+				"star": "伊桑·霍克 / 乌玛·瑟曼",
+				"comment": "未来科幻神作，其实无关基因，是梦想令人生有意义"
+			}
+		]
+	},
+	{
+		"seriesId": 16,
+		"seriesName": "星河战队",
+		"seriesList": [
+			{
+				"id": 50,
+				"doubanUrl": "https://movie.douban.com/subject/1295384/",
+				"posterUrl": "./images/星河战队.webp",
+				"score": "7.8",
+				"transName": "星河战队",
+				"year": "1997",
+				"offiName": "Starship Troopers",
+				"country": "美国",
+				"type": "怪物 / 太空 / 外星 / 血腥 / 战争",
+				"director": "保罗·范霍文",
+				"star": "卡斯帕·凡·迪恩 / 迪娜·迈耶",
+				"comment": "经典IP，人类军队大战外星昆虫，战争场面很过瘾，女主超美"
+			},
+			{
+				"id": 51,
+				"doubanUrl": "https://movie.douban.com/subject/1422938/",
+				"posterUrl": "./images/星河战队2：联邦英雄.webp",
+				"score": "5.1",
+				"transName": "星河战队2：联邦英雄",
+				"year": "2004",
+				"offiName": "Starship Troopers 2: Hero of the Federation",
+				"country": "美国",
+				"type": "怪物 / 人性 / 外星 / 血腥 / 战争",
+				"director": "菲尔 蒂贝特",
+				"star": "比利·布朗 / 理查德·布基",
+				"comment": "虫族智商又涨了，这次是寄生大脑，杀人诛心"
+			},
+			{
+				"id": 52,
+				"doubanUrl": "https://movie.douban.com/subject/3006123/",
+				"posterUrl": "./images/星河战队3：掠夺者.webp",
+				"score": "5.2",
+				"transName": "星河战队3：掠夺者",
+				"year": "2008",
+				"offiName": "Starship Troopers 3: Marauder",
+				"country": "美国",
+				"type": "怪物 / 外星 / 血腥 / 战争 / 宗教",
+				"director": "爱德华·纽梅尔",
+				"star": "卡斯帕·凡·迪恩 / 乔琳纳·布拉洛克",
+				"comment": "传教令人稍感不适，阴谋论，最后的巨虫+机甲挺混搭的"
+			}
+		]
+	},
+	{
+		"seriesId": 17,
+		"seriesName": "极度深寒",
+		"seriesList": [
+			{
+				"id": 53,
+				"doubanUrl": "https://movie.douban.com/subject/1293515/",
+				"posterUrl": "./images/极度深寒.webp",
+				"score": "7.4",
+				"transName": "极度深寒",
+				"year": "1998",
+				"offiName": "Deep Rising",
+				"country": "美国 / 加拿大",
+				"type": "怪物 / 惊悚 / 血腥 / 灾难",
+				"director": "斯蒂芬·索莫斯",
+				"star": "特里特·威廉斯 / 法米克·詹森",
+				"comment": "大章鱼触手play，把人拖进马桶的画面是童年阴影之一了"
+			}
+		]
+	},
+	{
+		"seriesId": 18,
+		"seriesName": "木乃伊",
+		"seriesList": [
+			{
+				"id": 54,
+				"doubanUrl": "https://movie.douban.com/subject/1295229/",
+				"posterUrl": "./images/木乃伊.webp",
+				"score": "7.8",
+				"transName": "木乃伊",
+				"year": "1999",
+				"offiName": "The Mummy",
+				"country": "美国",
+				"type": "惊悚 / 历史 / 神话 / 探险 / 逃生 / 宗教",
+				"director": "斯蒂芬·索莫斯",
+				"star": "布兰登·费舍 / 蕾切尔·薇兹",
+				"comment": "经典IP，对神秘诡谲的古埃及文化没有抵抗力"
+			},
+			{
+				"id": 55,
+				"doubanUrl": "https://movie.douban.com/subject/1298586/",
+				"posterUrl": "./images/木乃伊归来.webp",
+				"score": "7.4",
+				"transName": "木乃伊归来",
+				"year": "2001",
+				"offiName": "The Mummy Returns",
+				"country": "美国",
+				"type": "惊悚 / 历史 / 神话 / 探险 / 逃生 / 宗教",
+				"director": "斯蒂芬·索莫斯",
+				"star": "布兰登·费舍 / 蕾切尔·薇兹",
+				"comment": "新的历险，宫殿的闪回很美，还有密密麻麻的甲虫和蝎子"
+			},
+			{
+				"id": 56,
+				"doubanUrl": "https://movie.douban.com/subject/1997679/",
+				"posterUrl": "./images/木乃伊3：龙帝之墓.webp",
+				"score": "5.5",
+				"transName": "木乃伊3：龙帝之墓",
+				"year": "2008",
+				"offiName": "The Mummy: Tomb of the Dragon Emperor",
+				"country": "美国 / 德国",
+				"type": "神话 / 探险",
+				"director": "罗伯·科恩",
+				"star": "布兰登·费舍 / 李连杰",
+				"comment": "木乃伊系列完结篇，看看就行，纯粹瞎编，祖龙都气活了"
+			}
+		]
+	},
+	{
+		"seriesId": 19,
+		"seriesName": "卢浮魅影",
+		"seriesList": [
+			{
+				"id": 57,
+				"doubanUrl": "https://movie.douban.com/subject/1297659/",
+				"posterUrl": "./images/卢浮魅影.webp",
+				"score": "6.6",
+				"transName": "卢浮魅影",
+				"year": "2001",
+				"offiName": "Belphégor - Le fantôme du Louvre",
+				"country": "法国",
+				"type": "惊悚 / 魔鬼 / 宗教",
+				"director": "让-保尔·萨罗米",
+				"star": "苏菲·玛索 / 米歇尔·塞罗尔",
+				"comment": "也是木乃伊题材，幽灵附体，苏菲玛索好美，幻觉场景挺带感的"
+			}
+		]
+	},
+	{
+		"seriesId": 20,
+		"seriesName": "人工智能",
+		"seriesList": [
+			{
+				"id": 58,
+				"doubanUrl": "https://movie.douban.com/subject/1302827/",
+				"posterUrl": "./images/人工智能.webp",
+				"score": "8.6",
+				"transName": "人工智能",
+				"year": "2001",
+				"offiName": "A.I. - Artificial Intelligence",
+				"country": "美国",
+				"type": "末日 / 奇幻 / 人性 / 未来 / 哲学 / 致郁",
+				"director": "史蒂文·斯皮尔伯格",
+				"star": "海利·乔·奥斯蒙 / 弗兰西丝·奥康纳",
+				"comment": "未来科幻神作，机器人版木偶奇遇记，感动得一塌糊涂"
+			}
+		]
+	},
+	{
+		"seriesId": 21,
+		"seriesName": "惊心食人族",
+		"seriesList": [
+			{
+				"id": 59,
+				"doubanUrl": "https://movie.douban.com/subject/1306670/",
+				"posterUrl": "./images/惊心食人族.webp",
+				"score": "5.8",
+				"transName": "惊心食人族",
+				"year": "2001",
+				"offiName": "Jeepers Creepers",
+				"country": "美国 / 德国",
+				"type": "怪物 / 惊悚 / 逃生 / 血腥",
+				"director": "维克多·萨尔瓦",
+				"star": "吉娜·菲利普斯 / 贾斯汀·朗",
+				"comment": "作死姐弟误入藏尸基地，被撞不死又会飞的蝙蝠怪一路追杀"
+			},
+			{
+				"id": 60,
+				"doubanUrl": "https://movie.douban.com/subject/1308046/",
+				"posterUrl": "./images/惊心食人族2.webp",
+				"score": "6.3",
+				"transName": "惊心食人族2",
+				"year": "2003",
+				"offiName": "Jeepers Creepers 2",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 逃生 / 血腥",
+				"director": "维克多·萨尔瓦",
+				"star": "乔纳森·布瑞克 / 妮基·艾考克斯",
+				"comment": "最精彩的一部，路过校车抛锚，一车学生成为怪物的猎物"
+			},
+			{
+				"id": 61,
+				"doubanUrl": "https://movie.douban.com/subject/2314054/",
+				"posterUrl": "./images/惊心食人族3.webp",
+				"score": "4.3",
+				"transName": "惊心食人族3",
+				"year": "2017",
+				"offiName": "Jeepers Creepers 3",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 逃生 / 血腥",
+				"director": "维克多·萨尔瓦",
+				"star": "梅格·福斯特 / 吉娜·菲利普斯",
+				"comment": "食人族系列完结篇，第一部女主和第二部老头回归了断蝙蝠怪"
+			}
+		]
+	},
+	{
+		"seriesId": 22,
+		"seriesName": "生化危机",
+		"seriesList": [
+			{
+				"id": 62,
+				"doubanUrl": "https://movie.douban.com/subject/1306809/",
+				"posterUrl": "./images/生化危机.webp",
+				"score": "7.9",
+				"transName": "生化危机",
+				"year": "2002",
+				"offiName": "Resident Evil",
+				"country": "英国 / 德国 / 法国 / 美国",
+				"type": "变异 / 病毒 / 惊悚 / 丧尸 / 探险 / 逃生 / 血腥",
+				"director": "保罗·安德森",
+				"star": "米拉·乔沃维奇 / 米歇尔·罗德里格兹",
+				"comment": "经典IP，最精彩的一部，剧情视效都很刺激，新手Alice"
+			},
+			{
+				"id": 63,
+				"doubanUrl": "https://movie.douban.com/subject/1308752/",
+				"posterUrl": "./images/生化危机2：启示录.webp",
+				"score": "7.7",
+				"transName": "生化危机2：启示录",
+				"year": "2004",
+				"offiName": "Resident Evil: Apocalypse",
+				"country": "英国 / 加拿大",
+				"type": "变异 / 病毒 / 惊悚 / 丧尸 / 逃生 / 血腥 / 灾难",
+				"director": "亚历山大·维特",
+				"star": "米拉·乔沃维奇 / 西耶娜·盖尔利",
+				"comment": "病毒还是泄露了，浣熊市沦陷为丧尸城，进阶Alice"
+			},
+			{
+				"id": 64,
+				"doubanUrl": "https://movie.douban.com/subject/1482911/",
+				"posterUrl": "./images/生化危机3：灭绝.webp",
+				"score": "7.2",
+				"transName": "生化危机3：灭绝",
+				"year": "2007",
+				"offiName": "Resident Evil: Extinction",
+				"country": "美国 / 法国 / 澳大利亚 / 德国 / 英国",
+				"type": "惊悚 / 末日 / 人性 / 丧尸 / 逃生 / 血腥 / 哲学",
+				"director": "拉塞尔·穆卡希",
+				"star": "米拉·乔沃维奇 / 奥德·菲尔",
+				"comment": "病毒席卷全球，人类末日已至，城市化为荒漠，超能Alice"
+			},
+			{
+				"id": 65,
+				"doubanUrl": "https://movie.douban.com/subject/3041294/",
+				"posterUrl": "./images/生化危机4：战神再生.webp",
+				"score": "6.5",
+				"transName": "生化危机4：战神再生",
+				"year": "2010",
+				"offiName": "Resident Evil: Afterlife",
+				"country": "德国 / 法国 / 美国 / 加拿大",
+				"type": "病毒 / 惊悚 / 末日 / 人性 / 丧尸 / 逃生 / 血腥",
+				"director": "保罗·安德森",
+				"star": "米拉·乔沃维奇 / 艾丽·拉特",
+				"comment": "克隆军团亮相，被注射血清变回普通人的Alice依旧吊炸天"
+			},
+			{
+				"id": 66,
+				"doubanUrl": "https://movie.douban.com/subject/6532822/",
+				"posterUrl": "./images/生化危机5：惩罚.webp",
+				"score": "5.9",
+				"transName": "生化危机5：惩罚",
+				"year": "2012",
+				"offiName": "Resident Evil: Retribution",
+				"country": "德国 / 加拿大 / 美国 / 法国",
+				"type": "惊悚 / 末日 / 人性 / 丧尸 / 探险 / 逃生 / 血腥",
+				"director": "保罗·安德森",
+				"star": "米拉·乔沃维奇 / 米歇尔·罗德里格兹",
+				"comment": "大型打怪通关真人秀，前几部的梗都再来一遍，金刚Alice"
+			},
+			{
+				"id": 67,
+				"doubanUrl": "https://movie.douban.com/subject/20471852/",
+				"posterUrl": "./images/生化危机6：终章.webp",
+				"score": "6.5",
+				"transName": "生化危机6：终章",
+				"year": "2016",
+				"offiName": "Resident Evil: The Final Chapter",
+				"country": "美国",
+				"type": "病毒 / 惊悚 / 末日 / 人性 / 丧尸 / 血腥 / 哲学",
+				"director": "保罗·安德森",
+				"star": "米拉·乔沃维奇 / 伊恩·格雷",
+				"comment": "生化危机系列完结篇，真相大白，感慨万千，女神Alice"
+			}
+		]
+	},
+	{
+		"seriesId": 23,
+		"seriesName": "少数派报告",
+		"seriesList": [
+			{
+				"id": 68,
+				"doubanUrl": "https://movie.douban.com/subject/1297689/",
+				"posterUrl": "./images/少数派报告.webp",
+				"score": "7.8",
+				"transName": "少数派报告",
+				"year": "2002",
+				"offiName": "Minority Report",
+				"country": "美国",
+				"type": "人性 / 烧脑 / 未来 / 哲学 / 罪案",
+				"director": "史蒂文·斯皮尔伯格",
+				"star": "汤姆·克鲁斯 / 科林·法瑞尔",
+				"comment": "预测犯罪企图，避免犯罪事实，对司法公正的设想与反思"
+			}
+		]
+	},
+	{
+		"seriesId": 24,
+		"seriesName": "八脚怪",
+		"seriesList": [
+			{
+				"id": 69,
+				"doubanUrl": "https://movie.douban.com/subject/1298602/",
+				"posterUrl": "./images/八脚怪.webp",
+				"score": "6.0",
+				"transName": "八脚怪",
+				"year": "2002",
+				"offiName": "Eight Legged Freaks",
+				"country": "美国 / 澳大利亚",
+				"type": "变异 / 怪物 / 逃生 / 灾难 / 重口",
+				"director": "埃洛瑞·埃卡伊姆",
+				"star": "大卫·阿奎特 / 卡瑞·伍尔",
+				"comment": "变异大蜘蛛们攻击小镇，特效不错，斯嘉丽早期作品"
+			}
+		]
+	},
+	{
+		"seriesId": 25,
+		"seriesName": "双瞳",
+		"seriesList": [
+			{
+				"id": 70,
+				"doubanUrl": "https://movie.douban.com/subject/1305046/",
+				"posterUrl": "./images/双瞳.webp",
+				"score": "7.5",
+				"transName": "双瞳",
+				"year": "2002",
+				"offiName": "雙瞳",
+				"country": "香港 / 台湾",
+				"type": "惊悚 / 魔鬼 / 人性 / 血腥 / 哲学 / 宗教 / 罪案",
+				"director": "陈国富",
+				"star": "梁家辉 / 刘若英",
+				"comment": "结合犯罪探案+道教修仙的题材，剖析人生哲学，大开眼界"
+			}
+		]
+	},
+	{
+		"seriesId": 26,
+		"seriesName": "惊变",
+		"seriesList": [
+			{
+				"id": 71,
+				"doubanUrl": "https://movie.douban.com/subject/1306421/",
+				"posterUrl": "./images/惊变28天.webp",
+				"score": "7.1",
+				"transName": "惊变28天",
+				"year": "2002",
+				"offiName": "28 Days Later",
+				"country": "英国",
+				"type": "病毒 / 惊悚 / 末日 / 人性 / 丧尸 / 逃生 / 血腥",
+				"director": "丹尼·博伊尔",
+				"star": "基里安·墨菲 / 娜奥米·哈里斯",
+				"comment": "幸存者并非幸运儿，比丧尸更可怕的，是人心"
+			},
+			{
+				"id": 72,
+				"doubanUrl": "https://movie.douban.com/subject/1758487/",
+				"posterUrl": "./images/惊变28周.webp",
+				"score": "6.7",
+				"transName": "惊变28周",
+				"year": "2007",
+				"offiName": "28 Weeks Later",
+				"country": "英国 / 西班牙",
+				"type": "病毒 / 惊悚 / 人性 / 丧尸 / 逃生 / 血腥 / 灾难",
+				"director": "胡安·卡洛斯·弗雷斯纳迪罗",
+				"star": "杰瑞米·雷纳 / 哈罗德·佩里诺",
+				"comment": "以为病毒灭绝了回来重建家园，结果人家还进化了"
+			}
+		]
+	},
+	{
+		"seriesId": 27,
+		"seriesName": "地心抢险记",
+		"seriesList": [
+			{
+				"id": 73,
+				"doubanUrl": "https://movie.douban.com/subject/1300092/",
+				"posterUrl": "./images/地心抢险记.webp",
+				"score": "6.7",
+				"transName": "地心抢险记",
+				"year": "2003",
+				"offiName": "The Core",
+				"country": "美国 / 英国",
+				"type": "探险 / 灾难",
+				"director": "乔恩·阿米尔",
+				"star": "艾伦·艾克哈特 / 克里斯托弗·谢尔",
+				"comment": "地核熄火，一队专家坐着钻地潜艇钻进地心拯救地球"
+			}
+		]
+	},
+	{
+		"seriesId": 28,
+		"seriesName": "大鱼",
+		"seriesList": [
+			{
+				"id": 74,
+				"doubanUrl": "https://movie.douban.com/subject/1291545/",
+				"posterUrl": "./images/大鱼.webp",
+				"score": "8.8",
+				"transName": "大鱼",
+				"year": "2003",
+				"offiName": "Big Fish",
+				"country": "美国",
+				"type": "奇幻 / 探险 / 哲学",
+				"director": "蒂姆·波顿",
+				"star": "伊万·麦克格雷格 / 阿尔伯特·芬尼",
+				"comment": "人生太无趣，所以才讲故事；人生太有趣，所以才有故事"
+			}
+		]
+	},
+	{
+		"seriesId": 29,
+		"seriesName": "冷山",
+		"seriesList": [
+			{
+				"id": 75,
+				"doubanUrl": "https://movie.douban.com/subject/1307332/",
+				"posterUrl": "./images/冷山.webp",
+				"score": "8.1",
+				"transName": "冷山",
+				"year": "2003",
+				"offiName": "Cold Mountain",
+				"country": "美国",
+				"type": "爱情 / 战争 / 致郁",
+				"director": "安东尼·明格拉",
+				"star": "裘德·洛 / 妮可·基德曼",
+				"comment": "回来吧，回到我身边；余生，就当做他仍在回家的路上"
+			}
+		]
+	},
+	{
+		"seriesId": 30,
+		"seriesName": "彼得潘",
+		"seriesList": [
+			{
+				"id": 76,
+				"doubanUrl": "https://movie.douban.com/subject/1307931/",
+				"posterUrl": "./images/彼得·潘.webp",
+				"score": "8.1",
+				"transName": "彼得·潘",
+				"year": "2003",
+				"offiName": "Peter Pan",
+				"country": "英国 / 澳大利亚 / 美国",
+				"type": "奇幻 / 探险 / 哲学",
+				"director": "P·J·霍根",
+				"star": "杰瑞米·桑普特 / 蕾切儿·哈伍德",
+				"comment": "所有人都会长大，除了他；颜值爆表，永远为彼得潘心动"
+			}
+		]
+	},
+	{
+		"seriesId": 31,
+		"seriesName": "活死人",
+		"seriesList": [
+			{
+				"id": 77,
+				"doubanUrl": "https://movie.douban.com/subject/1309088/",
+				"posterUrl": "./images/活死人黎明.webp",
+				"score": "7.5",
+				"transName": "活死人黎明",
+				"year": "2004",
+				"offiName": "Dawn of the Dead",
+				"country": "美国 / 加拿大 / 日本 / 法国",
+				"type": "惊悚 / 人性 / 丧尸 / 逃生 / 血腥 / 灾难",
+				"director": "扎克·施奈德",
+				"star": "萨拉·波莉 / 文·瑞姆斯",
+				"comment": "最佳庇护所——商场，资源应有尽有，但没人会坐以待毙"
+			},
+			{
+				"id": 78,
+				"doubanUrl": "https://baike.baidu.com/item/%E6%B4%BB%E6%AD%BB%E4%BA%BA%E4%B9%8B%E5%9C%B0/35692",
+				"posterUrl": "./images/活死人之地.jpg",
+				"score": "6.4",
+				"transName": "活死人之地",
+				"year": "2005",
+				"offiName": "Land of the Dead",
+				"country": "美国 / 法国 / 加拿大",
+				"type": "惊悚 / 末日 / 人性 / 丧尸 / 血腥",
+				"director": "乔治·A·罗梅罗",
+				"star": "西蒙·贝克尔 / 丹尼斯·霍珀",
+				"comment": "进化的丧尸攻破人类最后的庇护城，阶级统治要不得"
+			},
+			{
+				"id": 79,
+				"doubanUrl": "https://movie.douban.com/subject/1839849/",
+				"posterUrl": "./images/新活死人之夜.jpg",
+				"score": "4.7",
+				"transName": "新活死人之夜",
+				"year": "2006",
+				"offiName": "Night of the Living Dead",
+				"country": "美国",
+				"type": "惊悚 / 人性 / 丧尸 / 逃生 / 血腥 / 灾难",
+				"director": "杰夫·布罗德史崔特",
+				"star": "布兰娜·布朗 / Sid Haig",
+				"comment": "主角回乡参加葬礼，结果发现亲朋好友都成了丧尸"
+			},
+			{
+				"id": 80,
+				"doubanUrl": "https://movie.douban.com/subject/1865656/",
+				"posterUrl": "./images/死亡日记.webp",
+				"score": "5.8",
+				"transName": "死亡日记",
+				"year": "2007",
+				"offiName": "Diary of the Dead",
+				"country": "美国",
+				"type": "惊悚 / 人性 / 丧尸 / 探险 / 逃生 / 血腥",
+				"director": "乔治·A·罗梅罗",
+				"star": "肖恩·罗伯茨 / 梅根·帕克",
+				"comment": "几个大学生拍电影时丧尸爆发，一路逃亡坚持录像"
+			},
+			{
+				"id": 81,
+				"doubanUrl": "https://movie.douban.com/subject/1871840/",
+				"posterUrl": "./images/新丧尸出笼.webp",
+				"score": "6.4",
+				"transName": "新丧尸出笼",
+				"year": "2008",
+				"offiName": "Day of the Dead",
+				"country": "美国",
+				"type": "病毒 / 惊悚 / 丧尸 / 逃生 / 血腥 / 灾难",
+				"director": "史蒂夫·迈纳",
+				"star": "米娜·苏瓦丽 / 尼克·卡农",
+				"comment": "主角团终于是能打的军人了，逃命救人炸BOSS，搞定"
+			}
+		]
+	},
+	{
+		"seriesId": 32,
+		"seriesName": "血与冰淇淋",
+		"seriesList": [
+			{
+				"id": 82,
+				"doubanUrl": "https://movie.douban.com/subject/1308755/",
+				"posterUrl": "./images/僵尸肖恩.webp",
+				"score": "7.7",
+				"transName": "僵尸肖恩",
+				"year": "2004",
+				"offiName": "Shaun of the Dead",
+				"country": "英国 / 法国 / 美国",
+				"type": "丧尸 / 逃生 / 血腥 / 灾难 / 哲学",
+				"director": "埃德加·赖特",
+				"star": "西蒙·佩吉 / 尼克·弗罗斯特",
+				"comment": "英伦铁三角成名作，另类丧尸片，黑色幽默，非常有趣"
+			},
+			{
+				"id": 83,
+				"doubanUrl": "https://movie.douban.com/subject/1806555/",
+				"posterUrl": "./images/热血警探.webp",
+				"score": "8.3",
+				"transName": "热血警探",
+				"year": "2007",
+				"offiName": "Hot Fuzz",
+				"country": "美国 / 法国 / 英国",
+				"type": "人性 / 血腥 / 哲学 / 罪案",
+				"director": "埃德加·赖特",
+				"star": "西蒙·佩吉 / 尼克·弗罗斯特",
+				"comment": "镜头剪辑教科书，延续搞怪画风，反乌托邦的猎奇故事"
+			},
+			{
+				"id": 84,
+				"doubanUrl": "https://movie.douban.com/subject/3026572/",
+				"posterUrl": "./images/世界尽头.webp",
+				"score": "7.4",
+				"transName": "世界尽头",
+				"year": "2013",
+				"offiName": "The World's End",
+				"country": "英国",
+				"type": "末日 / 奇幻 / 人性 / 外星 / 哲学",
+				"director": "埃德加·赖特",
+				"star": "西蒙·佩吉 / 尼克·弗罗斯特",
+				"comment": "“血与冰淇淋”三部曲收官之作，各种混搭，脑洞无边"
+			}
+		]
+	},
+	{
+		"seriesId": 33,
+		"seriesName": "范海辛",
+		"seriesList": [
+			{
+				"id": 85,
+				"doubanUrl": "https://movie.douban.com/subject/1309136/",
+				"posterUrl": "./images/范海辛.webp",
+				"score": "7.1",
+				"transName": "范海辛",
+				"year": "2004",
+				"offiName": "Van Helsing",
+				"country": "捷克 / 美国",
+				"type": "怪物 / 惊悚 / 神话 / 宗教",
+				"director": "斯蒂芬·索莫斯",
+				"star": "休·杰克曼 / 凯特·贝金赛尔",
+				"comment": "吸血鬼、科学怪人、猎人、狼人、巨人……中世纪传说集合"
+			}
+		]
+	},
+	{
+		"seriesId": 34,
+		"seriesName": "后天",
+		"seriesList": [
+			{
+				"id": 86,
+				"doubanUrl": "https://movie.douban.com/subject/1308779/",
+				"posterUrl": "./images/后天.webp",
+				"score": "8.1",
+				"transName": "后天",
+				"year": "2004",
+				"offiName": "The Day After Tomorrow",
+				"country": "美国",
+				"type": "人性 / 探险 / 逃生 / 灾难",
+				"director": "罗兰·艾默里奇",
+				"star": "丹尼斯·奎德 / 杰克·吉伦哈尔",
+				"comment": "灾难片的教科书，剧情一般，但视效一流，爽就完事了"
+			}
+		]
+	},
+	{
+		"seriesId": 35,
+		"seriesName": "雷蒙斯尼奇的不幸历险",
+		"seriesList": [
+			{
+				"id": 87,
+				"doubanUrl": "https://movie.douban.com/subject/1308979/",
+				"posterUrl": "./images/雷蒙·斯尼奇的不幸历险.webp",
+				"score": "7.5",
+				"transName": "雷蒙·斯尼奇的不幸历险",
+				"year": "2004",
+				"offiName": "Lemony Snicket's A Series of Unfortunate Events",
+				"country": "美国 / 德国",
+				"type": "奇幻 / 探险 / 哲学 / 致郁",
+				"director": "布拉德·塞伯宁",
+				"star": "金·凯瑞 / 连姆·艾肯",
+				"comment": "哥特风的“童话”故事，剧情荒诞猎奇，片尾设计妙极了"
+			}
+		]
+	},
+	{
+		"seriesId": 36,
+		"seriesName": "康斯坦丁",
+		"seriesList": [
+			{
+				"id": 88,
+				"doubanUrl": "https://movie.douban.com/subject/1309021/",
+				"posterUrl": "./images/康斯坦丁.webp",
+				"score": "7.8",
+				"transName": "康斯坦丁",
+				"year": "2005",
+				"offiName": "Constantine",
+				"country": "美国 / 德国",
+				"type": "惊悚 / 魔鬼 / 神话 / 哲学 / 宗教",
+				"director": "弗朗西斯·劳伦斯",
+				"star": "基努·里维斯 / 蕾切尔·薇兹",
+				"comment": "上不了天堂也下不了地狱的驱魔人的故事，DC大法好"
+			}
+		]
+	},
+	{
+		"seriesId": 37,
+		"seriesName": "恐怖蜡像馆",
+		"seriesList": [
+			{
+				"id": 89,
+				"doubanUrl": "https://movie.douban.com/subject/1309184/",
+				"posterUrl": "./images/恐怖蜡像馆.webp",
+				"score": "6.9",
+				"transName": "恐怖蜡像馆",
+				"year": "2005",
+				"offiName": "House of Wax",
+				"country": "美国 / 澳大利亚",
+				"type": "惊悚 / 逃生 / 血腥 / 重口",
+				"director": "佐米·希尔拉",
+				"star": "伊丽莎·库斯伯特 / 查德·迈克尔·墨瑞",
+				"comment": "活人直接做成蜡像，代入一下恐怖至极"
+			}
+		]
+	},
+	{
+		"seriesId": 38,
+		"seriesName": "世界之战",
+		"seriesList": [
+			{
+				"id": 90,
+				"doubanUrl": "https://movie.douban.com/subject/1309044/",
+				"posterUrl": "./images/世界之战.webp",
+				"score": "6.5",
+				"transName": "世界之战",
+				"year": "2005",
+				"offiName": "War of the Worlds",
+				"country": "美国",
+				"type": "惊悚 / 人性 / 逃生 / 外星 / 血腥 / 灾难 / 哲学",
+				"director": "史蒂文·斯皮尔伯格",
+				"star": "汤姆·克鲁斯 / 达科塔·范宁",
+				"comment": "难得平凡的阿汤哥，外星人入侵场面很过瘾，结局意外理中"
+			}
+		]
+	},
+	{
+		"seriesId": 39,
+		"seriesName": "黑暗侵袭",
+		"seriesList": [
+			{
+				"id": 91,
+				"doubanUrl": "https://movie.douban.com/subject/1437109/",
+				"posterUrl": "./images/黑暗侵袭.webp",
+				"score": "7.6",
+				"transName": "黑暗侵袭",
+				"year": "2005",
+				"offiName": "The Descent",
+				"country": "英国",
+				"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 血腥",
+				"director": "尼尔·马歇尔",
+				"star": "肖娜·麦克唐纳 / 娜塔莉·杰克逊·门多萨",
+				"comment": "全程紧张，如临其境，恐惧与绝望表现得淋漓尽致"
+			},
+			{
+				"id": 92,
+				"doubanUrl": "https://movie.douban.com/subject/3066083/",
+				"posterUrl": "./images/黑暗侵袭2.webp",
+				"score": "6.7",
+				"transName": "黑暗侵袭2",
+				"year": "2009",
+				"offiName": "The Descent: Part 2",
+				"country": "英国",
+				"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 血腥",
+				"director": "约翰·哈里斯",
+				"star": "迈克尔·J·雷诺兹 / 肖娜·麦克唐纳",
+				"comment": "续集交代了怪物的背景，强行让女主失忆重返地狱"
+			}
+		]
+	},
+	{
+		"seriesId": 40,
+		"seriesName": "万能钥匙",
+		"seriesList": [
+			{
+				"id": 93,
+				"doubanUrl": "https://movie.douban.com/subject/1418752/",
+				"posterUrl": "./images/万能钥匙.webp",
+				"score": "7.9",
+				"transName": "万能钥匙",
+				"year": "2005",
+				"offiName": "The Skeleton Key",
+				"country": "美国 / 德国",
+				"type": "惊悚 / 人性 / 烧脑 / 哲学 / 致郁",
+				"director": "伊恩·索夫特雷",
+				"star": "凯特·哈德森 / 吉娜·罗兰兹",
+				"comment": "两个至理名言：好奇害死猫；信则有不信则无"
+			}
+		]
+	},
+	{
+		"seriesId": 41,
+		"seriesName": "格林兄弟",
+		"seriesList": [
+			{
+				"id": 94,
+				"doubanUrl": "https://movie.douban.com/subject/1309053/",
+				"posterUrl": "./images/格林兄弟.webp",
+				"score": "6.6",
+				"transName": "格林兄弟",
+				"year": "2005",
+				"offiName": "The Brothers Grimm",
+				"country": "捷克 / 美国 / 英国",
+				"type": "惊悚 / 奇幻 / 探险 / 哲学 / 重口",
+				"director": "特瑞·吉列姆",
+				"star": "马特·达蒙 / 希斯·莱杰",
+				"comment": "格林童话串烧，但是走荒诞残酷的黑暗风，会有不适感"
+			}
+		]
+	},
+	{
+		"seriesId": 42,
+		"seriesName": "毁灭战士",
+		"seriesList": [
+			{
+				"id": 95,
+				"doubanUrl": "https://movie.douban.com/subject/1436680/",
+				"posterUrl": "./images/毁灭战士.webp",
+				"score": "6.0",
+				"transName": "毁灭战士",
+				"year": "2005",
+				"offiName": "Doom",
+				"country": "英国 / 捷克 / 德国 / 美国",
+				"type": "变异 / 怪物 / 惊悚 / 人性 / 探险 / 外星 / 血腥",
+				"director": "安德列·巴柯维亚",
+				"star": "道恩·强森 / 卡尔·厄本",
+				"comment": "武装小队去外星实验基地调查，发现人都变成了怪物"
+			}
+		]
+	},
+	{
+		"seriesId": 43,
+		"seriesName": "撕裂人",
+		"seriesList": [
+			{
+				"id": 96,
+				"doubanUrl": "https://movie.douban.com/subject/1465415/",
+				"posterUrl": "./images/撕裂人.webp",
+				"score": "6.0",
+				"transName": "撕裂人",
+				"year": "2006",
+				"offiName": "Slither",
+				"country": "加拿大 / 美国",
+				"type": "变异 / 怪物 / 外星 / 血腥 / 灾难 / 重口",
+				"director": "詹姆斯·古恩",
+				"star": "内森·菲利安 / 伊丽莎白·班克斯",
+				"comment": "非常重口，变异、蠕虫、肉团……怎么恶心怎么来"
+			}
+		]
+	},
+	{
+		"seriesId": 44,
+		"seriesName": "寂静岭",
+		"seriesList": [
+			{
+				"id": 97,
+				"doubanUrl": "https://movie.douban.com/subject/1466007/",
+				"posterUrl": "./images/寂静岭.webp",
+				"score": "7.6",
+				"transName": "寂静岭",
+				"year": "2006",
+				"offiName": "Silent Hill",
+				"country": "加拿大 / 法国 / 日本 / 美国",
+				"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 血腥 / 哲学 / 宗教",
+				"director": "克里斯多夫·甘斯",
+				"star": "拉达·米切尔 / 肖恩·宾",
+				"comment": "“表世界”与“里世界”，伪善与真恶的具象化，很多隐喻"
+			},
+			{
+				"id": 98,
+				"doubanUrl": "https://movie.douban.com/subject/2117898/",
+				"posterUrl": "./images/寂静岭2：启示.webp",
+				"score": "5.6",
+				"transName": "寂静岭2：启示",
+				"year": "2012",
+				"offiName": "Silent Hill: Revelation 3D",
+				"country": "法国 / 美国 / 加拿大",
+				"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 血腥 / 哲学 / 宗教",
+				"director": "迈克尔·巴塞特",
+				"star": "肖恩·宾 / 凯瑞-安·莫斯",
+				"comment": "女儿重回寂静岭，揭开真相，与“自己”做一个了断"
+			}
+		]
+	},
+	{
+		"seriesId": 45,
+		"seriesName": "达芬奇密码",
+		"seriesList": [
+			{
+				"id": 99,
+				"doubanUrl": "https://movie.douban.com/subject/1329950/",
+				"posterUrl": "./images/达·芬奇密码.webp",
+				"score": "7.3",
+				"transName": "达·芬奇密码",
+				"year": "2006",
+				"offiName": "The Da Vinci Code",
+				"country": "美国 / 马耳他 / 法国 / 英国",
+				"type": "历史 / 探险 / 哲学 / 宗教 / 罪案",
+				"director": "朗·霍华德",
+				"star": "汤姆·汉克斯 / 奥黛丽·塔图",
+				"comment": "符号学家的解谜游戏，很喜欢这种对传说开脑洞的解读"
+			},
+			{
+				"id": 100,
+				"doubanUrl": "https://movie.douban.com/subject/1927369/",
+				"posterUrl": "./images/天使与魔鬼.webp",
+				"score": "7.3",
+				"transName": "天使与魔鬼",
+				"year": "2009",
+				"offiName": "Angels & Demons",
+				"country": "美国 / 意大利",
+				"type": "历史 / 探险 / 哲学 / 宗教 / 罪案",
+				"director": "朗·霍华德",
+				"star": "汤姆·汉克斯 / 伊万·麦克格雷格",
+				"comment": "有人说：科学的尽头是哲学，哲学的尽头是神学"
+			},
+			{
+				"id": 101,
+				"doubanUrl": "https://movie.douban.com/subject/24860318/",
+				"posterUrl": "./images/但丁密码.webp",
+				"score": "6.2",
+				"transName": "但丁密码",
+				"year": "2016",
+				"offiName": "Inferno",
+				"country": "美国 / 匈牙利",
+				"type": "历史 / 探险 / 哲学 / 宗教 / 罪案",
+				"director": "朗·霍华德",
+				"star": "汤姆·汉克斯 / 菲丽希缇·琼斯",
+				"comment": "反派死于话多，阴谋毁于讲究"
+			}
+		]
+	},
+	{
+		"seriesId": 46,
+		"seriesName": "鬼域",
+		"seriesList": [
+			{
+				"id": 102,
+				"doubanUrl": "https://movie.douban.com/subject/1778999/",
+				"posterUrl": "./images/鬼域.webp",
+				"score": "6.5",
+				"transName": "鬼域",
+				"year": "2006",
+				"offiName": "鬼域",
+				"country": "香港 / 泰国",
+				"type": "惊悚 / 魔鬼 / 人性 / 哲学",
+				"director": "彭顺 / 彭发",
+				"star": "李心洁 / 李彩桦",
+				"comment": "女主掉入诡异空间，那里全是被现实遗忘的人事物"
+			}
+		]
+	},
+	{
+		"seriesId": 47,
+		"seriesName": "汉江怪物",
+		"seriesList": [
+			{
+				"id": 103,
+				"doubanUrl": "https://movie.douban.com/subject/1763134/",
+				"posterUrl": "./images/汉江怪物.webp",
+				"score": "7.3",
+				"transName": "汉江怪物",
+				"year": "2006",
+				"offiName": "괴물",
+				"country": "韩国",
+				"type": "变异 / 怪物 / 惊悚 / 人性 / 逃生 / 灾难",
+				"director": "奉俊昊",
+				"star": "宋康昊 / 朴海日",
+				"comment": "与巨型娃娃鱼斗智斗勇，反映人性温暖，讽刺社会麻木"
+			}
+		]
+	},
+	{
+		"seriesId": 48,
+		"seriesName": "航班蛇患",
+		"seriesList": [
+			{
+				"id": 104,
+				"doubanUrl": "https://movie.douban.com/subject/1482080/",
+				"posterUrl": "./images/航班蛇患.webp",
+				"score": "6.1",
+				"transName": "航班蛇患",
+				"year": "2006",
+				"offiName": "Snakes on a Plane",
+				"country": "美国 / 德国 / 加拿大",
+				"type": "怪物 / 惊悚 / 人性 / 逃生 / 灾难",
+				"director": "大卫·R·艾里斯",
+				"star": "塞缪尔·杰克逊 / 朱丽安娜·玛格丽丝",
+				"comment": "无处可逃的空中蛇灾"
+			}
+		]
+	},
+	{
+		"seriesId": 49,
+		"seriesName": "诡丝",
+		"seriesList": [
+			{
+				"id": 105,
+				"doubanUrl": "https://movie.douban.com/subject/1780168/",
+				"posterUrl": "./images/诡丝.webp",
+				"score": "7.0",
+				"transName": "诡丝",
+				"year": "2006",
+				"offiName": "詭絲",
+				"country": "台湾",
+				"type": "惊悚 / 魔鬼 / 人性 / 哲学 / 罪案",
+				"director": "苏照彬",
+				"star": "张震 / 林嘉欣",
+				"comment": "科学捉鬼，真相感人，诡丝其实就是“慈母手中线”啊"
+			}
+		]
+	},
+	{
+		"seriesId": 50,
+		"seriesName": "坠入",
+		"seriesList": [
+			{
+				"id": 106,
+				"doubanUrl": "https://movie.douban.com/subject/1890572/",
+				"posterUrl": "./images/坠入.webp",
+				"score": "8.8",
+				"transName": "坠入",
+				"year": "2006",
+				"offiName": "The Fall",
+				"country": "美国 / 南非 / 印度",
+				"type": "奇幻 / 人性 / 探险 / 哲学",
+				"director": "塔西姆·辛",
+				"star": "李·佩斯 / 凯婷卡·安塔鲁",
+				"comment": "谎言与纯真，幻想与希望，故事好美，画面好美，李佩斯好美"
+			}
+		]
+	},
+	{
+		"seriesId": 51,
+		"seriesName": "潘神的迷宫",
+		"seriesList": [
+			{
+				"id": 107,
+				"doubanUrl": "https://movie.douban.com/subject/1767042/",
+				"posterUrl": "./images/潘神的迷宫.webp",
+				"score": "7.8",
+				"transName": "潘神的迷宫",
+				"year": "2006",
+				"offiName": "El Laberinto del Fauno",
+				"country": "西班牙 / 墨西哥 / 美国",
+				"type": "怪物 / 惊悚 / 奇幻 / 人性 / 神话 / 探险 / 战争 / 致郁",
+				"director": "吉尔莫·德尔·托罗",
+				"star": "伊万娜·巴克罗 / 塞尔希·洛佩斯",
+				"comment": "一边是残酷的现实，一边是美满的童话，你相信哪个结局"
+			}
+		]
+	},
+	{
+		"seriesId": 52,
+		"seriesName": "伤城",
+		"seriesList": [
+			{
+				"id": 108,
+				"doubanUrl": "https://movie.douban.com/subject/1867408/",
+				"posterUrl": "./images/伤城.webp",
+				"score": "6.8",
+				"transName": "伤城",
+				"year": "2006",
+				"offiName": "伤城",
+				"country": "中国大陆 / 香港",
+				"type": "人性 / 烧脑 / 哲学 / 致郁 / 罪案",
+				"director": "刘伟强 / 麦兆辉",
+				"star": "梁朝伟 / 金城武",
+				"comment": "世间安得两全法，不负如来不负卿"
+			}
+		]
+	},
+	{
+		"seriesId": 53,
+		"seriesName": "仙境之桥",
+		"seriesList": [
+			{
+				"id": 109,
+				"doubanUrl": "https://movie.douban.com/subject/1860745/",
+				"posterUrl": "./images/仙境之桥.webp",
+				"score": "7.8",
+				"transName": "仙境之桥",
+				"year": "2007",
+				"offiName": "Bridge to Terabithia",
+				"country": "美国",
+				"type": "奇幻 / 探险 / 哲学 / 致郁",
+				"director": "嘉柏·丘波",
+				"star": "乔什·哈切森 / 安娜索菲亚·罗伯",
+				"comment": "她出现又离去，如璀璨流星，她教会你成长，请永远相信"
+			}
+		]
+	},
+	{
+		"seriesId": 54,
+		"seriesName": "十二宫",
+		"seriesList": [
+			{
+				"id": 110,
+				"doubanUrl": "https://movie.douban.com/subject/1781126/",
+				"posterUrl": "./images/十二宫.webp",
+				"score": "7.3",
+				"transName": "十二宫",
+				"year": "2007",
+				"offiName": "Zodiac",
+				"country": "美国",
+				"type": "惊悚 / 历史 / 人性 / 哲学 / 罪案",
+				"director": "大卫·芬奇",
+				"star": "杰克·吉伦哈尔 / 马克·鲁弗洛",
+				"comment": "真实案件改编，连环杀手作案前刻意透露线索挑衅警方"
+			}
+		]
+	},
+	{
+		"seriesId": 55,
+		"seriesName": "恐怖星球",
+		"seriesList": [
+			{
+				"id": 111,
+				"doubanUrl": "https://movie.douban.com/subject/2160611/",
+				"posterUrl": "./images/恐怖星球.webp",
+				"score": "7.4",
+				"transName": "恐怖星球",
+				"year": "2007",
+				"offiName": "Planet Terror",
+				"country": "美国",
+				"type": "变异 / 病毒 / 丧尸 / 逃生 / 灾难 / 重口",
+				"director": "罗伯特·罗德里格兹",
+				"star": "罗丝·麦高恩 / 弗莱迪·罗德里格兹",
+				"comment": "剪辑复古，节奏紧凑，剧情硬核，极其重口，慎入"
+			}
+		]
+	},
+	{
+		"seriesId": 56,
+		"seriesName": "降头",
+		"seriesList": [
+			{
+				"id": 112,
+				"doubanUrl": "https://movie.douban.com/subject/2053665/",
+				"posterUrl": "./images/降头.webp",
+				"score": "6.1",
+				"transName": "降头",
+				"year": "2007",
+				"offiName": "降頭",
+				"country": "香港",
+				"type": "惊悚 / 人性 / 血腥 / 重口 / 罪案",
+				"director": "邱礼涛",
+				"star": "郑浩南 / 邵美琪",
+				"comment": "对降头术感兴趣可以一看，部分画面令人不适，慎入"
+			}
+		]
+	},
+	{
+		"seriesId": 57,
+		"seriesName": "星尘",
+		"seriesList": [
+			{
+				"id": 113,
+				"doubanUrl": "https://movie.douban.com/subject/1867335/",
+				"posterUrl": "./images/星尘.webp",
+				"score": "7.6",
+				"transName": "星尘",
+				"year": "2007",
+				"offiName": "Stardust",
+				"country": "美国 / 英国 / 冰岛",
+				"type": "爱情 / 奇幻 / 神话 / 探险",
+				"director": "马修·沃恩",
+				"star": "查理·考克斯 / 克莱尔·丹妮斯",
+				"comment": "“浪漫”一词足矣，片尾曲我当了十年的手机铃声"
+			}
+		]
+	},
+	{
+		"seriesId": 58,
+		"seriesName": "+侦探",
+		"seriesList": [
+			{
+				"id": 114,
+				"doubanUrl": "https://movie.douban.com/subject/2263112/",
+				"posterUrl": "./images/C+侦探.webp",
+				"score": "6.6",
+				"transName": "C+侦探",
+				"year": "2007",
+				"offiName": "C+偵探",
+				"country": "香港",
+				"type": "惊悚 / 人性 / 罪案",
+				"director": "彭顺",
+				"star": "郭富城 / 廖启智",
+				"comment": "“C+侦探”就是“私家侦探”的粤语谐音，画风比较阴沉"
+			},
+			{
+				"id": 115,
+				"doubanUrl": "https://movie.douban.com/subject/4118060/",
+				"posterUrl": "./images/B+侦探.webp",
+				"score": "5.7",
+				"transName": "B+侦探",
+				"year": "2011",
+				"offiName": "B+偵探",
+				"country": "香港",
+				"type": "惊悚 / 人性 / 罪案",
+				"director": "彭顺",
+				"star": "郭富城 / 廖启智",
+				"comment": "有推理过程的演绎，氛围营造到位，越接近真相越紧张"
+			}
+		]
+	},
+	{
+		"seriesId": 59,
+		"seriesName": "迷雾",
+		"seriesList": [
+			{
+				"id": 116,
+				"doubanUrl": "https://movie.douban.com/subject/1945330/",
+				"posterUrl": "./images/迷雾.webp",
+				"score": "7.9",
+				"transName": "迷雾",
+				"year": "2007",
+				"offiName": "The Mist",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 人性 / 血腥 / 哲学 / 致郁 / 宗教",
+				"director": "弗兰克·德拉邦特",
+				"star": "托马斯·简 / 马西娅·盖伊·哈登",
+				"comment": "浓雾危机四伏，各色人等齐困超市，未知恐惧与信仰盲从"
+			}
+		]
+	},
+	{
+		"seriesId": 60,
+		"seriesName": "科洛弗",
+		"seriesList": [
+			{
+				"id": 117,
+				"doubanUrl": "https://movie.douban.com/subject/2144242/",
+				"posterUrl": "./images/科洛弗档案.webp",
+				"score": "7.3",
+				"transName": "科洛弗档案",
+				"year": "2008",
+				"offiName": "Cloverfield",
+				"country": "美国",
+				"type": "怪物 / 人性 / 逃生 / 外星 / 灾难",
+				"director": "马特·里夫斯",
+				"star": "丽兹·卡潘 / 杰西卡·卢卡斯",
+				"comment": "伪DV拍摄手法，代入感强烈，普通人视角中的灾难时刻"
+			},
+			{
+				"id": 118,
+				"doubanUrl": "https://movie.douban.com/subject/2977957/",
+				"posterUrl": "./images/科洛弗道10号.webp",
+				"score": "6.8",
+				"transName": "科洛弗道10号",
+				"year": "2016",
+				"offiName": "10 Cloverfield Lane",
+				"country": "美国",
+				"type": "惊悚 / 末日 / 人性 / 逃生 / 外星",
+				"director": "丹·特拉亨伯格",
+				"star": "约翰·古德曼 / 玛丽·伊丽莎白·温斯特德",
+				"comment": "怪物只出现了几秒，主要讲末世中一处地下室的悬疑经历"
+			},
+			{
+				"id": 119,
+				"doubanUrl": "https://movie.douban.com/subject/21328095/",
+				"posterUrl": "./images/科洛弗悖论.webp",
+				"score": "6.0",
+				"transName": "科洛弗悖论",
+				"year": "2018",
+				"offiName": "The Cloverfield Paradox",
+				"country": "美国",
+				"type": "穿越 / 人性 / 太空 / 逃生 / 血腥 / 灾难",
+				"director": "朱利叶斯·约拿",
+				"star": "古古·姆巴塔-劳 / 大卫·奥伊罗",
+				"comment": "科洛弗前传，太空能源实验结果打开了平行宇宙的通道"
+			}
+		]
+	},
+	{
+		"seriesId": 61,
+		"seriesName": "地心历险记",
+		"seriesList": [
+			{
+				"id": 120,
+				"doubanUrl": "https://movie.douban.com/subject/2037833/",
+				"posterUrl": "./images/地心历险记.webp",
+				"score": "6.7",
+				"transName": "地心历险记",
+				"year": "2008",
+				"offiName": "Journey to the Center of the Earth",
+				"country": "美国",
+				"type": "怪物 / 奇幻 / 探险 / 逃生",
+				"director": "埃里克·布雷维格",
+				"star": "布兰登·费舍 / 乔什·哈切森",
+				"comment": "凡尔纳小说改编，一家沙雕掉入地心世界的探险经历"
+			},
+			{
+				"id": 121,
+				"doubanUrl": "https://movie.douban.com/subject/3606973/",
+				"posterUrl": "./images/地心历险记2：神秘岛.webp",
+				"score": "6.3",
+				"transName": "地心历险记2：神秘岛",
+				"year": "2012",
+				"offiName": "Journey 2: The Mysterious Island",
+				"country": "美国",
+				"type": "怪物 / 奇幻 / 探险 / 逃生",
+				"director": "布拉德·佩顿",
+				"star": "道恩·强森 / 乔什·哈切森",
+				"comment": "沙雕一家踏上神秘岛屿再度探险，特效不错"
+			}
+		]
+	},
+	{
+		"seriesId": 62,
+		"seriesName": "先知",
+		"seriesList": [
+			{
+				"id": 122,
+				"doubanUrl": "https://movie.douban.com/subject/2354729/",
+				"posterUrl": "./images/先知.webp",
+				"score": "6.7",
+				"transName": "先知",
+				"year": "2009",
+				"offiName": "Knowing",
+				"country": "美国 / 英国 / 澳大利亚",
+				"type": "外星 / 灾难 / 哲学 / 宗教",
+				"director": "亚历克斯·普罗亚斯",
+				"star": "尼古拉斯·凯奇 / 钱德勒·坎特布瑞",
+				"comment": "没错，就是你，你就是被主选中的天之骄子"
+			}
+		]
+	},
+	{
+		"seriesId": 63,
+		"seriesName": "第九区",
+		"seriesList": [
+			{
+				"id": 123,
+				"doubanUrl": "https://movie.douban.com/subject/3006772/",
+				"posterUrl": "./images/第九区.webp",
+				"score": "8.2",
+				"transName": "第九区",
+				"year": "2009",
+				"offiName": "District 9",
+				"country": "美国 / 新西兰 / 加拿大 / 南非",
+				"type": "变异 / 怪物 / 人性 / 外星 / 致郁",
+				"director": "尼尔·布洛姆坎普",
+				"star": "沙尔托·科普雷 / 詹森·库伯",
+				"comment": "种族歧视者必被歧视反噬，人性的丑陋与美丽并存"
+			}
+		]
+	},
+	{
+		"seriesId": 64,
+		"seriesName": "丧尸乐园",
+		"seriesList": [
+			{
+				"id": 124,
+				"doubanUrl": "https://movie.douban.com/subject/3259993/",
+				"posterUrl": "./images/丧尸乐园.webp",
+				"score": "7.3",
+				"transName": "丧尸乐园",
+				"year": "2009",
+				"offiName": "Zombieland",
+				"country": "美国",
+				"type": "人性 / 丧尸 / 探险 / 逃生 / 灾难",
+				"director": "鲁本·弗雷斯彻",
+				"star": "杰西·艾森伯格 / 伍迪·哈里森",
+				"comment": "末世生存指南最后一条：生存之余，享受生活"
+			}
+		]
+	},
+	{
+		"seriesId": 65,
+		"seriesName": "无姓之人",
+		"seriesList": [
+			{
+				"id": 125,
+				"doubanUrl": "https://movie.douban.com/subject/2076181/",
+				"posterUrl": "./images/无姓之人.webp",
+				"score": "8.2",
+				"transName": "无姓之人",
+				"year": "2009",
+				"offiName": "Mr. Nobody",
+				"country": "加拿大 / 比利时 / 法国 / 德国",
+				"type": "爱情 / 穿越 / 烧脑 / 太空 / 哲学",
+				"director": "雅克·范·多梅尔",
+				"star": "杰瑞德·莱托 / 萨拉·波莉",
+				"comment": "未来无数可能，我只选择有你的人生；男女主颜值爆表"
+			}
+		]
+	},
+	{
+		"seriesId": 66,
+		"seriesName": "恐怖游轮",
+		"seriesList": [
+			{
+				"id": 126,
+				"doubanUrl": "https://movie.douban.com/subject/3011051/",
+				"posterUrl": "./images/恐怖游轮.webp",
+				"score": "8.4",
+				"transName": "恐怖游轮",
+				"year": "2009",
+				"offiName": "Triangle",
+				"country": "英国 / 澳大利亚",
+				"type": "惊悚 / 人性 / 烧脑 / 逃生 / 血腥 / 哲学",
+				"director": "克里斯托弗·史密斯",
+				"star": "梅利莎·乔治 / 利亚姆·海姆斯沃斯",
+				"comment": "背弃誓言者将永堕地狱"
+			}
+		]
+	},
+	{
+		"seriesId": 67,
+		"seriesName": "2012",
+		"seriesList": [
+			{
+				"id": 127,
+				"doubanUrl": "https://movie.douban.com/subject/3005875/",
+				"posterUrl": "./images/2012.webp",
+				"score": "7.8",
+				"transName": "2012",
+				"year": "2009",
+				"offiName": "2012",
+				"country": "美国 / 加拿大",
+				"type": "末日 / 人性 / 逃生 / 灾难 / 哲学",
+				"director": "罗兰·艾默里奇",
+				"star": "约翰·库萨克 / 切瓦特·埃加福特",
+				"comment": "特效过瘾，灾难场面够长够足，主角团命真的硬"
+			}
+		]
+	},
+	{
+		"seriesId": 68,
+		"seriesName": "阴宅瓦德马尔",
+		"seriesList": [
+			{
+				"id": 128,
+				"doubanUrl": "https://movie.douban.com/subject/4082744/",
+				"posterUrl": "./images/阴宅瓦德马尔.webp",
+				"score": "5.5",
+				"transName": "阴宅瓦德马尔",
+				"year": "2010",
+				"offiName": "La herencia Valdemar",
+				"country": "西班牙",
+				"type": "怪物 / 惊悚 / 魔鬼 / 人性 / 神话 / 逃生 / 哲学",
+				"director": "José Luis Alemán",
+				"star": "scar Jaenada / Silvia Abascal",
+				"comment": "克苏鲁题材代表作之一，上篇，到古宅调查发现阴谋"
+			},
+			{
+				"id": 129,
+				"doubanUrl": "https://movie.douban.com/subject/5905771/",
+				"posterUrl": "./images/阴宅瓦德马尔2.webp",
+				"score": "5.1",
+				"transName": "阴宅瓦德马尔2",
+				"year": "2010",
+				"offiName": "La herencia Valdemar II: La sombra prohibida",
+				"country": "西班牙",
+				"type": "怪物 / 惊悚 / 魔鬼 / 人性 / 神话 / 逃生 / 哲学",
+				"director": "José Luis Alemán",
+				"star": "Silvia Abascal / Óscar Jaenada",
+				"comment": "下篇，克总终于出现了，疯子与模特假人有点吓到"
+			}
+		]
+	},
+	{
+		"seriesId": 69,
+		"seriesName": "诸神",
+		"seriesList": [
+			{
+				"id": 130,
+				"doubanUrl": "https://movie.douban.com/subject/2131654/",
+				"posterUrl": "./images/诸神之战.webp",
+				"score": "6.1",
+				"transName": "诸神之战",
+				"year": "2010",
+				"offiName": "Clash of the Titans",
+				"country": "美国",
+				"type": "怪物 / 神话 / 探险 / 战争",
+				"director": "路易斯·莱特里尔",
+				"star": "萨姆·沃辛顿 / 杰玛·阿特登",
+				"comment": "希腊神话的英雄珀耳修斯殴打北欧神话的海怪克拉肯的故事"
+			},
+			{
+				"id": 131,
+				"doubanUrl": "https://movie.douban.com/subject/4824515/",
+				"posterUrl": "./images/诸神之怒.webp",
+				"score": "5.9",
+				"transName": "诸神之怒",
+				"year": "2012",
+				"offiName": "Wrath of the Titans",
+				"country": "美国",
+				"type": "怪物 / 神话 / 探险 / 战争",
+				"director": "乔纳森·里贝斯曼",
+				"star": "萨姆·沃辛顿 / 拉尔夫·费因斯",
+				"comment": "兄弟虐恋，父子情深……不愧是希腊神话，众神本色呢"
+			}
+		]
+	},
+	{
+		"seriesId": 70,
+		"seriesName": "剑雨",
+		"seriesList": [
+			{
+				"id": 132,
+				"doubanUrl": "https://movie.douban.com/subject/3813779/",
+				"posterUrl": "./images/剑雨.webp",
+				"score": "7.1",
+				"transName": "剑雨",
+				"year": "2010",
+				"offiName": "剑雨",
+				"country": "中国大陆 / 香港 / 台湾",
+				"type": "爱情 / 历史 / 人性 / 哲学",
+				"director": "苏照彬",
+				"star": "杨紫琼 / 郑雨盛",
+				"comment": "刀光剑影的武侠，柴米油盐的爱情"
+			}
+		]
+	},
+	{
+		"seriesId": 71,
+		"seriesName": "潜伏",
+		"seriesList": [
+			{
+				"id": 133,
+				"doubanUrl": "https://movie.douban.com/subject/4817901/",
+				"posterUrl": "./images/潜伏.webp",
+				"score": "7.5",
+				"transName": "潜伏",
+				"year": "2010",
+				"offiName": "Insidious",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 人性 / 烧脑 / 哲学",
+				"director": "温子仁",
+				"star": "萝丝·拜恩 / 帕特里克·威尔森",
+				"comment": "经典IP，小男孩灵魂出窍时招惹恶灵，欲占据其身体"
+			},
+			{
+				"id": 134,
+				"doubanUrl": "https://movie.douban.com/subject/10485526/",
+				"posterUrl": "./images/潜伏2.webp",
+				"score": "7.9",
+				"transName": "潜伏2",
+				"year": "2013",
+				"offiName": "Insidious Chapter 2",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 人性 / 烧脑 / 哲学",
+				"director": "温子仁",
+				"star": "帕特里克·威尔森 / 萝丝·拜恩",
+				"comment": "一家人并未摆脱恐惧，未知鬼魂频频作怪，真相竟是……"
+			},
+			{
+				"id": 135,
+				"doubanUrl": "https://movie.douban.com/subject/25728008/",
+				"posterUrl": "./images/潜伏3.webp",
+				"score": "6.2",
+				"transName": "潜伏3",
+				"year": "2015",
+				"offiName": "Insidious Chapter 3",
+				"country": "美国 / 加拿大",
+				"type": "惊悚 / 魔鬼 / 人性 / 哲学",
+				"director": "雷·沃纳尔",
+				"star": "林·沙烨 / 德蒙特·莫罗尼",
+				"comment": "第一部故事的前传，灵媒Elise的另一起惊险迷案"
+			},
+			{
+				"id": 136,
+				"doubanUrl": "https://movie.douban.com/subject/26794994/",
+				"posterUrl": "./images/潜伏4：锁命亡灵.webp",
+				"score": "6.1",
+				"transName": "潜伏4：锁命亡灵",
+				"year": "2018",
+				"offiName": "Insidious: The Last Key",
+				"country": "美国 / 加拿大",
+				"type": "惊悚 / 魔鬼 / 人性 / 哲学",
+				"director": "亚当·罗比特尔",
+				"star": "林·沙烨 / 雷·沃纳尔",
+				"comment": "灵媒Elise的个人背景故事，监狱里的锁魂鬼怪"
+			}
+		]
+	},
+	{
+		"seriesId": 72,
+		"seriesName": "胡桃夹子",
+		"seriesList": [
+			{
+				"id": 137,
+				"doubanUrl": "https://movie.douban.com/subject/3012819/",
+				"posterUrl": "./images/胡桃夹子：魔境冒险.webp",
+				"score": "6.3",
+				"transName": "胡桃夹子：魔境冒险",
+				"year": "2010",
+				"offiName": "The Nutcracker in 3D",
+				"country": "英国 / 匈牙利",
+				"type": "奇幻 / 探险 / 哲学",
+				"director": "安德烈·康查洛夫斯基",
+				"star": "艾丽·范宁 / 内森·连恩",
+				"comment": "德国童话改编，漂亮小孩们的暧昧真令人心动啊"
+			}
+		]
+	},
+	{
+		"seriesId": 73,
+		"seriesName": "杀戮都市",
+		"seriesList": [
+			{
+				"id": 138,
+				"doubanUrl": "https://movie.douban.com/subject/4079117/",
+				"posterUrl": "./images/杀戮都市.webp",
+				"score": "6.6",
+				"transName": "杀戮都市",
+				"year": "2010",
+				"offiName": "GANTZ",
+				"country": "日本",
+				"type": "穿越 / 怪物 / 人性 / 外星 / 无限 / 血腥 / 哲学",
+				"director": "佐藤信介",
+				"star": "二宫和也 / 松山研一",
+				"comment": "已死之人被神秘机器传送到异空间打怪，千手观音超带感"
+			},
+			{
+				"id": 139,
+				"doubanUrl": "https://movie.douban.com/subject/4079119/",
+				"posterUrl": "./images/杀戮都市2：完美答案.webp",
+				"score": "6.5",
+				"transName": "杀戮都市2：完美答案",
+				"year": "2011",
+				"offiName": "GANTZ: Perfect Answer",
+				"country": "日本",
+				"type": "穿越 / 怪物 / 人性 / 外星 / 无限 / 血腥 / 哲学",
+				"director": "佐藤信介",
+				"star": "二宫和也 / 松山研一",
+				"comment": "GANTZ快没电了，世界线崩坏，决战将至，结局感人"
+			}
+		]
+	},
+	{
+		"seriesId": 74,
+		"seriesName": "保罗",
+		"seriesList": [
+			{
+				"id": 140,
+				"doubanUrl": "https://movie.douban.com/subject/2999913/",
+				"posterUrl": "./images/保罗.webp",
+				"score": "7.6",
+				"transName": "保罗",
+				"year": "2011",
+				"offiName": "Paul",
+				"country": "美国 / 英国",
+				"type": "怪物 / 太空 / 探险 / 外星 / 哲学",
+				"director": "格雷格·莫托拉",
+				"star": "西蒙·佩吉 / 尼克·弗罗斯特",
+				"comment": "西蒙聚聚和好基友搭档奉上的一场科幻宅狂欢之旅"
+			}
+		]
+	},
+	{
+		"seriesId": 75,
+		"seriesName": "美少女特攻队",
+		"seriesList": [
+			{
+				"id": 141,
+				"doubanUrl": "https://movie.douban.com/subject/3262050/",
+				"posterUrl": "./images/美少女特攻队.webp",
+				"score": "6.1",
+				"transName": "美少女特攻队",
+				"year": "2011",
+				"offiName": "Sucker Punch",
+				"country": "美国",
+				"type": "奇幻 / 人性 / 烧脑 / 探险 / 无限 / 哲学 / 致郁",
+				"director": "扎克·施奈德",
+				"star": "艾米莉·布朗宁 / 杰米·钟",
+				"comment": "花式制服play，悲惨现实前的一场颅内高潮"
+			}
+		]
+	},
+	{
+		"seriesId": 76,
+		"seriesName": "惊天战神",
+		"seriesList": [
+			{
+				"id": 142,
+				"doubanUrl": "https://movie.douban.com/subject/3131599/",
+				"posterUrl": "./images/惊天战神.webp",
+				"score": "5.7",
+				"transName": "惊天战神",
+				"year": "2011",
+				"offiName": "Immortals",
+				"country": "美国",
+				"type": "惊悚 / 神话 / 探险 / 战争",
+				"director": "塔西姆·辛",
+				"star": "亨利·卡维尔 / 米基·洛克",
+				"comment": "当年在电影院看得我心惊胆战，视效音效都很“硬核”"
+			}
+		]
+	},
+	{
+		"seriesId": 77,
+		"seriesName": "柳如是",
+		"seriesList": [
+			{
+				"id": 143,
+				"doubanUrl": "https://movie.douban.com/subject/6078003/",
+				"posterUrl": "./images/柳如是.webp",
+				"score": "7.1",
+				"transName": "柳如是",
+				"year": "2012",
+				"offiName": "柳如是",
+				"country": "中国大陆",
+				"type": "爱情 / 历史 / 人性 / 战争 / 哲学",
+				"director": "吴琦 / 高峰",
+				"star": "万茜 / 秦汉",
+				"comment": "我见青山多妩媚，料青山见我应如是"
+			}
+		]
+	},
+	{
+		"seriesId": 78,
+		"seriesName": "林中小屋",
+		"seriesList": [
+			{
+				"id": 144,
+				"doubanUrl": "https://movie.douban.com/subject/3143676/",
+				"posterUrl": "./images/林中小屋.webp",
+				"score": "7.5",
+				"transName": "林中小屋",
+				"year": "2012",
+				"offiName": "The Cabin in the Woods",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 逃生 / 血腥 / 哲学",
+				"director": "德鲁·高达",
+				"star": "克里斯汀·康奈利 / 理查德·詹金斯",
+				"comment": "经典怪物角色大杂烩，对恐怖片商业流水线的讽刺"
+			}
+		]
+	},
+	{
+		"seriesId": 79,
+		"seriesName": "铁线虫入侵",
+		"seriesList": [
+			{
+				"id": 145,
+				"doubanUrl": "https://movie.douban.com/subject/6839145/",
+				"posterUrl": "./images/铁线虫入侵.webp",
+				"score": "6.7",
+				"transName": "铁线虫入侵",
+				"year": "2012",
+				"offiName": "연가시",
+				"country": "韩国",
+				"type": "怪物 / 人性 / 灾难",
+				"director": "朴正祐",
+				"star": "金明民 / 金烔完",
+				"comment": "依然是表现小人物在灾难面前的无力+讽刺政府"
+			}
+		]
+	},
+	{
+		"seriesId": 80,
+		"seriesName": "海啸奇迹",
+		"seriesList": [
+			{
+				"id": 146,
+				"doubanUrl": "https://movie.douban.com/subject/4832825/",
+				"posterUrl": "./images/海啸奇迹.webp",
+				"score": "7.6",
+				"transName": "海啸奇迹",
+				"year": "2012",
+				"offiName": "Lo imposible",
+				"country": "西班牙 / 美国",
+				"type": "人性 / 逃生 / 灾难",
+				"director": "胡安·安东尼奥·巴亚纳",
+				"star": "娜奥米·沃茨 / 伊万·麦克格雷格",
+				"comment": "2004印度洋海啸真实事件改编，爱能战胜一切艰险"
+			}
+		]
+	},
+	{
+		"seriesId": 81,
+		"seriesName": "末日浩劫",
+		"seriesList": [
+			{
+				"id": 147,
+				"doubanUrl": "https://movie.douban.com/subject/19976260/",
+				"posterUrl": "./images/末日浩劫.webp",
+				"score": "5.7",
+				"transName": "末日浩劫",
+				"year": "2013",
+				"offiName": "Los últimos días",
+				"country": "西班牙 / 法国",
+				"type": "病毒 / 末日 / 人性 / 探险 / 哲学",
+				"director": "大卫·帕斯特尔 / 亚历克斯·帕斯特尔",
+				"star": "基姆·古铁雷斯 / 何塞·科罗纳多",
+				"comment": "“见光死”病毒爆发，蜷缩于建筑内的人类末世……"
+			}
+		]
+	},
+	{
+		"seriesId": 82,
+		"seriesName": "僵尸世界大战",
+		"seriesList": [
+			{
+				"id": 148,
+				"doubanUrl": "https://movie.douban.com/subject/2132473/",
+				"posterUrl": "./images/僵尸世界大战.webp",
+				"score": "7.4",
+				"transName": "僵尸世界大战",
+				"year": "2013",
+				"offiName": "World War Z",
+				"country": "美国",
+				"type": "病毒 / 惊悚 / 人性 / 丧尸 / 探险 / 逃生 / 灾难",
+				"director": "马克·福斯特",
+				"star": "布拉德·皮特 / 米瑞·伊诺丝",
+				"comment": "最具人文关怀丧尸，弱者反而得生，大场面够本"
+			}
+		]
+	},
+	{
+		"seriesId": 83,
+		"seriesName": "招魂",
+		"seriesList": [
+			{
+				"id": 149,
+				"doubanUrl": "https://movie.douban.com/subject/3804629/",
+				"posterUrl": "./images/招魂.webp",
+				"score": "7.8",
+				"transName": "招魂",
+				"year": "2013",
+				"offiName": "The Conjuring",
+				"country": "美国",
+				"type": "惊悚 / 魔鬼 / 烧脑 / 哲学 / 宗教",
+				"director": "温子仁",
+				"star": "维拉·法米加 / 帕特里克·威尔森",
+				"comment": "经典IP，闹鬼玩偶安娜贝尔事件，阴森紧张的气氛绝了"
+			},
+			{
+				"id": 150,
+				"doubanUrl": "https://movie.douban.com/subject/24860563/",
+				"posterUrl": "./images/招魂2.webp",
+				"score": "7.7",
+				"transName": "招魂2",
+				"year": "2016",
+				"offiName": "The Conjuring 2",
+				"country": "美国 / 加拿大",
+				"type": "惊悚 / 魔鬼 / 烧脑 / 哲学 / 宗教",
+				"director": "温子仁",
+				"star": "帕特里克·威尔森 / 维拉·法米加",
+				"comment": "驱魔夫妻介入新案件，却不能证明灵异事件的真实性"
+			}
+		]
+	},
+	{
+		"seriesId": 84,
+		"seriesName": "地心引力",
+		"seriesList": [
+			{
+				"id": 151,
+				"doubanUrl": "https://movie.douban.com/subject/3793783/",
+				"posterUrl": "./images/地心引力.webp",
+				"score": "7.8",
+				"transName": "地心引力",
+				"year": "2013",
+				"offiName": "Gravity",
+				"country": "美国 / 英国",
+				"type": "惊悚 / 人性 / 太空 / 逃生",
+				"director": "阿方索·卡隆",
+				"star": "桑德拉·布洛克 / 乔治·克鲁尼",
+				"comment": "黑暗无声的浩瀚宇宙，渺小孤独的绝境求生"
+			}
+		]
+	},
+	{
+		"seriesId": 85,
+		"seriesName": "流感",
+		"seriesList": [
+			{
+				"id": 152,
+				"doubanUrl": "https://movie.douban.com/subject/10432911/",
+				"posterUrl": "./images/流感.webp",
+				"score": "7.9",
+				"transName": "流感",
+				"year": "2013",
+				"offiName": "감기",
+				"country": "韩国",
+				"type": "病毒 / 人性 / 逃生 / 灾难",
+				"director": "金成洙",
+				"star": "张赫 / 秀爱",
+				"comment": "韩影从不吝惜过度渲染的人性狗血与触目惊心的骇人场景"
+			}
+		]
+	},
+	{
+		"seriesId": 86,
+		"seriesName": "彗星来的那一夜",
+		"seriesList": [
+			{
+				"id": 153,
+				"doubanUrl": "https://movie.douban.com/subject/25807345/",
+				"posterUrl": "./images/彗星来的那一夜.webp",
+				"score": "8.5",
+				"transName": "彗星来的那一夜",
+				"year": "2013",
+				"offiName": "Coherence",
+				"country": "美国 / 英国",
+				"type": "穿越 / 惊悚 / 人性 / 烧脑 / 哲学",
+				"director": "詹姆斯·沃德·布柯特",
+				"star": "艾米丽·芭尔多尼 / 莫瑞·史特林",
+				"comment": "小成本大学问，看完此片将导致头脑风暴一整晚"
+			}
+		]
+	},
+	{
+		"seriesId": 87,
+		"seriesName": "安德的游戏",
+		"seriesList": [
+			{
+				"id": 154,
+				"doubanUrl": "https://movie.douban.com/subject/5323957/",
+				"posterUrl": "./images/安德的游戏.webp",
+				"score": "6.9",
+				"transName": "安德的游戏",
+				"year": "2013",
+				"offiName": "Ender's Game",
+				"country": "美国",
+				"type": "太空 / 外星 / 人性 / 战争 / 哲学",
+				"director": "加文·胡德",
+				"star": "阿萨·巴特菲尔德 / 哈里森·福特",
+				"comment": "这不是游戏，这是战争"
+			}
+		]
+	},
+	{
+		"seriesId": 88,
+		"seriesName": "僵尸",
+		"seriesList": [
+			{
+				"id": 155,
+				"doubanUrl": "https://movie.douban.com/subject/22715021/",
+				"posterUrl": "./images/僵尸.webp",
+				"score": "7.8",
+				"transName": "僵尸",
+				"year": "2013",
+				"offiName": "殭屍",
+				"country": "香港",
+				"type": "变异 / 惊悚 / 魔鬼 / 人性 / 哲学 / 致郁 / 宗教 / 罪案",
+				"director": "麦浚龙",
+				"star": "钱小豪 / 惠英红",
+				"comment": "致敬港式僵尸片黄金时代，一场精彩的告别演出"
+			}
+		]
+	},
+	{
+		"seriesId": 89,
+		"seriesName": "千万别眨眼",
+		"seriesList": [
+			{
+				"id": 156,
+				"doubanUrl": "https://movie.douban.com/subject/5158577/",
+				"posterUrl": "./images/千万别眨眼.webp",
+				"score": "5.3",
+				"transName": "千万别眨眼",
+				"year": "2014",
+				"offiName": "Don't Blink",
+				"country": "美国",
+				"type": "惊悚 / 人性 / 哲学",
+				"director": "特拉维斯·奥茨",
+				"star": "米娜·苏瓦丽 / 布莱恩·奥斯汀·格林",
+				"comment": "暴风雪山庄+无人生还模式，千万别眨眼，否则……"
+			}
+		]
+	},
+	{
+		"seriesId": 90,
+		"seriesName": "前目的地",
+		"seriesList": [
+			{
+				"id": 157,
+				"doubanUrl": "https://movie.douban.com/subject/20278505/",
+				"posterUrl": "./images/前目的地.webp",
+				"score": "7.8",
+				"transName": "前目的地",
+				"year": "2014",
+				"offiName": "Predestination",
+				"country": "澳大利亚",
+				"type": "穿越 / 人性 / 烧脑 / 哲学 / 罪案",
+				"director": "迈克尔·斯派瑞 / 彼得·斯派瑞",
+				"star": "伊桑·霍克 / 莎拉·斯努克",
+				"comment": "我睡我自己，我渣我自己，我生我自己，我杀我自己"
+			}
+		]
+	},
+	{
+		"seriesId": 91,
+		"seriesName": "大师",
+		"seriesList": [
+			{
+				"id": 158,
+				"doubanUrl": "https://movie.douban.com/subject/24743711/",
+				"posterUrl": "./images/催眠大师.webp",
+				"score": "7.6",
+				"transName": "催眠大师",
+				"year": "2014",
+				"offiName": "催眠大师",
+				"country": "中国大陆",
+				"type": "惊悚 / 人性 / 烧脑 / 哲学",
+				"director": "陈正道",
+				"star": "徐峥 / 莫文蔚",
+				"comment": "国产悬疑佳作，反转反转再反转，“旧梦太美只能半醒”"
+			},
+			{
+				"id": 159,
+				"doubanUrl": "https://movie.douban.com/subject/25884801/",
+				"posterUrl": "./images/记忆大师.webp",
+				"score": "7.1",
+				"transName": "记忆大师",
+				"year": "2017",
+				"offiName": "记忆大师",
+				"country": "中国大陆",
+				"type": "人性 / 烧脑 / 哲学 / 罪案",
+				"director": "陈正道",
+				"star": "黄渤 / 段奕宏",
+				"comment": "要想骗过别人，先要骗过自己"
+			}
+		]
+	},
+	{
+		"seriesId": 92,
+		"seriesName": "移动迷宫",
+		"seriesList": [
+			{
+				"id": 160,
+				"doubanUrl": "https://movie.douban.com/subject/21349345/",
+				"posterUrl": "./images/移动迷宫.webp",
+				"score": "6.9",
+				"transName": "移动迷宫",
+				"year": "2014",
+				"offiName": "The Maze Runner",
+				"country": "美国 / 英国",
+				"type": "怪物 / 人性 / 探险 / 逃生",
+				"director": "韦斯·鲍尔",
+				"star": "迪伦·奥布莱恩 / 阿梅尔·艾米恩",
+				"comment": "一群小鲜肉被困在迷宫中心，迷宫中似有神秘怪物把守"
+			},
+			{
+				"id": 161,
+				"doubanUrl": "https://movie.douban.com/subject/25995508/",
+				"posterUrl": "./images/移动迷宫2：焦土试炼.webp",
+				"score": "5.8",
+				"transName": "移动迷宫2：焦土试炼",
+				"year": "2015",
+				"offiName": "Maze Runner: The Scorch Trials",
+				"country": "美国",
+				"type": "末日 / 人性 / 丧尸 / 探险 / 逃生",
+				"director": "韦斯·鲍尔",
+				"star": "迪伦·奥布莱恩 / 卡雅·斯考达里奥",
+				"comment": "一行人逃出迷宫，却发现世界已变焦土……"
+			},
+			{
+				"id": 162,
+				"doubanUrl": "https://movie.douban.com/subject/26004132/",
+				"posterUrl": "./images/移动迷宫3：死亡解药.webp",
+				"score": "5.3",
+				"transName": "移动迷宫3：死亡解药",
+				"year": "2018",
+				"offiName": "Maze Runner: The Death Cure",
+				"country": "美国",
+				"type": "病毒 / 末日 / 人性 / 丧尸 / 探险 / 逃生",
+				"director": "韦斯·鲍尔",
+				"star": "迪伦·奥布莱恩 / 卡雅·斯考达里奥",
+				"comment": "年轻人真是靠不住啊"
+			}
+		]
+	},
+	{
+		"seriesId": 93,
+		"seriesName": "诚如神之所说",
+		"seriesList": [
+			{
+				"id": 163,
+				"doubanUrl": "https://movie.douban.com/subject/25777512/",
+				"posterUrl": "./images/诚如神之所说.webp",
+				"score": "6.5",
+				"transName": "诚如神之所说",
+				"year": "2014",
+				"offiName": "神さまの言うとおり",
+				"country": "日本",
+				"type": "怪物 / 惊悚 / 人性 / 逃生 / 外星 / 无限 / 血腥",
+				"director": "三池崇史",
+				"star": "福士苍汰 / 山崎纮菜",
+				"comment": "学校突然陷入恐怖离奇的淘汰游戏，血腥，干脆，刺激"
+			}
+		]
+	},
+	{
+		"seriesId": 94,
+		"seriesName": "模仿游戏",
+		"seriesList": [
+			{
+				"id": 164,
+				"doubanUrl": "https://movie.douban.com/subject/10463953/",
+				"posterUrl": "./images/模仿游戏.webp",
+				"score": "8.6",
+				"transName": "模仿游戏",
+				"year": "2014",
+				"offiName": "The Imitation Game",
+				"country": "英国 / 美国",
+				"type": "历史 / 人性 / 同性 / 战争 / 致郁",
+				"director": "莫滕·泰杜姆",
+				"star": "本尼迪克特·康伯巴奇 / 凯拉·奈特莉",
+				"comment": "人工智能之父艾伦·图灵传记改编，天才的伟大与悲剧"
+			}
+		]
+	},
+	{
+		"seriesId": 95,
+		"seriesName": "故事的故事",
+		"seriesList": [
+			{
+				"id": 165,
+				"doubanUrl": "https://movie.douban.com/subject/25767747/",
+				"posterUrl": "./images/故事的故事.webp",
+				"score": "7.6",
+				"transName": "故事的故事",
+				"year": "2015",
+				"offiName": "Il racconto dei racconti",
+				"country": "意大利 / 法国 / 英国",
+				"type": "惊悚 / 奇幻 / 人性 / 哲学",
+				"director": "马提欧·加洛尼",
+				"star": "萨尔玛·海耶克 / 文森特·卡索",
+				"comment": "欧洲童话集《五日谈》改编，暗黑猎奇风，爱生欲，欲生恶"
+			}
+		]
+	},
+	{
+		"seriesId": 96,
+		"seriesName": "卡罗尔",
+		"seriesList": [
+			{
+				"id": 166,
+				"doubanUrl": "https://movie.douban.com/subject/10757577/",
+				"posterUrl": "./images/卡罗尔.webp",
+				"score": "8.3",
+				"transName": "卡罗尔",
+				"year": "2015",
+				"offiName": "Carol",
+				"country": "英国 / 美国",
+				"type": "爱情 / 同性",
+				"director": "托德·海因斯",
+				"star": "凯特·布兰切特 / 鲁妮·玛拉",
+				"comment": "结尾的一幕简直心潮澎湃，爱能让人所向披靡"
+			}
+		]
+	},
+	{
+		"seriesId": 97,
+		"seriesName": "末日崩塌",
+		"seriesList": [
+			{
+				"id": 167,
+				"doubanUrl": "https://movie.douban.com/subject/25786077/",
+				"posterUrl": "./images/末日崩塌.webp",
+				"score": "7.0",
+				"transName": "末日崩塌",
+				"year": "2015",
+				"offiName": "San Andreas",
+				"country": "美国 / 澳大利亚",
+				"type": "人性 / 探险 / 逃生 / 灾难",
+				"director": "布拉德·佩顿",
+				"star": "道恩·强森 / 亚历珊德拉·达达里奥",
+				"comment": "加州突发大地震，巨石强森一家人逃难自救"
+			}
+		]
+	},
+	{
+		"seriesId": 98,
+		"seriesName": "鸡皮疙瘩",
+		"seriesList": [
+			{
+				"id": 168,
+				"doubanUrl": "https://movie.douban.com/subject/2364051/",
+				"posterUrl": "./images/鸡皮疙瘩.webp",
+				"score": "6.2",
+				"transName": "鸡皮疙瘩",
+				"year": "2015",
+				"offiName": "Goosebumps",
+				"country": "美国 / 澳大利亚",
+				"type": "怪物 / 惊悚 / 奇幻 / 探险",
+				"director": "罗伯·莱特曼",
+				"star": "杰克·布莱克 / 迪兰·明奈特",
+				"comment": "《鸡皮疙瘩》系列的怪物们从书中来到现实搞事"
+			},
+			{
+				"id": 169,
+				"doubanUrl": "https://movie.douban.com/subject/26779967/",
+				"posterUrl": "./images/鸡皮疙瘩2：闹鬼万圣节.webp",
+				"score": "5.4",
+				"transName": "鸡皮疙瘩2：闹鬼万圣节",
+				"year": "2015",
+				"offiName": "Goosebumps 2: Haunted Halloween",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 奇幻 / 探险",
+				"director": "阿里·桑德尔",
+				"star": "温迪·麦克伦登-考威 / 麦迪森·伊瑟曼",
+				"comment": "木偶斯拉皮阴谋大闹万圣节"
+			}
+		]
+	},
+	{
+		"seriesId": 99,
+		"seriesName": "釜山行",
+		"seriesList": [
+			{
+				"id": 170,
+				"doubanUrl": "https://movie.douban.com/subject/25986180/",
+				"posterUrl": "./images/釜山行.webp",
+				"score": "8.4",
+				"transName": "釜山行",
+				"year": "2016",
+				"offiName": "부산행",
+				"country": "韩国",
+				"type": "变异 / 人性 / 丧尸 / 逃生 / 血腥 / 灾难",
+				"director": "延尚昊",
+				"star": "孔侑 / 郑有美",
+				"comment": "当你坐火车时突然爆发丧尸，你会如何活到最后"
+			}
+		]
+	},
+	{
+		"seriesId": 100,
+		"seriesName": "隧道",
+		"seriesList": [
+			{
+				"id": 171,
+				"doubanUrl": "https://movie.douban.com/subject/26410594/",
+				"posterUrl": "./images/隧道.webp",
+				"score": "7.7",
+				"transName": "隧道",
+				"year": "2016",
+				"offiName": "터널",
+				"country": "韩国",
+				"type": "人性 / 逃生 / 灾难",
+				"director": "金成勋",
+				"star": "河正宇 / 吴达洙",
+				"comment": "一个人在生存极限中的挣扎，剧情真实而残酷"
+			}
+		]
+	},
+	{
+		"seriesId": 101,
+		"seriesName": "降临",
+		"seriesList": [
+			{
+				"id": 172,
+				"doubanUrl": "https://movie.douban.com/subject/21324900/",
+				"posterUrl": "./images/降临.webp",
+				"score": "7.7",
+				"transName": "降临",
+				"year": "2016",
+				"offiName": "Arrival",
+				"country": "美国",
+				"type": "怪物 / 烧脑 / 外星 / 哲学",
+				"director": "丹尼斯·维伦纽瓦",
+				"star": "艾米·亚当斯 / 杰瑞米·雷纳",
+				"comment": "超脱时间的束缚，每一秒都在过完一生"
+			}
+		]
+	},
+	{
+		"seriesId": 102,
+		"seriesName": "请以你的名字呼唤我",
+		"seriesList": [
+			{
+				"id": 173,
+				"doubanUrl": "https://movie.douban.com/subject/26799731/",
+				"posterUrl": "./images/请以你的名字呼唤我.webp",
+				"score": "8.8",
+				"transName": "请以你的名字呼唤我",
+				"year": "2017",
+				"offiName": "Call Me by Your Name",
+				"country": "意大利 / 法国 / 巴西 / 美国 / 荷兰 / 德国",
+				"type": "爱情 / 同性 / 致郁",
+				"director": "卢卡·瓜达尼诺",
+				"star": "艾米·汉莫 / 蒂莫西·柴勒梅德",
+				"comment": "你甚至会忘了这是同性片，美丽的夏日恋曲，后劲非常大"
+			}
+		]
+	},
+	{
+		"seriesId": 103,
+		"seriesName": "金刚",
+		"seriesList": [
+			{
+				"id": 174,
+				"doubanUrl": "https://movie.douban.com/subject/26309788/",
+				"posterUrl": "./images/金刚：骷髅岛.webp",
+				"score": "6.5",
+				"transName": "金刚：骷髅岛",
+				"year": "2017",
+				"offiName": "Kong: Skull Island",
+				"country": "美国 / 中国大陆 / 澳大利亚 / 加拿大",
+				"type": "怪物 / 惊悚 / 人性 / 探险 / 逃生 / 血腥",
+				"director": "乔丹·沃格特-罗伯茨",
+				"star": "汤姆·希德勒斯顿 / 布丽·拉尔森",
+				"comment": "竹林中的长脚蜘蛛把我吓到了，怪物们还挺硬核的"
+			}
+		]
+	},
+	{
+		"seriesId": 104,
+		"seriesName": "异星觉醒",
+		"seriesList": [
+			{
+				"id": 175,
+				"doubanUrl": "https://movie.douban.com/subject/26718838/",
+				"posterUrl": "./images/异星觉醒.webp",
+				"score": "6.5",
+				"transName": "异星觉醒",
+				"year": "2017",
+				"offiName": "Life",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 太空 / 逃生 / 外星 / 血腥",
+				"director": "丹尼尔·伊斯皮诺萨",
+				"star": "杰克·吉伦哈尔 / 丽贝卡·弗格森",
+				"comment": "宇宙就像一盒巧克力，你永远不知道下一个是什么怪物"
+			}
+		]
+	},
+	{
+		"seriesId": 105,
+		"seriesName": "全球风暴",
+		"seriesList": [
+			{
+				"id": 176,
+				"doubanUrl": "https://movie.douban.com/subject/22266012/",
+				"posterUrl": "./images/全球风暴.webp",
+				"score": "6.0",
+				"transName": "全球风暴",
+				"year": "2017",
+				"offiName": "Geostorm",
+				"country": "美国",
+				"type": "人性 / 太空 / 逃生 / 灾难",
+				"director": "迪安·德夫林",
+				"star": "杰拉德·巴特勒 / 吉姆·斯特吉斯",
+				"comment": "剧情为主，灾难场面较少，阿祖还是帅的"
+			}
+		]
+	},
+	{
+		"seriesId": 106,
+		"seriesName": "湮灭",
+		"seriesList": [
+			{
+				"id": 177,
+				"doubanUrl": "https://movie.douban.com/subject/26384741/",
+				"posterUrl": "./images/湮灭.webp",
+				"score": "7.1",
+				"transName": "湮灭",
+				"year": "2018",
+				"offiName": "Annihilation",
+				"country": "美国 / 英国",
+				"type": "变异 / 怪物 / 惊悚 / 烧脑 / 探险 / 外星 / 哲学",
+				"director": "亚历克斯·嘉兰",
+				"star": "娜塔莉·波特曼 / 詹妮弗·杰森·李",
+				"comment": "看完电影不知所云，看完影评细思恐极"
+			}
+		]
+	},
+	{
+		"seriesId": 107,
+		"seriesName": "寂静之地",
+		"seriesList": [
+			{
+				"id": 178,
+				"doubanUrl": "https://movie.douban.com/subject/26997663/",
+				"posterUrl": "./images/寂静之地.webp",
+				"score": "6.3",
+				"transName": "寂静之地",
+				"year": "2018",
+				"offiName": "A Quiet Place",
+				"country": "美国",
+				"type": "怪物 / 惊悚 / 末日 / 人性 / 逃生",
+				"director": "约翰·卡拉辛斯基",
+				"star": "艾米莉·布朗特 / 约翰·卡拉辛斯基",
+				"comment": "气氛塑造非常到位，特别是生孩子那段太紧张了"
+			}
+		]
+	},
+	{
+		"seriesId": 108,
+		"seriesName": "狂暴巨兽",
+		"seriesList": [
+			{
+				"id": 179,
+				"doubanUrl": "https://movie.douban.com/subject/26430636/",
+				"posterUrl": "./images/狂暴巨兽.webp",
+				"score": "6.4",
+				"transName": "狂暴巨兽",
+				"year": "2018",
+				"offiName": "Rampage",
+				"country": "美国",
+				"type": "变异 / 怪物 / 基因 / 灾难",
+				"director": "布拉德·佩顿",
+				"star": "道恩·强森 / 娜奥米·哈里斯",
+				"comment": "我巨石强森又来拯救世界了，这次有三只大怪兽哦"
+			}
+		]
+	},
+	{
+		"seriesId": 109,
+		"seriesName": "动物世界",
+		"seriesList": [
+			{
+				"id": 180,
+				"doubanUrl": "https://movie.douban.com/subject/26925317/",
+				"posterUrl": "./images/动物世界.webp",
+				"score": "7.2",
+				"transName": "动物世界",
+				"year": "2018",
+				"offiName": "动物世界",
+				"country": "中国大陆",
+				"type": "奇幻 / 人性 / 烧脑 / 哲学",
+				"director": "韩延",
+				"star": "李易峰 / 迈克尔·道格拉斯",
+				"comment": "不是简单的纸牌游戏，而是智商的博弈"
+			}
+		]
+	},
+	{
+		"seriesId": 110,
+		"seriesName": "巨齿鲨",
+		"seriesList": [
+			{
+				"id": 181,
+				"doubanUrl": "https://movie.douban.com/subject/26426194/",
+				"posterUrl": "./images/巨齿鲨.webp",
+				"score": "5.7",
+				"transName": "巨齿鲨",
+				"year": "2018",
+				"offiName": "The Meg",
+				"country": "美国 / 中国大陆 / 香港",
+				"type": "怪物 / 惊悚 / 探险 / 灾难",
+				"director": "乔·德特杜巴",
+				"star": "杰森·斯坦森 / 李冰冰",
+				"comment": "海上科研项目不小心惊动了一只远古海洋霸主巨齿鲨"
+			}
+		]
+	}
+]
