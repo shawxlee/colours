@@ -2532,5 +2532,19 @@
 		"director": "乔·德特杜巴",
 		"star": "杰森·斯坦森 / 李冰冰",
 		"comment": "海上科研项目不小心惊动了一只远古海洋霸主巨齿鲨"
+	},
+	{
+		"id": 182,
+		"doubanUrl": "https://movie.douban.com/subject/30164448/",
+		"posterUrl": "./images/海市蜃楼.webp",
+		"score": "7.8",
+		"transName": "海市蜃楼",
+		"year": "2018",
+		"offiName": "Durante la tormenta",
+		"country": "西班牙",
+		"type": "穿越 / 人性 / 哲学",
+		"director": "奥里奥尔·保罗",
+		"star": "阿德里亚娜·乌加特 / 奇诺·达林",
+		"comment": "一个雷电交加的夜晚，一台摄像机连通了过去与未来……"
 	}
 ]

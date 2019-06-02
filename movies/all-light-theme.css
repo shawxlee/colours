@@ -97,7 +97,7 @@ body {
 }
 
 /* 工具栏 */
-.toolBar {
+.toolbar {
 	position: fixed;
 	top: 3rem;
 	right: 0;
@@ -109,7 +109,7 @@ body {
 	top: .5rem;
 }
 /* 搜索框 */
-.toolBar form {
+.toolbar form {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -117,14 +117,14 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.toolBar form .form-control {
+.toolbar form .form-control {
 	position: absolute;
 	top: .2375rem;
 	right: 1rem;
 	width: 100%;
 	transition: width .1s linear;
 }
-.toolBar form .navbar-toggler {
+.toolbar form .navbar-toggler {
 	position: absolute;
 	top: .5rem;
 	right: 1rem;
@@ -145,48 +145,48 @@ body {
 	transition: width .2s linear;
 }
 /* 筛选器 */
-.screenToggler {
+.toolbar-toggler {
 	font-size: 1rem;
 	color: #4f94cd;
 }
-.screenToggler .navbar-toggler {
+.toolbar-toggler .navbar-toggler {
 	color: #4f94cd;
 }
-.screenToggler .active {
+.toolbar-toggler .active {
 	color: #363636;
 }
 /* 筛选面板 */
-#screenCollapse .btn {
+#screenSwitch .btn {
 	color: #4f94cd;
 }
-#screenCollapse .btn-sm {
+#screenSwitch .btn-sm {
 	font-size: .9rem;
 }
-#screenCollapse span {
+#screenSwitch span {
 	display: inline-block;
 	transform: rotate(90deg);
 }
-#screenCollapse .active {
+#screenSwitch .active {
 	color: white;
 }
-#screenCollapse .active .disabled {
+#screenSwitch .active .disabled {
 	color: #a9a9a9;
 }
-#screenCollapse .more {
+#screenSwitch .more {
 	color: #a9a9a9;
 	background-color: #e8e8e8;
 	border-color: #e8e8e8;
 }
-#screenCollapse .navbar-toggler {
+#screenSwitch .navbar-toggler {
 	font-size: 1rem;
 	opacity: 0;
 }
-#screenCollapse .show {
+#screenSwitch .show {
 	opacity: 1;
 }
 
 /* 更新状态栏 */
-.tipInfo {
+.divider {
 	width: 100%;
 	height: 3rem;
 	margin-top: .25rem;
@@ -195,7 +195,7 @@ body {
 	color: #cfcfcf;
 	text-align: center;
 }
-.tipInfo hr {
+.divider hr {
 	display: inline-block;
 	width: 30%;
 	vertical-align: middle;
@@ -226,23 +226,23 @@ body {
 }
 
 /* 全览模式 */
-.detailCard {
+.film-card {
 	background-color: white;
 }
 /* 海报 */
-.filmPoster {
+.film-card-poster {
 	position: relative;
 	width: 5.9rem;
 	height: 8.8rem;
 	border-radius: .3rem;
 	overflow: hidden;
 }
-.filmPoster .btn {
+.film-card-poster .btn {
 	width: 6rem;
 	color: white;
 	border-color: white;
 }
-.filmPoster p {
+.film-card-poster p {
 	width: 100%;
 	font-size: .9rem;
 	text-align: center;
@@ -250,60 +250,53 @@ body {
 	opacity: 0;
 	transition: opacity .2s linear;
 }
-.filmPoster span {
+.film-card-poster span {
 	color: white;
 }
-.filmPoster .fade {
+.film-card-poster .fade {
 	opacity: 1;
 }
-/* 评分 */
-.filmScore {
+.film-card-poster .badge {
 	position: absolute;
 	top: 0;
 	right: 0;
 	width: 2.3rem;
 	height: 1.3rem;
-	text-align: center;
+	font-size: 1rem;
+	font-weight: normal;
+	color: white;
 	border-radius: 0 .3rem;
 }
-.filmScore a {
-	font-size: 1rem;
-	line-height: 1.4;
-	color: white;
-	text-decoration: none;
-}
 /* 信息 */
-.filmInfo {
+.film-card-info {
 	width: calc(100% - 5.9rem);
 	padding-top: .05rem;
 	padding-left: .5rem;
 	line-height: 1.4;
 	color: #9c9c9c;
 }
-.filmInfo h5 {
-	width: 100%;
+.film-card-info h5 {
 	margin: 0;
 	font-weight: bold;
 	color: #363636;
 	white-space: nowrap;
 	overflow-x: auto;
 }
-.filmInfo h6 {
+.film-card-info h6 {
 	margin: 0;
 	font-weight: bold;
 }
-.filmInfo p {
+.film-card-info p {
 	margin: 0;
 	font-size: .9rem;
 }
-.filmInfo .d-flex h6:last-of-type,
-.filmInfo .d-flex p:last-of-type {
-	width: 80%;
+.film-card-info .d-flex h6:last-of-type,
+.film-card-info .d-flex p:last-of-type {
 	white-space: nowrap;
 	overflow-x: auto;
 }
 /* 评语 */
-.filmComment {
+.film-card-comment {
 	height: 2.4rem;
 	font-size: 1rem;
 	line-height: 2.4;
@@ -311,10 +304,10 @@ body {
 	background-color: #f5f5f5;
 	border-radius: .3rem;
 }
-.filmComment i {
+.film-card-comment i {
 	color: #9c9c9c;
 }
-.filmComment p {
+.film-card-comment p {
 	height: 100%;
 	white-space: nowrap;
 	overflow-x: auto;
@@ -322,58 +315,56 @@ body {
 
 /* 简约模式 */
 /* 标题 */
-.miniToggler {
+.accordion-toggler {
 	background-color: #4f94cd;
 }
-.miniToggler .filmScore {
-	position: relative;
-	top: -.15rem;
-	right: 0;
-	display: inline-block;
-	border-radius: .3rem;
-}
-.miniToggler h5 {
-	display: inline-block;
-	width: calc(100% - 3rem);
+.accordion-toggler h5 {
 	font-weight: bold;
 	line-height: 1;
 	color: white;
-	white-space: nowrap;
 }
-.miniToggler small {
+.accordion-toggler .badge {
+	font-weight: normal;
+	color: white;
+}
+.accordion-toggler small {
 	font-weight: normal;
 }
-.miniToggler p {
+.accordion-toggler p {
 	margin-bottom: 0;
 	line-height: 1;
 	color: white;
 }
-.miniToggler.collapsed {
+.accordion-toggler.collapsed {
 	background-color: white;
 }
-.miniToggler.collapsed h5 {
+.accordion-toggler.collapsed h5 {
 	color: #363636;
 }
-.miniToggler.collapsed small {
+.accordion-toggler.collapsed small {
 	color: #696969;
 }
-.miniToggler.collapsed p {
+.accordion-toggler.collapsed p {
 	color: #9c9c9c;
 }
 /* 信息 */
-#miniMode .filmInfo h6 {
-	width: 100%;
+.media img:first-of-type {
+	width: 5.9rem;
+	height: 8.8rem;
+	border-radius: .3rem;
+}
+.media .film-card-info h6 {
 	line-height: 1.15;
 	color: #696969;
 	white-space: nowrap;
 	overflow-x: auto;
 }
-#miniMode .filmComment {
+.media-body .film-card-comment {
 	height: 3.2rem;
 	font-size: .9rem;
 	line-height: 1.5;
 }
-#miniMode .filmComment i {
+.media-body .film-card-comment i {
 	font-size: 1rem;
 }
 
