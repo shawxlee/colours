@@ -77,9 +77,10 @@ body {
 	height: 3rem;
 	color: white;
 	background-color: #4f94cd;
+	transition: top .2s linear;
 }
 .hide {
-	top: -2.5rem;
+	top: -3rem;
 }
 #topNav .nav-link {
 	height: 1.5rem;
@@ -96,6 +97,21 @@ body {
 	background-color: transparent;
 }
 
+/* 比例条 */
+/* 过渡：淡入/淡出 */
+.fade-enter,
+.fade-leave-to {
+	height: 0;
+}
+.fade-enter-to,
+.fade-leave {
+	height: .5rem;
+}
+.fade-enter-active,
+.fade-leave-active {
+	transition: height .2s linear;
+}
+
 /* 工具栏 */
 .toolbar {
 	position: fixed;
@@ -104,8 +120,9 @@ body {
 	left: 0;
 	z-index: 9;
 	background-color: white;
+	transition: top .2s linear;
 }
-.top {
+.up {
 	top: .5rem;
 }
 /* 搜索框 */
@@ -122,7 +139,7 @@ body {
 	top: .2375rem;
 	right: 1rem;
 	width: 100%;
-	transition: width .1s linear;
+	transition: width .2s linear;
 }
 .toolbar form .navbar-toggler {
 	position: absolute;
@@ -142,7 +159,7 @@ body {
 	transition: width .1s linear;
 }
 .stretch-leave-active {
-	transition: width .2s linear;
+	transition: width .3s linear;
 }
 /* 筛选器 */
 .toolbar-toggler {
@@ -219,10 +236,15 @@ body {
 	margin-top: .25rem;
 }
 .pull-enter-active {
-	transition: margin-top .15s linear;
+	transition: margin-top .1s linear;
 }
 .pull-leave-active {
 	transition: margin-top .3s linear;
+}
+/* 底部分割线 */
+.tab-pane .divider {
+	margin-top: 0;
+	margin-bottom: 4.05rem;
 }
 
 /* 全览模式 */
@@ -368,12 +390,6 @@ body {
 	font-size: 1rem;
 }
 
-/* 底部分割线 */
-#bottomDivider {
-	margin-top: 0;
-	margin-bottom: 4.05rem;
-}
-
 /* 快捷按钮 */
 #toTop,
 #toBottom {
@@ -392,7 +408,7 @@ body {
 	opacity: .5;
 }
 #toTop {
-	transform: translateY(-3rem);
+	bottom: 7.3rem;
 }
 
 /* 底部导航 */
