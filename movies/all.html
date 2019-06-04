@@ -11,18 +11,20 @@
 	<!-- 私有样式 -->
 	<link rel="stylesheet" type="text/css" href="all-light-theme.css">
 
-	<!-- 图标及标题 -->
+	<!-- 图标 -->
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
 	<title>MR.S - 来自Shaw的电影推荐</title>
 </head>
 <body>
 	<div class="container-fluid m-0 p-0">
 		<!-- 页面1：全部影片 -->
 		<div id="all">
-			<!-- 顶部导航栏：标题、切换模式 -->
+			<!-- 顶部导航栏 -->
 			<nav class="navbar navbar-expand-lg border-bottom fixed-top" :class="{hide: topHidden}" id="topNav">
 				<span class="navbar-text mb-0 h4">全部影片</span>
+				<!-- 模式切换 -->
 				<ul class="nav nav-pills">
 					<li class="nav-item mx-1">
 						<a class="nav-link rounded-pill px-2 active" data-toggle="pill" href="#detailMode">全览模式</a>
@@ -43,13 +45,14 @@
 				</div>
 			</transition>
 
-			<!-- 工具栏：排序、过滤、搜索 -->
+			<!-- 工具栏 -->
 			<nav class="navbar navbar-expand-lg border-bottom toolbar" :class="{up: topHidden}">
 				<!-- 筛选器 -->
 				<div class="toolbar-toggler" data-toggle="collapse" data-target="#screenSwitch">
 					<button class="navbar-toggler pr-1" :class="{active: !screenHidden}" type="button">
 						<i class="fas fa-sort-amount-down"></i>
 					</button>
+					<!-- 筛选信息 -->
 					<template v-if="screenHidden">
 						<span v-show="sortOrder == 1 && !isReverse">最早上映</span>
 						<span v-show="sortOrder == 1 && isReverse">最近上映</span>
@@ -60,13 +63,12 @@
 						<span v-for="item in activeTags"> · {{ item }}</span>
 					</template>
 				</div>
-
 				<!-- 搜索框 -->
 				<form>
 					<transition name="stretch">
-						<input class="form-control rounded-pill" :style="[isFocus ? '' : {width: searchText.length + 3 + 'rem'}]" id="searchInput" type="text" placeholder="输入关键词搜索" v-if="isStretch" v-on="{focus.passive: isFocus = true, blur.passive: isFocus = false}" v-model.trim="searchText">
+						<input class="form-control rounded-pill" :style="[isFocus ? '' : {width: searchText.length + 3 + 'rem'}]" id="searchInput" type="text" placeholder="输入关键词搜索" v-if="isStretch" v-on="{focus: isFocus = true, blur: isFocus = false}" v-model.trim="searchText">
 					</transition>
-					<button class="navbar-toggler" :class="{active: isFocus}" type="button" v-on="{mousedown.prevent, click.passive: onSearch}">
+					<button class="navbar-toggler" :class="{active: isFocus}" type="button" @mousedown.prevent @click.passive="onSearch">
 						<i class="fas fa-times" v-if="searchText.length > 0"></i>
 						<i class="fas fa-search" v-else></i>
 					</button>
@@ -75,7 +77,7 @@
 				<!-- 筛选面板 -->
 				<div class="collapse navbar-collapse p-2 pt-4" id="screenSwitch">
 					<div class="row no-gutters justify-content-between">
-						<!-- 排序 -->
+						<!-- 排序按钮 -->
 						<div class="col-4 px-1" v-for="(item, index) in sorts">
 							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == index + 1}" @tap="onSort(index)">按{{ item }}排序 <span>
 								<i class="fas fa-caret-left mr-0" :class="{disabled: !isReverse}"></i>
@@ -83,7 +85,7 @@
 							</span></v-touch>
 						</div>
 						<div class="w-100"><hr></div>
-						<!-- 过滤 -->
+						<!-- 过滤标签 -->
 						<div class="col-2 p-1" v-for="(item, index) in tags" v-if="moreHidden ? index < 17 : true">
 							<v-touch class="btn btn-sm" :class="{active: item.isActive}" @tap="onTag(item)">{{ item.tag }}</v-touch>
 						</div>
@@ -115,16 +117,16 @@
 			</transition>
 
 			<!-- 电影列表 -->
-			<v-touch class="tab-content" v-on="{swipeup: swipeUp, swipedown: swipeDown}" :swipe-options="{threshold: 100}">
+			<v-touch class="tab-content" v-on="{swipeup: swipeUp, swipedown: swipeDown}" :swipe-options="{direction: 'horizontal', threshold: 100}">
 				<!-- 全览模式 -->
 				<div class="tab-pane active" id="detailMode">
-					<div class="film-card my-1 p-3" v-for="(item, index) in filterFilms" :key="item.id">
+					<div class="film-card my-1 p-3" v-for="item in filterFilms" :key="item.id">
 						<div class="d-flex">
-							<!-- 海报 -->
 							<div class="film-card-poster">
-								<img data-toggle="modal" :data-target="'#largePoster_' + index" data-backdrop="static" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
-								<!-- 点击查看大图 -->
-								<div class="modal" :id="'largePoster_' + index" tabindex="-1">
+								<!-- 海报 -->
+								<img data-toggle="modal" :data-target="'#poster_' + item.id" data-backdrop="static" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
+								<!-- 查看大图 -->
+								<div class="modal" :id="'poster_' + item.id" tabindex="-1">
 									<div class="modal-dialog modal-dialog-centered m-0">
 										<div class="modal-content bg-transparent border-0 p-3 pb-1">
 											<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%"><br>
@@ -167,7 +169,6 @@
 							<p>{{ item.comment }}</p>
 						</div>
 					</div>
-
 					<!-- 底部分割线 -->
 					<div class="divider" v-if="films.length > 0">
 						<div v-if="filterFilms.length > 0">
@@ -181,22 +182,21 @@
 
 				<!-- 简约模式 -->
 				<div class="tab-pane accordion mx-1" id="miniMode">
-					<div class="card my-1 shadow-sm" style="border-radius: .5rem;" v-for="(item, index) in filterFilms" :key="item.id">
+					<div class="card my-1 shadow-sm" style="border-radius: .5rem;" v-for="item in filterFilms" :key="item.id">
 						<div class="card-header p-0 shadow">
-							<!-- 主要信息 -->
-							<div class="accordion-toggler p-3 collapsed" data-toggle="collapse" :data-target="'#miniInfo_' + index">
-								<h5>
-									<a class="badge mr-2" :style="{'background-color': getColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
-									{{ item.transName }}<small> ({{ item.year }})</small>
-								</h5>
+							<!-- 主题 -->
+							<div class="accordion-toggler p-3 collapsed" data-toggle="collapse" :data-target="'#info_' + item.id">
+								<h5><a class="badge mr-2" :style="{'background-color': getColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>{{ item.transName }} <small>({{ item.year }})</small></h5>
 								<p><i class="fas fa-tag mr-2 mb-0"></i>{{ item.type }}</p>
 							</div>
 						</div>
 						<!-- 展开详情 -->
-						<div class="collapse" :id="'miniInfo_' + index" data-parent="#miniMode">
+						<div class="collapse" :id="'info_' + item.id" data-parent="#miniMode">
 							<div class="card-body media p-3">
-								<img data-toggle="modal" :data-target="'#largePoster2_' + index" data-backdrop="static" :src="item.posterUrl" :alt="item.transName">
-								<div class="modal" :id="'largePoster2_' + index" tabindex="-1">
+								<!-- 海报 -->
+								<img data-toggle="modal" :data-target="'#poster2_' + item.id" data-backdrop="static" :src="item.posterUrl" :alt="item.transName">
+								<!-- 查看大图 -->
+								<div class="modal" :id="'poster2_' + item.id" tabindex="-1">
 									<div class="modal-dialog modal-dialog-centered m-0">
 										<div class="modal-content bg-transparent border-0 p-3 pb-1">
 											<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%"><br>
@@ -205,6 +205,7 @@
 										</div>
 									</div>
 								</div>
+								<!-- 信息 -->
 								<div class="media-body film-card-info">
 									<h6>{{ item.offiName }}</h6>
 									<div class="d-flex mt-1">
@@ -226,7 +227,6 @@
 							</div>
 						</div>
 					</div>
-
 					<!-- 底部分割线 -->
 					<div class="divider" v-if="films.length > 0">
 						<div v-if="filterFilms.length > 0">
@@ -240,15 +240,72 @@
 
 				<!-- 系列模式 -->
 				<div class="tab-pane" id="seriesMode">
-					
-
-					<!-- 底部分割线 -->
-					<div class="divider" v-if="series.length > 0">
-						<div v-if="filterSeries.length > 0">
-							<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+					<!-- 导航 -->
+					<nav class="navbar" id="seriesNav">
+						<nav class="nav nav-pills flex-column">
+							<a class="nav-link" :href="'#series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">{{ item.seriesName }} 系列</a>
+						</nav>
+					</nav>
+					<!-- 详情 -->
+					<div data-spy="scroll" data-target="#seriesNav" data-offset="0">
+						<div v-for="item in filterSeries" :key="item.seriesId">
+							<!-- 系列分割线 -->
+							<div class="divider" :id="'series_' + item.seriesId">
+								<hr>&nbsp;&nbsp; <span>{{ item.seriesName }}</span> 系列 &nbsp;&nbsp;<hr>
+							</div>
+							<div class="d-flex" v-for="film in item.filmList" :key="film.id">
+								<div class="film-card-poster">
+									<!-- 海报 -->
+									<img data-toggle="modal" :data-target="'#poster3_' + film.id" data-backdrop="static" :src="film.posterUrl" :alt="film.transName" width="100%" height="100%">
+									<!-- 查看大图 -->
+									<div class="modal" :id="'poster3_' + film.id" tabindex="-1">
+										<div class="modal-dialog modal-dialog-centered m-0">
+											<div class="modal-content bg-transparent border-0 p-3 pb-1">
+												<img data-dismiss="modal" :src="film.posterUrl" :alt="film.transName" width="100%"><br>
+												<a class="btn mx-auto" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a><br>
+												<p :class="{fade: isSave}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
+											</div>
+										</div>
+									</div>
+									<!-- 评分 -->
+									<span class="badge">{{ film.year }}</span><a class="badge" :style="{'background-color': getColor(film)}" :href="film.doubanUrl" target="_blank">{{ film.score }}</a>
+								</div>
+								<!-- 信息 -->
+								<div class="film-card-info">
+									<h5>{{ film.transName }}</h5>
+									<h6>{{ film.offiName }}</h6>
+									<div class="d-flex">
+										<p>类型：</p>
+										<p>{{ film.type }}</p>
+									</div>
+									<div class="d-flex">
+										<p>地区：</p>
+										<p>{{ film.country }}</p>
+									</div>
+									<div class="d-flex">
+										<p>导演：</p>
+										<p>{{ film.director }}</p>
+									</div>
+									<div class="d-flex">
+										<p>主演：</p>
+										<p>{{ film.star }}</p>
+									</div>
+								</div>
+								<!-- 评语 -->
+								<div class="d-flex mt-2 px-2 film-card-comment">
+									<div><i class="fas fa-comment-dots mr-2"></i></div>
+									<p>{{ film.comment }}</p>
+								</div>
+							</div>
 						</div>
-						<div v-else>
-							<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+						<!-- 底部分割线 -->
+						<div class="divider" v-if="series.length > 0">
+							<div v-if="filterSeries.length > 0">
+								<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+							</div>
+							<div v-else>
+								<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -267,7 +324,7 @@
 					<a class="nav-link active" id="toAll" href="#all"><i class="fas fa-star"></i><br>全部</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" id="toToWatch" href="#toWatch"><i class="fas fa-play-circle"></i><br>待看</a>
+					<a class="nav-link" id="toToWatch" href="#to-watch"><i class="fas fa-play-circle"></i><br>待看</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" id="toWatched" href="#watched"><i class="fas fa-pen-square"></i><br>已看</a>

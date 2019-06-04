@@ -9,7 +9,6 @@
 	flexible = lib.flexible || (lib.flexible = {});
 	// 设置了 viewport meta
 	if (vpMeta) {
-		console.warn("将根据 meta 标签缩放比例调整基准字号");
 		var initial = vpMeta.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
 		if (initial) {
 				scale = parseFloat(initial[1]); // 已设置的 initialScale

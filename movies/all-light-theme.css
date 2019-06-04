@@ -314,6 +314,7 @@ body {
 }
 .film-card-info .d-flex h6:last-of-type,
 .film-card-info .d-flex p:last-of-type {
+	width: 80%;
 	white-space: nowrap;
 	overflow-x: auto;
 }
