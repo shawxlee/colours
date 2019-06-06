@@ -53,10 +53,7 @@ body {
 /* 输入框 */
 .form-control {
 	height: 2.4rem;
-	padding-top: .7rem;
-	padding-bottom: .7rem;
-	font-size: 1rem;
-	line-height: 1;
+	padding-bottom: .35rem;
 }
 .form-control:focus,
 .form-control:active:focus,
@@ -68,6 +65,13 @@ body {
 	border-color: #4f94cd;
 	box-shadow: none;
 	outline: none;
+}
+/* 徽章标识 */
+.badge {
+	font-size: 1rem;
+	font-weight: normal;
+	color: white;
+	border-radius: .3rem;
 }
 
 /*  局部样式  */
@@ -145,6 +149,11 @@ body {
 	position: absolute;
 	top: .5rem;
 	right: 1rem;
+}
+.fa-times-circle {
+	position: relative;
+	bottom: .1rem;
+	font-size: 1rem;
 }
 /* 过渡：展开/收起 */
 .stretch-enter,
@@ -284,9 +293,6 @@ body {
 	right: 0;
 	width: 2.3rem;
 	height: 1.3rem;
-	font-size: 1rem;
-	font-weight: normal;
-	color: white;
 	border-radius: 0 .3rem;
 }
 /* 信息 */

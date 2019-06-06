@@ -66,10 +66,10 @@
 				<!-- 搜索框 -->
 				<form>
 					<transition name="stretch">
-						<input class="form-control rounded-pill" :style="[isFocus ? '' : {width: searchText.length + 3 + 'rem'}]" id="searchInput" type="text" placeholder="输入关键词搜索" v-if="isStretch" v-on="{focus: isFocus = true, blur: isFocus = false}" v-model.trim="searchText">
+						<input class="form-control rounded-pill" :style="[isFocus ? '' : {width: searchText.length + 4 + 'rem'}]" id="searchInput" type="text" placeholder="输入关键词搜索" v-if="isStretch" @focus.passive="isFocus = true" @blur.passive="isFocus = false" v-model.trim="searchText" v-focus>
 					</transition>
 					<button class="navbar-toggler" :class="{active: isFocus}" type="button" @mousedown.prevent @click.passive="onSearch">
-						<i class="fas fa-times" v-if="searchText.length > 0"></i>
+						<i class="fas fa-times-circle" v-if="searchText.length > 0"></i>
 						<i class="fas fa-search" v-else></i>
 					</button>
 				</form>
@@ -117,7 +117,7 @@
 			</transition>
 
 			<!-- 电影列表 -->
-			<v-touch class="tab-content" v-on="{swipeup: swipeUp, swipedown: swipeDown}" :swipe-options="{direction: 'horizontal', threshold: 100}">
+			<v-touch class="tab-content" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
 				<!-- 全览模式 -->
 				<div class="tab-pane active" id="detailMode">
 					<div class="film-card my-1 p-3" v-for="item in filterFilms" :key="item.id">

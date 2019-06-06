@@ -147,6 +147,14 @@ var page1 = new Vue({
 		// 初始化所有数据
 		this.loadData();
 	},
+	directives: {
+		// 自定义指令：元素自动获得焦点
+		focus: {
+			inserted(el) {
+				el.focus();
+			}
+		}
+	},
 	methods: {
 		// 加载数据并显示状态：若成功则清除筛选信息，然后收起状态栏；否则显示错误提示
 		loadData() {
@@ -273,11 +281,9 @@ var page1 = new Vue({
 			}
 
 			if (this.searchText.length > 0) {
+				document.getElementById('searchInput').focus();
 				this.searchText = '';
 			}
-
-			var searchInput = document.getElementById('searchInput');
-			searchInput.focus();
 		},
 		// 点击不同按钮切换排序方式，点击同一按钮切换正倒序
 		onSort(index) {
