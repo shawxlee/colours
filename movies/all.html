@@ -40,8 +40,8 @@
 
 			<!-- 比例条 -->
 			<transition name="fade">
-				<div class="progress fixed-top" style="height: .5rem;" v-if="topHidden">
-					<v-touch class="progress-bar" :style="{width: getPercen(index), 'background-color': item}" v-for="(item, index) in colors" @tap="onGrade(index)"><span v-show="grade == 9 - index">{{ grade }} 分</span></v-touch>
+				<div class="progress rounded-0 fixed-top" style="height: .5rem;" v-if="topHidden">
+					<div class="progress-bar" :style="{width: getPercen(index), 'background-color': item}" v-for="(item, index) in colors"></div>
 				</div>
 			</transition>
 
@@ -139,15 +139,16 @@
 								<a class="badge" :style="{'background-color': getColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
 							</div>
 							<!-- 信息 -->
-							<div class="film-card-info">
+							<div class="film-card-info pl-2">
 								<h5>{{ item.transName }}</h5>
-								<div class="d-flex mt-1 mb-3">
-									<h6>({{ item.year }})</h6>&nbsp;
-									<h6>{{ item.offiName }}</h6>
-								</div>
+								<h6>{{ item.offiName }}</h6>
 								<div class="d-flex">
 									<p>类型：</p>
 									<p>{{ item.type }}</p>
+								</div>
+								<div class="d-flex">
+									<p>年份：</p>
+									<p>{{ item.year }}</p>
 								</div>
 								<div class="d-flex">
 									<p>地区：</p>
@@ -185,7 +186,7 @@
 					<div class="card my-1 shadow-sm" style="border-radius: .5rem;" v-for="item in filterFilms" :key="item.id">
 						<div class="card-header p-0 shadow">
 							<!-- 主题 -->
-							<div class="accordion-toggler p-3 collapsed" data-toggle="collapse" :data-target="'#info_' + item.id">
+							<div class="accordion-toggler px-3 collapsed" data-toggle="collapse" :data-target="'#info_' + item.id">
 								<h5><a class="badge mr-2" :style="{'background-color': getColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>{{ item.transName }} <small>({{ item.year }})</small></h5>
 								<p><i class="fas fa-tag mr-2 mb-0"></i>{{ item.type }}</p>
 							</div>
@@ -206,9 +207,9 @@
 									</div>
 								</div>
 								<!-- 信息 -->
-								<div class="media-body film-card-info">
+								<div class="media-body film-card-info pl-2">
 									<h6>{{ item.offiName }}</h6>
-									<div class="d-flex mt-1">
+									<div class="d-flex">
 										<p>地区：</p>
 										<p>{{ item.country }}</p>
 									</div>
@@ -220,8 +221,8 @@
 										<p>主演：</p>
 										<p>{{ item.star }}</p>
 									</div>
-									<div class="film-card-comment mt-2 px-2 py-1">
-										<i class="fas fa-comment-dots mr-2 mb-0"></i>{{ item.comment }}
+									<div class="film-card-comment mt-2 px-2">
+										<i class="fas fa-comment-dots m-0 mr-2"></i>{{ item.comment }}
 									</div>
 								</div>
 							</div>
@@ -240,71 +241,73 @@
 
 				<!-- 系列模式 -->
 				<div class="tab-pane" id="seriesMode">
-					<!-- 导航 -->
-					<nav class="navbar" id="seriesNav">
-						<nav class="nav nav-pills flex-column">
-							<a class="nav-link" :href="'#series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">{{ item.seriesName }} 系列</a>
+					<div class="row">
+						<!-- 导航 -->
+						<nav class="col-4 navbar" id="seriesNav">
+							<nav class="nav nav-pills flex-column">
+								<a class="nav-link" :href="'#series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">{{ item.seriesName }} 系列</a>
+							</nav>
 						</nav>
-					</nav>
-					<!-- 详情 -->
-					<div data-spy="scroll" data-target="#seriesNav" data-offset="0">
-						<div v-for="item in filterSeries" :key="item.seriesId">
-							<!-- 系列分割线 -->
-							<div class="divider" :id="'series_' + item.seriesId">
-								<hr>&nbsp;&nbsp; <span>{{ item.seriesName }}</span> 系列 &nbsp;&nbsp;<hr>
-							</div>
-							<div class="d-flex" v-for="film in item.filmList" :key="film.id">
-								<div class="film-card-poster">
-									<!-- 海报 -->
-									<img data-toggle="modal" :data-target="'#poster3_' + film.id" data-backdrop="static" :src="film.posterUrl" :alt="film.transName" width="100%" height="100%">
-									<!-- 查看大图 -->
-									<div class="modal" :id="'poster3_' + film.id" tabindex="-1">
-										<div class="modal-dialog modal-dialog-centered m-0">
-											<div class="modal-content bg-transparent border-0 p-3 pb-1">
-												<img data-dismiss="modal" :src="film.posterUrl" :alt="film.transName" width="100%"><br>
-												<a class="btn mx-auto" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a><br>
-												<p :class="{fade: isSave}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
+						<!-- 详情 -->
+						<div class="col-8" data-spy="scroll" data-target="#seriesNav" data-offset="0">
+							<div v-for="item in filterSeries" :key="item.seriesId">
+								<!-- 系列分割线 -->
+								<div class="divider" :id="'series_' + item.seriesId">
+									<hr>&nbsp;&nbsp; <span>{{ item.seriesName }}</span> 系列 &nbsp;&nbsp;<hr>
+								</div>
+								<div class="d-flex" v-for="film in item.filmList" :key="film.id">
+									<div class="film-card-poster">
+										<!-- 海报 -->
+										<img data-toggle="modal" :data-target="'#poster3_' + film.id" data-backdrop="static" :src="film.posterUrl" :alt="film.transName" width="100%" height="100%">
+										<!-- 查看大图 -->
+										<div class="modal" :id="'poster3_' + film.id" tabindex="-1">
+											<div class="modal-dialog modal-dialog-centered m-0">
+												<div class="modal-content bg-transparent border-0 p-3 pb-1">
+													<img data-dismiss="modal" :src="film.posterUrl" :alt="film.transName" width="100%"><br>
+													<a class="btn mx-auto" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a><br>
+													<p :class="{fade: isSave}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
+												</div>
 											</div>
 										</div>
+										<!-- 评分 -->
+										<span class="badge">{{ film.year }}</span><a class="badge" :style="{'background-color': getColor(film)}" :href="film.doubanUrl" target="_blank">{{ film.score }}</a>
 									</div>
-									<!-- 评分 -->
-									<span class="badge">{{ film.year }}</span><a class="badge" :style="{'background-color': getColor(film)}" :href="film.doubanUrl" target="_blank">{{ film.score }}</a>
-								</div>
-								<!-- 信息 -->
-								<div class="film-card-info">
-									<h5>{{ film.transName }}</h5>
-									<h6>{{ film.offiName }}</h6>
-									<div class="d-flex">
-										<p>类型：</p>
-										<p>{{ film.type }}</p>
+									<!-- 信息 -->
+									<div class="film-card-info">
+										<h5>{{ film.transName }}</h5>
+										<h6>{{ film.offiName }}</h6>
+										<div class="d-flex">
+											<p>类型：</p>
+											<p>{{ film.type }}</p>
+										</div>
+										<div class="d-flex">
+											<p>地区：</p>
+											<p>{{ film.country }}</p>
+										</div>
+										<div class="d-flex">
+											<p>导演：</p>
+											<p>{{ film.director }}</p>
+										</div>
+										<div class="d-flex">
+											<p>主演：</p>
+											<p>{{ film.star }}</p>
+										</div>
 									</div>
-									<div class="d-flex">
-										<p>地区：</p>
-										<p>{{ film.country }}</p>
+									<!-- 评语 -->
+									<div class="d-flex mt-2 px-2 film-card-comment">
+										<div><i class="fas fa-comment-dots mr-2"></i></div>
+										<p>{{ film.comment }}</p>
 									</div>
-									<div class="d-flex">
-										<p>导演：</p>
-										<p>{{ film.director }}</p>
-									</div>
-									<div class="d-flex">
-										<p>主演：</p>
-										<p>{{ film.star }}</p>
-									</div>
-								</div>
-								<!-- 评语 -->
-								<div class="d-flex mt-2 px-2 film-card-comment">
-									<div><i class="fas fa-comment-dots mr-2"></i></div>
-									<p>{{ film.comment }}</p>
 								</div>
 							</div>
-						</div>
-						<!-- 底部分割线 -->
-						<div class="divider" v-if="series.length > 0">
-							<div v-if="filterSeries.length > 0">
-								<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
-							</div>
-							<div v-else>
-								<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+							<!-- 底部分割线 -->
+							<div class="divider" v-if="series.length > 0">
+								<div v-if="filterSeries.length > 0">
+									<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+								</div>
+								<div v-else>
+									<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+								</div>
 							</div>
 						</div>
 					</div>

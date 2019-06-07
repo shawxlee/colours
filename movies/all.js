@@ -6,7 +6,6 @@ var page1 = new Vue({
 		series: [],
 		topHidden: false,
 		colors: ['#912cee', '#0000cd', '#00cdcd', '#00cd00', '#cdcd00', '#cd8500', '#cd0000'],
-		grade: 0,
 		screenHidden: true,
 		sortOrder: 1,
 		isReverse: false,
@@ -172,7 +171,6 @@ var page1 = new Vue({
 
 			axios.all([getFilms(), getSeries()])
 			.then(axios.spread(function (resFilms, resSeries) {
-				page1.grade = 0;
 				page1.clearTags();
 				page1.hideSearch();
 				console.log('getRes:', resFilms, resSeries);
@@ -193,52 +191,6 @@ var page1 = new Vue({
 				console.log('finalData:', page1.films, page1.series);
 			});
 		},
-		loadFilms() {
-			var time = new Date().getTime(),
-			filmsUrl = 'http://192.168.199.126:8080/movies/all-films.json?t=' + time;
-
-			axios.get(filmsUrl, {timeout: 5000})
-			.then(function (response) {
-				console.log('getRes:', response);
-				page1.films = response.data;
-				console.log('getFilms:', page1.films);
-				page1.isSuccess = true;
-				setTimeout(function () {
-					page1.isPull = false;
-				}, 1500);
-			})
-			.catch(function (error) {
-				console.log('catchError:', error);
-				page1.isError = true;
-				page1.isPull = true;
-			})
-			.then(function () {
-				console.log('finalFilms:', page1.films);
-			});
-		},
-		loadSeries() {
-			var time = new Date().getTime(),
-			seriesUrl = 'http://192.168.199.126:8080/movies/all-series.json?t=' + time;
-
-			axios.get(seriesUrl, {timeout: 5000})
-			.then(function (response) {
-				console.log('getRes:', response);
-				page1.series = response.data;
-				console.log('getSeries:', page1.series);
-				page1.isSuccess = true;
-				setTimeout(function () {
-					page1.isPull = false;
-				}, 1500);
-			})
-			.catch(function (error) {
-				console.log('catchError:', error);
-				page1.isError = true;
-				page1.isPull = true;
-			})
-			.then(function () {
-				console.log('finalSeries:', page1.series);
-			});
-		},
 		// 清空所有选中的标签
 		clearTags() {
 			var i, len;
@@ -257,25 +209,15 @@ var page1 = new Vue({
 		// 获取不同分级占总数量的百分比
 		getPercen(index) {
 			var films = this.films,
-			gradeArr = films.filter(function (item) {
+			grade = films.filter(function (item) {
 				return Math.floor(item.score) == 9 - index;
 			});
 
-			return Math.round(gradeArr.length / films.length * 100) + '%';
-		},
-		// 点击不同按钮切换分级，点击同一按钮激活/取消；激活时关闭搜索框
-		onGrade(index) {
-			if (this.grade == 9 - index) {
-				this.grade = 0;
-			} else {
-				this.hideSearch();
-				this.grade = 9 - index;
-			}
+			return Math.round(grade.length / films.length * 100) + '%';
 		},
 		// 点击按钮展开搜索框/清除搜索文本
 		onSearch() {
 			if (!this.isStretch) {
-				this.grade = 0;
 				this.clearTags();
 				this.isStretch = true;
 			}
@@ -351,9 +293,17 @@ var page1 = new Vue({
 
 			return this.films.sort(function (a, b) {
 				if (sortOrder == 1) {
-					return isReverse ? b.year - a.year : a.year - b.year;
+					if (a.year == b.year) {
+						return a.id - b.id;
+					} else {
+						return isReverse ? b.year - a.year : a.year - b.year;
+					}
 				} else if (sortOrder == 2) {
-					return isReverse ? a.score - b.score : b.score - a.score;
+					if (a.score == b.score) {
+						return a.id - b.id;
+					} else {
+						return isReverse ? a.score - b.score : b.score - a.score;
+					}
 				} else {
 					return isReverse ? a.id - b.id : b.id - a.id;
 				}
@@ -361,12 +311,19 @@ var page1 = new Vue({
 		},
 		// 电影过滤：评分级别/类型标签/搜索文本
 		filterFilms() {
-			var searchText = this.searchText,
-			grade = this.grade,
-			activeTags = this.activeTags;
+			var activeTags = this.activeTags,
+			searchText = this.searchText;
 
 			return this.sortFilms.filter(function (item) {
-				if (searchText.length > 0) {
+				if (activeTags.length > 0) {
+					// 标签：遍历每一个选中标签，返回包含至少一个标签的所有项
+					let i, len;
+					for (i = 0, len = activeTags.length; i < len; i++) {
+						if (item.type.includes(activeTags[i])) {
+							return true;
+						}
+					}
+				} else if (searchText.length > 0) {
 					// 搜索：将搜索文本按空格分割为关键词，清除数据文本的所有标点符号，返回包含至少一个关键词的所有项
 					var stArr = searchText.split(' '),
 					keys = [item.transName, item.year, item.offiName, item.country, item.type, item.director, item.star, item.comment];
@@ -377,25 +334,6 @@ var page1 = new Vue({
 							if (keys[j].replace(/[ \/ ·，“”……：]+/g, '').toLowerCase().includes(stArr[i].toLowerCase())) {
 								return true;
 							}
-						}
-					}
-				} else if (grade > 0 && activeTags.length == 0) {
-					// 仅分级：返回所有评分属于当前等级的项
-					return Math.floor(item.score) == grade;
-				} else if (grade == 0 && activeTags.length > 0) {
-					// 仅标签：遍历每一个选中标签，返回包含至少一个标签的所有项
-					let i, len;
-					for (i = 0, len = activeTags.length; i < len; i++) {
-						if (item.type.includes(activeTags[i])) {
-							return true;
-						}
-					}
-				} else if (grade > 0 && activeTags.length > 0) {
-					// 分级+标签：遍历每一个选中标签，返回包含至少一个标签并且属于当前等级的所有项
-					let i, len;
-					for (i = 0, len = activeTags.length; i < len; i++) {
-						if (Math.floor(item.score) == grade && item.type.includes(activeTags[i])) {
-							return true;
 						}
 					}
 				} else {
@@ -410,9 +348,17 @@ var page1 = new Vue({
 
 			return this.series.sort(function (a, b) {
 				if (sortOrder == 1) {
-					return isReverse ? b.firstYear - a.firstYear : a.firstYear - b.firstYear;
+					if (a.firstYear == b.firstYear) {
+						return a.seriesId - b.seriesId;
+					} else {
+						return isReverse ? b.firstYear - a.firstYear : a.firstYear - b.firstYear;
+					}
 				} else if (sortOrder == 2) {
-					return isReverse ? a.topScore - b.topScore : b.topScore - a.topScore;
+					if (a.topScore == b.topScore) {
+						return a.seriesId - b.seriesId;
+					} else {
+						return isReverse ? a.topScore - b.topScore : b.topScore - a.topScore;
+					}
 				} else {
 					return isReverse ? a.seriesId - b.seriesId : b.seriesId - a.seriesId;
 				}
@@ -420,53 +366,33 @@ var page1 = new Vue({
 		},
 		// 系列过滤：类型标签/搜索文本
 		filterSeries() {
-			var searchText = this.searchText,
-			grade = this.grade,
-			activeTags = this.activeTags;
+			var activeTags = this.activeTags,
+			searchText = this.searchText;
 
 			return this.sortSeries.filter(function (item) {
-				if (searchText.length > 0) {
+				var filmList = item.filmList;
+				if (activeTags.length > 0) {
+					// 标签：遍历每一个选中标签，返回包含至少一个标签的所有项
+					let i, lenI, j, lenJ;
+					for (i = 0, lenI = activeTags.length; i < lenI; i++) {
+						for (j = 0, lenJ = filmList.length; j < lenJ; j++) {
+							if (filmList[j].type.includes(activeTags[i])) {
+								return true;
+							}
+						}
+					}
+				} else if (searchText.length > 0) {
 					// 搜索：将搜索文本按空格分割为关键词，清除数据文本的所有标点符号，返回包含至少一个关键词的所有项
 					var stArr = searchText.split(' ');
 					
 					let i, lenI, j, lenJ, k, lenK;
 					for (i = 0, lenI = stArr.length; i < lenI; i++) {
-						for (j = 0, lenJ = item.filmList.length; j < lenJ; j++) {
-							let film = item.filmList[j],
-							keys = [film.transName, film.year, film.offiName, film.country, film.type, film.director, film.star, film.comment];
-
+						for (j = 0, lenJ = filmList.length; j < lenJ; j++) {
+							var keys = [filmList[j].transName, filmList[j].year, filmList[j].offiName, filmList[j].country, filmList[j].type, filmList[j].director, filmList[j].star, filmList[j].comment];
 							for (k = 0, lenK = keys.length; k < lenK; k++) {
 								if (keys[k].replace(/[ \/ ·，“”……：]+/g, '').toLowerCase().includes(stArr[i].toLowerCase())) {
 									return true;
 								}
-							}
-						}
-					}
-				} else if (grade > 0 && activeTags.length == 0) {
-					// 仅分级：返回所有评分属于当前等级的项
-					let i, len;
-					for (i = 0, len = item.filmList.length; i < len; i++) {
-						if (Math.floor(item.filmList[i].score) == grade) {
-							return true;
-						}
-					}
-				} else if (grade == 0 && activeTags.length > 0) {
-					// 仅标签：遍历每一个选中标签，返回包含至少一个标签的所有项
-					let i, lenI, j, lenJ;
-					for (i = 0, lenI = activeTags.length; i < lenI; i++) {
-						for (j = 0, lenJ = item.filmList.length; j < lenJ; j++) {
-							if (item.filmList[j].type.includes(activeTags[i])) {
-								return true;
-							}
-						}
-					}
-				} else if (grade > 0 && activeTags.length > 0) {
-					// 分级+标签：遍历每一个选中标签，返回包含至少一个标签并且属于当前等级的所有项
-					let i, lenI, j, lenJ;
-					for (i = 0, lenI = activeTags.length; i < lenI; i++) {
-						for (j = 0, lenJ = item.filmList.length; j < lenJ; j++) {
-							if (Math.floor(item.filmList[j].score) == grade && item.filmList[j].type.includes(activeTags[i])) {
-								return true;
 							}
 						}
 					}

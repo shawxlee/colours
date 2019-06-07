@@ -13,6 +13,7 @@ body {
 	color: #1c1c1c;
 	background-color: #e8e8e8;
 }
+
 /* 折叠组件 */
 .navbar-toggler {
 	color: #a9a9a9;
@@ -53,7 +54,9 @@ body {
 /* 输入框 */
 .form-control {
 	height: 2.4rem;
-	padding-bottom: .35rem;
+	padding-top: .4rem;
+	font-size: 1rem;
+	line-height: 1;
 }
 .form-control:focus,
 .form-control:active:focus,
@@ -66,7 +69,7 @@ body {
 	box-shadow: none;
 	outline: none;
 }
-/* 徽章标识 */
+/* 徽章 */
 .badge {
 	font-size: 1rem;
 	font-weight: normal;
@@ -89,7 +92,6 @@ body {
 #topNav .nav-link {
 	height: 1.5rem;
 	padding-top: .35rem;
-	padding-bottom: .35rem;
 	font-size: .8rem;
 	line-height: 1;
 	color: #a9a9a9;
@@ -292,33 +294,35 @@ body {
 	top: 0;
 	right: 0;
 	width: 2.3rem;
-	height: 1.3rem;
+	height: 1.35rem;
+	padding: 0;
+	padding-top: .25rem;
+	line-height: 1;
 	border-radius: 0 .3rem;
 }
 /* 信息 */
 .film-card-info {
 	width: calc(100% - 5.9rem);
-	padding-top: .05rem;
-	padding-left: .5rem;
-	line-height: 1.4;
+	line-height: 1.35;
 	color: #9c9c9c;
 }
 .film-card-info h5 {
 	margin: 0;
+	margin-bottom: .05rem;
 	font-weight: bold;
 	color: #363636;
-	white-space: nowrap;
-	overflow-x: auto;
 }
 .film-card-info h6 {
 	margin: 0;
+	margin-bottom: .35rem;
 	font-weight: bold;
+	white-space: nowrap;
+	overflow-x: auto;
 }
 .film-card-info p {
 	margin: 0;
 	font-size: .9rem;
 }
-.film-card-info .d-flex h6:last-of-type,
 .film-card-info .d-flex p:last-of-type {
 	width: 80%;
 	white-space: nowrap;
@@ -345,14 +349,18 @@ body {
 /* 简约模式 */
 /* 标题 */
 .accordion-toggler {
+	padding-top: .7rem;
+	padding-bottom: .7rem;
 	background-color: #4f94cd;
 }
 .accordion-toggler h5 {
+	margin-bottom: .2rem;
 	font-weight: bold;
-	line-height: 1;
 	color: white;
 }
 .accordion-toggler .badge {
+	position: relative;
+	bottom: .15rem;
 	font-weight: normal;
 	color: white;
 }
@@ -361,7 +369,6 @@ body {
 }
 .accordion-toggler p {
 	margin-bottom: 0;
-	line-height: 1;
 	color: white;
 }
 .accordion-toggler.collapsed {
@@ -383,17 +390,28 @@ body {
 	border-radius: .3rem;
 }
 .media .film-card-info h6 {
-	line-height: 1.15;
+	padding-top: 0;
 	color: #696969;
-	white-space: nowrap;
-	overflow-x: auto;
 }
 .media-body .film-card-comment {
-	height: 3.2rem;
+	height: 3.3rem;
+	padding-top: .3rem;
+	padding-bottom: .3rem;
 	font-size: .9rem;
 	line-height: 1.5;
 }
 .media-body .film-card-comment i {
+	font-size: 1rem;
+}
+
+/* 系列模式 */
+/* 导航 */
+#seriesNav .nav {
+	position: fixed;
+	top: 6rem;
+	left: 0;
+}
+#seriesNav .nav-link {
 	font-size: 1rem;
 }
 
