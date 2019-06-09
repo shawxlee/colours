@@ -137,10 +137,11 @@ var page1 = new Vue({
 		}
 		],
 		moreHidden: true,
-		isPull: true,
+		isPull: false,
 		isSuccess: false,
 		isError: false,
-		isSave: false
+		isSave: false,
+		isReload: false
 	},
 	mounted() {
 		// 初始化所有数据
@@ -178,14 +179,17 @@ var page1 = new Vue({
 				console.log('getFilms:', page1.films);
 				page1.series = resSeries.data;
 				console.log('getSeries:', page1.series);
+				page1.isReload = false;
 				page1.isSuccess = true;
 				setTimeout(function () {
 					page1.isPull = false;
 				}, 1500);
 			}))
 			.catch(function (error) {
-				console.log('catchError:', error);
+				console.warn('catchError:', error);
+				page1.isReload = false;
 				page1.isError = true;
+				page1.isPull = true;
 			})
 			.then(function () {
 				console.log('finalData:', page1.films, page1.series);
@@ -223,7 +227,7 @@ var page1 = new Vue({
 			}
 
 			if (this.searchText.length > 0) {
-				document.getElementById('searchInput').focus();
+				document.getElementsByTagName('input').focus();
 				this.searchText = '';
 			}
 		},
@@ -245,12 +249,15 @@ var page1 = new Vue({
 		},
 		// 上滑时隐藏导航栏
 		swipeUp() {
-			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-			if (!this.topHidden && scrollTop > 175) {
+			var scrollHeight = document.body.scrollHeight,
+			viewportHeight = document.documentElement.clientHeight || window.innerHeight || document.body.clientHeight,
+			bottomHeight = document.querySelector('.divider').offsetHeight;
+
+			if (!this.topHidden && scrollHeight - bottomHeight > viewportHeight) {
 				this.topHidden = true;
 			}
 		},
-		// 下滑时显示导航栏；滚动到顶部时下滑触发更新
+		// 下滑时显示导航栏；顶部下滑时触发下拉刷新
 		swipeDown() {
 			if (this.topHidden) {
 				this.topHidden = false;
@@ -258,11 +265,11 @@ var page1 = new Vue({
 
 			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 			if (scrollTop == 0) {
-				this.reloadData();
+				this.pullReload();
 			}
 		},
-		// 下拉后重新加载数据
-		reloadData() {
+		// 复位所有状态信息并展开更新栏，然后重新加载数据
+		pullReload() {
 			this.isSuccess = false;
 			this.isError = false;
 			this.isPull = true;
@@ -283,6 +290,18 @@ var page1 = new Vue({
 		getColor(item) {
 			var scoreIndex = 9 - Math.floor(item.score);
 			return this.colors[scoreIndex];
+		},
+		// 点击直接刷新数据；在顶部时点击触发下拉刷新
+		onReload() {
+			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			if (scrollTop > 0) {
+				this.isReload = true;
+				setTimeout(function () {
+					page1.loadData();
+				}, 1000);
+			} else {
+				this.pullReload();
+			}
 		}
 	},
 	computed: {
@@ -414,47 +433,36 @@ var page1 = new Vue({
 $(function () {
 	// 折叠组件：工具栏
 	var screenSwitch = $('#screenSwitch');
-	// 筛选按钮变色；筛选信息隐藏/显示
+	// 筛选面板展开时按钮变色、隐藏筛选信息
 	screenSwitch.on('show.bs.collapse', function () {
 		page1.screenHidden = false;
 	});
-	// 若有标签被激活则收起搜索框；若有更多标签被激活则不折叠更多标签
+	// 筛选面板收起后按钮变色、显示筛选信息、隐藏更多标签；若有更多标签被激活则不隐藏
 	screenSwitch.on('hidden.bs.collapse', function () {
 		page1.screenHidden = true;
 		page1.moreHidden = true;
 		if (page1.activeTags.length > 0) {
-			var lastIndex = page1.tags.lastIndexOf({isActive: true});
-			if (lastIndex > 16) {
-				page1.moreHidden = false;
+			let i, len;
+			for (i = 17, len = page1.tags.length; i < len; i++) {
+				if (page1.tags[i].isActive) {
+					page1.moreHidden = false;
+				}
 			}
 		}
 	});
-	// 收起筛选面板；若搜索文本为空也收起搜索框
+	// 点击其他位置收起筛选面板；若搜索文本为空也收起搜索框
+	var nToolbar = $('#topNav, #detailMode, #miniMode, #seriesMode, #toTop, #toBottom, #footer');
+	nToolbar.on('click', foldUp);
 	function foldUp() {
 		screenSwitch.collapse('hide');
 		if (page1.searchText.length == 0) {
 			page1.hideSearch();
 		}
 	}
-	// 点击其他位置收起
-	var nToolbar = $('#topNav, #detailMode, #miniMode, #seriesMode, #toTop, #toBottom, #bottomNav');
-	nToolbar.on('click', function () {
-		foldUp();
-	});
-	// 页面滚动时收起；滚动快到顶部时即显示顶部导航栏
-	$(document).on('scroll', function () {
-		foldUp();
-		var scrollTop = $(document).scrollTop();
-		console.log(scrollTop);
-		if (scrollTop < 100) {
-			page1.topHidden = false;
-		}
-	});
 
-	// 页面滚动动画效果
+	// 页面滚动条效果
 	var toTop = $('#toTop'),
-	toBottom = $('#toBottom'),
-	toAll = $('#toAll');
+	toBottom = $('#toBottom');
 	// 回到顶部
 	toTop.on('click', function () {
 		$('html, body').animate({ scrollTop: 0 }, 300, 'linear');
@@ -466,10 +474,26 @@ $(function () {
 		$('html, body').animate({ scrollTop: height }, 300, 'linear');
 		page1.topHidden = false;
 	});
-	// 回到顶部并刷新
-	toAll.on('click', function () {
-		$(document).scrollTop(0);
-		page1.topHidden = false;
-		page1.reloadData();
+	// 页面滚动时收起筛选面板及搜索框，快到顶部时显示顶部导航栏；在顶部时隐藏向上和刷新按钮，在底部时隐藏向下按钮
+	$(document).on('scroll', function () {
+		foldUp();
+		var scrollTop = $(document).scrollTop();
+		console.log(scrollTop);
+		if (scrollTop < 100) {
+			page1.topHidden = false;
+		}
+
+		if (scrollTop == 0) {
+			toTop.fadeOut();
+		} else {
+			toTop.fadeIn();
+		}
+
+		var height = $(document).height() - $(window).height();
+		if (scrollTop == height) {
+			toBottom.fadeOut();
+		} else {
+			toBottom.fadeIn();
+		}
 	});
 });

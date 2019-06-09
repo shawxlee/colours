@@ -18,33 +18,30 @@
 	<title>MR.S - 来自Shaw的电影推荐</title>
 </head>
 <body>
-	<div class="container-fluid m-0 p-0">
-		<!-- 页面1：全部影片 -->
-		<div id="all">
-			<!-- 顶部导航栏 -->
-			<nav class="navbar navbar-expand-lg border-bottom fixed-top" :class="{hide: topHidden}" id="topNav">
-				<span class="navbar-text mb-0 h4">全部影片</span>
-				<!-- 模式切换 -->
-				<ul class="nav nav-pills">
-					<li class="nav-item mx-1">
-						<a class="nav-link rounded-pill px-2 active" data-toggle="pill" href="#detailMode">全览模式</a>
-					</li>
-					<li class="nav-item mx-1">
-						<a class="nav-link rounded-pill px-2" data-toggle="pill" href="#miniMode">简约模式</a>
-					</li>
-					<li class="nav-item mx-1">
-						<a class="nav-link rounded-pill px-2" data-toggle="pill" href="#seriesMode">系列模式</a>
-					</li>
-				</ul>
-			</nav>
+	<div id="all">
+		<!-- 顶部导航栏 -->
+		<nav class="navbar navbar-expand-lg border-bottom fixed-top" :class="{hide: topHidden}" id="topNav">
+			<span class="navbar-text mb-0 h4">全部影片</span>
+			<!-- 模式切换 -->
+			<ul class="nav nav-pills">
+				<li class="nav-item mx-1">
+					<a class="nav-link rounded-pill px-2 active" data-toggle="pill" href="#detailMode">全览模式</a>
+				</li>
+				<li class="nav-item mx-1">
+					<a class="nav-link rounded-pill px-2" data-toggle="pill" href="#miniMode">简约模式</a>
+				</li>
+				<li class="nav-item mx-1">
+					<a class="nav-link rounded-pill px-2" data-toggle="pill" href="#seriesMode">系列模式</a>
+				</li>
+			</ul>
+		</nav>
 
-			<!-- 比例条 -->
-			<transition name="fade">
-				<div class="progress rounded-0 fixed-top" style="height: .5rem;" v-if="topHidden">
-					<div class="progress-bar" :style="{width: getPercen(index), 'background-color': item}" v-for="(item, index) in colors"></div>
-				</div>
-			</transition>
+		<!-- 比例条 -->
+		<div class="progress rounded-0 fixed-top" style="height: .5rem;" v-if="topHidden">
+			<div class="progress-bar" :style="{width: getPercen(index), 'background-color': item}" v-for="(item, index) in colors"></div>
+		</div>
 
+		<div class="container-fluid p-0">
 			<!-- 工具栏 -->
 			<nav class="navbar navbar-expand-lg border-bottom toolbar" :class="{up: topHidden}">
 				<!-- 筛选器 -->
@@ -66,7 +63,7 @@
 				<!-- 搜索框 -->
 				<form>
 					<transition name="stretch">
-						<input class="form-control rounded-pill" :style="[isFocus ? '' : {width: searchText.length + 4 + 'rem'}]" id="searchInput" type="text" placeholder="输入关键词搜索" v-if="isStretch" @focus.passive="isFocus = true" @blur.passive="isFocus = false" v-model.trim="searchText" v-focus>
+						<input class="form-control rounded-pill" :style="[isFocus ? '' : {width: searchText.length + 4 + 'rem'}]" type="text" placeholder="输入关键词搜索" v-if="isStretch" @focus.passive="isFocus = true" @blur.passive="isFocus = false" v-model.trim="searchText" v-focus>
 					</transition>
 					<button class="navbar-toggler" :class="{active: isFocus}" type="button" @mousedown.prevent @click.passive="onSearch">
 						<i class="fas fa-times-circle" v-if="searchText.length > 0"></i>
@@ -182,8 +179,8 @@
 				</div>
 
 				<!-- 简约模式 -->
-				<div class="tab-pane accordion mx-1" id="miniMode">
-					<div class="card my-1 shadow-sm" style="border-radius: .5rem;" v-for="item in filterFilms" :key="item.id">
+				<div class="tab-pane accordion" id="miniMode">
+					<div class="card m-1 shadow-sm" style="border-radius: .5rem;" v-for="item in filterFilms" :key="item.id">
 						<div class="card-header p-0 shadow">
 							<!-- 主题 -->
 							<div class="accordion-toggler px-3 collapsed" data-toggle="collapse" :data-target="'#info_' + item.id">
@@ -240,63 +237,65 @@
 				</div>
 
 				<!-- 系列模式 -->
-				<div class="tab-pane" id="seriesMode">
-					<div class="row">
+				<div class="tab-pane" id="seriesMode" data-spy="scroll" data-target="#seriesNav" data-offset="0">
+					<div class="row no-gutters">
 						<!-- 导航 -->
-						<nav class="col-4 navbar" id="seriesNav">
-							<nav class="nav nav-pills flex-column">
-								<a class="nav-link" :href="'#series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">{{ item.seriesName }} 系列</a>
-							</nav>
-						</nav>
+						<div class="col-4 border-right">
+							<div class="list-group" :class="{sub: topHidden}" id="seriesNav">
+								<a class="list-group-item list-group-item-action" :href="'#series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">{{ item.seriesName }} <small>系列</small></a>
+							</div>
+						</div>
 						<!-- 详情 -->
-						<div class="col-8" data-spy="scroll" data-target="#seriesNav" data-offset="0">
-							<div v-for="item in filterSeries" :key="item.seriesId">
-								<!-- 系列分割线 -->
-								<div class="divider" :id="'series_' + item.seriesId">
-									<hr>&nbsp;&nbsp; <span>{{ item.seriesName }}</span> 系列 &nbsp;&nbsp;<hr>
-								</div>
-								<div class="d-flex" v-for="film in item.filmList" :key="film.id">
-									<div class="film-card-poster">
-										<!-- 海报 -->
-										<img data-toggle="modal" :data-target="'#poster3_' + film.id" data-backdrop="static" :src="film.posterUrl" :alt="film.transName" width="100%" height="100%">
-										<!-- 查看大图 -->
-										<div class="modal" :id="'poster3_' + film.id" tabindex="-1">
-											<div class="modal-dialog modal-dialog-centered m-0">
-												<div class="modal-content bg-transparent border-0 p-3 pb-1">
-													<img data-dismiss="modal" :src="film.posterUrl" :alt="film.transName" width="100%"><br>
-													<a class="btn mx-auto" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a><br>
-													<p :class="{fade: isSave}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
+						<div class="col-8">
+							<div class="series-content">
+								<div v-for="item in filterSeries" :key="item.seriesId">
+									<!-- 系列分割线 -->
+									<div class="divider" :id="'series_' + item.seriesId">
+										<hr>&nbsp;&nbsp; <span>{{ item.seriesName }}</span> 系列 &nbsp;&nbsp;<hr>
+									</div>
+									<div class="d-flex" v-for="film in item.filmList" :key="film.id">
+										<div class="film-card-poster">
+											<!-- 海报 -->
+											<img data-toggle="modal" :data-target="'#poster3_' + film.id" data-backdrop="static" :src="film.posterUrl" :alt="film.transName" width="100%" height="100%">
+											<!-- 查看大图 -->
+											<div class="modal" :id="'poster3_' + film.id" tabindex="-1">
+												<div class="modal-dialog modal-dialog-centered m-0">
+													<div class="modal-content bg-transparent border-0 p-3 pb-1">
+														<img data-dismiss="modal" :src="film.posterUrl" :alt="film.transName" width="100%"><br>
+														<a class="btn mx-auto" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a><br>
+														<p :class="{fade: isSave}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
+													</div>
 												</div>
 											</div>
+											<!-- 评分 -->
+											<span class="badge">{{ film.year }}</span><a class="badge" :style="{'background-color': getColor(film)}" :href="film.doubanUrl" target="_blank">{{ film.score }}</a>
 										</div>
-										<!-- 评分 -->
-										<span class="badge">{{ film.year }}</span><a class="badge" :style="{'background-color': getColor(film)}" :href="film.doubanUrl" target="_blank">{{ film.score }}</a>
-									</div>
-									<!-- 信息 -->
-									<div class="film-card-info">
-										<h5>{{ film.transName }}</h5>
-										<h6>{{ film.offiName }}</h6>
-										<div class="d-flex">
-											<p>类型：</p>
-											<p>{{ film.type }}</p>
+										<!-- 信息 -->
+										<div class="film-card-info">
+											<h5>{{ film.transName }}</h5>
+											<h6>{{ film.offiName }}</h6>
+											<div class="d-flex">
+												<p>类型：</p>
+												<p>{{ film.type }}</p>
+											</div>
+											<div class="d-flex">
+												<p>地区：</p>
+												<p>{{ film.country }}</p>
+											</div>
+											<div class="d-flex">
+												<p>导演：</p>
+												<p>{{ film.director }}</p>
+											</div>
+											<div class="d-flex">
+												<p>主演：</p>
+												<p>{{ film.star }}</p>
+											</div>
 										</div>
-										<div class="d-flex">
-											<p>地区：</p>
-											<p>{{ film.country }}</p>
+										<!-- 评语 -->
+										<div class="d-flex mt-2 px-2 film-card-comment">
+											<div><i class="fas fa-comment-dots mr-2"></i></div>
+											<p>{{ film.comment }}</p>
 										</div>
-										<div class="d-flex">
-											<p>导演：</p>
-											<p>{{ film.director }}</p>
-										</div>
-										<div class="d-flex">
-											<p>主演：</p>
-											<p>{{ film.star }}</p>
-										</div>
-									</div>
-									<!-- 评语 -->
-									<div class="d-flex mt-2 px-2 film-card-comment">
-										<div><i class="fas fa-comment-dots mr-2"></i></div>
-										<p>{{ film.comment }}</p>
 									</div>
 								</div>
 							</div>
@@ -315,28 +314,31 @@
 			</v-touch>
 		</div>
 
-		<!-- 底部全局导航 -->
-		<div id="footer">
-			<!-- 快捷按钮 -->
-			<div id="toTop"><i class="fas fa-chevron-up"></i></div>
-			<div id="toBottom"><i class="fas fa-chevron-down"></i></div>
+		<!-- 快捷按钮 -->
+		<div class="shortBtn" id="toTop"><i class="fas fa-chevron-up"></i></div>
+		<v-touch class="shortBtn" @tap="onReload">
+			<i class="fas fa-sync-alt" v-if="isReload"></i>
+			<i class="fas fa-redo-alt" v-else></i>
+		</v-touch>
+		<div class="shortBtn" id="toBottom"><i class="fas fa-chevron-down"></i></div>
+	</div>
 
-			<!-- 页面导航 -->
-			<ul class="nav nav-justified border-top fixed-bottom" id="bottomNav">
-				<li class="nav-item">
-					<a class="nav-link active" id="toAll" href="#all"><i class="fas fa-star"></i><br>全部</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" id="toToWatch" href="#to-watch"><i class="fas fa-play-circle"></i><br>待看</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" id="toWatched" href="#watched"><i class="fas fa-pen-square"></i><br>已看</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" id="settingToggler" href="#setting"><i class="fas fa-cog"></i><br>设置</a>
-				</li>
-			</ul>
-		</div>
+	<!-- 底部全局导航 -->
+	<div id="footer">
+		<ul class="nav nav-justified border-top fixed-bottom" id="bottomNav">
+			<li class="nav-item">
+				<a class="nav-link active" href="#all"><i class="fas fa-star"></i><br>全部</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#watch"><i class="fas fa-play-circle"></i><br>待看</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#review"><i class="fas fa-pen-square"></i><br>影评</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#setting"><i class="fas fa-cog"></i><br>设置</a>
+			</li>
+		</ul>
 	</div>
 
 	<!-- 动态调整字号 -->
@@ -345,10 +347,11 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+	<script src="https://vuejs.org/js/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-	<script src="./node_modules/vue-touch/dist/vue-touch.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+	<script src="./node_modules/vue-touch/dist/vue-touch.js"></script>
 	<!-- 私有脚本 -->
 	<script type="text/javascript" src="all.js"></script>
 </body>

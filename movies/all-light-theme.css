@@ -84,7 +84,6 @@ body {
 	height: 3rem;
 	color: white;
 	background-color: #4f94cd;
-	transition: top .2s linear;
 }
 .hide {
 	top: -3rem;
@@ -103,21 +102,6 @@ body {
 	background-color: transparent;
 }
 
-/* 比例条 */
-/* 过渡：淡入/淡出 */
-.fade-enter,
-.fade-leave-to {
-	height: 0;
-}
-.fade-enter-to,
-.fade-leave {
-	height: .5rem;
-}
-.fade-enter-active,
-.fade-leave-active {
-	transition: height .2s linear;
-}
-
 /* 工具栏 */
 .toolbar {
 	position: fixed;
@@ -126,7 +110,6 @@ body {
 	left: 0;
 	z-index: 9;
 	background-color: white;
-	transition: top .2s linear;
 }
 .up {
 	top: .5rem;
@@ -161,16 +144,18 @@ body {
 .stretch-enter,
 .stretch-leave-to {
 	width: 15%;
+	opacity: 0;
 }
 .stretch-enter-to,
 .stretch-leave {
 	width: 100%;
+	opacity: 1;
 }
 .stretch-enter-active {
-	transition: width .1s linear;
+	transition: all .1s linear;
 }
 .stretch-leave-active {
-	transition: width .3s linear;
+	transition: all .3s linear;
 }
 /* 筛选器 */
 .toolbar-toggler {
@@ -229,7 +214,8 @@ body {
 	vertical-align: middle;
 }
 /* 动画：图标旋转 */
-.fa-sync-alt {
+.fa-sync-alt,
+.fa-sync {
 	animation: rotating 1s linear infinite;
 }
 @keyframes rotating {
@@ -267,8 +253,8 @@ body {
 	position: relative;
 	width: 5.9rem;
 	height: 8.8rem;
-	border-radius: .3rem;
 	overflow: hidden;
+	border-radius: .3rem;
 }
 .film-card-poster .btn {
 	width: 6rem;
@@ -313,11 +299,11 @@ body {
 	color: #363636;
 }
 .film-card-info h6 {
+	overflow-x: auto;
 	margin: 0;
 	margin-bottom: .35rem;
 	font-weight: bold;
 	white-space: nowrap;
-	overflow-x: auto;
 }
 .film-card-info p {
 	margin: 0;
@@ -325,8 +311,8 @@ body {
 }
 .film-card-info .d-flex p:last-of-type {
 	width: 80%;
-	white-space: nowrap;
 	overflow-x: auto;
+	white-space: nowrap;
 }
 /* 评语 */
 .film-card-comment {
@@ -342,8 +328,8 @@ body {
 }
 .film-card-comment p {
 	height: 100%;
-	white-space: nowrap;
 	overflow-x: auto;
+	white-space: nowrap;
 }
 
 /* 简约模式 */
@@ -405,36 +391,53 @@ body {
 }
 
 /* 系列模式 */
+#seriesMode {
+	position: relative;
+}
 /* 导航 */
-#seriesNav .nav {
+.list-group {
 	position: fixed;
 	top: 6rem;
 	left: 0;
-}
-#seriesNav .nav-link {
+	height: calc(100vh - 9.8rem);
+	overflow-y: auto;
 	font-size: 1rem;
+}
+.sub {
+	top: 3.5rem;
+	height: calc(100vh - 6.8rem);
+}
+/* 详情 */
+.series-content {
+	height: 100%;
+	overflow-y: auto;
+	background-color: white;
 }
 
 /* 快捷按钮 */
-#toTop,
-#toBottom {
+.shortBtn {
 	position: fixed;
 	right: .5rem;
-	bottom: 4.3rem;
+	bottom: 7.3rem;
 	z-index: 9;
 	width: 2.5rem;
 	height: 2.5rem;
-	font-size: 1rem;
-	line-height: 2.5;
+	padding-top: .625rem;
+	font-size: 1.25rem;
+	line-height: 1;
 	color: white;
 	text-align: center;
 	background-color: #363636;
 	border-radius: 50%;
 	opacity: .5;
 }
-#toTop {
-	bottom: 7.3rem;
+#toTop.shortBtn {
+	bottom: 10.3rem;
 }
+#toBottom.shortBtn {
+	bottom: 4.3rem;
+}
+
 
 /* 底部导航 */
 #bottomNav {
