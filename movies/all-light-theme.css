@@ -80,25 +80,24 @@ body {
 /*  局部样式  */
 
 /* 顶部导航栏 */
-#topNav {
+#all-header {
 	height: 3rem;
 	color: white;
 	background-color: #4f94cd;
 }
 .hide {
-	top: -3rem;
+	top: -2.5rem;
 }
-#topNav .nav-link {
+#all-header .nav-link {
 	height: 1.5rem;
-	padding-top: .35rem;
-	font-size: .8rem;
+	padding-top: .3rem;
+	font-size: .9rem;
 	line-height: 1;
 	color: #a9a9a9;
-	border: .08rem solid #a9a9a9;
 }
-#topNav .active {
+#all-header .active {
 	color: white;
-	border-color: white;
+	border-bottom: .1rem solid white; 
 	background-color: transparent;
 }
 
@@ -119,7 +118,7 @@ body {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 82%;
+	width: calc(100% - 8rem);
 	margin: 0;
 	padding: 0;
 }
@@ -159,6 +158,7 @@ body {
 }
 /* 筛选器 */
 .toolbar-toggler {
+	width: calc(100% - 2.3rem);
 	font-size: 1rem;
 	color: #4f94cd;
 }
@@ -169,32 +169,37 @@ body {
 	color: #363636;
 }
 /* 筛选面板 */
-#screenSwitch .btn {
+#screen-collapse .btn {
 	color: #4f94cd;
 }
-#screenSwitch .btn-sm {
+#screen-collapse .btn-sm {
 	font-size: .9rem;
 }
-#screenSwitch span {
+#screen-collapse span {
 	display: inline-block;
+	width: 1rem;
+	padding: 0;
+	margin: 0;
+	font-size: .8rem;
+	line-height: 1;
 	transform: rotate(90deg);
 }
-#screenSwitch .active {
+#screen-collapse .active {
 	color: white;
 }
-#screenSwitch .active .disabled {
+#screen-collapse .active .disabled {
 	color: #a9a9a9;
 }
-#screenSwitch .more {
+#screen-collapse .more {
 	color: #a9a9a9;
 	background-color: #e8e8e8;
 	border-color: #e8e8e8;
 }
-#screenSwitch .navbar-toggler {
+#screen-collapse .navbar-toggler {
 	font-size: 1rem;
 	opacity: 0;
 }
-#screenSwitch .show {
+#screen-collapse .show {
 	opacity: 1;
 }
 
@@ -333,11 +338,15 @@ body {
 }
 
 /* 简约模式 */
+#mini-mode .film-card {
+	border-radius: .5rem;
+}
 /* 标题 */
 .accordion-toggler {
 	padding-top: .7rem;
 	padding-bottom: .7rem;
 	background-color: #4f94cd;
+	border-radius: .5rem .5rem 0 0;
 }
 .accordion-toggler h5 {
 	margin-bottom: .2rem;
@@ -359,6 +368,7 @@ body {
 }
 .accordion-toggler.collapsed {
 	background-color: white;
+	border-radius: .5rem;
 }
 .accordion-toggler.collapsed h5 {
 	color: #363636;
@@ -370,55 +380,77 @@ body {
 	color: #9c9c9c;
 }
 /* 信息 */
-.media img:first-of-type {
-	width: 5.9rem;
-	height: 8.8rem;
-	border-radius: .3rem;
-}
-.media .film-card-info h6 {
+#mini-mode .film-card-info h6 {
 	padding-top: 0;
 	color: #696969;
 }
-.media-body .film-card-comment {
+#mini-mode .film-card-comment {
 	height: 3.3rem;
 	padding-top: .3rem;
 	padding-bottom: .3rem;
 	font-size: .9rem;
 	line-height: 1.5;
 }
-.media-body .film-card-comment i {
+#mini-mode .film-card-comment i {
 	font-size: 1rem;
 }
 
 /* 系列模式 */
-#seriesMode {
-	position: relative;
+#series-mode {
+	background-color: white;
 }
 /* 导航 */
 .list-group {
-	position: fixed;
-	top: 6rem;
-	left: 0;
-	height: calc(100vh - 9.8rem);
+	width: 100%;
+	height: calc(100vh - 10.3rem);
 	overflow-y: auto;
+	border-radius: .3rem;
+}
+.list-group a:first-of-type {
+	border-top: none;
+}
+.list-group a:last-of-type {
+	border-bottom: none;
+}
+.list-group-item {
+	width: 100%;
+	font-size: .9rem;
+	color: #696969;
+}
+.list-group-item span:first-of-type {
 	font-size: 1rem;
+	font-weight: bold;
 }
-.sub {
-	top: 3.5rem;
-	height: calc(100vh - 6.8rem);
+.list-group-item .badge {
+	position: relative;
+	bottom: .09rem;
+	height: 1.25rem;
+	padding-top: .225rem;
+	font-size: .8rem;
+	line-height: 1;
+	color: #4f94cd;
+	background-color: transparent;
+	border: .08rem solid #4f94cd;
 }
+.list-group-item .badge:last-of-type {
+	font-weight: bold;
+	color: white;
+	background-color: #4f94cd;
+}
+
 /* 详情 */
 .series-content {
-	height: 100%;
-	overflow-y: auto;
-	background-color: white;
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 6.25rem);
+	overflow-y: scroll;
 }
 
 /* 快捷按钮 */
-.shortBtn {
+.shortcut {
 	position: fixed;
-	right: .5rem;
-	bottom: 7.3rem;
+	right: .7rem;
+	bottom: 7.5rem;
 	z-index: 9;
 	width: 2.5rem;
 	height: 2.5rem;
@@ -431,27 +463,27 @@ body {
 	border-radius: 50%;
 	opacity: .5;
 }
-#toTop.shortBtn {
-	bottom: 10.3rem;
+#to-top.shortcut {
+	bottom: 10.5rem;
 }
-#toBottom.shortBtn {
-	bottom: 4.3rem;
+#to-bottom.shortcut {
+	bottom: 4.5rem;
 }
 
 
 /* 底部导航 */
-#bottomNav {
+#footer .nav {
 	height: 3.8rem;
 	background-color: white;
 }
-#bottomNav .nav-link {
+#footer .nav-link {
 	padding-top: .6rem;
 	font-size: .8rem;
 	color: #a9a9a9;	
 }
-#bottomNav .nav-link i {
+#footer .nav-link i {
 	font-size: 1.5rem;
 }
-#bottomNav .active {
+#footer .active {
 	color: #4f94cd;
 }

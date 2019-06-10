@@ -5,7 +5,6 @@ var page1 = new Vue({
 		films: [],
 		series: [],
 		topHidden: false,
-		colors: ['#912cee', '#0000cd', '#00cdcd', '#00cd00', '#cdcd00', '#cd8500', '#cd0000'],
 		screenHidden: true,
 		sortOrder: 1,
 		isReverse: false,
@@ -210,15 +209,6 @@ var page1 = new Vue({
 			this.isFocus = false;
 			this.isStretch = false;
 		},
-		// 获取不同分级占总数量的百分比
-		getPercen(index) {
-			var films = this.films,
-			grade = films.filter(function (item) {
-				return Math.floor(item.score) == 9 - index;
-			});
-
-			return Math.round(grade.length / films.length * 100) + '%';
-		},
 		// 点击按钮展开搜索框/清除搜索文本
 		onSearch() {
 			if (!this.isStretch) {
@@ -227,7 +217,7 @@ var page1 = new Vue({
 			}
 
 			if (this.searchText.length > 0) {
-				document.getElementsByTagName('input').focus();
+				document.getElementsByTagName('input')[0].focus();
 				this.searchText = '';
 			}
 		},
@@ -286,10 +276,12 @@ var page1 = new Vue({
 				}, 2000);
 			}, 1000);
 		},
-		// 获取评分所属级别的颜色
+		// 评分七个级别显示不同颜色
 		getColor(item) {
-			var scoreIndex = 9 - Math.floor(item.score);
-			return this.colors[scoreIndex];
+			var colors = ['#912cee', '#0000cd', '#00cdcd', '#00cd00', '#cdcd00', '#cd8500', '#cd0000'],
+			scoreIndex = 9 - Math.floor(item.score);
+
+			return colors[scoreIndex];
 		},
 		// 点击直接刷新数据；在顶部时点击触发下拉刷新
 		onReload() {
@@ -432,13 +424,14 @@ var page1 = new Vue({
 // jquery脚本
 $(function () {
 	// 折叠组件：工具栏
-	var screenSwitch = $('#screenSwitch');
+	var screenCollapse = $('#screen-collapse');
 	// 筛选面板展开时按钮变色、隐藏筛选信息
-	screenSwitch.on('show.bs.collapse', function () {
+	screenCollapse.on('show.bs.collapse', function () {
 		page1.screenHidden = false;
 	});
+
 	// 筛选面板收起后按钮变色、显示筛选信息、隐藏更多标签；若有更多标签被激活则不隐藏
-	screenSwitch.on('hidden.bs.collapse', function () {
+	screenCollapse.on('hidden.bs.collapse', function () {
 		page1.screenHidden = true;
 		page1.moreHidden = true;
 		if (page1.activeTags.length > 0) {
@@ -450,30 +443,34 @@ $(function () {
 			}
 		}
 	});
+
 	// 点击其他位置收起筛选面板；若搜索文本为空也收起搜索框
-	var nToolbar = $('#topNav, #detailMode, #miniMode, #seriesMode, #toTop, #toBottom, #footer');
+	var nToolbar = $('#all-header, #detail-mode, #mini-mode, #series-mode, #to-top, #to-bottom, #footer');
 	nToolbar.on('click', foldUp);
 	function foldUp() {
-		screenSwitch.collapse('hide');
+		screenCollapse.collapse('hide');
 		if (page1.searchText.length == 0) {
 			page1.hideSearch();
 		}
 	}
 
 	// 页面滚动条效果
-	var toTop = $('#toTop'),
-	toBottom = $('#toBottom');
+	var toTop = $('#to-top'),
+	toBottom = $('#to-bottom');
+
 	// 回到顶部
 	toTop.on('click', function () {
 		$('html, body').animate({ scrollTop: 0 }, 300, 'linear');
 		page1.topHidden = false;
 	});
+
 	// 直达底部
 	toBottom.on('click', function () {
 		var height = $(document).height();
 		$('html, body').animate({ scrollTop: height }, 300, 'linear');
 		page1.topHidden = false;
 	});
+
 	// 页面滚动时收起筛选面板及搜索框，快到顶部时显示顶部导航栏；在顶部时隐藏向上和刷新按钮，在底部时隐藏向下按钮
 	$(document).on('scroll', function () {
 		foldUp();
@@ -484,14 +481,14 @@ $(function () {
 		}
 
 		if (scrollTop == 0) {
-			toTop.fadeOut();
+			toTop.fadeOut('fast');
 		} else {
 			toTop.fadeIn();
 		}
 
 		var height = $(document).height() - $(window).height();
 		if (scrollTop == height) {
-			toBottom.fadeOut();
+			toBottom.fadeOut('fast');
 		} else {
 			toBottom.fadeIn();
 		}
