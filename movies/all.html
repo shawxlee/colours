@@ -109,9 +109,9 @@
 			</transition>
 
 			<!-- 电影列表 -->
-			<v-touch class="tab-content" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
+			<div class="tab-content">
 				<!-- 全览模式 -->
-				<div class="tab-pane active" id="detail-mode">
+				<v-touch class="tab-pane active" id="detail-mode" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
 					<div class="film-card my-1 p-3" v-for="item in filterFilms" :key="item.id">
 						<div class="d-flex">
 							<div class="film-card-poster">
@@ -171,10 +171,10 @@
 							<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
 						</div>
 					</div>
-				</div>
+				</v-touch>
 
 				<!-- 简约模式 -->
-				<div class="tab-pane accordion" id="mini-mode">
+				<v-touch class="tab-pane accordion" id="mini-mode" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
 					<div class="film-card m-1" v-for="item in filterFilms" :key="item.id">
 						<!-- 主题 -->
 						<div class="accordion-toggler px-3 shadow collapsed" data-toggle="collapse" :data-target="'#info_' + item.id">
@@ -229,7 +229,7 @@
 							<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
 						</div>
 					</div>
-				</div>
+				</v-touch>
 
 				<!-- 系列模式 -->
 				<div class="tab-pane" id="series-mode">
@@ -247,12 +247,12 @@
 							</div>
 						</div>
 						<!-- 详情 -->
-						<div class="col-7">
-							<div class="series-content m-0 p-0" data-spy="scroll" data-target="#series-nav" data-offset="0">
-								<div v-for="item in filterSeries" :key="item.seriesId" :id="'series_' + item.seriesId">
+						<v-touch class="col-7 pl-1 pr-2" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
+							<div class="series-content m-0 p-0" data-spy="scroll" data-target="#series-nav" data-offset="75">
+								<div :id="'series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">
 									<!-- 系列分割线 -->
 									<div class="divider">
-										<hr>&nbsp;&nbsp; <span>{{ item.seriesName }}</span> 系列 &nbsp;&nbsp;<hr>
+										<hr>&nbsp;&nbsp; {{ item.seriesName }} <small v-show="item.filmList.length > 1">系列</small> &nbsp;&nbsp;<hr>
 									</div>
 									<div class="d-flex" v-for="film in item.filmList" :key="film.id">
 										<div class="film-card-poster">
@@ -309,10 +309,10 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</v-touch>
 					</div>
 				</div>
-			</v-touch>
+			</div>
 		</div>
 
 		<!-- 快捷按钮 -->

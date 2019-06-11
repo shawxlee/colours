@@ -437,13 +437,13 @@ body {
 	color: white;
 	background-color: #4f94cd;
 }
-
 /* 详情 */
 .series-content {
 	position: relative;
 	width: 100%;
 	height: calc(100vh - 6.25rem);
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 /* 快捷按钮 */
