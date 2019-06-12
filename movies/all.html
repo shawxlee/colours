@@ -17,10 +17,10 @@
 
 	<title>MR.S - 来自Shaw的电影推荐</title>
 </head>
-<body>
+<body data-spy="scroll" data-target="#series-nav" data-offset="80">
 	<div id="all">
 		<!-- 顶部导航栏 -->
-		<nav class="navbar navbar-expand-lg border-bottom fixed-top" :class="{hide: topHidden}" id="all-header">
+		<nav class="navbar navbar-expand-lg border-bottom fixed-top" :class="{'header-up': headerHidden}" id="all-header">
 			<span class="navbar-text mb-0 h4">全部影片</span>
 			<!-- 模式切换 -->
 			<ul class="nav nav-pills">
@@ -38,7 +38,7 @@
 
 		<div class="container-fluid p-0">
 			<!-- 工具栏 -->
-			<nav class="navbar navbar-expand-lg border-bottom toolbar" :class="{up: topHidden}">
+			<nav class="navbar navbar-expand-lg border-bottom toolbar" :class="{'toolbar-up': headerHidden}">
 				<!-- 筛选器 -->
 				<div class="toolbar-toggler" data-toggle="collapse" data-target="#screen-collapse">
 					<button class="navbar-toggler px-0" :class="{active: !screenHidden}" type="button">
@@ -123,7 +123,7 @@
 										<div class="modal-content bg-transparent border-0 p-3 pb-1">
 											<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%"><br>
 											<a class="btn mx-auto" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a><br>
-											<p :class="{fade: isSave}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
+											<p :class="{show: isSave}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
 										</div>
 									</div>
 								</div>
@@ -193,7 +193,7 @@
 											<div class="modal-content bg-transparent border-0 p-3 pb-1">
 												<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%"><br>
 												<a class="btn mx-auto" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a><br>
-												<p :class="{fade: isSave}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
+												<p :class="{show: isSave}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
 											</div>
 										</div>
 									</div>
@@ -235,10 +235,10 @@
 				<div class="tab-pane" id="series-mode">
 					<div class="row no-gutters">
 						<!-- 导航 -->
-						<div class="col-5 p-1">
-							<div class="list-group border" id="series-nav">
-								<a class="list-group-item list-group-item-action p-2 border-left-0 border-right-0" :href="'#series_' + item.seriesId" v-for="(item, index) in filterSeries" :key="item.seriesId">
-									<span>{{ item.seriesName }}&nbsp;</span> <span class="badge px-1 m-0 rounded-0" v-show="item.filmList.length > 1">系列</span><span class="badge px-1 m-0 rounded-0" v-show="item.filmList.length > 1">{{ item.filmList.length }}</span>
+						<div class="col-4">
+							<div class="list-group border-right" :class="{'series-up': headerHidden}" id="series-nav">
+								<a class="list-group-item list-group-item-action p-2 rounded-0 border-left-0 border-right-0" :href="'#series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">
+									<i class="fas fa-caret-right"></i> <span>{{ item.seriesName }}</span> <span class="badge badge-pill" v-show="item.filmList.length > 1">{{ item.filmList.length }}</span>
 									<br>
 									{{ item.firstYear }}
 									<br>
@@ -247,49 +247,47 @@
 							</div>
 						</div>
 						<!-- 详情 -->
-						<v-touch class="col-7 pl-1 pr-2" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
-							<div class="series-content m-0 p-0" data-spy="scroll" data-target="#series-nav" data-offset="75">
-								<div :id="'series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">
-									<!-- 系列分割线 -->
-									<div class="divider">
-										<hr>&nbsp;&nbsp; {{ item.seriesName }} <small v-show="item.filmList.length > 1">系列</small> &nbsp;&nbsp;<hr>
-									</div>
-									<div class="d-flex" v-for="film in item.filmList" :key="film.id">
-										<div class="film-card-poster">
-											<!-- 海报 -->
-											<img data-toggle="modal" :data-target="'#poster3_' + film.id" data-backdrop="static" :src="film.posterUrl" :alt="film.transName" width="100%" height="100%">
-											<!-- 查看大图 -->
-											<div class="modal" :id="'poster3_' + film.id" tabindex="-1">
-												<div class="modal-dialog modal-dialog-centered m-0">
-													<div class="modal-content bg-transparent border-0 p-3 pb-1">
-														<img data-dismiss="modal" :src="film.posterUrl" :alt="film.transName" width="100%"><br>
-														<a class="btn mx-auto" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a><br>
-														<p :class="{fade: isSave}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
-													</div>
-												</div>
-											</div>
-											<!-- 评分 -->
-											<span class="badge">{{ film.year }}</span><a class="badge" :style="{'background-color': getColor(film)}" :href="film.doubanUrl" target="_blank">{{ film.score }}</a>
-										</div>
-										<!-- 信息 -->
-										<div class="film-card-info">
+						<div class="col-8">
+							<v-touch class="series-content" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
+								<div class="film-card my-1 p-2" :id="'series_' + item.seriesId" v-for="item in filterSeries" :key="item.seriesId">
+									<div class="my-3" v-for="(film, index) in item.filmList" :key="film.id">
+										<div class="series-content-order">
+											<span class="badge">No.{{ index + 1 }}</span><span class="badge">{{ film.year }}</span>
 											<h5>{{ film.transName }}</h5>
 											<h6>{{ film.offiName }}</h6>
-											<div class="d-flex">
-												<p>类型：</p>
-												<p>{{ film.type }}</p>
+											<p><i class="fas fa-tag mr-2 mb-0"></i>{{ film.type }}</p>
+										</div>
+										<div class="d-flex">
+											<div class="film-card-poster">
+												<!-- 海报 -->
+												<img data-toggle="modal" :data-target="'#poster3_' + film.id" data-backdrop="static" :src="film.posterUrl" :alt="film.transName" width="100%" height="100%">
+												<!-- 查看大图 -->
+												<div class="modal" :id="'poster3_' + film.id" tabindex="-1">
+													<div class="modal-dialog modal-dialog-centered m-0">
+														<div class="modal-content bg-transparent border-0 p-3 pb-1">
+															<img data-dismiss="modal" :src="film.posterUrl" :alt="film.transName" width="100%"><br>
+															<a class="btn mx-auto" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a><br>
+															<p :class="{show: isSave}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
+														</div>
+													</div>
+												</div>
+												<!-- 评分 -->
+												<a class="badge" :style="{'background-color': getColor(film)}" :href="film.doubanUrl" target="_blank">{{ film.score }}</a>
 											</div>
-											<div class="d-flex">
-												<p>地区：</p>
-												<p>{{ film.country }}</p>
-											</div>
-											<div class="d-flex">
-												<p>导演：</p>
-												<p>{{ film.director }}</p>
-											</div>
-											<div class="d-flex">
-												<p>主演：</p>
-												<p>{{ film.star }}</p>
+											<!-- 信息 -->
+											<div class="film-card-info pl-2">
+												<div class="d-flex">
+													<p>地区：</p>
+													<p>{{ film.country }}</p>
+												</div>
+												<div class="d-flex">
+													<p>导演：</p>
+													<p>{{ film.director }}</p>
+												</div>
+												<div class="d-flex">
+													<p>主演：</p>
+													<p>{{ film.star }}</p>
+												</div>
 											</div>
 										</div>
 										<!-- 评语 -->
@@ -308,8 +306,8 @@
 										<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
 									</div>
 								</div>
-							</div>
-						</v-touch>
+							</v-touch>
+						</div>
 					</div>
 				</div>
 			</div>

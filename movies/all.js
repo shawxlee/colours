@@ -4,7 +4,7 @@ var page1 = new Vue({
 	data: {
 		films: [],
 		series: [],
-		topHidden: false,
+		headerHidden: false,
 		screenHidden: true,
 		sortOrder: 1,
 		isReverse: false,
@@ -243,14 +243,14 @@ var page1 = new Vue({
 			viewportHeight = document.documentElement.clientHeight || window.innerHeight || document.body.clientHeight,
 			bottomHeight = document.querySelector('.divider').offsetHeight;
 
-			if (!this.topHidden && scrollHeight - bottomHeight > viewportHeight) {
-				this.topHidden = true;
+			if (!this.headerHidden && scrollHeight - bottomHeight > viewportHeight) {
+				this.headerHidden = true;
 			}
 		},
 		// 下滑时显示导航栏；顶部下滑时触发下拉刷新
 		swipeDown() {
-			if (this.topHidden) {
-				this.topHidden = false;
+			if (this.headerHidden) {
+				this.headerHidden = false;
 			}
 
 			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
@@ -461,14 +461,14 @@ $(function () {
 	// 回到顶部
 	toTop.on('click', function () {
 		$('html, body').animate({ scrollTop: 0 }, 300, 'linear');
-		page1.topHidden = false;
+		page1.headerHidden = false;
 	});
 
 	// 直达底部
 	toBottom.on('click', function () {
 		var height = $(document).height();
 		$('html, body').animate({ scrollTop: height }, 300, 'linear');
-		page1.topHidden = false;
+		page1.headerHidden = false;
 	});
 
 	// 页面滚动时收起筛选面板及搜索框，快到顶部时显示顶部导航栏；在顶部时隐藏向上和刷新按钮，在底部时隐藏向下按钮
@@ -477,7 +477,7 @@ $(function () {
 		var scrollTop = $(document).scrollTop();
 		console.log(scrollTop);
 		if (scrollTop < 100) {
-			page1.topHidden = false;
+			page1.headerHidden = false;
 		}
 
 		if (scrollTop == 0) {

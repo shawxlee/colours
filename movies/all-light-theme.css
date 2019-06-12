@@ -5,6 +5,7 @@
 	touch-action: auto !important;
 }
 body {
+	position: relative;
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
@@ -54,9 +55,8 @@ body {
 /* 输入框 */
 .form-control {
 	height: 2.4rem;
-	padding-top: .4rem;
 	font-size: 1rem;
-	line-height: 1;
+	line-height: normal;
 }
 .form-control:focus,
 .form-control:active:focus,
@@ -69,13 +69,6 @@ body {
 	box-shadow: none;
 	outline: none;
 }
-/* 徽章 */
-.badge {
-	font-size: 1rem;
-	font-weight: normal;
-	color: white;
-	border-radius: .3rem;
-}
 
 /*  局部样式  */
 
@@ -85,7 +78,7 @@ body {
 	color: white;
 	background-color: #4f94cd;
 }
-.hide {
+.header-up {
 	top: -2.5rem;
 }
 #all-header .nav-link {
@@ -110,7 +103,7 @@ body {
 	z-index: 9;
 	background-color: white;
 }
-.up {
+.toolbar-up {
 	top: .5rem;
 }
 /* 搜索框 */
@@ -243,11 +236,6 @@ body {
 .pull-leave-active {
 	transition: margin-top .3s linear;
 }
-/* 底部分割线 */
-.tab-pane .divider {
-	margin-top: 0;
-	margin-bottom: 4.05rem;
-}
 
 /* 全览模式 */
 .film-card {
@@ -277,7 +265,7 @@ body {
 .film-card-poster span {
 	color: white;
 }
-.film-card-poster .fade {
+.film-card-poster .show {
 	opacity: 1;
 }
 .film-card-poster .badge {
@@ -288,7 +276,10 @@ body {
 	height: 1.35rem;
 	padding: 0;
 	padding-top: .25rem;
+	font-size: 1rem;
+	font-weight: normal;
 	line-height: 1;
+	color: white;
 	border-radius: 0 .3rem;
 }
 /* 信息 */
@@ -304,11 +295,11 @@ body {
 	color: #363636;
 }
 .film-card-info h6 {
-	overflow-x: auto;
 	margin: 0;
 	margin-bottom: .35rem;
 	font-weight: bold;
 	white-space: nowrap;
+	overflow-x: auto;
 }
 .film-card-info p {
 	margin: 0;
@@ -316,8 +307,8 @@ body {
 }
 .film-card-info .d-flex p:last-of-type {
 	width: 80%;
-	overflow-x: auto;
 	white-space: nowrap;
+	overflow-x: auto;
 }
 /* 评语 */
 .film-card-comment {
@@ -333,8 +324,13 @@ body {
 }
 .film-card-comment p {
 	height: 100%;
-	overflow-x: auto;
 	white-space: nowrap;
+	overflow-x: auto;
+}
+/* 底部分割线 */
+.tab-pane .divider {
+	margin-top: 0;
+	margin-bottom: 4.05rem;
 }
 
 /* 简约模式 */
@@ -356,8 +352,10 @@ body {
 .accordion-toggler .badge {
 	position: relative;
 	bottom: .15rem;
+	font-size: 1rem;
 	font-weight: normal;
 	color: white;
+	border-radius: .3rem;
 }
 .accordion-toggler small {
 	font-weight: normal;
@@ -396,25 +394,25 @@ body {
 }
 
 /* 系列模式 */
-#series-mode {
-	background-color: white;
-}
 /* 导航 */
 .list-group {
-	width: 100%;
-	height: calc(100vh - 10.3rem);
+	position: fixed;
+	top: 6rem;
+	left: 0;
+	width: 33.3%;
+	height: calc(100vh - 9.8rem);
 	overflow-y: auto;
-	border-radius: .3rem;
+	overflow-x: hidden;
+	background-color: white;
 }
-.list-group a:first-of-type {
-	border-top: none;
-}
-.list-group a:last-of-type {
-	border-bottom: none;
+.series-up {
+	top: 3.25rem;
+	height: calc(100vh - 7.05rem);
 }
 .list-group-item {
-	width: 100%;
+	width: calc(100% + 1px);
 	font-size: .9rem;
+	white-space: nowrap;
 	color: #696969;
 }
 .list-group-item span:first-of-type {
@@ -423,27 +421,55 @@ body {
 }
 .list-group-item .badge {
 	position: relative;
-	bottom: .09rem;
-	height: 1.25rem;
-	padding-top: .225rem;
+	bottom: .06rem;
+	height: 1rem;
+	padding-bottom: 0;
+	padding-top: .15rem;
 	font-size: .8rem;
 	line-height: 1;
-	color: #4f94cd;
-	background-color: transparent;
-	border: .08rem solid #4f94cd;
-}
-.list-group-item .badge:last-of-type {
-	font-weight: bold;
 	color: white;
 	background-color: #4f94cd;
 }
+.list-group-item.active {
+	background-color: #4f94cd;
+	border-color: #4f94cd;
+}
+.list-group-item.active .badge {
+	color: #4f94cd;
+	background-color: white;
+}
 /* 详情 */
 .series-content {
-	position: relative;
 	width: 100%;
-	height: calc(100vh - 6.25rem);
-	overflow-y: scroll;
 	overflow-x: hidden;
+}
+.series-content-order .badge {
+	font-size: .9rem;
+	font-weight: normal;
+	color: white;
+	background-color: #9c9c9c;
+	border: .08rem solid #9c9c9c;
+	border-radius: 0;
+}
+.series-content-order .badge:last-of-type {
+	color: #9c9c9c;
+	background-color: white;
+}
+.series-content-order h5 {
+	margin-bottom: .05rem;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow-x: auto;
+	color: #363636;
+}
+.series-content-order h6 {
+	font-weight: bold;
+	white-space: nowrap;
+	overflow-x: auto;
+	color: #9c9c9c;
+}
+.series-content .divider hr {
+	width: 25%;
 }
 
 /* 快捷按钮 */
