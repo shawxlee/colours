@@ -140,6 +140,7 @@ var page1 = new Vue({
 		isSuccess: false,
 		isError: false,
 		showSaved: false,
+		optionsOrder: 0,
 		detailOrder: 0,
 		showPoster: false,
 		isReload: false
@@ -284,6 +285,10 @@ var page1 = new Vue({
 			scoreIndex = 9 - Math.floor(item.score);
 
 			return colors[scoreIndex];
+		},
+		// 点击添加影片内容到对应列表
+		onOption(order) {
+			this.optionsOrder = 0;
 		},
 		// 点击直接刷新数据；在顶部时点击触发下拉刷新
 		onReload() {

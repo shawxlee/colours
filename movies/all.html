@@ -112,7 +112,7 @@
 			<div class="tab-content">
 				<!-- 全览模式 -->
 				<v-touch class="tab-pane active" id="full-mode" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
-					<div class="film-card my-1 p-3" v-for="item in filterFilms" :key="item.id">
+					<v-touch class="film-card my-1 p-3" v-for="item in filterFilms" :key="item.id" @press="optionsOrder = item.id">
 						<div class="d-flex">
 							<!-- 海报 -->
 							<div class="film-card-poster">
@@ -163,7 +163,12 @@
 							<p><i class="fas fa-comment-dots mr-2"></i></p>
 							<p>{{ item.comment }}</p>
 						</div>
-					</div>
+						<div class="d-flex justify-content-center film-card-options" v-if="optionsOrder == item.id">
+							<v-touch class="option mx-3" @tap="onOption(1)">加入<br>待看</v-touch>
+							<v-touch class="option mx-3" @tap="onOption(2)">标记<br>已看</v-touch>
+							<v-touch class="option mx-3" @tap="onOption(3)">撰写<br>影评</v-touch>
+						</div>
+					</v-touch>
 					<!-- 底部分割线 -->
 					<div class="divider" v-if="films.length > 0">
 						<template v-if="filterFilms.length > 0">

@@ -239,6 +239,7 @@ body {
 
 /* 全览模式 */
 .film-card {
+	position: relative;
 	background-color: white;
 }
 /* 海报 */
@@ -325,6 +326,24 @@ body {
 	height: 100%;
 	white-space: nowrap;
 	overflow-x: auto;
+}
+/* 选项 */
+.film-card-options {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.5);
+}
+.film-card-options .option {
+	width: 3rem;
+	height: 3rem;
+	text-align: center;
+	color: #4f94cd;
+	background-color: rgba(79,148,205,.5);
+	border-radius: 50%;
+	border: .08rem solid #4f94cd;
 }
 /* 底部分割线 */
 .tab-pane .divider {
