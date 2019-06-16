@@ -140,7 +140,8 @@ var page1 = new Vue({
 		isSuccess: false,
 		isError: false,
 		showSaved: false,
-		optionsOrder: 0,
+		filmOrder: 0,
+		posterOrder: 0,
 		detailOrder: 0,
 		showPoster: false,
 		isReload: false
@@ -224,11 +225,6 @@ var page1 = new Vue({
 				this.searchText = '';
 			}
 		},
-		// 点击不同按钮切换排序方式，点击同一按钮切换正倒序
-		onSort(index) {
-			this.sortOrder = index + 1;
-			this.isReverse = !this.isReverse;
-		},
 		// 点击切换标签激活状态；若选中则添加到筛选信息中，否则从中删除；激活时关闭搜索框
 		onTag(item) {
 			item.isActive = !item.isActive;
@@ -288,7 +284,7 @@ var page1 = new Vue({
 		},
 		// 点击添加影片内容到对应列表
 		onOption(order) {
-			this.optionsOrder = 0;
+			this.filmOrder = 0;
 		},
 		// 点击直接刷新数据；在顶部时点击触发下拉刷新
 		onReload() {

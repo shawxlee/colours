@@ -1,4 +1,4 @@
-/* $primary: #4f94cd; $secondary: #a9a9a9; $light: #e8e8e8; $dark: #363636; */
+/* $primary: #4f94cd; $secondary: #a9a9a9; $light: #e8e8e8; $dark: #1c1c1c; */
 
 /*  全局样式  */
 * {
@@ -11,7 +11,6 @@ body {
 	margin: 0;
 	padding: 0;
 	padding-top: 6rem;
-	color: #1c1c1c;
 	background-color: #e8e8e8;
 }
 
@@ -20,7 +19,7 @@ body {
 	color: #a9a9a9;
 }
 .navbar-toggler.active {
-	color: #363636;
+	color: #1c1c1c;
 }
 .navbar-toggler:focus,
 .navbar-toggler:active:focus,
@@ -57,6 +56,7 @@ body {
 	height: 2.4rem;
 	font-size: 1rem;
 	line-height: normal;
+	background-color: #e8e8e8;
 }
 .form-control:focus,
 .form-control:active:focus,
@@ -107,7 +107,7 @@ body {
 	top: .5rem;
 }
 /* 搜索框 */
-.toolbar form {
+.toolbar-form {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -115,19 +115,19 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.toolbar form .form-control {
+.toolbar-form .form-control {
 	position: absolute;
 	top: .2375rem;
 	right: 1rem;
 	width: 100%;
 	transition: width .2s linear;
 }
-.toolbar form .navbar-toggler {
+.toolbar-form .navbar-toggler {
 	position: absolute;
 	top: .5rem;
 	right: 1rem;
 }
-.fa-times-circle {
+.toolbar-form .fa-times-circle {
 	position: relative;
 	bottom: .1rem;
 	font-size: 1rem;
@@ -159,7 +159,7 @@ body {
 	color: #4f94cd;
 }
 .toolbar-toggler .active {
-	color: #363636;
+	color: #1c1c1c;
 }
 /* 筛选面板 */
 #screen-collapse .btn {
@@ -224,7 +224,7 @@ body {
 /* 过渡：下拉/收起 */
 .pull-enter,
 .pull-leave-to {
-	margin-top: -3.25rem;
+	margin-top: -3rem;
 }
 .pull-enter-to,
 .pull-leave {
@@ -250,12 +250,34 @@ body {
 	overflow: hidden;
 	border-radius: .3rem;
 }
-.film-card-poster .btn {
+.film-card-poster .badge {
+	position: absolute;
+	top: .3rem;
+	right: .3rem;
+	height: 1.35rem;
+	padding-bottom: 0;
+	padding-top: .24rem;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1;
+	color: white;
+}
+/* 大图 */
+.film-card-poster-large {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: calc(3.8rem + 1px);
+	left: 0;
+	z-index: 1050;
+	text-align: center;
+}
+.film-card-poster-large .btn {
 	width: 6rem;
 	color: white;
 	border-color: white;
 }
-.film-card-poster p {
+.film-card-poster-large p {
 	width: 100%;
 	font-size: .9rem;
 	text-align: center;
@@ -263,36 +285,24 @@ body {
 	opacity: 0;
 	transition: opacity .2s linear;
 }
-.film-card-poster span {
+.film-card-poster-large span {
 	color: white;
 }
-.film-card-poster .show {
+.film-card-poster-large .show {
 	opacity: 1;
-}
-.film-card-poster .badge {
-	position: absolute;
-	top: .3rem;
-	right: .3rem;
-	height: 1.35rem;
-	padding-bottom: 0;
-	padding-top: .235rem;
-	font-size: 1rem;
-	font-weight: normal;
-	line-height: 1;
-	color: white;
 }
 /* 信息 */
 .film-card-info {
 	width: calc(100% - 5.9rem);
 	line-height: 1.35;
-	color: #9c9c9c;
+	color: #828282;
 }
 .film-card-info h5 {
-	margin-top: .1rem;
-	margin-bottom: .05rem;
+	margin-top: .05rem;
+	margin-bottom: .1rem;
 	font-weight: bold;
 	line-height: 1;
-	color: #363636;
+	color: #1c1c1c;
 }
 .film-card-info h6 {
 	margin-top: 0;
@@ -315,14 +325,15 @@ body {
 	height: 2.4rem;
 	font-size: 1rem;
 	line-height: 2.4;
-	color: #363636;
+	color: #1c1c1c;
 	background-color: #f5f5f5;
 	border-radius: .3rem;
 }
 .film-card-comment i {
-	color: #9c9c9c;
+	color: #828282;
+	opacity: .8;
 }
-.film-card-comment p {
+.film-card-comment p:last-of-type {
 	height: 100%;
 	white-space: nowrap;
 	overflow-x: auto;
@@ -337,13 +348,28 @@ body {
 	background-color: rgba(0,0,0,.5);
 }
 .film-card-options .option {
-	width: 3rem;
-	height: 3rem;
+	margin: auto;
+	font-size: .8rem;
 	text-align: center;
-	color: #4f94cd;
-	background-color: rgba(79,148,205,.5);
+	color: white;
+}
+.film-card-options .option .btn {
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-bottom: .25rem;
+	padding-top: .625rem;
+	font-size: 1.25rem;
+	line-height: 1;
+	background-color: white;
+	border: none;
 	border-radius: 50%;
-	border: .08rem solid #4f94cd;
+}
+.film-card-options .option:last-of-type .btn {
+	padding-top: .675rem;
+	font-size: 1.15rem;
+}
+.film-card-options i {
+	color: #4f94cd;
 }
 /* 底部分割线 */
 .tab-pane .divider {
@@ -355,17 +381,17 @@ body {
 .accordion .film-card {
 	border-radius: .5rem;
 }
-/* 标题 */
+/* 主体 */
 .accordion-toggler {
 	padding-top: .7rem;
 	padding-bottom: .7rem;
+	color: white;
 	background-color: #4f94cd;
 	border-radius: .5rem .5rem 0 0;
 }
 .accordion-toggler h5 {
 	margin-bottom: .2rem;
 	font-weight: bold;
-	color: white;
 }
 .accordion-toggler .badge {
 	position: relative;
@@ -383,35 +409,35 @@ body {
 }
 .accordion-toggler p {
 	margin-bottom: 0;
-	color: white;
+	font-size: .9rem;
+}
+.accordion-toggler i {
+	font-size: .8rem;
 }
 .accordion-toggler.collapsed {
 	background-color: white;
 	border-radius: .5rem;
+	color: #828282;
 }
 .accordion-toggler.collapsed h5 {
-	color: #363636;
+	color: #1c1c1c;
 }
 .accordion-toggler.collapsed small {
-	color: #696969;
+	color: #828282;
 }
-.accordion-toggler.collapsed p {
-	color: #9c9c9c;
-}
-/* 信息 */
+/* 详情 */
 .accordion .film-card-info h6 {
-	padding-top: 0;
-	color: #696969;
+	margin-bottom: .2rem;
+	line-height: 1;
 }
 .accordion .film-card-comment {
-	height: 3.3rem;
-	padding-top: .3rem;
-	padding-bottom: .3rem;
-	font-size: .9rem;
+	height: 3.63rem;
+	padding-top: .35rem;
 	line-height: 1.5;
 }
-.accordion .film-card-comment i {
-	font-size: 1rem;
+/* 选项 */
+.accordion .film-card-options {
+	border-radius: .5rem;
 }
 
 /* 系列模式 */
@@ -434,12 +460,12 @@ body {
 	width: calc(100% + 1px);
 	font-size: .9rem;
 	white-space: nowrap;
-	color: #9c9c9c;
+	color: #828282;
 }
 .list-group-item span:first-of-type {
 	font-size: 1rem;
 	font-weight: bold;
-	color: #696969;
+	color: #4f4f4f;
 }
 .list-group-item .badge {
 	position: relative;
@@ -463,16 +489,6 @@ body {
 	color: #4f94cd;
 	background-color: white;
 }
-/* 遮罩 */
-.detail-backdrop {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: calc(3.8rem + 1px);
-	left: 0;
-	z-index: 1040;
-	background-color: rgba(0,0,0,.5);
-}
 /* 内容 */
 .series-content {
 	width: 100%;
@@ -482,6 +498,7 @@ body {
 	position: relative;
 	top: -6rem;
 }
+/* 主体 */
 .series-content .film-card-poster {
 	width: 6.9rem;
 	height: 9.9rem;
@@ -493,10 +510,10 @@ body {
 }
 .series-content h6 {
 	width: 6.9rem;
-	color: #363636;
+	color: #1c1c1c;
 }
 .series-content h6 span {
-	color: #9c9c9c;
+	color: #828282;
 }
 .series-content span.badge {
 	position: absolute;
@@ -511,6 +528,9 @@ body {
 .series-content span.badge span {
 	font-size: .8rem;
 	font-weight: normal;
+}
+.series-content .film-card-options {
+	top: -.3rem;
 }
 /* 详情 */
 .series-content-detail {
@@ -538,19 +558,13 @@ body {
 .slide-leave-active {
 	transition: transform .1s linear;
 }
+/* 底图 */
 .series-content-detail img {
 	transition: all .2s linear;
 }
 .scale {
 	transform: scale(.92, .92);
 	transform-origin: 50% 50%;
-}
-.series-content-detail .film-card-poster {
-	width: 100%;
-	height: auto;
-	box-shadow: none;
-	line-height: 1.5;
-	text-align: center;
 }
 /* 信息 */
 .series-content-detail .film-card-info {
@@ -559,7 +573,6 @@ body {
 	bottom: -1px;
 	left: 0;
 	width: 100%;
-	color: #696969;
 	background-color: white;
 }
 .series-content-detail .film-card-info h5 {
@@ -569,7 +582,7 @@ body {
 	width: 100%;
 	margin-top: .45rem;
 	margin-bottom: 1rem;
-	color: #696969;
+	color: #828282;
 }
 .series-content-detail .film-card-info p {
 	margin-top: .45rem;
@@ -579,17 +592,20 @@ body {
 	top: -2.4rem;
 	right: 0;
 	left: 0;
-	background-color: rgba(245,245,245,.75);
+	background-color: rgba(255,255,255,.8);
 	border-radius: 0;
 }
-.series-content-detail .film-card-comment i {
-	color: #696969;
-	opacity: .7;
+.series-content-detail .film-card-comment p {
+	margin-top: 0;
+	font-size: 1rem;
 }
-.series-content-detail .film-card-comment div:last-of-type {
-	height: 100%;
-	white-space: nowrap;
-	overflow-x: auto;
+.series-content-detail .film-card-comment p:last-of-type {
+	width: 100%;
+}
+/* 大图 */
+.series-content-detail .film-card-poster-large {
+	position: relative;
+	width: 100%;
 }
 /* 底部分割线 */
 .series-content .divider hr {
@@ -608,7 +624,7 @@ body {
 	line-height: 1;
 	color: white;
 	text-align: center;
-	background-color: #363636;
+	background-color: #1c1c1c;
 	border-radius: 50%;
 	opacity: .5;
 }
@@ -619,6 +635,20 @@ body {
 	bottom: 4.5rem;
 }
 
+/* 遮罩 */
+.poster-backdrop,
+.detail-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 3.8rem;
+	left: 0;
+	z-index: 1040;
+	background-color: rgba(0,0,0,.5);
+}
+.detail-backdrop {
+	bottom: calc(3.8rem + 1px);
+}
 
 /* 底部导航 */
 #footer .nav {
@@ -628,7 +658,7 @@ body {
 #footer .nav-link {
 	padding-top: .6rem;
 	font-size: .8rem;
-	color: #a9a9a9;	
+	color: #a9a9a9;
 }
 #footer .nav-link i {
 	font-size: 1.5rem;

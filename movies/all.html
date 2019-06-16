@@ -56,7 +56,7 @@
 					</template>
 				</div>
 				<!-- 搜索框 -->
-				<form>
+				<form class="toolbar-form">
 					<transition name="stretch">
 						<input class="form-control rounded-pill" :style="[isFocus ? '' : {width: searchText.length + 4 + 'rem'}]" type="text" placeholder="输入关键词搜索" v-if="showSearch" @focus.passive="isFocus = true" @blur.passive="isFocus = false" v-model.trim="searchText" v-focus>
 					</transition>
@@ -71,7 +71,7 @@
 					<div class="row no-gutters justify-content-between">
 						<!-- 排序按钮 -->
 						<div class="col-4 px-1" v-for="(item, index) in sorts">
-							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == index + 1}" @tap="onSort(index)">按{{ item }}排序<span>
+							<v-touch class="btn btn-sm rounded-pill px-2" :class="{active: sortOrder == index + 1}" @tap="sortOrder = index + 1; isReverse = !isReverse">按{{ item }}排序<span>
 								<i class="fas fa-caret-left mr-0" :class="{disabled: !isReverse}"></i>
 								<i class="fas fa-caret-right ml-0" :class="{disabled: isReverse}"></i>
 							</span></v-touch>
@@ -86,7 +86,7 @@
 						</div>
 						<div class="w-100 mt-1 text-center">
 							<v-touch class="navbar-toggler" :class="{show: activeTags.length > 0}" @tap="clearTags">
-								<i class="fas fa-times mt-1"></i> 清空标签
+								<i class="fas fa-times-circle mt-1"></i> 清空标签
 							</v-touch>
 						</div>
 					</div>
@@ -112,25 +112,22 @@
 			<div class="tab-content">
 				<!-- 全览模式 -->
 				<v-touch class="tab-pane active" id="full-mode" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
-					<v-touch class="film-card my-1 p-3" v-for="item in filterFilms" :key="item.id" @press="optionsOrder = item.id">
+					<v-touch class="film-card my-1 p-3" v-for="item in filterFilms" :key="item.id" @press="filmOrder = item.id">
 						<div class="d-flex">
 							<!-- 海报 -->
 							<div class="film-card-poster">
-								<img data-toggle="modal" :data-target="'#poster_' + item.id" data-backdrop="static" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
-								<!-- 查看大图 -->
-								<div class="modal" :id="'poster_' + item.id" tabindex="-1">
-									<div class="modal-dialog modal-dialog-centered m-0">
-										<div class="modal-content bg-transparent border-0 p-3 pb-1">
-											<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%">
-											<br>
-											<a class="btn mx-auto" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a>
-											<br>
-											<p :class="{show: showSaved}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
-										</div>
-									</div>
-								</div>
+								<img :src="item.posterUrl" :alt="item.transName" width="100%" height="100%" @click.passive="posterOrder = item.id">
 								<!-- 评分 -->
 								<a class="badge" :style="{'background-color': getColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>
+
+								<!-- 查看大图 -->
+								<div class="film-card-poster-large p-3 pb-1" v-show="posterOrder == item.id" @click.self="posterOrder = 0">
+									<img :src="item.posterUrl" :alt="item.transName" width="100%" @click.passive="posterOrder = 0">
+									<br><br>
+									<a class="btn mb-1" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a>
+									<br>
+									<p :class="{show: showSaved}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
+								</div>
 							</div>
 							<!-- 信息 -->
 							<div class="film-card-info pl-2">
@@ -163,27 +160,40 @@
 							<p><i class="fas fa-comment-dots mr-2"></i></p>
 							<p>{{ item.comment }}</p>
 						</div>
-						<div class="d-flex justify-content-center film-card-options" v-if="optionsOrder == item.id">
-							<v-touch class="option mx-3" @tap="onOption(1)">加入<br>待看</v-touch>
-							<v-touch class="option mx-3" @tap="onOption(2)">标记<br>已看</v-touch>
-							<v-touch class="option mx-3" @tap="onOption(3)">撰写<br>影评</v-touch>
+						<!-- 选项 -->
+						<div class="d-flex justify-content-center film-card-options" v-if="filmOrder == item.id">
+							<v-touch class="option mx-3" @tap="onOption(1)">
+								<a class="btn px-0"><i class="fas fa-plus"></i></a>
+								<br>
+								加入待看
+							</v-touch>
+							<v-touch class="option mx-3" @tap="onOption(2)">
+								<a class="btn px-0"><i class="fas fa-check"></i></a>
+								<br>
+								标记已看
+							</v-touch>
+							<v-touch class="option mx-3" @tap="onOption(3)">
+								<a class="btn px-0"><i class="fas fa-pen"></i></a>
+								<br>
+								撰写影评
+							</v-touch>
 						</div>
 					</v-touch>
 					<!-- 底部分割线 -->
 					<div class="divider" v-if="films.length > 0">
 						<template v-if="filterFilms.length > 0">
-							<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+							<hr>&nbsp;&nbsp; 已到底部 <i class="fas fa-hourglass-end"></i> &nbsp;&nbsp;<hr>
 						</template>
 						<template v-else>
-							<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+							<hr>&nbsp;&nbsp; 暂无匹配 <i class="fas fa-ban"></i> &nbsp;&nbsp;<hr>
 						</template>
 					</div>
 				</v-touch>
 
 				<!-- 简约模式 -->
 				<v-touch class="tab-pane accordion" id="mini-mode" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
-					<div class="film-card m-1" v-for="item in filterFilms" :key="item.id">
-						<!-- 主题 -->
+					<v-touch class="film-card m-1" v-for="item in filterFilms" :key="item.id" @press="filmOrder = item.id">
+						<!-- 主体 -->
 						<div class="accordion-toggler px-3 shadow-sm collapsed" data-toggle="collapse" :data-target="'#info_' + item.id">
 							<h5><a class="badge mr-2" :style="{'background-color': getColor(item)}" :href="item.doubanUrl" target="_blank">{{ item.score }}</a>{{ item.transName }} <small>({{ item.year }})</small></h5>
 							<p><i class="fas fa-tag mr-2 mb-0"></i>{{ item.type }}</p>
@@ -193,18 +203,15 @@
 							<div class="d-flex p-3">
 								<!-- 海报 -->
 								<div class="film-card-poster">
-									<img data-toggle="modal" :data-target="'#poster2_' + item.id" data-backdrop="static" :src="item.posterUrl" :alt="item.transName" width="100%" height="100%">
+									<img :src="item.posterUrl" :alt="item.transName" width="100%" height="100%" @click.passive="posterOrder = item.id">
+
 									<!-- 查看大图 -->
-									<div class="modal" :id="'poster2_' + item.id" tabindex="-1">
-										<div class="modal-dialog modal-dialog-centered m-0">
-											<div class="modal-content bg-transparent border-0 p-3 pb-1">
-												<img data-dismiss="modal" :src="item.posterUrl" :alt="item.transName" width="100%">
-												<br>
-												<a class="btn mx-auto" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a>
-												<br>
-												<p :class="{show: showSaved}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
-											</div>
-										</div>
+									<div class="film-card-poster-large p-3 pb-1" v-show="posterOrder == item.id" @click.self="posterOrder = 0">
+										<img :src="item.posterUrl" :alt="item.transName" width="100%" @click.passive="posterOrder = 0">
+										<br><br>
+										<a class="btn mb-1" :href="item.posterUrl" :download="item.transName" @click.passive="onSave">保存图片</a>
+										<br>
+										<p :class="{show: showSaved}">图片 <span>{{ item.transName }}</span> 已保存到手机相册</p>
 									</div>
 								</div>
 								<!-- 信息 -->
@@ -222,18 +229,38 @@
 										<p>主演：</p>
 										<p>{{ item.star }}</p>
 									</div>
-									<p class="film-card-comment mt-2 px-2"><i class="fas fa-comment-dots m-0 mr-2"></i>{{ item.comment }}</p>
+									<div class="film-card-comment mt-2 pl-2">
+										<i class="fas fa-comment-dots mr-2"></i>{{ item.comment }}
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+						<!-- 选项 -->
+						<div class="d-flex justify-content-center film-card-options" v-if="filmOrder == item.id">
+							<v-touch class="option mx-3" @tap="onOption(1)">
+								<a class="btn px-0"><i class="fas fa-plus"></i></a>
+								<br>
+								加入待看
+							</v-touch>
+							<v-touch class="option mx-3" @tap="onOption(2)">
+								<a class="btn px-0"><i class="fas fa-check"></i></a>
+								<br>
+								标记已看
+							</v-touch>
+							<v-touch class="option mx-3" @tap="onOption(3)">
+								<a class="btn px-0"><i class="fas fa-pen"></i></a>
+								<br>
+								撰写影评
+							</v-touch>
+						</div>
+					</v-touch>
 					<!-- 底部分割线 -->
 					<div class="divider" v-if="films.length > 0">
 						<template v-if="filterFilms.length > 0">
-							<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+							<hr>&nbsp;&nbsp; 已到底部 <i class="fas fa-hourglass-end"></i> &nbsp;&nbsp;<hr>
 						</template>
 						<template v-else>
-							<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+							<hr>&nbsp;&nbsp; 暂无匹配 <i class="fas fa-ban"></i> &nbsp;&nbsp;<hr>
 						</template>
 					</div>
 				</v-touch>
@@ -263,32 +290,39 @@
 							</div>
 						</div>
 						<div class="col-8">
-							<!-- 遮罩 -->
-							<v-touch class="detail-backdrop" v-if="detailOrder > 0" @tap="detailOrder = 0"></v-touch>
 							<!-- 内容 -->
 							<v-touch class="series-content" @swipeup="swipeUp" @swipedown="swipeDown" :swipe-options="{threshold: 100}">
 								<div class="film-card my-1" v-for="item in filterSeries" :key="item.seriesId">
 									<div class="series-id" :id="'series_' + item.seriesId"></div>
 									<div class="row no-gutters p-2">
-										<div class="col-6 my-2 position-relative" v-for="(film, index) in item.filmList" :key="film.id">
+										<v-touch class="col-6 my-2 position-relative" v-for="(film, index) in item.filmList" :key="film.id" @press="detailOrder = 0; filmOrder = film.id">
 											<!-- 海报 -->
 											<div class="film-card-poster mx-auto mb-2">
 												<img :src="film.posterUrl" :alt="film.transName" width="100%" height="100%" @click.passive="detailOrder = film.id">
 												<a class="badge" :style="{'background-color': getColor(film)}" :href="film.doubanUrl" target="_blank">{{ film.score }}</a>
 											</div>
 											<!-- 标题 -->
-											<h6 class="mx-auto">{{ film.transName }} <span>({{ film.year }})</span></h6>
+											<h6 class="mx-auto" @click.passive="detailOrder = film.id">{{ film.transName }} <span>({{ film.year }})</span></h6>
 											<!-- 编号 -->
 											<span class="badge rounded-0"><span>No.</span>{{ index + 1 }}</span>
+											<!-- 选项 -->
+											<div class="film-card-options" v-if="filmOrder == film.id">
+												<v-touch class="option my-3" @tap="onOption(1)">
+													<a class="btn px-0 mr-2"><i class="fas fa-plus"></i></a>加入待看
+												</v-touch>
+												<v-touch class="option my-3" @tap="onOption(2)">
+													<a class="btn px-0 mr-2"><i class="fas fa-check"></i></a>标记已看
+												</v-touch>
+												<v-touch class="option my-3" @tap="onOption(3)">
+													<a class="btn px-0 mr-2"><i class="fas fa-pen"></i></a>撰写影评
+												</v-touch>
+											</div>
+
 											<!-- 查看详情 -->
 											<transition name="slide">
 												<div class="series-content-detail" :class="{'detail-up': showPoster}" v-if="detailOrder == film.id">
 													<!-- 底图 -->
 													<img :class="{scale: showPoster}" :src="film.posterUrl" :alt="film.transName" width="100%" @click.passive="showPoster = !showPoster">
-													<div class="film-card-poster" v-if="showPoster" @click.self="detailOrder = 0">
-														<a class="btn mx-auto mb-2" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a>
-														<p :class="{show: showSaved}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
-													</div>
 													<!-- 信息 -->
 													<transition name="slide">
 														<v-touch class="film-card-info p-3" v-if="!showPoster" @tap="detailOrder = 0">
@@ -300,23 +334,30 @@
 															<p>导演：{{ film.director }}</p>
 															<p>主演：{{ film.star }}</p>
 															<div class="d-flex px-2 film-card-comment">
-																<div><i class="fas fa-comment-dots mr-2"></i></div>
-																<div>{{ film.comment }}</div>
+																<p><i class="fas fa-comment-dots mr-2"></i></p>
+																<p>{{ film.comment }}</p>
 															</div>
 														</v-touch>
 													</transition>
+
+													<!-- 查看大图 -->
+													<div class="film-card-poster-large px-3 mb-1" v-show="showPoster" @click.self="detailOrder = 0">
+														<a class="btn mb-1" :href="film.posterUrl" :download="film.transName" @click.passive="onSave">保存图片</a>
+														<br>
+														<p :class="{show: showSaved}">图片 <span>{{ film.transName }}</span> 已保存到手机相册</p>
+													</div>
 												</div>
 											</transition>
-										</div>
+										</v-touch>
 									</div>
 								</div>
 								<!-- 底部分割线 -->
 								<div class="divider" v-if="series.length > 0">
 									<template v-if="filterSeries.length > 0">
-										<hr>&nbsp;&nbsp; 已到底部 <i class="far fa-check-circle"></i> &nbsp;&nbsp;<hr>
+										<hr>&nbsp;&nbsp; 已到底部 <i class="fas fa-hourglass-end"></i> &nbsp;&nbsp;<hr>
 									</template>
 									<template v-else>
-										<hr>&nbsp;&nbsp; 暂无匹配 <i class="far fa-times-circle"></i> &nbsp;&nbsp;<hr>
+										<hr>&nbsp;&nbsp; 暂无匹配 <i class="fas fa-ban"></i> &nbsp;&nbsp;<hr>
 									</template>
 								</div>
 							</v-touch>
@@ -333,6 +374,10 @@
 			<i class="fas fa-redo-alt" v-else></i>
 		</v-touch>
 		<div class="shortcut" id="to-bottom"><i class="fas fa-chevron-down"></i></div>
+
+		<!-- 遮罩 -->
+		<v-touch class="poster-backdrop" v-if="posterOrder > 0 || showPoster"></v-touch>
+		<v-touch class="detail-backdrop" v-if="detailOrder > 0 && !showPoster" @tap="detailOrder = 0"></v-touch>
 	</div>
 
 	<!-- 底部全局导航 -->
@@ -345,7 +390,7 @@
 				<a class="nav-link" href="#watch"><i class="fas fa-play-circle"></i><br>待看</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#review"><i class="fas fa-pen-square"></i><br>影评</a>
+				<a class="nav-link" href="#review"><i class="fas fa-poll-h"></i><br>回顾</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#setting"><i class="fas fa-cog"></i><br>设置</a>
