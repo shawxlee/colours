@@ -1,9 +1,10 @@
-$(function () {
-    $("a").click(function(){
+$(function() {
+    $("a").click(function() {
         window.location.reload();
     });
-    $("#changeColor").click(function(event){
+    $("#changeColor").click(function(event) {
         var icVal = $("#inputColor").val();
+
         function testPatt(v) {
             var patt = /^#([0-9]|[a-zA-Z]){6}$/;
             return patt.test(v);
@@ -16,16 +17,15 @@ $(function () {
                 "color": icVal,
             });
             $("td").css("border-color", icVal);
-        }
-        else {
+        } else {
             $("input").css("background-color", "red");
         };
         event.stopPropagation();
     });
-    $("#inputColor").focus(function(){       
+    $("#inputColor").focus(function() {
         $("input").css("background-color", "");
     });
-    $(document).click(function(){
+    $(document).click(function() {
         $("input").css("background-color", "");
     });
 });

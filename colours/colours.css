@@ -1,49 +1,61 @@
 html {
     font-size: 12.6px;
 }
+
 body {
     padding: 0.3rem;
     padding-top: 0;
     padding-bottom: 3rem;
     color: white;
 }
+
 nav {
     height: 4.5rem;
 }
+
 span {
     font-size: 1.1rem;
 }
+
 a span {
     font-size: 1.5rem;
 }
+
 #currentColor {
     color: white;
 }
+
 #inputColor {
     height: 2.4rem;
     font-size: 1.1rem;
 }
+
 #changeColor {
     margin: 0;
     padding: 0;
     width: 4rem;
     height: 2.4rem;
 }
+
 i {
     font-size: 2.4rem;
 }
+
 #start {
     height: 5rem;
 }
+
 th {
     color: black;
     height: 4rem;
     text-align: right;
 }
+
 td {
     border: 0.3rem solid white;
     padding-right: 0.2rem;
 }
+
 tr td:first-child {
     text-align: right;
 }
